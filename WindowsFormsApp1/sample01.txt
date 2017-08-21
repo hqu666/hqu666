@@ -1,0 +1,8 @@
+flv=sample01.flv
+startimage=sample01.jpg
+autoplay=0
+volume=50
+showstop=1
+showvolume=1
+showtime=1
+showiconplay=1 
