@@ -1,0 +1,538 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!--互換表示をさせない;InternetExplorer-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Player screen of MaraSongs</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+	<script src="https://code.jquery.com/jquery-2.2.3.js"></script>
+	<script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+	<link href="../../main.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<div align="center" style="font-size: 11pt; line-height: 150%; ">
+		<div style="line-height:16px ; text-alingn:left;
+				 border-style: solid ; border-width: 1px; padding: 10px 5px 10px 20px; border-color: #999999 ;
+				 width: 860px; border-radius: 10px; box-shadow: 10px 10px 10px #AAA;">
+
+			<table align="left" valign="top" border="0" cellpadding="0" cellspacing="0" width="850">
+				<tr valign="top">
+					<td style="width: 48px; ">
+						<a href="index.html">
+							<img src="../img/ic_launcher-web.png" alt="Marasong" style="width: 48px; " vspace="1" hspace="1">
+						</a>
+					</td>
+					<td style=" height: 66px">
+						<small>Music player usable commonly</small><br>
+						<big><big><big>MaraSongs</big></big>
+						</big>
+					</td>
+					<td rowspan=3 align="right" style="width: 280px; ">
+						<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+						<!-- サポートページトップ -->
+						<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3146425308522831" data-ad-slot="4219928305" data-ad-format="auto"></ins>
+						<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+						<p>
+							<p>
+								<script type="text/javascript">
+					var nend_params = {"media":32269,"site":171820,"spot":472676,"type":1,"oriented":3};
+					</script>
+								<script type="text/javascript" src="https://js1.nend.net/js/nendAdLoader.js"></script>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<h1>Explanation of the player</h1>
+					</td>
+
+				</tr>
+				<tr>
+					<td colspan="2" 　>
+						At the time of start after the second, the player of MaraSongs starts in the state that can reproduce from a continuance
+						of the music that I heard last time.<br> There are the following functions to the player screen of MaraSongs.
+					</td>
+				</tr>
+			</table>
+
+			<table align="left" valign="top" border="0" cellpadding="10" cellspacing="0" style="font-size: 11pt; line-height: 150%; "
+				width="850">
+				<tr>
+					<td colspan=2 align="left" valign="top" style="background:#eeeeff">
+						<h2>Title bar</h2>
+					</td>
+					<td colspan="2" align="right" valign="bottom" style="background:#eeeeff">(It is ToolBer after Android5)
+						<img src="img/player_titol_bar.png" alt="タイトルバー" style="width: 300px; " vspace="1" hspace="1">
+					</td>
+				</tr>
+				<tr>
+					<td align="left" valign="top" style="background:#eeeeff"></td>
+					<td colspan="3" 　align="left" valign="top">
+						I display a list of player screens name reproducing in ToolBar.
+						<br>There is a menu button in the right-side end.</td>
+				</tr>
+
+				<tr>
+					<td colspan=2 align="left" valign="top" style="background:#ffeeee">
+						<h2>Head area</h2>
+					</td>
+					<td colspan="2" align="right" style="background:#ffeeee">
+						<img src="img/play_head_eria.png" alt="ヘッドエリア" style="width: 300px; " vspace="1" hspace="1">
+					</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td rowspan="4" 　align="left" valign="top" style="background:#ffeeee">.
+					</td>
+					<td>Common matter</td>
+					<td colspan="2" align="left" valign="top">
+						<ul>
+							<li>It changes to a list of artist - titles screen when I tap it</li>
+							<li>The place where I do not finish entering by long character string scrolls automatically.</li>
+							<li>The top number on each list is a counter of the joint / total number.<br> (Only as for the list of all songs)<br>								Other lists are information areas of the lower part; only in the counter of the number of the list total music</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td align="left" valign="top">1;Artist</td>
+					<td colspan="2" align="left" valign="top">
+						It is an artist name performed credit of by the record jackets which included the guest participation.
+						<ul><small>
+						<li>The list prevents one piece of album from separating by removing guest names, but displays it as it was done credit with the player screen.</li>
+					</small></ul>
+					</td>
+				</tr>
+				<tr>
+					<td align="left" valign="top">2;Album</td>
+					<td colspan="2" align="left" valign="top">
+						It is the reproducing album which I extracted by the artist name mentioned above.
+					</td>
+				</tr>
+				<tr>
+					<td align="left" valign="top">3;Title</td>
+					<td colspan="2" align="left" valign="top">
+						It is a title of a musical composition reproducing in the music that I extracted by an album name mentioned above.
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3" style="background:#eeffee">
+						<h2>Central part</h2>
+					</td>
+					<td rowspan=2 style="background:#eeffee">
+						<img src="../img/play_center.png" alt="中央部" style="width: 180px; " vspace="1" hspace="1">
+					</td>
+				</tr>
+				<tr>
+					<td rowspan="7" 　align="left" valign="top" style="background:#eeffee">.
+					</td>
+					<td align="left" valign="top">Album art</td>
+					<td>If the images such as jacket photographs are set, I display the image.
+					</td>
+				</tr>
+				<tr>
+					<td align="left" valign="top">
+						Visualizer<br>
+						<img src="../img/play_fft.png" alt="fft" style="width: 120px; " vspace="1" hspace="1">
+					</td>
+					<td>
+						I display a <a name="visualtser">visualizer</a> expressing the sound that reproduces when I perform a flick of a jacket
+						photograph to the left visually.
+						<ul>
+							<small>
+						<li>In "sound effects / visualizer" of the setting following; can choose it
+							<ol>
+								<li>Oscilloscope style<br>
+									The wave pattern indication of an analog feeling. (the right figure)
+								</li>
+								<li>Spectrum analyzer style<br>
+									The level increase and decrease indication every digital-like frequency band. (left-hand figure)
+								</li>
+								<li>to not use<br>
+								The person given priority to power saving can turn off Virtualizer.
+								</li>
+							</ol>
+					</li>
+					</small>
+						</ul>
+					</td>
+					<td style="background:#eeffee">
+						<img src="../img/play_wav.png" alt="wave" style="width: 180px; " vspace="1" hspace="1">
+					</td>
+				</tr>
+
+				<tr align="left" valign="top">
+					<td rowspan=2>
+						Lyric indication
+					</td>
+					<td>
+						I display a <a name="lyric">Lyric</a> when I perform a flick of a jacket photograph to the right.
+						<ul><small>
+						<li>
+							It is ID3 tag and aac of mp3 that I can display it.
+						</li>
+						<li>
+							The file except it or the file which a text is not set displays the search situation (including the tag information that I was able to read).
+						</li>
+						<li>
+							I display a file name and the tag information to a clue for trouble for a while.
+						</li>
+						<li>If long shot taps a displayed text, I display an associated operation menu.
+							<ol>
+							<li>Extended indication<br>
+								I pour it into built-in web view and display it.<br>
+								I established reproduction / stop, forwarding, the return button in the lower part of the screen.<br>
+								The person feeling that a letter is small, please use a function to enlarge by pinch operation of web.<br>
+								*The web view is closed with a returning key.
+							</li>
+							<li>Re-reading of the text<br>
+							When I could not acquire a text, reading operation was possible by manual operation again.
+							</li>
+							</ol>
+						</small>
+						</ul>
+
+					</td>
+					<td style="background:#eeffee">
+						<img src="../img/play_lylic.png" alt="歌詞表示" style="width: 180px;" vspace="1" hspace="1">
+						<br>
+						<img src="../img/lylic_web.png" alt="歌詞表示web" style="width: 180px;" vspace="1" hspace="1">
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<small>I locate a "music forwarding" button to "music return", the right to the left of the indication department. It may be a strange design<br>
+				・Position not to tap by mistake<br>
+				・Reproduction / stop, the order forwarding make trial and error by possible placement with one hand.
+				</small>
+					</td>
+					<td rowspan=2 style="background:#eeffee">
+						<img src="../img/play_center.png" alt="中央部左右" style="width: 180px; " vspace="1" hspace="1">
+					</td>
+				</tr>
+				<tr>
+					<td align="left" valign="top" style="background:#dddddd">
+						<a name="vol_bt">Volume adjustment button<br>
+					<img src="../img/onryou_bt.png" alt="音量bt" style="width: 40px; " vspace="1" hspace="1">
+				</td>
+				<td>It is the button which I established because there was the case which cannot operate a volume adjustment button depending on a stand and a folder.
+					<ul><small>
+						<li>Silence it with a tap</li>
+						<li>I display a volume adjustment slider with a long tap.</li>
+						<li>The number displayed under the button is current volume.<br>
+							（The volume of Android is 15 phases）</li>
+					</small></ul>
+				</td>
+			</tr>
+			<tr align="left" valign="top" >
+				<td style="background:#cccccc">
+					Return button<br>
+					<img src="../img/rewbtn.png" alt="戻しボタン" width="32" height="32"></td>
+				<td colspan="2">
+					It "is a return button" returning to music in front that there is under the volume adjustment button.
+					<ul><small>
+						<li>It goes back up in the music before the next by a double tap with a single tap at the top of the music.</li>
+						<li>For example, I subtract for number of times that tapped it from the all songs counter and perform reproduction (constitution of the screen) of the music before ten pieces at once if ten times tap it.
+						<br>It is terminated abnormally once without renewal of the album art catching up with it when I make by one piece a device to send whenever I tap it when I ring it repeatedly.
+						</li>
+					</small></ul>
+				</td>
+			</tr>
+			<tr align="left" valign="top" >
+				<td style="background:#eeeeee">Forwarding button<img src="../img/ffbtn.png"  alt="Moji kara" width="32" height="32" ></td>
+				<td colspan="2">
+					It "is a forwarding button" to send to the next music that is to the right of the album art.<br>
+					<small>I do the device that malfunction does not produce even if I tap it like return consecutively.</small></td>
+			</tr>
+
+			</tr>
+			<tr>
+    			<td colspan=2 style="background:#ffeeff">
+    				<h2>The lower part</h2>
+				</td>
+				<td colspan="2"  align="right"  style="background:#ffeeff">
+					<img src="img/play_bottm.png" alt="下部" style="width: 300px; " vspace="1" hspace="1">
+				</td>
+			</tr>
+			<tr>
+				<td rowspan=3 align="left" valign="top" style="background:#ffeeff">
+				</td>
+				<td align="left" valign="top" rowspan="2" >seek bar</td>
+				<td  colspan="2"  align="left" valign="top" >
+				I operate here and move a reproduction point at any position in the music at the same time to show a reproduction position of music.
+			</tr>
+			<tr>
+				<td  colspan="2"  align="left" valign="top" >
+				When I perform the reproduction between two points, I display initiation and termination time under the bar and narrow down the movable range of the bar to only a reproduction section.
+			</tr>
+			<tr>
+				<td>Reproduction / pose button<br><img src="../img/play40.png"  width="32" height="32" align="left"></td>
+				<td  colspan="2"  align="left" valign="top" >
+				I tap it and change reproduction / pose.<br>
+				<small>Because you hang a pose not to be surprised start is smart just after that, to sound and start, I tap this button, and, please start reproduction.
+				</small>
+				</td>
+			</tr>
+			<tr>
+				<td rowspan=5 align="left" valign="top" style="background:#eeffff">.
+				</td>
+				  <td align="left" valign="top"  style="background:#eeffff">Accompaniment information area
+				  <!--img src="img/pl_bottom.gif" alt="ヘッドエリア" width="50%" >  --></td>
+				<td colspan="2"  align="right" style="background:#eeffff">
+					<img src="img/play_info.png" alt="情報表示エリア" style="width: 300px; " vspace="1" hspace="1">
+				</td>
+			</tr>
+			<tr>
+				<td align="left" valign="top" >song counter</td>
+					<td  colspan="2"  align="left" valign="top" >
+						I display the number of the music of lists of any program or / listing.
+					<ul><small>
+						<li>I carry out the forwarding / return that is not restricted with this count for the end of the album.</li>
+					</small></ul>
+			</tr>
+
+			<tr>
+				<td align="left" valign="top" >Reproduction position / reproduction time</td>
+				<td  colspan="2"  align="left" valign="top" >
+					"It is "a reproduction position" to show a reproducing position in the elapsed time from a start and reproduction time" indicating the length of the music now.
+					<ul><small>
+						<li>I assume the use of the repeat between two points in the music and make m second unit.</li>
+					</small></ul>
+			</tr>
+
+			<tr>
+				<td align="left" valign="top" >Progress from start</td>
+				<td  colspan="2"  align="left" valign="top" >
+					I display it with the number of / reproduction music at time in the elapsed time from a reproduction start how long the second line used this application consecutively.
+					<ul><small>
+						<li>I think that it would be a good idea to be usable in continuing it and a careless time aim by training for a long time.</li>
+						<li>I display an elapsed time at the time of the use after the second last time to the right.<br></li>
+					</small></ul>
+				</td>
+			</tr>
+			<tr align="left" valign="top" >
+				<td>Bluetooth information
+				</td>
+				<td  colspan="2"  align="left" valign="top" >
+				When I was connected, I display an apparatus name and the situation.<br>
+				*I make only toast indication at the time of the connection now.
+			</td>
+			</tr>
+		</table>
+
+		<table align="left" valign="top" border="0" cellpadding="10"  cellspacing="0"  style="font-size: 11pt; line-height: 150%; ">
+			<tr>
+			 <td colspan="5" style="background:#dddddd">Menu to display with a button(ToolBar menu of the top)</td>
+			</tr>
+			<tr>
+				<td rowspan=9 align="left" valign="top" style="background:#dddddd">
+				</td>
+				<td colspan="4" style="background:#eeeeee">Function, I gathered the functions that I touched it by a function to use from a player screen carelessly, and seemed to feel troublesome</td>
+			</tr>
+			<tr align="left" valign="top">
+				<td rowspan=4 align="left" valign="top" style="background:#eeeeee">
+				</td>
+				<td align="left" valign="top" ><a name="rundame">Random reproduction</a>
+					</td>
+					<td>
+						<ul><small>
+						<li>
+							With a random number, I avoid the music that reproduced recently and extract it from the index of the list of all songs.
+						</li>
+						<li>
+							The number of the music to extract sets it with "the number of of the setting the music that I set by random reproduction".
+						</li>
+						<li>
+							Because I enroll in the temporary playlist which is removed if I reproduce, I can let I tap a title part and display a list.
+						</li>
+					</small></ul>
+
+					</td>
+					<td align="left" valign="top" style="background:#eeeeee">
+						<img src="img/list_rundum0.png" alt="ランダム再生" style="width: 180px; " vspace="1" hspace="1">
+					</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td align="left" valign="top"><a name="repat">Repeat reproduction</a>
+					</td>
+					<td>
+						<ul><small>
+						<li>
+							I repeat reproducing album / in an identification range (two points of intervals) of music regenerating reproducing music / and regenerate reproducing artist /.
+						</li>
+						<li>
+							I display interface to set an initiation and termination point when I choose "the reproduction between two points" in a dialogue to choose either mentioned above.
+						</li>
+						<li>
+							"The reproduction cancellation between two points", "the reproduction origin between two points", "the reproduction endpoint between two points" are added to a function menu during "the reproduction between two points".
+						</li>
+						<li>
+							"The reproduction origin between two points", "the reproduction endpoint between two points" display a start or a dialogue to adjust an endpoint by 1/1000 second unit.<br>
+							The careless place inputs even a number in a bar to seek as follows for nine seconds and can adjust it.
+						</li>
+					</small></ul>
+					</td>
+					<td align="left" valign="top" style="background:#eeeeee">
+						<img src="img/memu_pl_fink_repeat00.png" alt="リピート再生" style="width: 180px; " vspace="1" hspace="1">
+						<br>
+						<img src="img/memu_pl_fink_repeat01.png" alt="二点間再生" style="width: 180px; " vspace="1" hspace="1">
+					</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td align="left" valign="top">
+						<a name="tone">equalizer</a>
+					</td>
+					<td>
+						<ul><small>
+						<li>
+							It is a graphic equalizer to set with the number of the bands in a band set in a terminal.
+						</li>
+						<li>
+							As for pre-seting it, there is "current setting" to maintain level emphasis / low level emphasis and user setting out of flat / high level emphasis /.
+						</li>
+						<li>
+							"The bus boot" is ON/OFF switch of a low level emphasis function preparing for in Android.
+						</li>
+						<li>
+							"The total level adjustment" maintains the ratio between each band setting and relaxes sound breaking by the level over by adding the total of the level level and 0.
+						</li>
+					</small></ul>
+					</td>
+					<td align="left" valign="top" style="background:#eeeeee">
+						<img src="img/memu_pl_fink_tone12.png" alt="音質調整" style="width: 180px; " vspace="1" hspace="1">
+					</td>
+				</tr>
+
+				<tr align="left" valign="top">
+					<td align="left" valign="top">
+						<a name="revarbe">reverberation</a>
+					</td>
+					<td>
+						<ul><small>
+						<li>
+							In re-barbe to pre-set of Android, the following is prepared for.
+							<ol><small>
+							<li>NONE<br>
+								I do not use the re-barbe
+							</li>
+							<li>SMALLROOM<br>
+								It is pre-seted re-barbe expressing under 5 meters in length by the small room
+							</li>
+							<li>MEDIUMROOM<br>
+								I pre-set re-barbe expressing the room of the medium having length less than 10 meters
+							</li>
+							<li>LARGEROOM<br>
+								I pre-set re-barbe expressing a large room suitable for a live performance
+							</li>
+							<li>MEDIUMHALL<br>
+								I pre-set re-barbe expressing a middle scale hall
+							</li>
+							<li>LARGEHALL<br>
+								I pre-set re-barbe expressing a large hall suitable for the full orchestra
+							</li>
+							<li>PLATE<br>
+								Effect in imitation of the mechanical reverberation using board springs equipped with by a comfortable clever amplifier
+							</li>
+						</small></ol>
+							</li>
+							<li>
+								It is hard to considerably understand the effect.<br> (There is not it by the work that 使 っていますで is extreme by a
+								standard function of Android obediently.<br> If stop it in the place where volume has finished rising by considerably
+								good headphones, know the reverberation; or please.)
+							</li>
+							</small>
+						</ul>
+
+					</td>
+					<td align="left" valign="top" style="background:#eeeeee">
+						<img src="img/memu_pl_rev_00.png" alt="リバーブ" style="width: 180px; " vspace="1" hspace="1">
+					</td>
+				</tr>
+
+				<tr>
+					<td colspan="3" style="background:#cccccc">
+						Others
+					</td>
+					<td rowspan=2 align="left" valign="top" style="background:#cccccc">
+						<img src="img/settei_00.png" alt="設定" style="width: 100px; " vspace="1" hspace="1">
+					</td>
+
+				</tr>
+
+				<tr align="left" valign="top">
+					<td rowspan=3 align="left" valign="top" style="background:#cccccc">
+					</td>
+					<td align="left" valign="top"><a href="pref.html">Preference screen</a>
+					</td>
+					<td>I open up a Preference screen.<br> I display the operation of a function (thing not to operate again basically if I
+						set it once) having lowest operation frequency and the situation of resume and a stored file.
+					</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td align="left" valign="top">Help indication
+					</td>
+					<td>It is the indication screen using the device of web.<br>
+						<small>I open the support page of the Web.</small>
+					</td>
+					<td rowspan=2 align="left" valign="top" style="background:#eeeeee">
+						<img src="img/help_web.png" alt="設定" style="width: 180px; " vspace="1" hspace="1">
+					</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td>Quit</td>
+					<td><small>I stop reproducing music and I record reproducing music and reopening point and finish application.
+				</small></td><small>
+			</small></tr><small>
+		</small>
+				<tr>
+					<td rowspan=5 align="left" valign="top" style="background:#eeeeee">.
+					</td>
+					<td colspan="4" style="background:#eeeeee">Key layout　<small>(If movement is different in a recent model because it is the confirmation with a considerably old model, please forgive it)</small>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="4">In principle, I choose a lower item if I push an upper item, the bottom if I push it over 4 arrow keys.</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						It is the right of 4 arrow keys other than forwarding
+					</td>
+					<td colspan="2">
+						I choose forwarding.<br> ・Similarly, return is chosen when I push the left of 4 arrow keys other than return<br> ・I
+						send it and then select a button together contralateral return with right and left key.
+					</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td colspan="2">
+						It is controlled 4 arrow keys in a bar to seek
+					</td>
+					<td colspan="2">
+						A knob is chosen forcibly, and the bar to seek coordinates a reproduction point in the wrong way.
+					</td>
+				</tr>
+			</table>
+
+			<div align="left">
+				<P>
+					<br clear="all">
+					<footer>
+						<a href="index.html">To a top screen</a> of MaraSongs
+						<br>
+						<p>
+							<a href="../../en/">
+								<img src="../../img/koubou.png" alt="比治山工房" style="width: 512px">
+							</a>
+							<a href="https://play.google.com/store/apps/details?id=com.hijiyam_koubou.marasongs">
+								<img src="../../img/marasongs.png" alt="Marasong_qr" vspace="1" hspace="1"></a>
+
+							Copyright 2016</footer>
+			</div>
+		</div>
+</body>
+
+</html>

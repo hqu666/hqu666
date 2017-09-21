@@ -1,0 +1,883 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MaraSongs 設定画面の内容</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
+    <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+    <link href="../../main.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div align="right">
+        <a href="en/pref.html">English</a>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 col-md-8">
+                <table align="left" valign="top" border="0" style="font-size: 11pt; line-height: 150%;">
+                    <tr valign="top">
+                        <td style="width: 58px; height: 22px">
+                            <a href="index.html">
+                                <img src="img/ic_launcher-web.png" alt="Marasong" style="width: 48px; " vspace="1" hspace="1">
+                            </a>
+                        </td>
+                        <td style="margin: 10px; padding: 10px;">
+                            当たり前に使える音楽プレイヤー
+                            <h2>MaraSongs</h2>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-sm-12 col-md-4" style="text-align: right;">
+                <P class="container">
+                    <div class="row">
+                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3146425308522831" data-ad-slot="4219928305" data-ad-format="auto"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+                    <div class="row">
+                        <script type="text/javascript">
+                            var nend_params = {
+                                "media": 32269,
+                                "site": 206990,
+                                "spot": 583222,
+                                "type": 1,
+                                "oriented": 1
+                            };
+                        </script>
+                        <script type="text/javascript" src="https://js1.nend.net/js/nendAdLoader.js"></script>
+                    </div>
+                </P>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <ul class="nav nav-tabs" style="width: 800dp; margin: 0px 0px 0px 15px;">
+                    <li class="nav-item" style="margin-right: 18px;">
+                        <a class="nav-link bg-primary active" href="index.html">概要</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 18px;">
+                        <a class="nav-link bg-primary" href="player.html">プレイヤー</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 18px;">
+                        <a class="nav-link bg-primary" href="list.html">リスト</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 18px;">
+                        <a class="nav-link bg-primary" style="background: #5cb85c !important;">設定画面</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 18px;">
+                        <a class="nav-link bg-primary" href="zenkyokulist.html">特徴機能詳細</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div style="line-height:16px ; text-alingn:left;
+				 border-style: solid ; border-width: 1px; padding: 10px 5px 10px 20px; border-color: #999999 ;
+				 border-radius: 10px; box-shadow: 10px 10px 10px #AAA;">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h2>設定画面の内容</h2>
+                    たまにしか変更しない設定操作しない事はこの画面で操作します
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-8 col-md-8">
+                    <table align="left" valign="top">
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td colspan=2 style="background:#eeeeff;">
+                                <h4>プレイヤー設定</h4>
+                            </td>
+                        </tr>
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#eeeeff;"></td>
+                            <td>
+                                プレイヤー画面の設定や動作に関する設定値を集めました。
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-xs-9 col-sm-4 col-md-4 div-img">
+                    <img src="img/settei_01.png" alt="プレイヤー設定" width="90%">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-9 col-md-9">
+                    <table align="left" valign="top" border="0" width="100%" style="font-size: 11pt; line-height: 150%;">
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#eeeeff;"></td>
+                            <td colspan=2 style="background:#ffeeff;">
+                                <h5>曲間隔時間のカット</h5>
+                            </td>
+                        </tr>
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#eeeeff;"></td>
+                            <td style="background:#ffeeff;"></td>
+                            <td>
+                                CDの基本的な仕様にある1秒のギャップをカットする秒数です。
+                                <ul>
+                                    <li>
+                                        曲が終わって次の曲が始まるまでの間が長すぎると感じたら1000m秒（1秒）未満の値を設定してください。
+                                    </li>
+                                    <li>
+                                        0から1000m秒の間で調整できます。
+                                    </li>
+                                    <li>
+                                        初期値は0秒です。
+                                    </li>
+                                    <li>
+                                        CDの規格が決まった1980年代からの通例で曲の末尾には１秒の無音エリアが入っています。<br> CDを直接再生すればその無音部分は分からないように再生されますが、ファイルにしてしまうと無音部分が再生範囲に含まれてしまします。
+                                    </li>
+                                    <li>
+                                        この間隔が気になる時にこの設定を試してください。
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-xs-9 col-sm-3 col-md-3 div-img">
+                    <img src="img/settei_1player1.png" alt="曲間隔時間のカット" width="90%">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-9 col-md-9">
+                    <table align="left" valign="top" border="0" width="100%" style="font-size: 11pt; line-height: 150%;">
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#eeeeff;"></td>
+                            <td colspan=2 style="background:#eeffee;">
+                                <h5>コンピレーション設定</h5>
+                            </td>
+                        </tr>
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#eeeeff;"></td>
+                            <td style="background:#eeffee;"></td>
+                            <td>
+                                様々なアーティストの楽曲が収録されたアルバムは&quot;コンピレーションアルバム&quot;と呼ばれますが、同じアーティストの曲が何曲か入っていたら、そのアーティストのリーダーアルバムとする為の閾値設定です。
+                                <ul>
+                                    <li>
+                                        その比率を全曲中の％で指定します。
+                                    </li>
+                                    <li>
+                                        初期値は40%です。
+                                    </li>
+                                    <li>
+                                        全曲リストを構成する時に、ここで設定する曲数に満たないアルバムをコンピレーションアルバムとします。<br> ファイルに設定されているタグ情報にはコンピレーションか否かを判定するフラグが設定されている場合もありますが、 その指定が無いファイルも同条件で初期振り分けができる様にMaraSongsでは機能として設けました。
+                                    </li>
+                                    <li>
+                                        この設定を変えると全曲リストを再構成します。 （設定から戻ったら全曲更新でデータテーブルを再構成するので2、3分待ってくださいね）。
+                                    </li>
+                                </ul>
+                                曲数の設定が微妙だった例
+                                <ul>
+                                    <li>
+                                        Jimmy Cliff / The Harder They Come 　Jimmy Cliff名義6/12曲
+                                    </li>
+                                    <li>
+                                        Richard O'Brien / The Rocky Horror Picture Show 　Richard O'Brien名義1/16曲
+                                    </li>
+                                    <li>
+                                        ・・・と、%指定にするのも妙な状況ですので、自動的な振り分けは単純に曲数として、後から<a href="list.html#add_listup">どのアーティストのアルバムかを調整できる機能</a>を設けました。
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-xs-9 col-sm-3 col-md-3 div-img">
+                    <img src="img/settei_1player_2compration.png" alt="コンピレーション設定" width="90%">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-9 col-md-9">
+                    <table align="left" valign="top" border="0" width="100%" style="font-size: 11pt; line-height: 150%;">
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#eeeeff;"></td>
+                            <td colspan=2 style="background:#ffeeff;">
+                                <h5>曲間隔時間のカット</h5>
+                            </td>
+                        </tr>
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#eeeeff;"></td>
+                            <td style="background:#ffeeff;"></td>
+                            <td>
+                                CDの基本的な仕様にある1秒のギャップをカットする秒数です。
+                                <ul>
+                                    <li>
+                                        曲が終わって次の曲が始まるまでの間が長すぎると感じたら1000m秒（1秒）未満の値を設定してください。
+                                    </li>
+                                    <li>
+                                        0から1000m秒の間で調整できます。
+                                    </li>
+                                    <li>
+                                        初期値は0秒です。
+                                    </li>
+                                    <li>
+                                        CDの規格が決まった1980年代からの通例で曲の末尾には１秒の無音エリアが入っています。<br> CDを直接再生すればその無音部分は分からないように再生されますが、ファイルにしてしまうと無音部分が再生範囲に含まれてしまします。
+                                    </li>
+                                    <li>
+                                        この間隔が気になる時にこの設定を試してください。
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-xs-9 col-sm-3 col-md-3 div-img">
+                    <img src="img/settei_1player1.png" alt="曲間隔時間のカット" width="90%">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-9 col-md-6">
+                    <table align="left" valign="top" border="0" width="100%" style="font-size: 11pt; line-height: 150%;">
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#eeeeff;"></td>
+                            <td colspan=2 style="background:#deeeed;">
+                                <h5>プレイヤーの背景色</h5>
+                            </td>
+                        </tr>
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#eeeeff;"></td>
+                            <td style="background:#deeeed;"></td>
+                            <td>
+                                Android標準の白系と黒系を切り替えます。
+                                <ul>
+                                    <li>
+                                        この設定を変更すると、次にリストを表示した時から反映されます。
+                                    </li>
+                                    <li>
+                                        この設定を変更すると画面を再起動して、設定を反映ます。
+                                    </li>
+                                    <li>
+                                        すぐに変更反映しない時は「後で」を選択して下さい。
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-xs-9 col-sm-3 col-md-3 div-img">
+                    <img src="img/settei_1player24.png" alt="プレイヤーの背景色" width="90%">
+                </div>
+                <div class="col-xs-9 col-sm-3 col-md-3 div-img">
+                    <img src="img/settei_1player2WB.png" alt="プレイヤーの背景色2" width="90%">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-9 col-md-9">
+                    <table align="left" valign="top" border="0" width="100%" style="font-size: 11pt; line-height: 150%;">
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#eeeeff;"></td>
+                            <td colspan=2 style="background:#edeeed;">
+                                <h5><a name="listhyouji">リスト表示</a></h5>
+                            </td>
+                        </tr>
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#eeeeff;"></td>
+                            <td style="background:#edeeed;"></td>
+                            <td>
+                                Androidのミュージックプレイヤースタンダードなサムネールと付属情報付きのリストか、 文字だけのシンプルなリストかを選択できます。
+                                <ul>
+                                    <li>
+                                        この設定を変更すると、次にリストを表示した時から反映されます。。
+                                    </li>
+                                    <li>
+                                        *ver1.2.4以降はリストの動作速度を改善しましたのでデフォルトは&quot;詳細表示&quot;にしています。
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-xs-9 col-sm-3 col-md-3 div-img">
+                    <img src="img/settei_1player.png" alt="リスト表示" width="90%">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-9 col-md-6">
+                    <table align="left" valign="top" border="0" width="100%" style="font-size: 11pt; line-height: 150%;">
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td colspan=2 style="background:#ffeeff;">
+                                <h4>プレイリスト</h4>
+                            </td>
+                        </tr>
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#ffeeff;"></td>
+                            <td>
+                                プレイリスト操作や作成に関する設定です
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-xs-9 col-sm-3 col-md-3 div-img">
+                    <img src="img/settei_02.png " alt="プレイリスト設定サマリー" width="90%">
+                </div>
+                <div class="col-xs-9 col-sm-3 col-md-3 div-img">
+                    <img src="img/settei_2playlist.png " alt="プレイリスト設定サマリー2" width="90%">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-9 col-md-9">
+                    <table align="left" valign="top" border="0" width="100%" style="font-size: 11pt; line-height: 150%;">
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#ffeeff;"></td>
+                            <td colspan=2 style="background:#edeeed;">
+                                <h5>アーティストリストの分離</h5>
+                            </td>
+                        </tr>
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#ffeeff;"></td>
+                            <td style="background:#edeeed;"></td>
+                            <td>
+                                最近再生した曲など長くなる可能性のあるリストはアーティスト/アルバム/タイトルの3階層リストを作成します。
+                                <ul>
+                                    <li>
+                                        ただし短いリストでは無駄な作業になりますので、ここで設定する曲数を割るとタイトルだけの一般的なプレイリストとして表示します。
+                                    </li>
+                                    <li>
+                                        初期値は1000曲です。
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-xs-9 col-sm-3 col-md-3 div-img">
+                    <img src="img/settei_2playlist_1aratisut_bunri.png " alt="プレイリスト設定アーティストリスト分離" width="90%">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-9 col-md-9">
+                    <table align="left" valign="top" border="0" width="100%" style="font-size: 11pt; line-height: 150%;">
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#ffeeff;"></td>
+                            <td colspan=2 style="background:#eeeded;">
+                                <h5>最近追加したアルバム</h5>
+                            </td>
+                        </tr>
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#ffeeff;"></td>
+                            <td style="background:#eeeded;"></td>
+                            <td>
+                                最近再生した曲をアルバム単位で抽出します。
+                                <ul>
+                                    <li>
+                                        最低何枚を抽出するかを設定します。
+                                    </li>
+                                    <li>
+                                        初期値は1000曲です。
+                                    </li>
+                                    <li>
+                                        日付で区切ればいつの間にか抽出できる曲がなくなり、 曲数で区切ると同日の登録曲も抽出されなくなるので 登録日付で最新の曲が有るアルバムから、何枚まで抽出するかという機能にしました。
+                                    </li>
+                                    <li>
+                                        購入したばかりの端末の内蔵メモリに音楽ファイルを登録すると全曲が対象になってしまいますので 初期値は1枚としています。
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-xs-9 col-sm-3 col-md-3 div-img">
+                    <img src="img/settei_2playlist_2saikintuika.png " alt="プレイリスト設定最近追加 " width="90%">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-9 col-md-9">
+                    <table align="left" valign="top" border="0" width="100%" style="font-size: 11pt; line-height: 150%;">
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#ffeeff;"></td>
+                            <td colspan=2 style="background:#dddeee;">
+                                <h5>最近再生した曲</h5>
+                            </td>
+                        </tr>
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#ffeeff;"></td>
+                            <td style="background:#dddeee;"></td>
+                            <td>
+                                最近再生した曲から何曲遡ってリストアップするかを指定します。
+                                <ul>
+                                    <li>
+                                        Mara-Songsは再生した曲を記録します。その履歴で最近のものからリストアップするかを指定します。
+                                    </li>
+                                    <li>
+                                        初期値は100曲です。
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-xs-9 col-sm-3 col-md-3 div-img">
+                    <img src="img/settei_2playlist_3saikiknsaisei.png " alt="プレイリスト設定最近再生" width="90%">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-9 col-md-9">
+                    <table align="left" valign="top" border="0" width="100%" style="font-size: 11pt; line-height: 150%;">
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#ffeeff;"></td>
+                            <td colspan=2 style="background:#eeeddd;">
+                                <h5>ランダム再生の設定曲数</h5>
+                            </td>
+                        </tr>
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#ffeeff;"></td>
+                            <td style="background:#eeeddd;"></td>
+                            <td>
+                                ランダム再生で抽出する曲数です。
+                                <ul>
+                                    <li>
+                                        全曲リストのインデックスから乱数で曲を抽出。<br> その時、最近再生した曲と照合してできるだけ再生されていない曲を抽出します。
+                                    </li>
+                                    <li>
+                                        初期値は100曲です。
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-xs-9 col-sm-3 col-md-3 div-img">
+                    <img src="img/settei_2playlist_4rundum.png " alt="ランダム再生の設定曲数" width="90%">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <table align="left" valign="top" border="0" width="100%" style="font-size: 11pt; line-height: 150%;">
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#ffeeff;"></td>
+                            <td colspan=2 style="background:#dedede;">
+                                <h5>2点間再生</h5>(参考表示)
+                            </td>
+                        </tr>
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#ffeeff;"></td>
+                            <td style="background:#dedede;"></td>
+                            <td>
+                                ここで設定する事では無いのですが現在2点間再生していれば 開始点と終了点などの設定値がどうなっているかを確認できる様にしました。
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-9 col-md-6">
+                    <table align="left" valign="top" border="0" width="100%" style="font-size: 11pt; line-height: 150%;">
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td colspan=2 style="background:#eeffee;">
+                                <h4>サウンドエフェクト</h4>
+                            </td>
+                        </tr>
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#eeffee;"></td>
+                            <td>
+                                プレイヤーのメニューから設定する音質設定関連の参考表示とビジュアライザーの設定です。
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-xs-9 col-sm-3 col-md-3 div-img">
+                    <img src="img/settei_03.png " alt="サウンドエフェクト設定 " width="90%">
+                </div>
+                <div class="col-xs-9 col-sm-3 col-md-3 div-img">
+                    <img src="img/settei_31.png " alt="サウンドエフェクトサマリー " width="90%">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-9 col-md-9">
+                    <table align="left" valign="top" border="0" width="100%" style="font-size: 11pt; line-height: 150%;">
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#eeffee;"></td>
+                            <td colspan=2 style="background:#ffeeee;">
+                                <h5>ビジュアライザー</h5>
+                            </td>
+                        </tr>
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#eeffee;"></td>
+                            <td style="background:#ffeeee;"></td>
+                            <td>
+                                ジャケットアートの表示部を横方向にフリックすれば表示するビジュアライザーの選択肢です。
+                                <ol>
+                                    <li>オシロスコープ風<br> アナログな感じの波形表示。
+                                    </li>
+                                    <li>スペクトラムアナライザ風<br> デジタル風な周波数帯毎のレベル増減表示。
+                                    </li>
+                                    <li>使わない<br> 節電優先の方はVirtualizerをoffにできます。
+                                    </li>
+                                </ol>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-xs-9 col-sm-3 col-md-3 div-img">
+                    <img src="img/settei_3sound_effect_2visuaraizer.png " alt="サウンドエフェクト設定ビジュアライザー " width="90%">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-9 col-md-9">
+                    <table align="left" valign="top" border="0" width="100%" style="font-size: 11pt; line-height: 150%;">
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td colspan=2 style="background:#eeeeff;">
+                                <h4>機種別調整</h4>
+                            </td>
+                        </tr>
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#eeeeff;"></td>
+                            <td>
+                                Androidのバージョンやハードウエアの構成によって動作が異なる機能の使用可否です。
+                                <ul>
+                                    <li>
+                                        動作不良が有ったらOFFにすると回避できるケースもあるので該当する項目を集めました。
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-xs-9 col-sm-3 col-md-3 div-img">
+                    <img src="img/settei_04.png " alt="機種別調整 " width="90%">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-9 col-md-9">
+                    <table align="left" valign="top" border="0">
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#eeeeff;"></td>
+                            <td colspan=2 style="background:#ffeeee;">
+                                <h5>ノティフィケーションプレイヤー</h5>
+                            </td>
+                        </tr>
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#eeeeff;"></td>
+                            <td style="background:#ffeeee;"></td>
+                            <td>
+                                アンテナピクトなどが表示される画面の最上部にアイコン、そこを下にドラッグすると表示される情報表示（ノティフィケーション）領域に表示されるプレイヤーです。
+                            </td>
+                        </tr>
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#eeeeff;"></td>
+                            <td colspan=2 style="background:#ddeedd;">
+                                <h5>ロックスクリーンプレイヤー</h5>
+                            </td>
+                        </tr>
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#eeeeff;"></td>
+                            <td style="background:#ddeedd;"></td>
+                            <td>
+                                ロック画面（バックライトをOffにして真っ黒になった画面）から復帰した時に表示されるロックスクリーンに表示されるプレイヤーです。
+                            </td>
+                        </tr>
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#eeeeff;"></td>
+                            <td colspan=2 style="background:#eedddd;">
+                                <h5>Bluetoothの接続に連動</h5>
+                            </td>
+                        </tr>
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#eeeeff;"></td>
+                            <td style="background:#eedddd;"></td>
+                            <td>
+                                接続していたBluetooth機器から切断されると一時停止。再接続すると再生を再開します。
+                                <ul>
+                                    <li>
+                                        ”しない”に設定してもBluetooth接続そのものができなくなるわけではありません
+                                    </li>
+                                    <li>
+                                        次に起動した時から設定が反映されます。
+                                    </li>
+                                    <li>
+                                        カーオーディオでBluetooth接続を使っているのですが、 エンジンを切った（接続が切れた）時にスマホのスピーカーで再生が続くことに違和感を感じて作った機能です。
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#eeeeff;"></td>
+                            <td colspan=2 style="background:#eeeedd;">
+                                <h5>終話後に自動再生</h5>
+                            </td>
+                        </tr>
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#eeeeff;"></td>
+                            <td style="background:#eeeedd;"></td>
+                            <td>
+                                電話がかかってきたら一時停止。通話が終われば再開します。
+                                <ul>
+                                    <li>
+                                        カーオーディオの連携機能では音量を下げるだけで、 通話には邪魔になってしまうので、Mara-Songsはきっちりと音を止めます。
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-xs-9 col-sm-3 col-md-3 div-img">
+                    <img src="img/settei_4kisyubetu.png " alt="機種別調整サマリー" width="90%"><br>
+                    <img src="img/settei_4off.png " alt="機種別調整サマリーoff" width="90%">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-9 col-md-9">
+                    <table align="left" valign="top" border="0" width="100%" style="font-size: 11pt; line-height: 150%;">
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td colspan=3 style="background:#eeeeee;">
+                                <h4>その他の設定</h4>
+                            </td>
+                        </tr>
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td colspan=2 style="background:#eeeeee;"></td>
+                            <td>
+                                設定項目以外に何が記録されているのかをモニター表示します。
+                            </td>
+                        </tr>
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#eeeeee;"></td>
+                            <td colspan=2 style="background:#8e8e8e; color:#FFFFFF;">
+                                <h5>レジューム再生情報</h5>
+                            </td>
+                        </tr>
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#eeeeee;"></td>
+                            <td style="background:#8e8e8e;"></td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        ２回目以降は前回の続きから再生できる様、以下の情報を保存します。
+                                    </li>
+                                    <li>
+                                        ユーザーが使う項目ではありませんが異常動作の原因究明用に可視化しました。
+                                    </li>
+                                </ul>
+                                <ol>
+                                    <li>
+                                        再生リスト
+                                        <ul>
+                                            <li>
+                                                [リストID]リスト名 で現在再生しているプレイリストを表示します。
+                                            </li>
+                                            <li>
+                                                備考;Android OSにも登録されるリストのIDは整数ですが 独自のデータベースを使用している全曲リストは-1と表示されます。
+                                            </li>
+                                            <li>
+                                                またリスト中のIndex(再生順は)&quot;mIndex&quot;で表示されます。
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        再生ファイル名
+                                        <ul>
+                                            <li>
+                                                前回最後に再生したファイルのURLです。
+                                            </li>
+                                            <li>
+                                                初期バージョンではプレイヤー画面のフィールドにありましたが、 機能追加時の表示に使いたく、こちらに移動しました。
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        再開ポジション
+                                        <ul>
+                                            <li>
+                                                その曲の先頭から、中断されたポイントまでの時間です。
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        再生時間
+                                        <ul>
+                                            <li>
+                                                その曲の長さです
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        前回の連続再生時間
+                                        <ul>
+                                            <li>
+                                                これは連続再生とは関係ありませんが、表示用にアプリケーションを閉じた時のカウントを記録しています。
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ol>
+                            </td>
+                        </tr>
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#eeeeee;"></td>
+                            <td colspan=2 style="background:#f8f8f8;">
+                                <h5>音楽ファイルの格納状況(ここも参考表示)</h5>
+                            </td>
+                        </tr>
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#eeeeee;"></td>
+                            <td style="background:#f8f8f8;"></td>
+                            <td>
+                                端末に格納されている音楽ファイルの状況です。ここに記録されている数値に変化が有れば全曲リストの更新を行います。
+                                <ol>
+                                    <li>
+                                        総アルバム数と総曲数
+                                        <ul>
+                                            <li>
+                                                フォルダとファイル数の増減記録です。
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        最新更新日
+                                        <ul>
+                                            <li>
+                                                すべての音楽ファイルの中で最近変更された曲の更新/追加日です。
+                                            </li>
+                                            <li>
+                                                データ数が偶然一致しても、変化が検出できる様、最終更新日も合わせて照合します
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ol>
+                            </td>
+                        </tr>
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#eeeeee;"></td>
+                            <td colspan=2 style="background:#8e8e8e; color:#FFFFFF;">
+                                <h5>その他の設定（主に参考表示）</h5>
+                            </td>
+                        </tr>
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#eeeeee;"></td>
+                            <td style="background:#8e8e8e;"></td>
+                            <td>
+                                システムとハードウエアの情報です。
+                                <ol>
+                                    <li>
+                                        音楽ファイルの格納場所
+                                        <ul>
+                                            <li>
+                                                メモリーカードと内蔵メモリそれぞれのメディア上でAndroidが”オーディオファイル”として検出したフォルダです。
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        APIレベル
+                                        <ul>
+                                            <li>
+                                                Android OSのバージョンに該当する数値です。
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        ダイヤルキーの有無
+                                        <ul>
+                                            <li>
+                                                マルチガイドキーを操作すると”有り”と判断し、それぞれの画面を起動した時の妥当なアイテムを選択します。
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ol>
+                                メーカーが特定端末用に開発したアプリなら必要ない情報ですが、不特定の端末をターゲットにするアプリの場合は機器の状況に合わせた切り替えが必要なので記録している項目です。
+                            </td>
+                        </tr>
+
+                    </table>
+                </div>
+                <div class="col-xs-9 col-sm-3 col-md-3 div-img">
+                    <img src="img/settei_05.png " alt="その他の設定" width="90%">
+                </div>
+                <div class="col-xs-9 col-sm-3 col-md-3 div-img">
+                    <img src="img/settei_00.png " alt="全体" width="90%">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-9 col-md-9">
+                    <table align="left" valign="top" border="0" width="100%" style="font-size: 11pt; line-height: 150%;">
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#eeeeee;"></td>
+                            <td colspan=2 style="background:f8f8f8;">
+                                <h5>隠しコマンド</h5>
+                            </td>
+                        </tr>
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#eeeeee;"></td>
+                            <td style="background:#f8f8f8;"></td>
+                            <td>
+                                設定ファイルがどうしようも無く壊れてしまった時の用心に作った機能です。
+                                <br> 実際には使うことの無い機能かもしれませんが”念の為”です。
+                                <br> そんなスイッチですから目につかないところに隠すように配置しました。
+                                <ol>
+                                    <li>
+                                        初期化
+                                        <ul>
+                                            <li>
+                                                挙動は設定ファイルのデータをファイルごと破棄して設定ファイルを０から作り直しますので、当然レジュームや前回の再生状況も消失します。
+                                            </li>
+                                            <li>
+                                                これを使うよりはプレイリストメニューの”全曲リスト更新”を使う方が安全な設定の作り直しができます。
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        調整リストのリセット
+                                        <ul>
+                                            <li>
+                                                全曲リストでファイスに登録してあるアーティスト名以外のアーティストのアルバムとして調整するMaraSongs独自の調整リストをリセットします。
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ol>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-xs-9 col-sm-3 col-md-3 div-img">
+                    <img src="img/settei_5sonta.png " alt="隠しコマンド" width="90%">
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p style="text-align: right; background-color:white">
+                <div class="col-xs-12 col-sm-12">
+                    <div class="col-xs-6 col-sm-8">
+                        <a href="../index.htm">
+                            <img src="../img/koubou.png" alt="比治山工房" width="100%">
+                        </a>
+                    </div>
+                    <div class="col-xs-2 col-sm-2">
+                        <a href="https://play.google.com/store/apps/details?id=com.hijiyam_koubou.marasongs ">
+                            <img src="../img/marasongs.png " alt="Marasong_qr " vspace="1 " hspace="1 "></a>
+                    </div>
+                    <div class="col-xs-4 col-sm-2">
+                        Copyright 2016
+                    </div>
+                </div>
+            </p>
+        </footer>
+    </div>
+</body>
+
+</html>

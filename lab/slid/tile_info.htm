@@ -1,0 +1,263 @@
+<!DOCTYPE HTML>
+<!--PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"-->
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>比治山工房/「タイル」の説明</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <style type="text/css">
+        /*table,
+        td,
+        th {
+            border: 2px #2b2b2b solid;
+        }*/
+        
+        td,
+        th {
+            padding: 10px 10px;
+        }
+    </style>
+</head>
+
+<body style="font-size: 11pt; line-height: 150%;">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 col-md-8">
+
+                <h1>タイル</h1>
+                型に沿って画像を並べる
+                <table border="0" bordercolor="#333333">
+                    <tr>
+                        <th bgcolor="#3c763d">
+                            <font color="#ffffff">
+                                概要
+                            </font>
+                        </th>
+                        <td rowspan="2" width="20%" align="center">
+                            <img src="tile_bace.png" alt="抜型" width="60%">
+                        </td>
+                        <td rowspan="2" width="30%">
+                            単色の透過PINGで
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="70%" rowspan="2" valign="top">
+                            抜き型になる画像ファイルを読み込み、その画像の余白部分にサムネイルを配置します。
+                            <div class="alert alert-danger" role="alert" style="width: 50%;height: auto;margin-left: 10px;">
+                                全体的に精度を上げるべく、調整中です。
+                            </div>
+                        </td>
+                        <tr>
+                            <td>
+                                <img src="img/tile_kekka.png" alt="結果" width="100%">
+                            </td>
+                            <td>
+                                こんな感じに型抜き
+                            </td>
+                        </tr>
+                </table>
+            </div>
+            <div class="col-sm-12 col-md-4" style="text-align: right;">
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- サポートページトップ -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3146425308522831" data-ad-slot="4219928305" data-ad-format="auto"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+
+                <script type="text/javascript">
+                    var nend_params = {
+                        "media": 32269,
+                        "site": 206990,
+                        "spot": 583222,
+                        "type": 1,
+                        "oriented": 1
+                    };
+                </script>
+                <script type="text/javascript" src="https://js1.nend.net/js/nendAdLoader.js"></script>
+            </div>
+        </div>
+
+        <div class="container" style="width: 100%;">
+            <div class="row" style="width: 100%;height: auto;">
+                <div class="bg-warning" style="padding: 5px;">
+                    <div class="col-sm-12">
+                        <div class="bg-info">
+                            画面の上部にコントロールパネルが有ります。
+                            <table border="1" bordercolor="#333333">
+                                <tr>
+                                    <th colspan="2" bgcolor="#337ab7">
+                                        <font color="#ffffff">
+                                            使い方
+                                        </font>
+                                    </th>
+                                    <th rowspan="2" width="15%">
+                                        img
+                                    </th>
+                                    <th rowspan="2" width="15%">
+                                        img
+                                    </th>
+                                </tr>
+                                <tr valign="top">
+                                    <td>
+                                        枠数
+                                    </td>
+                                    <td>
+                                        サムネイルを何枚配置するか
+                                        <div class="alert alert-info" role="alert" style="width: 98%;height: auto;">
+                                            最初に1000分割して型枠を除くには何パーセント追加するかをシュミレートします。
+                                        </div>
+
+                                    </td>
+                                </tr>
+                                <tr valign="top">
+                                    <td>
+                                        枠内
+                                    </td>
+                                    <td>
+                                        型抜きの幅を画面サイズの何パーセントにするか
+                                    </td>
+                                    <td>
+                                        <img src="img/waku1000.png" alt="抜型" width="60%">
+                                    </td>
+                                    <td>
+                                        img
+                                    </td>
+                                </tr>
+                                <tr valign="top">
+                                    <td>
+                                        ４点中３点
+                                    </td>
+                                    <td>
+                                        各サムネール枠の4頂点中、3点まで抜型にかからなければサムネイル描画枠とします。<br> ただしいづれかの辺の中心に抜型が入れば描画枠から外します。
+                                        <p>
+                                            このチェックを外すと4頂点および４辺のいづれかに抜型が掛かれば描画枠から外します。<br> 抜き部分を大きく取りたい時はこちらを指定してください。
+                                        </p>
+                                    </td>
+                                    <td>
+                                        img
+                                    </td>
+                                    <td>
+                                        img
+                                    </td>
+                                </tr>
+                                <tr valign="top">
+                                    <td>
+                                        デバッグ
+                                    </td>
+                                    <td>
+                                        この項目にチェックを入れるとサムネイル描画枠の分割線と何行目の何列目かをR１C１形式で表示します。
+                                    </td>
+                                    <td>
+                                        ON
+                                        <img src="img/waku1000.png" alt="デバッグon" width="60%">
+                                    </td>
+                                    <td>
+                                        OFF
+                                        <img src="img/debug_off.png" alt="デバッグoff" width="60%">
+                                    </td>
+                                </tr>
+                                <tr valign="top">
+                                    <td nowrap>
+                                        サムネイル表示
+                                    </td>
+                                    <td>
+                                        サムネイルの描画レイヤーの表示/非表示
+                                    </td>
+                                    <td>
+                                        img
+                                    </td>
+                                    <td>
+                                        img
+                                    </td>
+                                </tr>
+                                <tr valign="top">
+                                    <td>
+                                        抜型表示
+                                    </td>
+                                    <td>
+                                        型抜きの描画レイヤーの表示/非表示
+                                    </td>
+                                    <td>
+                                        img
+                                    </td>
+                                    <td>
+                                        img
+                                    </td>
+                                </tr>
+                                <tr valign="top">
+                                    <td>
+                                        抜型ファイル
+                                    </td>
+                                    <td>
+                                        抜型にするファイルを選択して下さい。デフォルトのハート以外のファイルで抜型の形を変える時に使用します。
+                                        <p>
+                                            サムネイル描画部部を透過したPINGか、サムネイル描画部部を白にしたモノクロ2値GIFを使って下さい。<br> JPEGだと白に見えている部分にも外形をスムーズに見せる為の中間色が入る為、誤動作が発生しやすくなります。
+                                        </p>
+                                    </td>
+                                    <td>
+                                        img
+                                    </td>
+                                    <td>
+                                        img
+                                    </td>
+                                </tr>
+                                <tr valign="top">
+                                    <td>
+                                        サムネイル
+                                    </td>
+                                    <td>
+                                        サムネイルとして並べるファイルを指定します
+                                        <p>
+                                            デフォルトでは抜型ファイルをそのまま使います。
+                                        </p>
+                                        <p>
+                                            抜型ファイルの様な製薬は有りません。
+                                        </p>
+                                        <p>
+                                            福世宇う指定可能です。<br>枠数で設定した回数、繰り返して表示します。
+                                        </p>
+                                    </td>
+                                    <td colspan="2">
+                                        <div class="alert alert-danger" role="alert" style="margin-left: 10px;">
+                                            この項目は只今作成中です
+                                        </div>
+                                    </td>
+                                    <!--<td>
+                                        img
+                                    </td>-->
+                                </tr>
+                                <tr valign="top">
+                                    <td>
+                                        回避情報
+                                    </td>
+                                    <td colspan="2">
+                                        抜型の中と判断され、描画枠から外された枠の情報を表示します。
+                                    </td>
+                                    <td>
+                                        <img src="img/kaihijyouhou.png" alt="回避情報" width="100%">
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="width: 100%;height: auto;">
+                <div class="bg-default">
+                    <a href="../">インデックス</a>
+                </div>
+            </div>
+
+        </div>
+</body>

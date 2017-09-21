@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <title>Free web signage |カットリスト</title>
+    <meta name="keywords" content="パワーポイントみたいに使える,簡易ムービー作成に,デジタルサイネージのコンテンツ作成に,結婚式のエンドロールムービーに">
+    <script type="text/javascript" src="http://twitter.github.com/hogan.js/builds/3.0.1/hogan-3.0.1.js"></script>
+    <!--<script type="text/javascript" src="https://github.com/twitter/hogan.js"></script>-->
+    <script type="text/javascript" src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+    <!--<script type="text/javascript" src="/js/manager/ajaxzip3-mod.js"></script>-->
+    <script type="text/javascript" src="../js/tab_text_read.js"></script>
+    <script type="text/javascript" src="../js/canvas_util.js"></script>
+    <script type="text/javascript" src="../js/audio_util.js"></script>
+    <script type="text/javascript" src="../js/text_util.js"></script>
+    <script type="text/javascript" src="../js/screenplay_common.js"></script>
+    <script type="text/javascript" src="../js/org_util.js"></script>
+    <script type="text/javascript" src="list.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../main.css" />
+</head>
+
+<body>
+    <div class="modal fade" id="modal_box">
+        <div class="modal-dialog">
+            <div class="modal-content" style="top: 50px;left: 50px;">
+                <div class="panel-heading" style="background-color: #ccc; cursor:move;" id="dlog_head">
+                    <span id="dlog_targrt"></span>
+                    <span id="dlog_titlo"></span>
+                    <div class="col-sm-12" style="text-align: right;">
+                        <a class="btn" data-dismiss="modal" id="modal_close" href="#">
+                            <span class="glyphicon glyphicon-remove" style="right: -31px;top: -25px;color: black;"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="box_inner" style="margin: 10px;">
+                    <form name="setform" action="">
+                        <!--<div class="row" style="margin: 2px;">
+                            <div class="col-sm-2" style="margin-top:5px;">-->
+                        <p id="scene_slsect_gr">移動先のシーン
+                            <select id="scene_slsect" style="padding: 0.2em;" onchange="moveSceneBody(event)">
+                            </select>の最終カットに移動
+                        </p>
+                        <p id="templeat_slsect_gr">
+                            <select id="templeat_slsect" style="padding: 0.2em;" onchange="readTempretBody(event)">
+                                <option id="templeat_conte">簡易ムービー（結婚式用エンドロール）</option>
+                                <option id="templeat_prezen">プレゼンスライド</option>
+                            </select>
+                        </p>
+                        <!--</div>
+                        </div>-->
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="wrapper">
+        <div id="header" style="margin-left: 0px;width: 100vw;height: 44px;">
+            <div style="margin-left: 0px;width: 20vw;padding: 10px;">
+                <img src="img/logo.png" style="width:100%;" align="left" alt="logo" />
+            </div>
+            <!-- <div style="padding: 10px;"> -->
+            <div id='page_titol' style="font-size: x-large;margin-top: -8px;">リスト編集</div>
+            <!-- </div> -->
+        </div>
+
+        <div id="contents" style="padding-right:16px;">
+            <!-- style="margin-top: 15px;left:0px;width:100vw;height: auto;" <div class="container"> -->
+            <div class="row ">
+                <div class="col-sm-12">
+                    <div class="panel-group" id="scene_list">
+
+                    </div>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-sm-12">
+                    <div style="text-align: end;">
+                        <div class="btn btn-primary btn-lg btn-xs" role="button " onclick="addScene(event)">
+                            <span class="glyphicon glyphicon-edit"></span>シーンを追加
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-sm-12">
+                    <div class="alert alert-warning" role="alert" style="width:100%;height: auto;margin-top: 10px;font-size: small;">
+                        この画面でできる事は<br>
+                        <ol>
+                            <li>
+                                この画面でシーン・カットの追廃/移動、
+                            </li>
+                            <li>各カットの
+                                <div class="btn btn-danger btn-lg btn-xs glyphicon glyphicon-pencil" role="button ">編集</div> ボタンでカット編集画面に遷移して内容の書き換え、
+                            </li>
+                            <li>
+                                <div class="btn btn-primary btn-lg btn-xs glyphicon glyphicon-play" role="button ">再生</div> ボタンでスライドショーの再生(先頭から)。
+                            </li>
+                            <li>
+                                「データ読込み/書き込み」 ボタンで編集したデータの保存と読出し。
+                            </li>
+                            <li>
+                                「テンプレート」 ボタンでデモ用に用意したコンテデータの読み出し。
+                            </li>
+                            <li>
+                                詳細は「説明」 ボタンで呼び出されたページをご参照ください。
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="sidebar" style="padding:10px;">
+            <!-- <div class="nav nav-header" style="text-align: center;">
+            </div> -->
+            <div><a href="../" class="btn btn-default  glyphicon glyphicon-eject" role="button " style="width: 100%;">インデックスへ</a></div>
+            <div><a href="index.html" target="_blank" class="btn btn-primary glyphicon glyphicon-play" id="player_bt" role="button " style="width: 100%;"> 再生</a></div>
+            <div>
+                <button type="button" class="btn btn-default  glyphicon glyphicon-open" role="button " style="width: 100%;" onclick="readTempret(event)"> テンプレート
+                </div>
+               <div>
+                    <button type="button" class="btn btn-success  glyphicon glyphicon-open" role="button " style="width: 100%;" onclick="readData(event)"> データ読込み
+                  <input type="file" id="read_url" style="display: none;" onChange="readUrl(event)">
+               </div>
+                  <div>
+                    <button type="button" class="btn btn-warning  glyphicon glyphicon-save" role="button " style="width: 100%;" onclick="saveData(event)"> データ書き出し
+                </div>
+
+                <div id="reCutNamber_bt" class="btn btn-info glyphicon glyphicon-list" role="button " style="width: 100%;display:inline-block" onclick="reCutNamber(event)">番号を振り直す
+                </div>
+
+                 <div class="panel-group">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" style="padding: 5px;">
+                            <div class="panel-title"  style="text-align: center">
+                                <div class="panel-heading btn collapse_bt" data-toggle="collapse" data-target="#slide_propaty" style="text-align: center;font-size: medium;">
+                                    全体設定
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div id="slide_propaty" class="panel-collapse collapse in" aria-expanded="true"> -->
+                        <div id="slide_propaty" class="panel-collapse collapse"> 
+                            <div class="panel-body">
+                                <div>
+                                    使用画面
+                                </div>
+                                <div> 
+                                    幅<input type="number" id="disp_width_px" step="1" min="480" max="9999" class="form-control" style='width:6em;display: inline;margin-left: 1.3em;' placeholder="640" value="" onchange="baceWidthPx(event)">px
+                                </div>
+                                <div>
+                                    高さ
+                                    <input type="number" id="disp_hight_px" step="1" min="480" max="9999" class="form-control" style='width:6em;display: inline;' placeholder="480" value="" onchange="baceHightPx(event)">px
+                               </div>
+                                 <div style="margin-left: 2.3em;">
+                                    <div id="use_this_window" class="btn btn-default btn-lg btn-xs glyphicon glyphicon-hd-video" role="button " onclick="useThisWindow(event)"> この画面</div>
+                                    <div id="bace_rotation" class="btn btn-default btn-lg btn-xs glyphicon glyphicon-share-alt" role="button " onclick="baceRotation(event)"> 縦横入替</div>
+                                 </div>
+                              <div style="margin-left: -18px;">
+                                    <input type="checkbox" class="cbox" id="auto_send" checked="true" onchange="autoSendBool(event)">
+                                    <label style="margin-left: -54px;">自動送り</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+ 
+                <div>
+                    <a href="info/list.htm" target="_blank " class="btn btn-default glyphicon glyphicon-comment" role="button " style="width: 100%;"> 説明</a>
+                </div>
+                <div style="margin-top: 15px;">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3146425308522831" data-ad-slot="4219928305" data-ad-format="auto"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+
+                    <script type="text/javascript">
+                        var nend_params = {
+                            "media": 32269,
+                            "site": 206990,
+                            "spot": 583222,
+                            "type": 1,
+                            "oriented": 1
+                        };
+                    </script>
+                    <script type="text/javascript" src="https://js1.nend.net/js/nendAdLoader.js"></script>
+                </div> 
+            </div> 
+        </div>
+        <!-- <div id="footer">
+         </div> -->
+    </div>
+
+    <script type="text/template" id="tpl_scene">
+        <div id="{{sceneNo}}" class="panel panel-default">
+            <div class="panel-heading" style="padding: 0px;">
+                <div class="panel-title">
+                    <table class="table table-striped table-condensed " border="0 " bordercolor="#333333 ">
+                        <tr>
+                            <td>
+                                <a data-toggle="collapse" href="#{{sceneNo}}d" id="{{sceneNo}}_title">追加したカット</a>
+                            </td>
+                            <td align="right">
+                                <div name="{{sceneNo}}" id="{{sceneNo}}_del_bt" class="btn btn-default btn-lg btn-xs glyphicon glyphicon-trash delCut" role="button " onclick="deletScene(event)">削除</div>
+                                <div name="{{sceneNo}}" id="{{sceneNo}}_up_bt" class="btn btn-warning btn-lg btn-xs glyphicon glyphicon-arrow-up recordUp" role="button " onclick="scenedUp(event)"></div>
+                                <div name="{{sceneNo}}" id="{{sceneNo}}_down_bt" class="btn btn-success btn-lg btn-xs glyphicon glyphicon-arrow-down recordDown" role="button " onclick="scenedDown(event)"></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="{{sceneNo}}d" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <div class="panel-group" id="{{sceneNo}}_group">
+
+                    </div>
+                    <div style="text-align: end;">
+                        <div name="{{sceneNo}}" class="btn btn-primary btn-lg btn-xs addCut" role="button " onclick="addCut(event)">
+                            <span class="glyphicon glyphicon-edit"></span>カットを追加</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/template" id="tpl_cut">
+        <div id="{{sceneCut}}" class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <div class="table-responsive table-striped ">
+                        <table class="table table-striped table-condensed " border="0 " bordercolor="#333333 " style="width:100%; ">
+                            <tr>
+                                <!--<td width="40%" rowspan="3">
+                                    <img src="img/{{sceneCut}}pre.png" class="img-responsive ">
+                                </td>-->
+                                <td>
+                                    <a data-toggle="collapse" href="#{{sceneCut}}t" id="{{sceneCut}}_title">追加したカット</a>
+                                </td>
+                                <td align="right">
+                                    <div name="{{sceneCut}}" id="{{sceneCut}}_edit_bt" class="btn btn-danger btn-lg btn-xs glyphicon glyphicon-pencil recordEdit" role="button " onclick="recordEdit(event)">編集</div>
+                                    <div name="{{sceneCut}}" id="{{sceneCut}}_del_bt" class="btn btn-default btn-lg btn-xs glyphicon glyphicon-trash delCut" role="button " onclick="deletCut(event)">削除</div>
+                                    <div name="{{sceneCut}}" id="{{sceneCut}}_move_bt" class="btn btn-success btn-lg btn-xs glyphicon glyphicon-retweet moveSheen" role="button " onclick="moveSheen(event)"> 別シーンに移動</div>
+                                    <div name="{{sceneCut}}" id="{{sceneCut}}_up_bt" class="btn btn-warning btn-lg btn-xs glyphicon glyphicon-arrow-up recordUp" role="button " onclick="recordUp(event)"></div>
+                                    <div name="{{sceneCut}}" id="{{sceneCut}}_down_bt" class="btn btn-success btn-lg btn-xs glyphicon glyphicon-arrow-down recordDown" role="button " onclick="recordDown(event)"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <div class="jtfont " id="{{sceneCut}}_sc_summary">追加したシーン
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </h4>
+            </div>
+            <div id="{{sceneCut}}t" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <div class="panel-group">
+                        <div class="panel panel-default">
+                            <div class="table-responsive table-striped ">
+                                <table class="table table-striped table-condensed " id="{{sceneCut}}_table" border="0 " bordercolor="#333333 " style="width:100%; ">
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/template" id="tpl_element">
+        <tr>
+            <td valign="top">
+                <lavel class="bg-info " id="{{scElement}}_type">type</lavel>
+            </td>
+            <td valign="top">
+                <lavel class="bg-info" id="{{scElement}}_elm">element</lavel>
+            </td>
+            <td valign="top">
+                <span id="{{scElement}}_souce">souce</span><span id="{{scElement}}_sub">    </span>            
+            </td>
+         </tr>
+    </script>
+
+    <script type="text/template" id="tpl_element_pict">
+        <tr>
+            <td valign="top">
+                <lavel class="bg-info" id="{{scElement}}_type">pict</lavel>
+            </td>
+            <td valign="top">
+                <lavel class="bg-info " id="{{scElement}}_elm">中央_左</lavel>
+            </td>
+            <td valign="top">
+                <img id="{{scElement}}_souce" src="" width="45%">
+            </td>
+        </tr>
+    </script>
+
+    <script type="text/template" id="tpl_scene_list_option">
+        <option value="{{sceneNo}}" id="{{sceneNo}}_select">123456</option>
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            var tag = "[document.ready] ";
+            var dbMsg = tag;
+            try {
+
+                var docW = window.innerWidth; //モニター画面の幅
+                dbMsg = dbMsg + 'docW=' + docW;
+                var headerHight = $('#header').outerHeight(true); //ヘッダの高さ
+                dbMsg = dbMsg + ',outerHeight=' + headerHight+10;
+                document.getElementById('contents').style.marginTop = headerHight + "px";
+                document.getElementById('sidebar').style.marginTop = headerHight + "px";
+  
+                textFileName = templateFileName;
+                signageName = 'オリジナルシナリオ';
+                setDragElement("modal_box");
+                if (elementArray) {
+                    dbMsg = dbMsg + 'elementArray有り';
+                    makeCutArray(elementArray);
+                } else { //cutArrayが作成されていなければ
+                    dbMsg = dbMsg + 'localStorageから';
+                    var elementArrayObj = JSON.parse(localStorage.getItem('elementArray')); //localStorageから読み出し
+                    elementArray = $.extend(true, [], elementArrayObj); //☆[]で配列にする
+                    if (elementArray) {
+                        dbMsg = dbMsg + 'elementArray有り' + elementArray.length;
+                        if (0 < elementArray.length) {
+                            makeCutArray(elementArray);
+                        } else {
+                            templeteRead();
+                            // document.getElementById('page_titol').innerHTML = signageName + 'のシーン・カットリスト'; //シーン選択リスト
+                        }
+                    } else { //localStorageにも無ければ
+                        dbMsg = dbMsg + 'templeteReadへ';
+                        templeteRead();
+                        // document.getElementById('page_titol').innerHTML = signageName + 'のシーン・カットリスト'; //シーン選択リスト
+                    }
+                }
+                myLog(dbMsg);
+                if (debug_now == true) {
+                    console.log(elementArray);
+                }
+            } catch (e) {
+                dbMsg = dbMsg + ';エラー;' + e;
+                console.log(dbMsg);
+            }
+        });
+
+        $(window).load(function() {
+            var tag = "[(window).load] ";
+            var dbMsg = tag; //+ ",ceremonies_slide_bg=" + ceremonies_slide_bg;
+            try {
+                // myLog(dbMsg);
+            } catch (e) {
+                dbMsg = dbMsg + ';エラー;' + e;
+                console.log(dbMsg);
+            }
+        }); //読込完了時；備考；$(window).load()はページのすべての要素、つまり画像などがすべてロードされた段階
+
+        $(window).resize(function() {
+            var tag = "[(window).resize] ";
+            var dbMsg = tag; //+ ",ceremonies_slide_bg=" + ceremonies_slide_bg;
+            location.reload();
+        });
+    </script>
+
+</body>
+
+</html>

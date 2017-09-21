@@ -1,0 +1,324 @@
+<!DOCTYPE HTML>
+<!--PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"-->
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>比治山工房/web signage |「シナリオに沿ったスライドショー」の説明</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <style type="text/css">
+        /*table,
+        td,
+        th {
+            border: 2px #2b2b2b solid;
+        }*/
+        
+        td,
+        th {
+            padding: 10px 10px;
+        }
+        
+        li {
+            margin-left: -1em;
+        }
+        
+        .sub_li {
+            font-size: 80%;
+            margin-left: -2em;
+        }
+        
+        td,
+        th {
+            padding: 10px 10px;
+        }
+        
+        #header {
+            width: 80vw;
+            height: 44px;
+            margin-left: 20vw;
+            padding: 0;
+            background-color: #dce5f3;
+            position: fixed;
+            z-index: 9999;
+        }
+        
+        #footer {
+            top: 90vh;
+            width: 80vw;
+            margin-left: 20vw;
+            padding: 0;
+            background-color: #dce5f3;
+            position: fixed;
+            z-index: 9999;
+        }
+        
+        #wrapper {
+            text-align: left;
+            width: 100vw;
+            margin: 0 auto;
+            padding: 0;
+        }
+        
+        #contents {
+            width: 80vw;
+            float: right;
+            padding-top: -44px;
+            margin-top: 44px;
+            padding-bottom: 10vh;
+        }
+        
+        #sidebar {
+            width: 20vw;
+            height: 100%;
+            float: left;
+            margin: 0;
+            padding-top: 8px;
+            font-size: 80%;
+            background-color: #f9f3f3;
+            position: fixed;
+            z-index: 9999;
+        }
+    </style>
+</head>
+
+<body style="width: 100vw;height: 100vh;font-size: 11pt; line-height: 150%;">
+    <div id="wrapper">
+        <div id="header">
+            <ul class="nav nav-tabs nav-justified">
+                <li role="presentation"><a href="index.html">概要</a></li>
+                <li role="presentation"><a href="list.htm">コンテ</a></li>
+                <li role="presentation"><a href="edit.htm">エディット</a></li>
+                <li role="presentation" class="active"><a href="#">プレイヤー</a></li>
+            </ul>
+        </div>
+        <div id="contents">
+            <div class="row" id='pagetop'>
+                <div class="col-xs-12 col-sm-7">
+                    <h4>シナリオに沿ったスライドショー</h4>
+                    <h2>プレイヤー</h2>
+                    エディット画面で設定したエレメントの画面をコンテ（リスト画面）で設定した順で再生します。
+                </div>
+                <div class="col-xs-12 col-sm-5" style="text-align: right;">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- サポートページトップ -->
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3146425308522831" data-ad-slot="4219928305" data-ad-format="auto"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+
+                    <script type="text/javascript">
+                        var nend_params = {
+                            "media": 32269,
+                            "site": 206990,
+                            "spot": 583222,
+                            "type": 1,
+                            "oriented": 1
+                        };
+                    </script>
+                    <script type="text/javascript" src="https://js1.nend.net/js/nendAdLoader.js"></script>
+                </div>
+            </div>
+            <!-- <div class="container-fluid"> -->
+
+            <div class="panel panel-default">
+                <div class="panel-heading" style="padding: 10px;background-color: #337ab7;color: white;">
+                    プレイヤー（スライドショー画面）
+                </div>
+                <div class="panel-body">
+                    <div class="row" style="width: 100%;height: auto;">
+                        <table border="0">
+                            <tr valign="top">
+                                <td width=70%>
+                                    <p>基本はBGMを流しながらの自動実行ですが、プレイヤーの底辺にはコントロールパネルが有り、手動操作も行えます。
+                                    </p>
+                                    <img src="img/saikai.png" style="width:100%;" alt="説明">
+                                </td>
+                                <th rowspan="2">
+                                    <img src="img/s050end.png" class="phorRes" style="width:100%;" alt="プレイヤー">
+                                </th>
+                            </tr>
+                        </table>
+
+                        <table width="100%" border="1" id='control_panel'>
+                            <tr valign="top">
+                                <th bgcolor="#b3d3ef" colspan="2">
+                                    コントロールパネル
+                                </th>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    <img src="img/conte_open_bt.png" class="phorRes" alt="コンテ表示"><br> コンテ表示
+                                </td>
+                                <td>
+                                    コンテ(シーンカットリスト)画面に戻ります。
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td nowrap>
+                                    <img src="img/sc_v.png" class="phorRes" alt="シーン・カット表示"><br> シーン・カット表示
+                                </td>
+                                <td>
+                                    現在表示しているシーンとカット番号です。
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    <img src="img/mae_bt.png" class="phorRes" alt="前のカット"><br> 前のカット
+                                </td>
+                                <td>
+                                    一つ前のカットに戻します。
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    音声コントロール
+                                </td>
+                                <td>
+                                    <img src="img/audio_panel.png" class="phorRes" style="width:80%;" alt="音声コントロール"><br> 音声ファイルの再生/停止、再生ポジション、音量を調整します。
+                                    <br> html5のaudioタグをそのまま使っていますので、ブラウザーによって構成やデザインが変わります。
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    <img src="img/play_bt.png" class="phorRes" alt="再生">
+                                    <img src="img/pouse_bt.png" class="phorRes" alt="再生/ポーズ"><br> 再生/ポーズ
+                                </td>
+                                <td>
+                                    自動送りのon/off切替です。
+                                    <ul>
+                                        <li>
+                                            自動送り中はポーズボタンが表示され、クリックすれば自動再生を中断します。
+                                        </li>
+                                        <li>
+                                            自動送り中でなければ再生ボタンが表示され、クリックすれば各カットに設定した秒数で次のカットに切り替わる自動再生を開始します。
+                                        </li>
+                                    </ul>
+                                    再生中のカットで停止/そのカットの先頭から再生します。
+                                    <div class="alert alert-danger" role="alert">
+                                        ここでは一過的な切り替えを行います。<br> 次に再生する時に自動送りで起動するか否かはリスト画面の「全体設定/自動送り」で設定して下さい。
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    <img src="img/tugi_bt.png" class="phorRes" alt="次のカット"><br> 次のカット
+                                </td>
+                                <td>
+                                    次のカットに送ります。
+                                    <div class="alert alert-info" role="alert">
+                                        PowerPointと同じくEnterキーでも次のカットに送ります。
+                                    </div>
+                                    <div class="alert alert-danger" role="alert">
+                                        連打すると誤動作の原因になりますので0.1秒遅延して動作します。
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    <img src="img/setumei_bt.png" class="phorRes" alt="説明"><br> 説明
+                                </td>
+                                <td>
+                                    プレイヤーからこの説明画面にリンクします。
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    <img src="img/navi_open.png" class="phorRes" alt="説明"><br> 閉じる
+                                </td>
+                                <td>
+                                    操作パネルを閉じて自動再生を開始します。
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    <img src="img/navi_close.png" class="phorRes" alt="説明"><br> 開く
+                                </td>
+                                <td>
+                                    自動再生を一時停止させて操作パネルを表示します。
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="sidebar">
+            <img src="../img/logo.png" class="phorRes" style="width:80%;" alt="logo">
+            <ul>
+                <li>
+                    <a href="../../" target="_blank" style="margin-top: -24px;">
+                        <span class="glyphicon glyphicon-home"></span>インデックス</a>
+                </li>
+                <li>
+                    <a href="#pagetop">ページトップへ</a>
+                </li>
+                <li>
+                    <a href="#control_panel">コントロールパネル</a>
+                </li>
+            </ul>
+            <div>
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3146425308522831" data-ad-slot="4219928305" data-ad-format="auto"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+
+                <script type="text/javascript">
+                    var nend_params = {
+                        "media": 32269,
+                        "site": 206990,
+                        "spot": 583222,
+                        "type": 1,
+                        "oriented": 1
+                    };
+                </script>
+                <script type="text/javascript" src="https://js1.nend.net/js/nendAdLoader.js"></script>
+            </div>
+        </div>
+        <!-- <div id="footer">
+            <div class="col-xs-12 col-sm-12" style="text-align: right;">
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3146425308522831" data-ad-slot="4219928305" data-ad-format="auto"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+
+                <script type="text/javascript">
+                    var nend_params = {
+                        "media": 32269,
+                        "site": 206990,
+                        "spot": 583222,
+                        "type": 1,
+                        "oriented": 1
+                    };
+                </script>
+                <script type="text/javascript" src="https://js1.nend.net/js/nendAdLoader.js"></script>
+            </div>
+        </div> -->
+    </div>
+    <script type="text/javascript">
+        $(function() {
+            var headerHight = $('#header').outerHeight(true); //ヘッダの高さ
+            // console.log(headerHight);
+            $('a[href^="#"]').click(function() {
+                var href = $(this).attr("href");
+                var target = $(href == "#" || href == "" ? 'html' : href);
+                var position = target.offset().top - headerHight; //ヘッダの高さ分位置をずらす
+                $("html, body").animate({
+                    scrollTop: position
+                }, 550, "swing");
+                return false;
+            });
+        });
+    </script>
+</body>

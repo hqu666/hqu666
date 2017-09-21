@@ -1,0 +1,349 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MaraSongs「リストアップ編集」</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
+    <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+    <link href="../../main.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div align="right">
+        <a href="../en/listup.html">English</a>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 col-md-8">
+                <table align="left" valign="top" border="0" style="font-size: 11pt; line-height: 150%;">
+                    <tr valign="top">
+                        <td style="width: 58px; height: 22px">
+                            <a href="index.html">
+                                <img src="img/ic_launcher-web.png" alt="Marasong" style="width: 48px; " vspace="1" hspace="1">
+                            </a>
+                        </td>
+                        <td style="margin: 10px; padding: 10px;">
+                            当たり前に使える音楽プレイヤー
+                            <h2>MaraSongs</h2>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-sm-12 col-md-4" style="text-align: right;">
+                <P class="container">
+                    <div class="row">
+                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3146425308522831" data-ad-slot="4219928305" data-ad-format="auto"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+                    <div class="row">
+                        <script type="text/javascript">
+                            var nend_params = {
+                                "media": 32269,
+                                "site": 206990,
+                                "spot": 583222,
+                                "type": 1,
+                                "oriented": 1
+                            };
+                        </script>
+                        <script type="text/javascript" src="https://js1.nend.net/js/nendAdLoader.js"></script>
+                    </div>
+                </P>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <ul class="nav nav-tabs" style="width: 800dp; margin: 0px 0px 0px 15px;">
+                    <li class="nav-item" style="margin-right: 18px;">
+                        <a class="nav-link bg-primary active" href="index.html">概要</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 18px;">
+                        <a class="nav-link bg-primary" href="player.html">プレイヤー</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 18px;">
+                        <a class="nav-link bg-primary" href="list.html">リスト</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 18px;">
+                        <a class="nav-link bg-primary" href="pref.html">設定画面</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 18px;">
+                        <a class="nav-link bg-primary" href="zenkyokulist.html">特徴機能詳細</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="line-height:16px ; text-alingn:left;
+					 border-style: solid ; border-width: 1px; padding: 10px 5px 10px 20px; border-color: #999999 ;
+					 border-radius: 10px; box-shadow: 10px 10px 10px #AAA;">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <ul class="nav nav-tabs" style="margin: -10px 0px 0px -20px;">
+                        <li class="nav-item" style="margin-right: 18px;">
+                            <a class="nav-link bg-primary" href="zenkyokulist.html">全曲リスト</a>
+                        </li>
+                        <li class="nav-item" style="margin-right: 18px;">
+                            <a class="nav-link bg-primary" style="background: #5cb85c !important;">リストアップ編集</a>
+                        </li>
+                        <li class="nav-item" style="margin-right: 18px;">
+                            <a class="nav-link bg-primary" href="request.html">リクエストリスト</a>
+                        </li>
+                        <li class="nav-item" style="margin-right: 18px;">
+                            <!-- <nobr> -->
+                            <a class="nav-link bg-primary" href="notif.html">ノティフィケーション/ロックスクリーンプレイヤー</a>
+                            <!-- </nobr> -->
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <h2>リストアップ編集</h2>
+                    クレジットされているアーティスト名以外でリストアップしたい時にご利用ください
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <table align="left" valign="top">
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#eeeeff;">
+                                <h4>機能概要</h4>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-9 col-md-6">
+                    <table align="left" valign="top">
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#eeeeff;"></td>
+                            <td>
+                                全曲リストを作成/更新した後に発生する以下の様なケースで使う機能です。
+                                <ul>
+                                    <li>
+                                        リストアップされているアーティストのアルバムでは無い様場合、 アーティストもしくはアルバム単位で、アーティストリストに表示されるアーティストを変更できます。
+                                    </li>
+                                    <li>
+                                        例えば"Big Brother And The Holding Company"を"Janis Joplin"に統合する<br> (クレジットされているアーティスト名に自動振り分けされる情報が含まれていない場合の例。
+                                        <ul>
+                                            <li>
+                                                Big Brother & The Holding CompanyのCheap ThrillsをJanis Joplinの並びで聞きたい
+                                            </li>
+                                            <li>
+                                                Beck, Bogert & AppiceをJeff Beckの並びで聞きたい
+                                            </li>
+                                            <li>
+                                                Jaco Pastoriusの9曲目Forgotten LoveはHerbie Hancock & Jaco PastoriusとクレジットされているのでHerbie Hancockの並びに表示されます。)
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        まとめきれなかったコンピレーションアルバムをここでまとめる事もできます。
+                                    </li>
+                                    <li>
+                                        このメニューはアーティストもしくはアルバムリストで表示されます。
+                                    </li>
+                                </ul>
+                            </td>
+                    </table>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3 div-img">
+                    <img src="img/listup_editS1.png" alt="リストアップ編集開始" width="90%">
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3 div-img">
+                    <img src="img/listup_edit5.png" alt="リストアップ結果" width="90%">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <table align="left" valign="top">
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#ffeeff;">
+                                <h4>操作手順は</h4>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-9">
+                    <table align="left" valign="top">
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#ffeeff;"></td>
+                            <td>
+                                <ol>
+                                    <li>
+                                        リストアップ先を変更したいアーティストもしくはアルバムをロングタップ
+                                    </li>
+                                    <li>
+                                        表示されたメニューから「リストアップ編集」を選択
+                                    </li>
+                                </ol>
+                            </td>
+                    </table>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3 div-img">
+                    <img src="img/listup_edit01.png" alt="リストアップ編集開始" width="90%">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-9 col-md-9">
+                    <table align="left" valign="top">
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#ffeeff;"></td>
+                            <td>
+                                <ol>
+                                    <li value=3>
+                                        次に表示されるリストから変更先を選択
+                                    </li>
+                                    <li>
+                                        ダイアログで確定操作
+                                        <ul>
+                                            <li>
+                                                ここでリストアップ先のアーティスト名を修正する事もできます。
+                                            </li>
+                                            <li>
+                                                &quot;選択したアーティスト名に変更&quot;にチェックを入れるとプレイヤー画面などで表示されるアーティスト名も選択したアーティスト名で表示されます<br> 例えば"ELP"と略称で記載されたアーティスト名を他のアルバムに揃えて"Emerson, Lake & Palmer"と表示/リストアップをさせたい時などにチェックを入れます。<br> ※使う頻度は低いのでチェックを外して表示します。
+                                            </li>
+                                            <li>
+                                                ここで確定した時点で修正リストに書き込みます。
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ol>
+
+                            </td>
+                    </table>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3 div-img">
+                    <img src="img/listup_edit02.png" alt="変更先を選択" width="90%">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-9">
+                    <table align="left" valign="top">
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#ffeeff;"></td>
+                            <td>
+                                <ol>
+                                    <li value=5>
+                                        リストアップ先変更ダイアログ
+                                        <ul>
+                                            <li>
+                                                "選択したアーティスト名に書換"を選べばプレイヤーでの表示もこのアーティスト名になります。
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ol>
+                            </td>
+                    </table>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3 div-img">
+                    <img src="img/listup_edit03.png" alt="変更先を選択" width="90%">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-9">
+                    <table align="left" valign="top">
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#ffeeff;"></td>
+                            <td>
+                                <ol>
+                                    <li value=6>
+                                        終了ダイアログ
+                                        <ul>
+                                            <li>
+                                                そのアルバムで書き換え対象となったレコード数を表示します。
+                                            </li>
+                                            <li>
+                                                最終選択
+                                                <ol>
+                                                    <li>
+                                                        選択を続ける
+                                                        <ul>
+                                                            <li>
+                                                                修正したいところが残っていたらこちらを選択。
+                                                            </li>
+                                                            <li>
+                                                                修正リストは維持されています。選択が終わった後でまとめて修正できます。
+                                                            </li>
+                                                            <li>
+                                                                また、次に全曲更新を行う時も修正リストを消去しない限り、このメニューで設定した修正内容が反映されます。
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        中止
+                                                        <ul>
+                                                            <li>
+                                                                ここまでの選択結果を破棄します。
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        全曲リスト更新
+                                                        <ul>
+                                                            <li>
+                                                                選択が終了したらこちらをクリック<br> 修正リストを反映させで全曲リストを更新します。
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ol>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ol>
+                                <ul>
+                                    <li>
+                                        間違って登録した場合はメニューのその他/<a href="#syuuseilist">修正リスト表示</a>で訂正できます。
+                                    </li>
+                                </ul>
+                            </td>
+                    </table>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3 div-img">
+                    <img src="img/listup_edit04.png" alt="終了ダイアログ" width="90%">
+                </div>
+            </div>
+            <p><small>
+			　全曲リストの更新が終わった直後、数秒はデータに結びついていない状態のリストが表示されているので、触るとアプリケーションがクラッシュします。</small><small><br></small><small>　その書き換えの間を示すダイアログ（アーティストリストの読み込みプログレス）が表示されますが一瞬なので見落としてしまいそうです。</small><small><br></small><small>　書き換えが終わったら２，３秒置いてから操作してください。
+		</div>
+
+		<footer class="footer">
+			<p style="text-align: right; background-color:white">
+				<div class="col-xs-12 col-sm-12">
+					<div class="col-xs-6 col-sm-8">
+						<a href="../index.htm">
+							<img src="../img/koubou.png" alt="比治山工房" width="100%">
+						</a>
+					</div>
+					<div class="col-xs-2 col-sm-2">
+						<a href="https://play.google.com/store/apps/details?id=com.hijiyam_koubou.marasongs ">
+							<img src="../img/marasongs.png " alt="Marasong_qr " vspace="1 " hspace="1 "></a>
+					</div>
+					<div class="col-xs-4 col-sm-2">
+						Copyright 2016
+					</div>
+				</div>
+			</p>
+		</footer>
+	</div>
+</body>
+
+</html>

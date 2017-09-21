@@ -1,0 +1,32 @@
+<html lang="ja">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>モーダルダイアログ</title>
+    <script type="text/javascript" charset="UTF-8">
+        onload = function() {
+            // 自分自身のウインドウを閉じる
+            document.getElementById("btnClose").onclick = CloseDialog;
+            onunload = CloseDialog;
+
+            function CloseDialog() {
+                // 親ウインドウを取得する(IE用)
+                if (!opener) {
+                    opener = dialogArguments;
+                }
+
+                // 親ウインドウのボタンのグレーアウトを解除する
+                opener.document.getElementById("btnOpen").disabled = false;
+                returnValue = "hoge";
+                close();
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>モーダルダイアログ</h1>
+    <input type="button" id="btnClose" value="自分自身のウインドウを閉じる">
+</body>
+
+</html>

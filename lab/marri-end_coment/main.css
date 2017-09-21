@@ -1,0 +1,20 @@
+@charset "UTF-8";
+td,
+th {
+    padding: 10px 10px;
+}
+
+.h1,
+.h2,
+.h3,
+h1,
+h2,
+h3 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.collapse_bt {
+    width: 100%;
+    text-align: left;
+}

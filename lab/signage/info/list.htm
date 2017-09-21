@@ -1,0 +1,545 @@
+<!DOCTYPE HTML>
+<!--PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"-->
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>比治山工房/web signage |「シナリオに沿ったスライドショー」の説明|コンテ</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="../../../main.css" />
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <ul class="nav nav-tabs nav-justified">
+                <li role="presentation"><a href="index.html">概要</a></li>
+                <li role="presentation" class="active"><a href="#">コンテ</a></li>
+                <li role="presentation"><a href="edit.htm">エディット</a></li>
+                <li role="presentation"><a href="player.htm">プレイヤー</a></li>
+            </ul>
+        </div>
+        <div id="contents">
+            <div class="row" id='pagetop'>
+                <div class="col-xs-12 col-sm-7">
+                    <h4>シナリオに沿ったスライドショー</h4>
+                    <h2>データレコードの編集</h2>
+                    このページでシーン/カットの順番と追加廃止、全体の設定を行います。
+                    <div class="alert alert-danger" role="alert" style='font-size: small;'>
+                        このシステムでは編集結果をLocalStrageに書き込み他の画面との連携を取ります。<br> これはサイトを閲覧している間のデータ保持ですので、適切なタイミングで「データ書き込み」を使って、ご利用のPCにデータを保存して下さい。
+                        <div class="alert alert-info" role="alert">
+                            書き出されるファイルはシーンカットのエレメント毎に１レコードを構成します。
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-5" style="text-align: right;">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- サポートページトップ -->
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3146425308522831" data-ad-slot="4219928305" data-ad-format="auto"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+
+                    <script type="text/javascript">
+                        var nend_params = {
+                            "media": 32269,
+                            "site": 206990,
+                            "spot": 583222,
+                            "type": 1,
+                            "oriented": 1
+                        };
+                    </script>
+                    <script type="text/javascript" src="https://js1.nend.net/js/nendAdLoader.js"></script>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading" style="padding: 10px;background-color: #337ab7;color: white;">
+                    コンテ画面（レコードエディタ）
+                </div>
+                <div class="panel-body">
+                    <div class="row" style="width: 100%;height: auto;">
+                        <table border="0">
+                            <tr valign="top">
+                                <td width=80%>
+                                    <p>表示されるリストはbootstrapのアコーディオンパネルで、
+                                        <ul>
+                                            <li>
+                                                シーン名と一部の内容を示す文字部部分(リンクテキスト)をクリックするとシーン内のカットを
+                                            </li>
+                                            <li>
+                                                カット名の文字部部分をクリックするとカットに配置された要素の概要を表示します。
+                                            </li>
+                                            <li>
+                                                画面の左側にはレコード編集以外のメニューが有ります。
+                                            </li>
+                                        </ul>
+                                        <img src="img/list_left_menupng.png" class="phorRes" style="width:30%;" alt="その他">
+
+                                    </p>
+
+                                    <td style="text-align: center;">
+                                        シーン一覧<br>
+                                        <img src="img/list0000.png" class="phorRes" style="width:100%;" alt="コンテ">
+                                        <br> ↓ <br> シーン内の<br>カット一覧
+                                        <br>
+                                        <img src="img/list0200.png" class="phorRes" style="width:100%;" alt="コンテ">
+                                        <br> ↓ <br> カット内の<br>エレメント一覧
+                                        <br>
+                                        <img src="img/list0300.png" class="phorRes" style="width:100%;" alt="コンテ">
+                                    </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="row" style="width: 100%;height: auto;">
+                        <table border="0" id='add_item'>
+                            <tr valign="top">
+                                <th bgcolor="#b3d3ef">
+                                    テンプレートの呼出しと初期化(新規作成の開始)
+                                </th>
+                                <th rowspan="2">
+                                    <img src="img/list_side_templrat.png" class="phorRes" style="width:100%;" alt="テンプレート">
+                                </th>
+                            </tr>
+                            <tr valign="top">
+                                <td width=70%>
+                                    サーバに用意してあるテンプレートファイルを読み出して、初期化します。<br> 不要なシーンカットを削除して編集元にして下さい。
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    <img src="img/list_left_menu_templatei.png" class="phorRes" style="width:80%;" alt="テンプレート選択">
+                                </td>
+                                <td>
+                                    現在、
+                                    <ol>
+                                        <li>
+                                            簡易ムービー用の結婚式用エンドロールと
+                                        </li>
+                                        <li>
+                                            プレゼンスライド
+                                        </li>
+                                    </ol>
+                                    の２種を用意しています。
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- 新規作成の開始 -->
+                        <table border="0" id='all_sett'>
+                            <tr valign="top">
+                                <th bgcolor="#b3d3ef">
+                                    全体設定
+                                </th>
+                                <th rowspan="2">
+                                    <img src="img/list_left_menu_zentai.png" class="phorRes" style="width:100%;" alt="全体設定">
+                                </th>
+                            </tr>
+                            <tr valign="top">
+                                <td width=70%>
+                                    新規設定時はまずこの設定を確認して下さい。
+                                    <ol>
+                                        <li>
+                                            「使用画面」は再生に使用する画面サイズを設定します。
+                                            <ol>
+                                                <li>
+                                                    「幅」/「高さ」は編集に使うPCでは設定できないサイズも有りますので、手入力可能にしています。
+                                                </li>
+                                                <li>
+                                                    「この画面」ボタンは編集作業を行っているパソコンもしくは再生する画面が同じサイズの場合、このボタンで上記の幅と高さを取得して設定します。
+                                                </li>
+                                                <li>
+                                                    「縦横入替」ボタンは縦横値を入れ替えます。<br> サイズは同じディスプレイを使用する場合は「この画面」で値を取得して、縦方向が長くなる置き方をしているディスプレイを使用する場合はこのボタンで入れ替えます。
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            自動送り
+                                            <ol>
+                                                <li>
+                                                    チェックを入れるとカット毎に指定した秒数で次のカットに進みます。
+                                                    <div class="alert alert-danger" role="alert">
+                                                        プレイヤー起動直後は再生待ち状態にしています。<br> 下部に表示されるコントロールパネルのプレイボタン、もしくはコントロールパネルを閉じるボタンで自動再生をスタートします。
+                                                    </div>
+                                                    デジタルサイネージの源泉や結婚式のエンドロールムービーなど簡易ムービー用の設定です。
+                                                    <div class="alert alert-danger" role="alert">
+                                                        途中で送り/戻しボタンを操作すれば自動再生を中断して順送りに切り替わります。
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    チェックを外せばコントローラーの送り/戻しボタンの操作で1カットづつ送り/戻しを行います。
+                                                    <div class="alert alert-danger" role="alert">
+                                                        カットの秒数を指定して、プレイボタンを操作すればそこから自動送りにできます。
+                                                    </div>
+                                                    プレゼンスライド用の設定です。
+                                                </li>
+                                            </ol>
+                                        </li>
+                                    </ol>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <div class="alert alert-info" role="alert">
+                                        全体設定の設定内容は書き出されるファイルの先頭レコードにシーンカット名「ｓ000ｃ00」エレメント名「signage」でかきこまれます。
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- 全体設定 -->
+                        <table border="0" id='edit_menu'>
+                            <tr valign="top" bgcolor="#337ab7">
+                                <th colspan="2">
+                                    <font color="#ffffff">
+                                        その他、左側の機能
+                                    </font>
+                                </th>
+                            </tr>
+                            <tr valign="top" id='edit_menu_play'>
+                                <th bgcolor="#b3d3ef">
+                                    プレイヤーを起動して再生の開始
+                                </th>
+                                <th rowspan="2">
+                                    <img src="img/list_side_play.png" class="phorRes" style="width:100%;" alt="プレイヤーを起動">
+                                </th>
+                            </tr>
+                            <tr valign="top">
+                                <td width=80%>
+                                    プレイヤーを起動し、先頭から再生します。
+                                </td>
+                            </tr>
+
+                            <tr valign="top" id='edit_menu_file'>
+                                <th bgcolor="#b3d3ef">
+                                    データ読込み/データ書き込み
+                                </th>
+                                <th rowspan="2">
+                                    <img src="img/list_side_yomikkomii.png" class="phorRes" style="width:100%;" alt="読"><br>
+                                    <img src="img/list_side_kakidasi.png" class="phorRes" style="width:100%;" alt="書き"><br>
+                                </th>
+                            </tr>
+                            <tr valign="top">
+                                <td width=80%>
+                                    ご利用頂いた皆さんが編集した結果を書き出し、実際の利用時や再編集する時に読み込む仕掛けです。
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <div class="alert alert-danger" role="alert">
+                                        Excelで内容を確認する時は
+                                        <ul>
+                                            <il>
+                                                書き出したファイルは文字コードが
+                                                <span class="label label-danger">utf-8</span>になっていますので、Excelなどで読み書きする時は「utf-8」を選択して下さい。
+
+                                            </il>
+                                            <il>
+                                                またエレメント内の改行は
+                                                <span class="label label-danger">&ltbr&gt</span>をそのまま書き出しますので用途に応じて置き換えなどの加工を行って下さい
+                                            </il>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr valign="top" id='edit_menu_renumber'>
+                                <th bgcolor="#b3d3ef">
+                                    番号を振り直す
+                                </th>
+                                <th rowspan="2">
+                                    <img src="img/list_side_play.png.png" class="phorRes" style="width:100%;" alt="番号を振り直す"><br>
+                                </th>
+                            </tr>
+                            <tr valign="top">
+                                <td width=80%>
+                                    シーンカットナンバーに乱れが生じた場合など、先頭から番号を付け直します。<br>
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- その他の機能 -->
+                        <br>
+                        <table border="0" id='edit_scene'>
+                            <tr valign="top" bgcolor="#337ab7">
+                                <th colspan="2">
+                                    <font color="#ffffff">
+                                        シーンの編集
+                                    </font>
+                                </th>
+                            </tr>
+                            <tr valign="top" id='edit_scene_add'>
+                                <th bgcolor="#b3d3ef">
+                                    追加
+                                </th>
+                                <th rowspan="2">
+                                    <img src="img/list_scene_add.png" class="phorRes" style="width:100%;" alt="追加">
+                                </th>
+                            </tr>
+                            <tr valign="top">
+                                <td width=80%>
+                                    最終シーンの下に1カット・1エレメントだけを初期設定した新規のシーンを追加します。
+                                </td>
+                            </tr>
+                            <tr valign="top" id='edit_scene_move'>
+                                <th bgcolor="#b3d3ef">
+                                    移動
+                                </th>
+                                <th rowspan="2">
+                                    <img src="img/list_cut_up_down.png" class="phorRes" style="width:100%;" alt="追加">
+                                </th>
+                            </tr>
+                            <tr valign="top">
+                                <td width=80%>
+                                    各シーンを上下に移動します。
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- シーンの編集 -->
+                        <table border="0" id='edit_cut'>
+                            <tr valign="top" bgcolor="#337ab7">
+                                <th colspan="2">
+                                    <font color="#ffffff">
+                                        カットの編集
+                                    </font>
+                                </th>
+                            </tr>
+                            <tr valign="top" id='edit_cut_add'>
+                                <th bgcolor="#b3d3ef">
+                                    追加
+                                </th>
+                                <th rowspan="2">
+                                    <img src="img/list_cut_add.png" class="phorRes" style="width:100%;" alt="追加">
+                                </th>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    各シーンの最終カットの下に1エレメントだけを初期設定した新規のシーンを追加します。
+                                </td>
+                            </tr>
+                            <tr valign="top" id='edit_cut_move'>
+                                <th bgcolor="#b3d3ef">
+                                    移動
+                                </th>
+                                <th rowspan="2">
+                                    <img src="img/list_cut_up_down.png" class="phorRes" alt="追加">
+                                </th>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    各シーン内でカットを上下に移動します。
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <div class="alert alert-info" role="alert">
+                                        <ul>
+                                            <li>
+                                                シーン内の最終カットを下に移動すれば次のシーンの先頭へ<br>（最終シーンなら次のシーンを作成）
+                                            </li>
+                                            <li>
+                                                シーンの先頭なら前のシーンの最終カットに異動します。
+                                                <div class="alert alert-danger" role="alert">
+                                                    s010c01の場合、それより前のシーンカットナンバーを設定できませんので上に異動するボタンを消します。
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr valign="top" id='edit_cut_move_ohter'>
+                                <th bgcolor="#b3d3ef">
+                                    別シーンに移動
+                                </th>
+                                <th rowspan="2">
+                                    <img src="img/list_cut_betu_scene.png" class="phorRes" alt="別シーンに移動">
+                                </th>
+                            </tr>
+
+                            <tr valign="top">
+                                <td colspan="2">
+                                    別シーンの最後にそのカットを追加します。
+                                    <img src="img/list_cut_betu_scene_dlog.png" width="50%" class="phorRes" alt="別シーンに移動">
+                                </td>
+                            </tr>
+                            <tr valign="top" id='edit_cut_del'>
+                                <th bgcolor="#b3d3ef">
+                                    削除
+                                </th>
+                                <th rowspan="2">
+                                    <img src="img/list_cut_sakujyo.png" class="phorRes" alt="削除">
+                                </th>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    そのカットを削除します。
+                                    <div class="alert alert-danger" role="alert">
+                                        削除したカットのデータは復帰できませんのでご注意ください
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr valign="top" id='edit_cut_edit'>
+                                <th bgcolor="#b3d3ef">
+                                    編集
+                                </th>
+                                <th rowspan="2">
+                                    <img src="img/list_cut_editi.png" class="phorRes" alt="編集">
+                                </th>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    (エレメント)編集画面を開き、そのカットの詳細編集ができる様にします。
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- カットの編集 -->
+                        <br>
+                        <div class="alert alert-info" role="alert" style="margin-left: 10px;" id='apndex'>
+                            <p>
+                                &lt;ご参考&gt;
+                            </p>
+                            データレコードに設定するシーンカットNo(scene_cut)はカットの移動、追廃時に自動設定します。
+                            <table width="100%" border="1">
+                                <tr valign="top">
+                                    <td colspan="2">
+                                        例えばシーン２のカット４なら「s020c04」と設定します<br> 小文字のｓ+３桁の数字でレコードの先頭区分に使います。
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="alert alert-danger" role="alert">
+                                Excelで元ファイルを編集する場合、セル内で改行する事があります。 これをtab区切りのTextファイルの書き出すと、別のレコードに分割されます。
+                                <br> このスクリプトでは分割されたレコードを繋ぎ直す為に「s0」という文字を行頭（レコードの先頭）の識別子として使います。
+                            </div>
+                        </div>
+                        <!-- ご参考 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="sidebar">
+            <img src="../img/logo.png" class="phorRes" style="width:80%;" alt="logo">
+            <ul>
+                <li>
+                    <a href="../../" target="_blank" style="margin-top: -24px;">
+                        <span class="glyphicon glyphicon-home"></span>インデックス</a>
+                </li>
+                <li>
+                    <a href="#pagetop">ページトップへ</a>
+                </li>
+                <li>
+                    <a href="#add_item">新規作成の開始</a>
+                </li>
+                <li>
+                    <a href="#all_sett">全体設定</a>
+                </li>
+                <li>
+                    <a href="#edit_menu">その他、左側の機能</a>
+                    <ul class="sub_li">
+                        <li>
+                            <a href="#edit_menu_play">再生の開始</a>
+                        </li>
+                        <li>
+                            <a href="#edit_menu_file">データ読込み/データ書き込み</a>
+                        </li>
+                        <li>
+                            <a href="#edit_menu_renumber">番号を振り直す</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#edit_scene">シーンの編集</a>
+                    <ul class="sub_li">
+                        <li>
+                            <a href="#edit_scene_add">追加</a>
+                        </li>
+                        <li>
+                            <a href="#edit_scene_move">移動</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#edit_cut">カットの編集</a>
+                    <ul class="sub_li">
+                        <li>
+                            <a href="#edit_cut_add">追加</a>
+                        </li>
+                        <li>
+                            <a href="#edit_cut_move">移動</a>
+                        </li>
+                        <li>
+                            <a href="#edit_cut_move_ohter">別シーンに移動</a>
+                        </li>
+                        <li>
+                            <a href="#edit_cut_del">削除</a>
+                        </li>
+                        <li>
+                            <a href="#edit_cut_edit">編集</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#apndex">ご参考まで</a>
+                </li>
+            </ul>
+            <div>
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3146425308522831" data-ad-slot="4219928305" data-ad-format="auto"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+
+                <script type="text/javascript">
+                    var nend_params = {
+                        "media": 32269,
+                        "site": 206990,
+                        "spot": 583222,
+                        "type": 1,
+                        "oriented": 1
+                    };
+                </script>
+                <script type="text/javascript" src="https://js1.nend.net/js/nendAdLoader.js"></script>
+            </div>
+        </div>
+        <!-- <div id="footer">
+            <div class="col-xs-12 col-sm-12" style="text-align: right;">
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3146425308522831" data-ad-slot="4219928305" data-ad-format="auto"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+
+                <script type="text/javascript">
+                    var nend_params = {
+                        "media": 32269,
+                        "site": 206990,
+                        "spot": 583222,
+                        "type": 1,
+                        "oriented": 1
+                    };
+                </script>
+                <script type="text/javascript" src="https://js1.nend.net/js/nendAdLoader.js"></script>
+            </div>
+        </div> -->
+    </div>
+    <script type="text/javascript">
+        $(function() {
+            var headerHight = $('#header').outerHeight(true); //ヘッダの高さ
+            // console.log(headerHight);
+            $('a[href^="#"]').click(function() {
+                var href = $(this).attr("href");
+                var target = $(href == "#" || href == "" ? 'html' : href);
+                var position = target.offset().top - headerHight; //ヘッダの高さ分位置をずらす
+                $("html, body").animate({
+                    scrollTop: position
+                }, 550, "swing");
+                return false;
+            });
+        });
+    </script>
+</body>

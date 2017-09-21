@@ -1,0 +1,52 @@
+@charset "utf-8";
+/*=============================================================
+ print Layout
+=============================================================*/
+#header-menu-block,
+#topic-path,
+#local-menu-area,
+#ftr-menu ul,
+#ftr-group,
+.pagetop{
+	display:none;
+}
+
+
+
+
+
+/* header
+-------------------------------------------------------------*/
+#header-block{
+	width:690px;
+	background:none;
+}
+#header-block p#logo{
+	width:300px;
+	padding:0px 0 0 0px;
+	float:left;
+}
+
+/* contents
+-------------------------------------------------------------*/
+#container{
+	background:none;
+}
+#page-body{
+	background:none;
+	width:690px;
+	min-height:inherit;
+	padding:0;
+}
+#contents-area{
+	width:690px;
+	padding:10px 0 10px;
+}
+#contents{
+	float:none;
+	margin:0 auto;
+}
+#footer{
+	width:690px;
+}
+

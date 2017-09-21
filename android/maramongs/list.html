@@ -1,0 +1,981 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MaraSongs「リストの説明」</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
+    <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+    <link href="../../main.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div align="right">
+        <a href="en/list.html">English</a>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 col-md-8">
+                <table align="left" valign="top" border="0" style="font-size: 11pt; line-height: 150%;">
+                    <tr valign="top">
+                        <td style="width: 58px; height: 22px">
+                            <a href="index.html">
+                                <img src="img/ic_launcher-web.png" alt="Marasong" style="width: 48px; " vspace="1" hspace="1">
+                            </a>
+                        </td>
+                        <td style="margin: 10px; padding: 10px;">
+                            当たり前に使える音楽プレイヤー
+                            <h2>MaraSongs</h2>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-sm-12 col-md-4" style="text-align: right;">
+                <P class="container">
+                    <div class="row">
+                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3146425308522831" data-ad-slot="4219928305" data-ad-format="auto"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+                    <div class="row">
+                        <script type="text/javascript">
+                            var nend_params = {
+                                "media": 32269,
+                                "site": 206990,
+                                "spot": 583222,
+                                "type": 1,
+                                "oriented": 1
+                            };
+                        </script>
+                        <script type="text/javascript" src="https://js1.nend.net/js/nendAdLoader.js"></script>
+                    </div>
+                </P>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <ul class="nav nav-tabs" style="width: 800dp; margin: 0px 0px 0px 15px;">
+                    <li class="nav-item" style="margin-right: 18px;">
+                        <a class="nav-link bg-primary active" href="index.html">概要</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 18px;">
+                        <a class="nav-link bg-primary" href="player.html">プレイヤー</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 18px;">
+                        <a class="nav-link bg-primary" style="background: #5cb85c !important;">リスト</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 18px;">
+                        <a class="nav-link bg-primary" href="pref.html">設定画面</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 18px;">
+                        <a class="nav-link bg-primary" href="zenkyokulist.html">特徴機能詳細</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="line-height:16px ; text-alingn:left;
+				 border-style: solid ; border-width: 1px; padding: 10px 5px 10px 20px; border-color: #999999 ;
+				 border-radius: 10px; box-shadow: 10px 10px 10px #AAA;">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h2>リストの説明</h2>
+                    プレイリストからの選曲リスト画面です
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <table align="left" valign="top">
+                        <tr>
+                            <td style="background:#eeeeff;">
+                                <h4>タイトルバー</h4>
+                                (Android5以降はToolBer)
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-9 col-md-6">
+                    <table align="left" valign="top">
+                        <tr>
+                            <td style="background:#eeeeff;"></td>
+                            <td>右端にメニューボタンが有ります。
+                                <ul>
+                                    <li>
+                                        元はヘッドエリアとしてタップすれば一階層上のリストに戻るという仕様でしたが、従来のメニューボタンの廃止に伴いメニュー機構が組み込めるToolBarに変更。
+                                    </li>
+                                    <li>
+                                        リスト切替のスピナーもツールバーに組み込みました。
+                                    </li>
+                                    <li>
+                                        全曲リストの様に階層化されたリストはアイコン部分をタップすれば、上位のリストに遷移します<br>
+                                        <small>・全曲リストのタイトルリストが表示された状態でヘッダーをタップするとアルバムリストへ、アルバムリストからはアーティストリストへ、最上位のアーティストリストならリストを閉じてプレイヤーにもどります。<br>
+							※戻るキー（ダイヤルキー付端末のクリアボタン）と同じ動作です。
+								<!-- アーティストリストのヘッダーをタップするとプレイリスト一覧へ遷移します。 -->
+										</li>
+									</ul>
+								</small>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-xs-9 col-sm-3 col-md3 div-img">
+                    <img src="img/list_tb.png" alt="リストツールバー" width="90%">
+                </div>
+                <div class="col-xs-9 col-sm-3 col-md3 div-img">
+                    <img src="img/list_tb_list.png" alt="リストツールバー" width="90%">
+                </div>
+            </div>
+
+            <h3>各リストの説明</h3>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <table align="left" valign="top">
+                        <tr>
+                            <td style="background:#ffeeee;">
+                                <h4><a name="zenkyoku_list">全曲リスト</a></h4>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-9 col-md-9">
+                    <table align="left">
+                        <tr>
+                            <td style="background:#ffeeee;"></td>
+                            <td>端末内にある音楽ファイルを以下の様に分類してリストアップします。
+                                <ul>
+                                    <li>
+                                        ファイルに設定されたタブ情報などによっては詳細情報が欠落する場合もあります。
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-9 col-md-9">
+                    <table align="left" valign="top" ">
+						<tr>
+							<td style="background:#ffeeee; "></td>
+							<td colspan="2 " style="background:#ffeeff; ">
+								<h5>アーティスト</h5>
+							</td>
+							<tr>
+								<td style="background:#ffeeee; "></td>
+								<td style="background:#ffeeff; "></td>
+								<td>
+									最近のパソコン用ミュージックプレイヤーで&quot;アルバムアーティスト&quot;で表示される項目です。
+									<ul>
+										<li>
+											参加ゲスト名をカットしたアルバムのリーダーとなるアーティスト名だけにする事でアルバムの分断を防ぎます。<br>
+											<small><small>AndroidのMediaStore.Audio.Mediaなど古いタイプの音楽ファイル管理ではアルバムにクレジットされたゲスト参加を含むアーティスト名で、フォルダも別フォルダにされていました。<br>
+									それでは別のアーティストの別のアルバムとして扱われるのでアルバム一枚分の連続再生ができなくなる為、ゲスト参加などを除いた最短のアーティスト名称でリストアップします。</small></small>
+										</li>
+										<li>
+											詳細表示では最初に登録されているアルバムアート、収録されているアルバムの年（期間）と枚数を表示します。
+										</li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td style="background:#ffeeee; "></td>
+								<td colspan="2 " style="background:#ffeeff; ">
+									<h5>アルバム</h5>
+								</td>
+								<tr>
+									<td style="background:#ffeeee; "></td>
+									<td style="background:#ffeeff; "></td>
+									<td>
+										選択されたアーティスト名で抽出したアルバムです。
+										<ul>
+											<li>
+												AndroidのMediaStore.Audio.Mediaからリリース年が拾えれば、年代の古いものから並べます。
+											</li>
+											<li>
+												詳細表示ではそれぞれのアルバムアート、制作年、収録曲数を表示します。
+											</li>
+										</ul>
+									</td>
+									<tr>
+										<td style="background:#ffeeee; "></td>
+										<td colspan="2 " style="background:#ffeeff; ">
+											<h5>タイトル</h5>
+										</td>
+										<tr>
+											<td style="background:#ffeeee; "></td>
+											<td style="background:#ffeeff; "></td>
+											<td>
+												選択されたアルバムの収録曲リストです。
+												<ul>
+													<li>
+														アルバムアートはヘッド部で表示します。
+													</li>
+													<li>
+														詳細表示ではゲスト参加があった場合もあるのでクレジットされているアーティスト名、アルバムの制作年と異なる録音日の場合もあるので年、そして曲の長さの時間表示です。
+													</li>
+												</ul>
+											</td>
+										</tr>
+									</tr>
+					</table>
+				</div>
+				<div class="col-xs-9 col-sm-3 col-md3 div-img ">
+					<img src="img/list_artist.png " alt="アーティストリスト " width="90% ">
+				</div>
+			</div>
+
+			<div class="row ">
+				<div class="col-xs-12 col-sm-9 col-md-9 ">
+					<table align="left " valign="top " >
+						<tr>
+							<td colspan="2 " style="background:#eeffee; ">
+								<h4>各種プレイリスト</h4>
+							</td>
+						</tr>
+						<tr>
+							<td style="background:#eeffee; "></td>
+							<td>
+								<ul>
+									<li>
+										作成したリストや端末に保存されているリスト以外でMaraSongsが生成するリスト
+									</li>
+								</ul>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+
+			<div class="row ">
+				<div class="col-xs-12 col-sm-9 col-md-9 ">
+					<table align="left " valign="top " >
+						<tr>
+							<td style="background:#eeffee; "></td>
+							<td colspan="2 " style="background:#eeeeff; ">
+								<h5><a name="saikinn_tuika ">最近追加したアルバム</a></h5>
+							</td>
+							<tr>
+								<td style="background:#eeffee; "></td>
+								<td style="background:#eeeeff; "></td>
+								<td>
+									機能メニューの「最近追加リストの更新」を選ぶと、設定の「プレイリスト / 最近追加したアルバム」で指定した枚数で最近追加した曲を抽出します。
+									<ul>
+										<li>
+											日付などで仕切るといつの間にか抽出できる曲が無くなるので、何年前の追加だろうと最も新しい曲をアルバム単位で抽出します。
+										</li>
+										<li>
+											デフォルトは1枚分です。
+										</li>
+										<li>
+											抽出枚数は「最近追加リストの更新」を選んだ時に設定できます。
+										</li>
+										それを超えたらアーティスト / アルバム /　タイトル　の3階層リスト<br> それ以下の時は階層化しないタイトルリストになります。
+										</li>
+										<li>
+											プレイヤーからリスト画面に切り替えた時にこのリストだったら読み込み時間が発生します。<br> 全曲リストなど他のリストに切り替えたい時は戻るキーでこのリストの読み込みを中断させる事が出来ます。
+										</li>
+									</ul>
+								</td>
+							</tr>
+					</table>
+				</div>
+				<div class="col-xs-9 col-sm-3 col-md3 div-img ">
+					<img src="img/list_saikin_tuika.png " alt="最近追加 " width="90% ">
+				</div>
+			</div>
+
+			<div class="row ">
+				<div class="col-xs-12 col-sm-9 col-md-9 ">
+					<table align="left " valign="top " >
+						<tr>
+							<td style="background:#eeffee; "></td>
+							<td colspan="2 " style="background:#ffeeff; ">
+								<h5><a name="saikinn_tuika ">最近再生した曲</a></h5>
+							</td>
+							<tr>
+								<td style="background:#eeffee; "></td>
+								<td style="background:#ffeeff; "></td>
+								<td>
+									プレイヤー画面のメニューから呼び出す機能/最近再生した曲で生成されたリストです。
+									<ul>
+										<li>
+											MaraSongsは再生した曲を、重複しない様に記録しています。
+										</li>
+										<li>
+											この項目を選ぶと設定の「プレイリスト / 最近再生リストへの登録設定」で指定した曲数を最近再生した順に抽出します。
+										</li>
+										<li>
+											デフォルトは100曲です。
+										</li>
+									</ul>
+								</td>
+							</tr>
+					</table>
+				</div>
+				<div class="col-xs-9 col-sm-3 col-md3 div-img ">
+					<img src="img/list_saikin_sausei.png " alt="最近再生 " width="90% ">
+				</div>
+			</div>
+
+			<div class="row ">
+				<div class="col-xs-12 col-sm-9 col-md-9 ">
+					<table align="left " valign="top " >
+						<tr>
+							<td style="background:#eeffee; "></td>
+							<td colspan="2 " style="background:#eeffff; ">
+								<h5><a href="player.html#rundame ">ランダム再生</a></h5>
+							</td>
+							<tr>
+								<td style="background:#eeffee; "></td>
+								<td style="background:#eeffff; "></td>
+								<td>
+									プレイヤー画面のメニューから呼び出す機能/ランダム再生で生成されたリストです。
+									<ul>
+										<li>
+											再生前に確認して削除などの編集が出来るようにしました。
+										</li>
+										<li>
+											曲数は設定のプレイリスト/ランダム再生の曲数で設定し、初期値は100曲です。
+										</li>
+									</ul>
+								</td>
+							</tr>
+					</table>
+				</div>
+				<div class="col-xs-9 col-sm-3 col-md3 div-img ">
+					<img src="img/list_rundum.png " alt="ランダム再生 " width="90% ">
+				</div>
+			</div>
+
+			<div class="row ">
+				<div class="col-xs-12 col-sm-9 col-md-9 div-img ">
+					<table align="left " valign="top " >
+						<tr>
+							<td style="background:#eeffee; "></td>
+							<td colspan="2 " style="background:#eeeeff; ">
+								<h5><a href="player.html#repat ">リピート再生</a></h5>
+							</td>
+							<tr>
+								<td style="background:#eeffee; "></td>
+								<td style="background:#eeeeff; "></td>
+								<td>
+									プレイヤー画面のメニューから呼び出す機能/リピート再生で生成されたリストです。
+									<ul>
+										<li>
+											他のプレイリストから、以前使ったリピート設定に戻れる様、一般的なプレイリストとして作成します。
+										</li>
+									</ul>
+								</td>
+							</tr>
+					</table>
+				</div>
+				<div class="col-xs-9 col-sm-3 col-md3 div-img ">
+					<img src="img/list_repeat.png " alt="リピート再生 " width="90% ">
+				</div>
+			</div>
+
+			<h3>リストアイテムのロングタップで表示されるメニュー</h3>
+
+			<div class="row ">
+				<div class="col-xs-12 ">
+					<table align="left " valign="top " >
+						<tr>
+							<td style="background:#dddddd; ">
+								<h4>アーティスト/アルバムリストの場合</h4>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+
+			<div class="row ">
+				<div class="col-xs-12 col-sm-9 col-md-9 ">
+					<table align="left " valign="top " >
+						<tr>
+							<td style="background:#dddddd; "></td>
+							<td colspan="2 ">
+								表示されているリストをロングタップすると、その時点で使える機能のメニューが表示されます。
+							</td>
+						</tr>
+						<tr>
+							<td style="background:#dddddd; "></td>
+							<td colspan=2 style="background:#888888; "></td>
+						</tr>
+						<tr>
+							<td style="background:#dddddd; "></td>
+							<td style="background:#888888; "></td>
+							<td>
+								<h5><a href="listup.html ">リストアップ編集</a></h5>
+								<ul>
+									<li>
+										全曲リストでリストアップされるアーティストの順番を調整する機能です。
+									</li>
+									<li>
+										活動期間中にグループの遺跡などでアルバムのアーティスト名が異なるアーティストや、まとめきれなかったコンピレーションのまとめ直しにご利用ください。
+									</li>
+									<li>
+										アーティスト名のリストの読み込みが必要ですので、アーティストリストを選択してからアルバムを選択して下さい。
+									</li>
+								</ul>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="col-xs-9 col-sm-3 col-md-3 div-img ">
+					<img src="img/list_titol_lt_menu.png " alt="アーティスト/アルバムリストの場合 " width="90% ">
+				</div>
+			</div>
+
+			<div class="row ">
+				<div class="col-xs-12 col-sm-9 col-md-9 ">
+					<table>
+						<tr>
+							<td style="background:#dddddd; "></td>
+							<td colspan="2 " style="background:#eeeeee; "></td>
+						</tr>
+						<tr>
+							<td style="background:#dddddd; "></td>
+							<td style="background:#eeeeee; "></td>
+							<td>
+								<h5><a href="request.html ">リクエスト</a></h5>
+							</td>
+						</tr>
+						<tr>
+							<td style="background:#dddddd; "></td>
+							<td style="background:#eeeeee; "></td>
+							<td>
+								<ul>
+									<li>
+										例えばドライブの時に同乗した人が「次はこれを聴きたい」という曲をリスト化します。
+									</li>
+									<li>
+										最後の曲を再生し終えると消去される一過的な抹消される仮作成リストです。
+									</li>
+									<li>
+										このリストは再生した曲を順次消去して、すべてのリクエストを再生し尽くせば元のプレイリストで再生していた次の曲に戻ります。
+									</li>
+									<li>
+										*全曲リストからの選択を前提にしていますので、まずは全曲リストを作成して下さい。
+									</li>
+								</ul>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="col-xs-9 col-sm-3 col-md3 div-img ">
+					<img src="img/rquest_list_if1.png " alt="リクエストIF " width="90% ">
+				</div>
+			</div>
+
+			<div class="row ">
+				<div class="col-xs-12 col-sm-9 col-md-9 ">
+					<table align="left " valign="top " >
+						<tr>
+							<td style="background:#dddddd; "></td>
+							<td colspan="2 " style="background:#888888; "></td>
+						</tr>
+						<tr>
+							<td style="background:#dddddd; "></td>
+							<td style="background:#888888; "></td>
+							<td>
+								<h5><a name="add_pl ">プレイリストに追加</a></h5>
+																選択した曲を既存のプレイリストに追加します。
+								<ul>
+									<li>
+										既存のプレイリストをリストアップしますので、追加先を選択して下さい。
+									</li>
+								</ul>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="col-xs-9 col-sm-3 col-md-3 div-img ">
+					<img src="img/playlist_ni_tuika.png " alt="追加先プレイリスト " width="90% ">
+				</div>
+			</div>
+
+			<div class="row ">
+				<div class="col-xs-12 col-sm-9 col-md-9 ">
+					<table align="left " valign="top " >
+						<tr>
+							<td style="background:#dddddd; "></td>
+							<td colspan="2 " style="background:#bbbbbb; "></td>
+						</tr>
+						<tr>
+							<td style="background:#dddddd; "></td>
+							<td style="background:#bbbbbb; "></td>
+							<td>
+								<h5><a name="add_pl ">新規プレイリストを作成して追加</a></h5>
+							</td>
+						</tr>
+						<tr>
+							<td style="background:#dddddd; "></td>
+							<td style="background:#bbbbbb; "></td>
+							<td>
+								選択した曲を1曲目に、新規のプレイリストを作成します。
+								<ul>
+									<li>
+										プレイリスト名を設定するダイアログを表示します。
+									</li>
+									<li>
+										初期値は「プレイリスト」+作成時点のタイムスタンプです。
+									</li>
+								</ul>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="col-xs-9 col-sm-3 col-md3 div-img ">
+					<img src="img/siniki_lisuto_tuika.png " alt="新規プレイリストを作成して追加 " width="90% ">
+				</div>
+			</div>
+
+			<div class="row ">
+				<div class="col-xs-12 col-sm-9 col-md-9 ">
+					<table align="left " valign="top " >
+						<tr>
+							<td style="background:#dddddd; "></td>
+							<td colspan="2 " style="background:#999999; "></td>
+						</tr>
+						<tr>
+							<td style="background:#dddddd; "></td>
+							<td style="background:#999999; "></td>
+							<td>
+								<h5><a name="del_pl ">このリストから削除</a></h5>
+							</td>
+						</tr>
+						<tr>
+							<td style="background:#dddddd; "></td>
+							<td style="background:#999999; "></td>
+							<td>
+								選択した曲を表示しているプレイリストから削除します。
+								<ul>
+									<li>
+										ファイル自体が消去されるわけでは有りません。
+									</li>
+								</ul>
+								曲のタイトルをロングタップ
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="col-xs-9 col-sm-3 col-md3 div-img ">
+					<img src="img/playlist_lt_menu.png " alt="プレイリストロングタップメニュー " width="90% ">
+				</div>
+			</div>
+
+			<div class="row ">
+				<div class="col-xs-12 col-sm-12 col-md-12 ">
+					<table align="left " valign="top " >
+						<tr>
+							<td style="background:#dddddd; "></td>
+							<td colspan="2 " style="background:#eeeeee; "></td>
+						</tr>
+						<tr>
+							<td style="background:#dddddd; "></td>
+							<td style="background:#eeeeee; "></td>
+							<td>
+								<h5><a name="move_item ">上下移動</a></h5>
+							</td>
+						</tr>
+						<tr>
+							<td style="background:#dddddd; "></td>
+							<td style="background:#eeeeee; "></td>
+							<td>
+								選択した曲を表示しているプレイリストの中で再生順を調整します。
+								<ul>
+									<li>
+										「このリストから削除」と合わせて「全曲リスト」以外で複数の曲が登録されているリストで表示されます。
+									</li>
+								</ul>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="row ">
+				<h3>ToolBarメニュー</h3>
+			</div>
+			<div class="row ">
+				<div class="col-xs-12 col-sm-9 col-md-9 ">
+					<table align="left " valign="top " >
+						<tr>
+							<td colspan="2 " style="background:#dddddd; ">
+								古い端末ではボタンで表示するメニュー
+							</td>
+						</tr>
+						<tr>
+							<td style="background:#dddddd; "></td>
+							<td>
+								<h4>機能メニュー</h4>
+								リスト画面用に作った機能を集めました。
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="col-xs-9 col-sm-3 col-md-3 div-img ">
+					<img src="img/list_tb_menu00.png " alt="リストツールバーメニュー " width="90% ">
+				</div>
+			</div>
+
+			<div class="row ">
+				<div class="col-xs-12 col-sm-9 col-md-6 ">
+					<table align="left " valign="top " >
+						<tr>
+							<td style="background:#dddddd; "></td>
+							<td colspan="2 " style="background:#999999; "></td>
+						</tr>
+						<tr>
+							<td style="background:#dddddd; "></td>
+							<td style="background:#999999; "></td>
+							<td>
+								<h4><a name="simplelist ">シンプル表示に切替/<br>詳細表示に切替</a></h4>
+							</td>
+						</tr>
+						<tr>
+							<td style="background:#dddddd; "></td>
+							<td style="background:#999999; "></td>
+							<td>
+								詳細表示の時はシンプル表示に、シンプル表示の時は詳細表示に切替ます。
+								<ul>
+									<li>
+										シンプル表示は、曲名だけ、もしくはアルバム名やアーティスト名だけを表示するシンプルなリストです。
+									</li>
+									<li>
+										詳細表示は、表示された項目の付随情報とサムネールを加えたリストです。
+									</li>
+									<li>
+										設定の<a href="pref.html#listhyouji ">プレイヤー設定/リスト表示</a>(詳細表示/アイテムのみ)と同じパラメータを操作していますが、 リスト画面の操作性を上げるためにここにも切替IFを設けました
+									</li>
+									<li>
+										以前はシンプル表示を推奨していましたが、Ver1.2.31で描画アルゴリズムを変更し、詳細表示でもストレスなくご利用頂けるかと思います。
+									</li>
+								</ul>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="col-xs-9 col-sm-3 col-md-3 div-img ">
+					<img src="img/list_artist.png " alt="詳細リスト " width="90% ">
+				</div>
+				<div class="col-xs-9 col-sm-3 col-md-3 div-img ">
+					<img src="img/list_artist_simple.png " alt="リシンプルリスト " width="90% ">
+				</div>
+			</div>
+
+			<div class="row ">
+				<div class="col-xs-12 col-sm-9 col-md-9 ">
+					<table align="left " valign="top " >
+						<tr>
+							<td style="background:#dddddd; "></td>
+							<td colspan="2 " style="background:#999999; "></td>
+						</tr>
+						<tr>
+							<td style="background:#dddddd; "></td>
+							<td style="background:#999999; "></td>
+							<td>
+								<h4>最近追加リストの更新</h4>
+							</td>
+						</tr>
+						<tr>
+							<td style="background:#dddddd; "></td>
+							<td style="background:#999999; "></td>
+							<td>
+								前記しました最近追加リストの作成/更新操作です。
+								<ul>
+									<li>
+										作成に入る前にリストアップするアルバム枚数を確認/修正するダイアログを表示します。<br> ※この修正は設定画面に反映されます。
+									</li>
+								</ul>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="col-xs-9 col-sm-3 col-md-3 div-img ">
+					<img src="img/list_tb_menu12_saikintuika_kousin.png " alt="最近追加リストの更新 " width="90% ">
+				</div>
+			</div>
+
+			<div class="row ">
+				<div class="col-xs-12 col-sm-9 col-md-9 ">
+					<table align="left " valign="top " >
+						<tr>
+							<td style="background:#dddddd; "></td>
+							<td colspan="2 " style="background:#999999; "></td>
+						</tr>
+						<tr>
+							<td style="background:#dddddd; "></td>
+							<td style="background:#999999; "></td>
+							<td>
+								<h4>リスト名変更</h4>
+								プレイリストの名称を変更します。
+								<ul>
+									<li>
+										作成したリストは勿論、最近追加や最近再生、ランダム再生、リピート再生といったプログラム生成させるリストも名称変更して恒久的に残せる様にしました。
+									</li>
+								</ul>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="col-xs-9 col-sm-3 col-md-3 div-img ">
+					<img src="img/list_tb_menu13_listmei_henkolu.png " alt="リスト名変更 " width="90% ">
+				</div>
+			</div>
+			
+			<div class="row ">
+				<div class="col-xs-12 col-sm-9 col-md-9 ">
+					<table align="left " valign="top " >
+						<tr>
+							<td style="background:#dddddd; "></td>
+							<td colspan="2 " style="background:#999999; "></td>
+						</tr>
+						<tr>
+							<td style="background:#dddddd; "></td>
+							<td style="background:#999999; "></td>
+							<td>
+								<h4>リストを削除</h4>
+								不要なプレイリストを削除します。
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="col-xs-9 col-sm-3 col-md-3 div-img ">
+					<img src="img/list_tb_menu14_listsakujyo.png " alt="リストを削除 " width="90% ">
+				</div>
+			</div>
+
+
+			<div class="row ">
+				<div class="col-xs-12 col-sm-9 col-md-9 ">
+					<table align="left " valign="top " >
+						<tr>
+							<td style="background:#dddddd; "></td>
+							<td colspan="2 " style="background:#999999; "></td>
+						</tr>
+						<tr>
+							<td style="background:#dddddd; "></td>
+							<td style="background:#999999; "></td>
+							<td>
+								<h4>表示されていないアーティスト</h4>
+								<ul>
+									<li>
+										コンピレーションなどに分類されるなどの理由でアーティストリストに表示されていないアーティストをアーティストリストに表示させます。
+									</li>
+																		<li>
+										調整リストに加えて全曲リストを修正します。
+									</li>
+								</ul>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="col-xs-9 col-sm-3 col-md-3 div-img ">
+					<img src="img/list_tb_menu15hihyouji_artist.png " alt="表示されていないアーティスト " width="90% ">
+				</div>
+			</div>
+
+			<div class="row ">
+				<div class="col-xs-12 col-sm-9 col-md-6 ">
+					<table align="left " valign="top " >
+						<tr>
+							<td style="background:#dddddd; "></td>
+							<td colspan="2 " style="background:#999999; "></td>
+						</tr>
+						<tr>
+							<td style="background:#dddddd; "></td>
+							<td style="background:#999999; "></td>
+							<td>
+								<h4><a href="zenkyokulist.html ">全曲リスト</a>更新</h4>
+							</td>
+						</tr>
+						<tr>
+							<td style="background:#dddddd; "></td>
+							<td style="background:#999999; "></td>
+							<td>
+								<ul>
+									<li>
+										アルファベット順に並べたアーティスト、年代順に並べたアルバム、番号通りに並んだタイトルタイトルリスト…と、連続再生が可能なリストを構成します。
+									</li>
+									<li>
+										本来はメモリーカードや内蔵メモリに楽曲ファイルがコピーされたタイミングで自動更新されるはずのデータですが、項目を埋めきれずに"unknown "と表記された状態が発生します。<br>このデータ欠落があると自動再生も異常終了する事がありますので、動作が奇妙な時はこの機能をお試しください。
+									</li>
+								</ul>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="col-xs-9 col-sm-3 col-md-3 div-img ">
+					<img src="img/inst02.png " alt="全曲リスト " width="90% ">
+				</div>
+				<div class="col-xs-9 col-sm-3 col-md-3 div-img ">
+					<img src="img/inst_end.png " alt="全曲リスト " width="90% ">
+				</div>
+			</div>
+
+			<div class="row ">
+				<div class="col-xs-12 col-sm-9 col-md-9 ">
+					<table align="left " valign="top " width="none ">
+						<tr>
+							<td colspan="3 " style="background:#dddddd; "></td>
+						</tr>
+						<tr>
+							<td style="background:#dddddd; "></td>
+							<td colspan="2 ">
+								<h4>その他</h4>
+							</td>
+						</tr>
+						<tr>
+							<td style="background:#dddddd; "></td>
+							<td colspan="2 " style="background:#eeeeee; "></td>
+						</tr>
+						<tr>
+							<td style="background:#dddddd; "> </td>
+							<td style="background:#eeeeee; "></td>
+							<td>
+								<h5><a href="pref.html ">設定</a>とヘルプ表示</h5>
+								<ul>
+									<li>
+										プレイヤー画面と同じです。
+									</li>
+								</ul>
+								終了
+								<ul>
+									<li>
+										リスト表示を終了します。
+									</li>
+								</ul>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="col-xs-9 col-sm-3 col-md-3 div-img ">
+					<img src="img/list_tb_menu20.png " alt="リストツールバーメニュー機能 " width="90% ">
+				</div>
+			</div>
+
+			<div class="row ">
+				<div class="col-xs-12 col-sm-9 col-md9 ">
+					<table align="left " valign="top " >
+						<tr>
+							<td style="background:#dddddd; "></td>
+							<td colspan="2 " style="background:#eeeeee; "></td>
+						</tr>
+						<tr>
+							<td style="background:#dddddd; "></td>
+							<td style="background:#eeeeee; "></td>
+							<td>
+								<h4><a name="syuuseilist ">修正リスト表示</a></h4>
+								修正リストはリストアップ修正で指定した"どのアーティスト(アルバム)をどのアーティストとしてリストアップするか "を記録しているデータベースです。
+								<ul>
+									<li>
+										リストアイテムのロングタップで表示される「リストアップ編集」で設定た状況を以下の様にダイアログ表示します。<br> アーティスト名
+										<br> (アルバム)
+										<br>&gt;&gt;リストアップ先のアーティスト名、もしくは分類
+									</li>
+									<li>
+										リストに表示されているアイテムをロングタップすると削除が出来るダイアログを表示します。
+									</li>
+								</ul>							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="col-xs-9 col-sm-3 col-md-3 div-img ">
+					<img src="img/list_tb_menu22_syuseilisuto.png " alt="修正リスト表示 " width="90% ">
+				</div>
+			</div>
+
+			<h3>キー割付け</h3>
+
+			<div class="row ">
+				<div class="col-xs-12 ">
+					<table align="left " valign="top " >
+						<tr>
+							<td colspan="2 " style="background:#dddddd; ">
+								かなり古い端末での確認ですので最近の端末では同様に動作しないかもしれません
+							</td>
+						</tr>
+						<tr>
+							<td style="background:#dddddd; "></td>
+							<td>
+								原則；４方向キーの上を押せば上のアイテム、下を押せば下のアイテムを選択します。
+							</td>
+						</tr>
+						<tr>
+							<td style="background:#dddddd; "></td>
+							<td>
+								リストの最終アイテムで４方向キーの下
+								<ul>
+									<li>
+										ヘッドを選択します。
+									</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td style="background:#dddddd; "></td>
+							<td>
+								ヘッドで４方向キーの上
+								<ul>
+									<li>
+										ヘッドを選択します。
+									</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td style="background:#dddddd; "></td>
+							<td>
+								バックキーの扱い
+								<ul>
+									<li>
+										タイトル→アルバム→アーティストとヘッドのタップと同じ動作を行い、最上位のリストが表示されている時はリストを終了してプレイヤーに戻ります。
+									</li>
+								</ul>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer class="footer ">
+		<p style="text-align: right; background-color:white ">
+			<div class="col-xs-12 col-sm-12 ">
+				<div class="col-xs-6 col-sm-8 ">
+					<a href="../index.htm ">
+						<img src="../img/koubou.png " alt="比治山工房 " width="100% ">
+					</a>
+				</div>
+				<div class="col-xs-2 col-sm-2 ">
+					<a href="https://play.google.com/store/apps/details?id=com.hijiyam_koubou.marasongs ">
+						<img src="../img/marasongs.png " alt="Marasong_qr " vspace="1 " hspace="1 "></a>
+				</div>
+				<div class="col-xs-4 col-sm-2 ">
+					Copyright 2016
+				</div>
+			</div>
+		</p>
+	</footer>
+	</div>
+</body>
+
+</html>

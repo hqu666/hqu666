@@ -1,0 +1,459 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--互換表示をさせない;InternetExplorer-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PHONE 2ndの使い方・電話帳リスト</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
+    <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+    <link href="../../main.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div align="right">
+        <a href="en/pbook.html">English</a>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 col-md-8">
+                <table align="left" valign="top" border="0" style="font-size: 11pt; line-height: 150%;">
+                    <tr valign="top">
+                        <td style="width: 58px; height: 22px">
+                            <a href="https://play.google.com/store/apps/details?id=com.hijiyama_koubou.phone2nd_l">
+                                <img src="img/ic_launcher.png" alt="phone2nd_l" style="width: 48px; " vspace="1" hspace="1">
+                            </a>
+                        </td>
+                        <td style="margin: 10px; padding: 10px;">
+                            カンタン通話に工夫した
+                            <h2>Phone2nd</h2>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-sm-12 col-md-4" style="text-align: right;">
+                <P class="container">
+                    <div class="row">
+                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3146425308522831" data-ad-slot="4219928305" data-ad-format="auto"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+                    <div class="row">
+                        <script type="text/javascript">
+                            var nend_params = {
+                                "media": 32269,
+                                "site": 206990,
+                                "spot": 583222,
+                                "type": 1,
+                                "oriented": 1
+                            };
+                        </script>
+                        <script type="text/javascript" src="https://js1.nend.net/js/nendAdLoader.js"></script>
+                    </div>
+                </P>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <ul class="nav nav-tabs" style="width: 800dp; margin: 0px 0px 0px 15px;">
+                    <li class="nav-item" style="margin-right: 18px;">
+                        <a class="nav-link bg-primary" href="index.html">概要</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 18px;">
+                        <a class="nav-link bg-primary" href="teiban.html">定番リスト</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 18px;">
+                        <a class="nav-link bg-primary active" style="background: #5cb85c !important;">電話帳リスト</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 18px;">
+                        <a class="nav-link bg-primary" href="pbook_page.html">電話帳</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 18px;">
+                        <a class="nav-link bg-primary" href="lireki.html">履歴リスト</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 18px;">
+                        <a class="nav-link bg-primary" href="kennsaku.html">検索</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 18px;">
+                        <a class="nav-link bg-primary" href="settei.html">設定画面</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div style="line-height:16px ; text-alingn:left;
+				 border-style: solid ; border-width: 1px; padding: 10px 5px 10px 20px; border-color: #999999 ;
+				 border-radius: 10px; box-shadow: 10px 10px 10px #AAA;">
+
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3>電話帳リスト</h3>
+                    電話帳を一覧表示するおなじみのリスト機能です。
+                    <ul>
+                        <li>
+                            Phone2ndでは右上のボタンで表示名とグループリストを切り替えてご利用頂きます。
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-9 col-md-9">
+                    <table align="left" valign="top" border="0">
+                        <tr>
+                            <td colspan="2" width=100% style="background:#ffeeff;">
+                                <h3>表示名リスト</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background:#ffeeff;"></td>
+                            <td>
+                                日本語モードでは表示名の読みがなの一文字目（あいうえお）、<br>英語モードでは頭文字(abc…)でグループ化したリストでご利用いただきます。
+                                <ul>
+                                    <li>
+                                        まずは画面の一番に有るスピナーで行頭文字(あかさたな)を選択します。
+                                        <ul>
+                                            <li>
+                                                行頭文字が無ければその行内に有る文字を選択します。<br> たとえば「さしすせそ」の「さ」が無くても「す」があれば親リストの表記で「す」のリストを選択します。
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        読みの一文字目リストを開いて表示された子リストの表示名をタッチすると、該当する電話帳を開きます。
+                                        <ul>
+                                            <li>
+                                                ロングタップでするとその電話帳を削除するかどうかが選べます。
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        スピナー
+                                        <ul>
+                                            <li>
+                                                あかさたな単位のジャンプ機能です。
+                                            </li>
+                                            <li>
+                                                末尾の「グループに切替」でアカウント毎のグループリストに切り替えます。
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-3">
+                    <img src="img/04pBook13.png" alt="電話帳リスト" width="90%">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-9 col-md-9">
+                    <table align="left" valign="top" border="0">
+                        <tr>
+                            <td style="background:#ffeeff;"></td>
+                            <td colspan="2" width=100% style="background:#ffeeee;">
+                                <h4>表示名リストのメニュー機能</h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background:#ffeeff;"></td>
+                            <td style="background:#ffeeee;"></td>
+                            <td>
+                                電話帳を作成して追加
+                                <ul>
+                                    <li>
+                                        本体に作成しますので電話帳編集でアカウントを設定してください。
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-3">
+                    <img src="img/jyuuhukuCyuusyutu0100.png" alt="重複削除1" width="90%">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-9 col-md-9">
+                    <table align="left" valign="top" border="0">
+                        <tr>
+                            <td style="background:#ffeeff;"></td>
+                            <td colspan="2" width=100% style="background:#ffffee;">
+                                <h4><a name="jyuuhuku">重複した電話帳の抽出</a></h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background:#ffeeff;"></td>
+                            <td style="background:#ffffee;"></td>
+                            <td>
+                                一つの電話帳の中で重複している電話番号やアドレスなどのデータレコード、<br> 表示名が消えてしまって使い物にならなくなっている電話帳を消去できます。
+                                <p>
+                                    *重複が発生する状況
+                                    <ol>
+                                        <li>
+                                            電話帳データをデータをバックアップファイルから戻す時に2回やってしまった(上書きさせずに追加してしまった)
+                                        </li>
+                                        <li>
+                                            Androroidの電話帳は@gmaile.comで指定したクラウド管理の電話帳と本体保存の電話帳で二重になった
+                                        </li>
+                                        <li>
+                                            更に本体の保存先名称(アカウント)は端末ごとに異なりますので、何台かの端末に引き継ぐ度にアカウント(登録場所の記載の違いで)同じ電話帳が二重化してしまう<br>
+                                        </li>
+                                    </ol>
+                                    など様々な原因で電話帳の重複が発生します。<br> Phone2ndでは最初のレコードだけを表示して、そのレコードだけを使えるようにしていましたが、他の電話帳アプリと併用されている方は、本来は一つにまとまっている筈の同じ表示名の複数の電話帳に、それぞれ固有のデータを書き込んでいる場合もありますので、最初に登録されている電話帳にデータをまとめます。
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-3">
+                    <img src="img/jyuuhukuCyuusyutu0110.png" alt="重複削除2" width="90%">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-9 col-md-9">
+                    <table align="left" valign="top" border="0">
+                        <tr>
+                            <td style="background:#ffeeff;"></td>
+                            <td colspan="2" width=100% style="background:#ffffee;">
+                                <h4><a name="jyuuhuku">使い方</a></h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background:#ffeeff;"></td>
+                            <td style="background:#ffffee;"></td>
+                            <td>
+                                <ol>
+                                    <li>
+                                        電話帳リストを表示してメニューから”重複した電話帳の抽出”。
+                                    </li>
+                                    <li>
+                                        表示されるリストの項目をタップして一件づつ処理します。<br> 表示されるリストはタイトル部で（重複しているレコード件数/総レコード数）
+                                        <br> 各レコードは　表示名;最初に抽出した重複部分　です。
+                                        <br> 処理後に表示されるトーストは表示名が同じ電話帳から移し替えたレコード数 : 同じ電話帳で重複しているレコードの削除件数　；　削除した同じ表示名の電話帳　です。
+                                    </li>
+                                    <li>
+                                        連続実行ボタンで一気に処理する事もできます.<br> *ご利用の端末の設定によっては正常に動作しない事もあり得ますので、まずは一件つつ、数件試して問題がない事を確認してからご利用ください。
+                                    </li>
+                                </ol>
+
+                                <h3>ご注意</h3>
+                                <ul>
+                                    <li>
+                                        データの消失に関しては責任を負いかねますので、バックアップを取ってからご利用ください。
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-3">
+                    <img src="img/jyuuhukuCyuusyutu0111.png" alt="重複削除3" width="90%"><br>
+                    <img src="img/jyuuhukuCyuusyutu0112.png" alt="重複削除4" width="90%">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-9 col-md-9">
+                    <table align="left" valign="top" border="0">
+                        <tr>
+                            <td colspan="3" style="background:#ffeeee;">
+                                <h3>グループリスト</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background:#ffeeee;"></td>
+                            <td colspan="2">
+                                グループリストでは上部のスピナーで電話帳の登録先を示すアカウントを切り替えます。
+                                <ul>
+                                    <li>
+                                        グループは各アカウントに設定された”器”なので、メンバー（割り付けられた電話帳）不在でも、メンバー未設定のグループも有ります。
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background:#ffeeee;"></td>
+                            <td colspan="2" style="background:#ffddee;">
+                                <h4>親リストをロングタップすると</h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background:#ffeeee;"></td>
+                            <td style="background:#ffddee;"></td>
+                            <td>
+                                <ol>
+                                    <li>
+                                        (そのグループに)電話帳を新規作成して追加
+                                    </li>
+                                    <li>
+                                        既に作成してある電話帳を(そのグループに)追加
+                                    </li>
+                                    <li>
+                                        (そのグループの)グループ名変更
+                                    </li>
+                                    <li>
+                                        （その）グループ（を）削除
+                                    </li>
+                                </ol>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-3">
+                    <img src="img/04pBook50.png" alt="名前からグループへ" width="90%">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-9 col-md-9">
+                    <table align="left" valign="top" border="0">
+                        <tr>
+                            <td style="background:#ffeeee;"></td>
+                            <td colspan="2" width=100% style="background:#ffeedd;">
+                                <h4>子リストのアイテムをロングタップすると</h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background:#ffeeee;"></td>
+                            <td style="background:#ffeedd;"></td>
+                            <td>
+                                <ol>
+                                    <li>
+                                        選択した人をそのグループから外す
+                                    </li>
+                                    <li>
+                                        選択した人のアカウントを変更
+                                        <small><ul>
+								<li>
+									変更した先も同名のグループを作成します。
+								</li>
+							</ul></small>
+                                    </li>
+                                </ol>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background:#ffeeee;"></td>
+                            <td colspan="2" width=100% style="background:#eeffee;">
+                                <h4>スピナー</h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background:#ffeeee;"></td>
+                            <td style="background:#eeffee;"></td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        アカウント(登録先)の切り替えです
+                                    </li>
+                                    <li>
+                                        末尾の「表示名に切替」で読み順の全電話帳リストに切り替えます。
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-3">
+                    <img src="img/04pBook55.png" alt="グループリスト" width="90%">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-9 col-md-9">
+                    <table align="left" valign="top">
+                        <tr>
+                            <td style="background:#ffeeee;"></td>
+                            <td colspan="2" width=100% style="background:#eeeeff;">
+                                <h4>グループリストのメニュー機能</h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background:#ffeeee;"></td>
+                            <td style="background:#eeeeff;"></td>
+                            <td>
+                                <ol>
+                                    <li>
+                                        新規グループ作成
+                                    </li>
+                                    <li>
+                                        メンバー不在のグループを削除
+                                    </li>
+                                    <li>
+                                        登録先（アカウント）の一括変換
+                                        <ul>
+                                            <li>
+                                                Android端末の移動時に一旦クラウド側に登録、後日、本体に切替・・・といった使い方もあります。
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ol>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-3">
+                    <img src="img/04pBook90.png" alt="グループから名前へ" width="90%">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <table align="left" valign="top">
+                        <tr>
+                            <td colspan="2" width=100% style="background:#ddffee;">
+                                <h4>メニューグループ「その他」について</h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background:#ddffee;"></td>
+                            <td>
+                                他の画面と共通で
+                                <ol>
+                                    <li>
+                                        <a href="settei.html">設定</a>
+                                    </li>
+                                    <li>
+                                        設定初期化
+                                    </li>
+                                    <li>
+                                        ヘルプ
+                                    </li>
+                                    <li>
+                                        終了<br> この画面を閉じて起動画面に戻ります。
+                                    </li>
+                                </ol>
+                                </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <p>
+        <footer>
+            <a href="../index.htm">
+                <img src="../img/koubou.png" alt="比治山工房" style="width: 512px">
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.hijiyama_koubou.phone2nd_l">
+                <img src="../img/phone2nd.png" alt="phone2nd_qr" vspace="1" hspace="1"></a>
+            Copyright 2016</footer>
+        </div>
+        </div>
+
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE HTML>
+<!--PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"-->
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+    <title>.NETで作る道具箱</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/org_util.js"></script>
+    <link rel="stylesheet" type="text/css" href="../main.css" title="優先スタイル">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <ul class="nav nav-tabs nav-justified">
+                <li role="presentation" class="active"><a href="#">.NET/C#</a></li>
+                <li role="presentation"><a href="../lab/">webプログラム実験室</a></li>
+                <li role="presentation"><a href="../android/">Andriod</a></li>
+            </ul>
+        </div>
+        <div id="contents">
+            <div class="row" id='pagetop'>
+                <div class="panel panel-default">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-xs-12 col-sm-7">
+                                <h1>.NETで作る道具箱</h1>
+                                <div class="alert alert-info" role="alert" style="width:96%;height: auto;margin-left: 10px;">
+                                    2017年の８月半ばから.NETを使い始めました。<br> まだまだ勉強に域を脱しませんが意外なほど簡単にWindowsアプリケーションが作れる事に感動しつつ、課題を模索しています。
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-5" style="text-align: right;">
+                                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                                <!-- サポートページトップ -->
+                                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3146425308522831" data-ad-slot="4219928305" data-ad-format="auto"></ins>
+                                <script>
+                                    (adsbygoogle = window.adsbygoogle || []).push({});
+                                </script>
+
+                                <script type="text/javascript">
+                                    var nend_params = {
+                                        "media": 32269,
+                                        "site": 206990,
+                                        "spot": 583222,
+                                        "type": 1,
+                                        "oriented": 1
+                                    };
+                                </script>
+                                <script type="text/javascript" src="https://js1.nend.net/js/nendAdLoader.js"></script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row " id="awcbrowser">
+                <div class="col-sm-12">
+                    <!--free_strage> id="msg_pict_send_row" style="width: 96vw;padding: 10px;margin: 1vw;"free_strage>-->
+                    <div class="panel-group">
+                        <div class="panel panel-default">
+                            <div class="panel-title">
+                                <div class="panel-heading btn collapse_bt" data-toggle="collapse" style="background-color: #fcf8e3" data-target="#awcbrowser_body">
+                                    <h2>
+                                        <img src="awcbrowser/img/awcfb_icon.png" class="phorRes" style="width:56px;" align="top" alt="icon"> AWC File Browser
+                                    </h2>
+                                </div>
+                            </div>
+
+                            <div id="awcbrowser_body" class="panel-collapse collapse in" aria-expanded="true">
+                                <!--class="panel-collapse collapse" -->
+                                <div class="panel-body">
+                                    <div class="panel-group">
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <div style="padding: 10px;background-color: #3c763d;color: white;">
+                                                    概要
+                                                </div>
+                                                <div style="padding: 10px;background-color: #dff0d8;">
+                                                    ファイルを整理する時に、中身を確認してから(After watching the contents)捨てるか残すかを判断できるファイルブラウザ―です。<br>
+                                                    <img src="awcbrowser/img/all_listup.png" class="phorRes" style="width:100%;" align="top" alt="all_m2ts"><br><br>
+                                                    <div class="alert alert-info">
+                                                        最新版は2017年9月20日（Ver,1.2.0)汎用プレイリスト(.m3u)対応<br>
+                                                        <ul>
+                                                            <li>
+                                                                自動送りは出来ませんのでボタンクリック操作して下さい。
+                                                            </li>
+                                                        </ul><br>
+                                                        <a href="awcbrowser/awsfilebrowser.zip" target="_blank" class="btn btn-primary btn-sx col-xs-12 col-sm-12" role="button" style="margin-bottom: 10px;padding: 5px;">
+                                                            ダウンロード
+                                                            <div class="label label-danger  label-sx "  style="margin-top: 5px;">
+                                                                awsfilebrowser.zip
+                                                            </div>の中の「setup.exe」をダブルクリックするとインストールします
+                                                        </a><br>警告が発生するかもしれません<br>
+                                                        <ul>
+                                                            <li>
+                                                                ブラウザのダウンロードブロックは破棄/継続の「継続」を選択して下さい。
+                                                                <a href="https://thk.kanzae.net/net/itc/t2691/" target="_blank">(ご参照)</a>
+                                                            </li>
+                                                            <li>
+                                                                Windows Defender SmartScreenのインストールブロックに引っ掛かりますが、「詳細情報」をクリックするとインストールを継続できます。
+                                                                <a href="https://shnk38.com/pc/how-to-win/win10-setting-smartscreen/" target="_blank">(ご参照)</a>
+                                                            </li>
+                                                        </ul>
+                                                        正しい配布方法を確認中です。
+                                                    </div>
+                                                </div>
+                                                <p></p>
+
+                                                <div>
+                                                    <a href="awcbrowser/" class="btn btn-warning btn-sx col-xs-12 col-sm-12" role="button" style="margin-top: 10px;padding: 5px;margin-bottom: 10px;">
+                                                    説明
+                                                </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--free web strage-->
+
+            <div class="row " id="tex2calcwin">
+                <div class="col-sm-12">
+                    <div class="panel-group">
+                        <div id="scenr_propaty" class="panel panel-default">
+                            <div class="panel-title">
+                                <div class="panel-heading btn collapse_bt" data-toggle="collapse" style="background-color: #fcf8e3" data-target="#tex2calcwin_body">
+                                    <h2> tex2calc (文字cal win)</h2>
+                                </div>
+                            </div>
+                            <div id="tex2calcwin_body" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div class="panel-group">
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-8">
+                                                <div style="text-align: right;">只今考案中</div>
+                                                <div style="padding: 10px;background-color: #3c763d;color: white;">
+                                                    概要
+                                                </div>
+                                                <div style="padding: 10px;background-color: #dff0d8;">
+                                                    コピーしてきたテキストから数字と演算子、関数を抜き出して計算します。
+                                                    <ul>
+                                                        <li>
+                                                            左半分は入力TextBoxと計算経過表示
+                                                            <ul>
+                                                                <li>
+                                                                    計算間違いを見つけたらそこだけ再入力して再計算
+                                                                </li>
+                                                                <li>
+                                                                    計算経過表示でお子さんに正しい計算順を教える時にも使えます。
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            右半分は計算機としてのソフトキーボード
+                                                            <ul>
+                                                                <li>
+                                                                    タッチパネルで当たり前の電卓操作
+                                                                </li>
+                                                                <li>
+                                                                    デザインの切り替えも用意します。
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="alert alert-info">
+                                                        準備中
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-4">
+                                                <p class="alert btn-sm" role="alert" style="background-color: #ccc;text-align: center;font-size: 18px;">
+                                                    只今考案中
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--tex2calc-->
+
+            <div class="row " id="remasincloc">
+                <div class="col-sm-12">
+                    <div class="panel-group">
+                        <div id="scenr_propaty" class="panel panel-default">
+                            <div class="panel-title">
+                                <div class="panel-heading btn collapse_bt" data-toggle="collapse" style="background-color: #fcf8e3" data-target="#remasincloc_body">
+                                    <h2>減算時計 (仮名)</h2>
+                                </div>
+                            </div>
+                            <div id="remasincloc_body" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div class="panel-group">
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-8">
+                                                <div style="text-align: right;">只今考案中</div>
+                                                <div style="padding: 10px;background-color: #3c763d;color: white;">
+                                                    概要
+                                                </div>
+                                                <div style="padding: 10px;background-color: #dff0d8;">
+                                                    スケジュールやアラームに設定した時刻までの残り時間を表示します。
+                                                    <ul>
+                                                        <li>
+                                                            目覚ましアラームと連携して夜更かし防止に
+                                                            <ul>
+                                                                <li>
+                                                                    実質的な目覚まし時計に使われているスマホのアラームと連携する方法を模索しています。
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            スケジュールと連携してアポ忘れ防止
+                                                        </li>
+                                                        <li>
+                                                            シンプルにタイマーとしてもご利用頂けます。
+                                                        </li>
+                                                    </ul>
+                                                    <div class="alert alert-info">
+                                                        準備中
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-4">
+                                                <p class="alert btn-sm" role="alert" style="background-color: #ccc;text-align: center;font-size: 18px;">
+                                                    只今考案中
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--tex2calc-->
+
+            <div class="row " id="info_row">
+                <div class="col-sm-12">
+                    <div class="panel-group">
+                        <div id="scenr_propaty" class="panel panel-default">
+                            <!-- <div class="panel-heading"> -->
+                            <div class="panel-title">
+                                <div class="panel-heading btn btn-default collapse_bt" data-toggle="collapse" data-target="#edit_other">
+                                    <h3>ご連絡</h3>
+                                </div>
+                            </div>
+                            <!-- </div> -->
+                            <div id="edit_other" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div class="panel-group">
+                                        只今、就活中。<br>広島市近郊のデベロッパー様でプログラマーをお探しでしたらご一報ください。
+                                        <input type="text" name="email" id="mail_send_titol" style="width:85%; margin-top: 5px;" placeholder="御社名をご記入ください">
+                                        <button type="button" id="mail_send" class="btn btn-Default glyphicon glyphicon-send btn-xs" role="button " style="margin-top: -6px;text-align: right;" onclick="mailSender(event)"> 送信</button>
+                                        <br>
+                                        <textarea type="text" name="email" class="form-control text_souce" id="mail_send_souce" style="min-height: 10em;margin-top: 5px;" placeholder="業務内容、就業場所などをご記入下さい。"></textarea>
+                                        <br>車での通勤可否と交通費の支給によっては広島市外への通勤も可能です。
+                                        <br>ハローワークインタネットサービスに登録されている案件は求人番号をご記入ください。
+                                        <br>その他の求人サイトにご登録の場合はその旨をお伝えください。
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="sidebar" style="padding:5px;">
+            <a href="../">
+                <img src="../img/koubou.png" alt="比治山工房" style="width:100%;margin-top: 10px;">
+            </a><br><br>
+            <ul>
+                <li>
+                    <a href="#pagetop">ページトップへ</a>
+                </li>
+                <li>
+                    <a href="#awcbrowser">AWC File Browser</a>
+                </li>
+                <li>
+                    <a href="#tex2calcwin">tex2calc (win)</a>
+                </li>
+                <li>
+                    <a href="#remasincloc">減算時計</a>
+                </li>
+                <li class="nomark_li">
+                </li>
+                <li>
+                    <a href="#info_row">ご連絡</a>
+                </li>
+            </ul>
+            <div>
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3146425308522831" data-ad-slot="4219928305" data-ad-format="auto"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+
+                <script type="text/javascript">
+                    var nend_params = {
+                        "media": 32269,
+                        "site": 206990,
+                        "spot": 583222,
+                        "type": 1,
+                        "oriented": 1
+                    };
+                </script>
+                <script type="text/javascript" src="https://js1.nend.net/js/nendAdLoader.js"></script>
+            </div>
+
+
+        </div>
+        <!-- <div id="footer">
+         </div> -->
+    </div>
+    <script type="text/javascript">
+        $(function() {
+            var headerHight = $('#header').outerHeight(true); //ヘッダの高さ
+            // console.log(headerHight);
+            $('a[href^="#"]').click(function() {
+                var href = $(this).attr("href");
+                var target = $(href == "#" || href == "" ? 'html' : href);
+                var position = target.offset().top - headerHight; //ヘッダの高さ分位置をずらす
+                $("html, body").animate({
+                    scrollTop: position
+                }, 550, "swing");
+                return false;
+            });
+        });
+    </script>
+</body>

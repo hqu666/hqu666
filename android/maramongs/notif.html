@@ -1,0 +1,299 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MaraSongs「ノティフィケーションプレイヤー」</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
+    <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+    <link href="../../main.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div align="right">
+        <a href="../notif.html">English</a>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 col-md-8">
+                <table align="left" valign="top" border="0" style="font-size: 11pt; line-height: 150%;">
+                    <tr valign="top">
+                        <td style="width: 58px; height: 22px">
+                            <a href="index.html">
+                                <img src="img/ic_launcher-web.png" alt="Marasong" style="width: 48px; " vspace="1" hspace="1">
+                            </a>
+                        </td>
+                        <td style="margin: 10px; padding: 10px;">
+                            当たり前に使える音楽プレイヤー
+                            <h2>MaraSongs</h2>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-sm-12 col-md-4" style="text-align: right;">
+                <P class="container">
+                    <div class="row">
+                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3146425308522831" data-ad-slot="4219928305" data-ad-format="auto"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+                    <div class="row">
+                        <script type="text/javascript">
+                            var nend_params = {
+                                "media": 32269,
+                                "site": 206990,
+                                "spot": 583222,
+                                "type": 1,
+                                "oriented": 1
+                            };
+                        </script>
+                        <script type="text/javascript" src="https://js1.nend.net/js/nendAdLoader.js"></script>
+                    </div>
+                </P>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <ul class="nav nav-tabs" style="width: 800dp; margin: 0px 0px 0px 15px;">
+                    <li class="nav-item" style="margin-right: 18px;">
+                        <a class="nav-link bg-primary active" href="index.html">概要</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 18px;">
+                        <a class="nav-link bg-primary" href="player.html">プレイヤー</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 18px;">
+                        <a class="nav-link bg-primary" href="list.html">リスト</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 18px;">
+                        <a class="nav-link bg-primary" href="pref.html">設定画面</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 18px;">
+                        <a class="nav-link bg-primary" href="zenkyokulist.html">特徴機能詳細</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="line-height:16px ; text-alingn:left;
+				 border-style: solid ; border-width: 1px; padding: 10px 5px 10px 20px; border-color: #999999 ;
+				 border-radius: 10px; box-shadow: 10px 10px 10px #AAA;">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <ul class="nav nav-tabs" style="margin: -10px 0px 0px -20px;">
+                        <li class="nav-item" style="margin-right: 18px;">
+                            <a class="nav-link bg-primary" href="zenkyokulist.html">全曲リスト</a>
+                        </li>
+                        <li class="nav-item" style="margin-right: 18px;">
+                            <a class="nav-link bg-primary" href="listup.html">リストアップ編集</a>
+                        </li>
+                        <li class="nav-item" style="margin-right: 18px;">
+                            <a class="nav-link bg-primary" href="request.html">リクエストリスト</a>
+                        </li>
+                        <li class="nav-item" style="margin-right: 18px;">
+                            <!-- <nobr> -->
+                            <a class="nav-link bg-primary" style="background: #5cb85c !important;">ノティフィケーション/ロックスクリーンプレイヤー</a>
+                            <!-- </nobr> -->
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <h2>ノティフィケーションプレイヤー</h2>
+                    <small>プレイヤー画面を閉じてしまったり、リスト操作や他のアプリを起動している時も、<br>
+					アンテナピクトなどが有る最上部の情報表示エリアに再生/停止とプレイヤーの終了ができるプレイヤを表示します。<br>
+					このプレイヤーは「設定」の「機種別調整」グループにある「ノティフィケーションプレイヤーを使う/使わない」で使用/未使用を選択できます。<br>*Android5.xからはロックスクリーンにもほぼ同じインターフェイスが表示されます。</small>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6 div-img">
+                    <img src="img/notif_player44.png" alt="b44" width="90%">
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 div-img">
+                    <img src="img/notif_player.png" alt="a5l" width="90%">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <table align="left" valign="top">
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#eeeeff;">
+                                <h4>画面構成</h4>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <table align="left" valign="top">
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#eeeeff;"></td>
+                            <td>
+                                再生/停止ボタン
+                                <ul>
+                                    <li>
+                                        プレイヤー画面の同デザインのボタンと同じ機能です。
+                                    </li>
+                                    <li>
+                                        多くのプレイヤーは停止でノティフィケーションの表示終了ですが、Mara-songではプレイヤー画面のボタンと動作を一致させ、ポーズにします。当然再生を再開できます。
+                                    </li>
+                                </ul>
+                                送り/戻しボタン(Android5.x以降)
+                                <ul>
+                                    <li>
+                                        ロックスクリーンと兼用になるので追加しました
+                                    </li>
+                                </ul>
+                                アルバムアート
+                                <ul>
+                                    <li>
+                                        ファイルに設定してある画像を表示します。
+                                    </li>
+                                </ul>
+                                曲情報
+                                <ul>
+                                    <li>
+                                        曲のタイトルの下にクレジットされているアーティスト名とアルバム名を表示します。<br>Android4.4以前は上から、アーティスト、アルバム名、タイトルで、カーオーディオなどBlutooth接続先の表示と同一です。
+                                    </li>
+                                </ul>
+                                終了ボタン
+                                <ul>
+                                    <li>
+                                        プレイヤーの終了はこのボタンで行います
+                                    </li>
+                                    <li>
+                                        音楽再生を終了したつもりでも、もし完全に終了していない様でしたら、ここから停止させて下さい。
+                                    </li>
+                                    <li>
+                                        ノティフィケーションからの終了は他に例を見ない機能なので、もしかしたら不備があるかもしれません。
+                                    </li>
+                                    <li>
+                                        例えば再起動を繰り返して動作が不安定になる時は、端末自体を再起動させて下さい。
+                                    </li>
+                                </ul>
+                                再生時間表示
+                                <ul>
+                                    <li>
+                                        クロノメータを使った簡易表示です。
+                                    </li>
+                                    <li>
+                                        プレイヤー画面の再生時間はファイル上のタイムラインを読み取った値ですが、ここではノティフィケーションエリアを引き出すタイミングでスタートさせる自動加算器ですので、ファイル上の再生ポイントとはズレが生じます。
+                                    </li>
+                                    <li>
+                                        あくまでも動作している事の目安にご利用ください。
+                                    </li>
+                                    <li>
+                                        *Android5.x以降は省略しています。
+                                    </li>
+                                </ul>
+                                ボタン以外をタップすれば、プレイヤー画面を表示します。
+                            </td>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-9 col-md-6">
+                    <h2>ロックスクリーンプレイヤー</h2>
+                    <small>ロック画面から表示を復帰させると端末ごとに工夫を凝らしたロックスクリーン画面が表示されます。<br>
+					音楽の再生が続いていればロックスクリーン用のミュージックプレイヤーが表示されています。</small>
+                    <table align="left" valign="top">
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td colspan=2 style="background:#ffeeff;">
+                                <h4>画面構成</h4>
+                            </td>
+                        </tr>
+                        <tr style="margin: 10px; padding: 10px;">
+                            <td style="background:#ffeeff;"></td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        Android4.4以前；端末などによって異なります。
+                                    </li>
+                                    <li>
+                                        Android5.xからはノティフィケーションプレイヤーが表示されます。<br> *終了ボタンは外してあります。
+                                    </li>
+                                </ul>
+                                <ol>
+                                    <li>
+                                        アルバムアート
+                                        <ul>
+                                            <li>
+                                                その曲に画像ファイルが設定されていたら表示します
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        再生/停止ボタン
+                                        <ul>
+                                            <li>
+                                                プレイヤー画面の同名ボタンと同じ機能です。
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        戻し/送りボタン
+                                        <ul>
+                                            <li>
+                                                私がテストした端末では再生/停止ボタンの左右に配置されていました。
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ol>
+                                備考;Bluetoothとの関連
+                                <ul>
+                                    <li>
+                                        ヘッドセットやカーオーディオなど、Bluetooth接続した時のリモコン対応や表示はロックスクリーンのリモコン機能で行われています。
+                                    </li>
+                                    <li>
+                                        接続する機器によって挙動は異なります。
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-3 div-img">
+                    Android4.4以前<br>
+                    <img src="img/lockscreenPlater44.png" alt="b44" width="90%">
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-3 div-img">
+                    Android5以降
+                    <img src="img/lockscreenPlater.png" alt="a5l" width="90%">
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p style="text-align: right; background-color:white">
+                <div class="col-xs-12 col-sm-12">
+                    <div class="col-xs-6 col-sm-8">
+                        <a href="../index.htm">
+                            <img src="../img/koubou.png" alt="比治山工房" width="100%">
+                        </a>
+                    </div>
+                    <div class="col-xs-2 col-sm-2">
+                        <a href="https://play.google.com/store/apps/details?id=com.hijiyam_koubou.marasongs ">
+                            <img src="../img/marasongs.png " alt="Marasong_qr " vspace="1 " hspace="1 "></a>
+                    </div>
+                    <div class="col-xs-4 col-sm-2">
+                        Copyright 2016
+                    </div>
+                </div>
+            </p>
+        </footer>
+    </div>
+</body>
+
+</html>

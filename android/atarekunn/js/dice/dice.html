@@ -1,0 +1,343 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dice</title>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+    <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="http://github.hubspot.com/tether/dist/js/tether.js"></script>
+    <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../js/jquery.qrcode.min.js"></script>
+    <link href="../../../main.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="../../../js/cock.js"></script>
+    <script type="text/javascript" src="../../../js/acount.js"></script>
+    <!--common.js読み込み前にjQueryを読み込みます-->
+    <script type="text/javascript" src="../../../js/common.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <div id="acount_aria"></div>
+    </header>
+    <div style="font-size: 11pt; line-height: 150%; line-height:16px ; text-alingn:left;
+					border-style: solid ; border-width: 6px; padding: 10px 5px 10px 20px; border-color: #999999 ;
+					border-radius: 10px; box-shadow: 10px 10px 10px #AAA; background-image: url(../../../img/felt_gr.jpg);">
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div id="top_aria" style="background-color:#383434;/* background-color: rgba(12, 12, 12, 0.64); *//* border-bottom: silver; */padding: 5px;box-shadow: 4px 3px 0px 0px;">
+                        <div id="top_base" style="width: 100%; height: inherit;">
+                            <textarea name="top_ta" rows="4" style="width: 100%;height: inherit;background-color: rgba(255, 255, 255, 0.1);color: #fdfdfd;"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div id="canvas_aria">
+                        <canvas id="canvas_base" style="width: 100%; height: inherit;"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div id="bottom_aria" style="background-color:#383434;/* background-color: rgba(12, 12, 12, 0.64); *//* border-bottom: silver; */padding: 5px;box-shadow: 4px 3px 0px 0px;">
+                        <div id="bottom_base" style="width: 100%; height: inherit;">
+                            <textarea name="bottom_ta" rows="4" style="width: 100%;height: inherit;background-color: rgba(255, 255, 255, 0.1);color: #fdfdfd;"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <div id="credit_aria"></div>
+                <P class="container">
+                    <script type="text/javascript">
+                        var nend_params = {
+                            "media": 32269,
+                            "site": 206990,
+                            "spot": 583222,
+                            "type": 1,
+                            "oriented": 1
+                        };
+                    </script>
+                    <script type="text/javascript" src="https://js1.nend.net/js/nendAdLoader.js"></script>
+                </P>
+            </div>
+            <div class="col-xs-12 col-sm-6" style="text-align: right;">
+                <div id="koukoku_aria" style="height: 100px; margin-top: 10px;">
+                    <P class="container">
+                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3146425308522831" data-ad-slot="4219928305" data-ad-format="auto"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+<script type="text/javascript">
+    var log_file; //fileオブジェクト
+    var my_coookie;
+    var tourokubi;
+    var gid;
+    var pid;
+    var data;
+    var dateStr;
+    var timeStr;
+    var canvas;
+    var ctx;
+
+    $(document).ready(function() { // ページ読み込み時に実行したい処理
+        var dbmsg = '[ready]';
+        tourokubi = null;
+        gid = null;
+        pid = null;
+        data = null;
+        my_coookie = 'atare_dice';
+        readElement("../../../js/acount.html", "acount_aria");
+        readElement("../foot.html", "credit_aria");
+        //      readElement("../../../js/koukoku.htm", "koukoku_aria");
+        syokika();
+        readLoc();
+        canvasSyokika();
+        readData();
+    });
+
+    function syokika() {
+        var dbmsg = '[syokika]';
+        document.getElementById("kousin_bt").style.display = "none"; //更新
+        document.getElementById("qr_make_bt").style.display = "none"; //QRコード作成
+        document.getElementById("qr_aria").style.display = "none";
+        document.getElementById("gr_mail_bt").style.display = "none"; //メ-ルで連絡
+        document.getElementById("member_list").style.display = "none";
+        document.getElementById("alart_text").style.display = "none";
+        isCookie();
+    }
+
+    function canvasSyokika() {
+        var dbmsg = '[canvasSyokika]';
+        canvas = document.getElementById('canvas_base'); /* canvas要素のノードオブジェクト */
+        if (!canvas || !canvas.getContext) { /* canvas要素の存在チェックとCanvas未対応ブラウザの対処 */
+            alart('ご利用のブラウザは必要な機能がありません。\nGoogle Chromeなどcanvasに対応したブラウザをご利用ください。');
+            return false;
+        } else {
+            ctx = canvas.getContext('2d'); /* 2Dコンテキスト */
+        }
+    }
+
+    function readData() {
+        var dbmsg = '[readData]';
+        canvasSyokika();
+        data = "1,2,3,4,5,6"
+        var data_Array = data.split(',');
+        dbmsg = dbmsg + data_Array.length + "個";
+        var w_width = document.getElementById("canvas_base").width; //window.innerWidth;
+        var kankaku = 20;
+        var ikko = (w_width - kankaku) / (data_Array.length)
+        dbmsg = dbmsg + "一個当たり" + ikko;
+        var start_X = kankaku;
+        var start_y = kankaku;
+        var ippen = ikko - kankaku;
+        var w_Height = ippen + kankaku * 2;
+        dbmsg = dbmsg + ",描画領域[" + w_width + " × " + w_Height + "]間隔=" + kankaku;
+        document.getElementById("canvas_base").height = w_Height; //window.innerHeight;
+        console.log(dbmsg);
+        for (var i = 0; i < data_Array.length; i++) {
+            var wStr = data_Array[i];
+            dbmsg = dbmsg + "(" + i + ")" + wStr + ";" + start_X;
+            writeDice(start_X, start_y, ippen, wStr)
+            start_X = start_X + ikko;
+        }
+        console.log(dbmsg);
+    }
+
+
+    function writeDice(start_X, start_y, ippen, d_val) {
+        var dbmsg = '[writeDice]' + d_val + "を(" + start_X + " , " + start_y + ")";
+        ctx.beginPath(); /* 四角を描く */
+        ctx.fillStyle = 'rgb(246, 246, 246)';
+        ctx.strokeStyle = 'rgb(8, 2, 2)';
+        ctx.fillRect(start_X, start_y, ippen, ippen); //塗りつぶし //枠線だけ strokeRect
+        ctx.fill(); //描画実行
+        ctx.stroke();
+        // ctx.moveTo(start_X, start_y);
+        // ctx.lineTo(start_X + ippen, start_y);
+        // ctx.lineTo(start_X + ippen, start_y + ippen);
+        // ctx.lineTo(start_X, start_y + ippen);
+        // ctx.closePath();
+        //     ctx.stroke();
+        switch (d_val) {
+            case '1':
+                writeOne(start_X, start_y, ippen);
+                break;
+            case '2':
+                writeTow(start_X, start_y, ippen, ippen / 10);
+                break;
+            case '3':
+                writeCenter(start_X, start_y, ippen, ippen / 11);
+                writeTowR(start_X, start_y, ippen, ippen / 11);
+                break;
+            case '4':
+                writeTow(start_X, start_y, ippen, ippen / 10);
+                writeTowR(start_X, start_y, ippen, ippen / 10);
+                break;
+            case '5':
+                writeCenter(start_X, start_y, ippen, ippen / 11);
+                writeTow(start_X, start_y, ippen, ippen / 11);
+                writeTowR(start_X, start_y, ippen, ippen / 11);
+                break;
+            case '6':
+                writeSix(start_X, start_y, ippen);
+                break;
+            default:
+                break;
+        }
+        console.log(dbmsg);
+    }
+
+    function writeOne(start_X, start_y, ippen) {
+        var dbmsg = '[writeOne]1を(' + start_X + " , " + start_y + ")";
+        ctx.beginPath();
+        ctx.fillStyle = 'rgb(256, 80, 77)'; // 赤
+        ctx.strokeStyle = 'rgb(156, 2, 2)';
+        var center_x = start_X + (ippen / 2);
+        var center_y = start_y + (ippen / 2);
+        var radius = ippen / 6;
+        var startAngle = 0;
+        var endAngle = Math.PI * 2;
+        var anticlockwise = false;
+        ctx.arc(center_x, center_y, radius, startAngle, endAngle, anticlockwise);
+        ctx.fill();
+        ctx.stroke();
+        // console.log(dbmsg);
+    }
+
+    function writeCenter(start_X, start_y, ippen, radius) {
+        var dbmsg = '[writeOne]1を(' + start_X + " , " + start_y + ")";
+        ctx.beginPath();
+        ctx.fillStyle = 'rgb(5, 8, 12)';
+        ctx.strokeStyle = 'rgb(56, 62, 34)';
+        var center_x = start_X + (ippen / 2);
+        var center_y = start_y + (ippen / 2);
+        var startAngle = 0;
+        var endAngle = Math.PI * 2;
+        var anticlockwise = false;
+        ctx.arc(center_x, center_y, radius, startAngle, endAngle, anticlockwise);
+        ctx.fill();
+        ctx.stroke();
+        // console.log(dbmsg);
+    }
+
+    function writeTow(start_X, start_y, ippen, radius) {
+        var dbmsg = '[writeTow]1を(' + start_X + " , " + start_y + ")";
+        ctx.beginPath();
+        ctx.fillStyle = 'rgb(5, 8, 12)';
+        ctx.strokeStyle = 'rgb(56, 62, 34)';
+        var shft = (ippen * 0.3);
+        var center_x = start_X + shft;
+        var center_y = start_y + shft;
+        var startAngle = 0;
+        var endAngle = Math.PI * 2;
+        var anticlockwise = false;
+        ctx.arc(center_x, center_y, radius, startAngle, endAngle, anticlockwise);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.beginPath();
+        center_x = start_X + ippen - shft;
+        center_y = start_y + ippen - shft;
+        ctx.arc(center_x, center_y, radius, startAngle, endAngle, anticlockwise);
+        ctx.fill();
+        ctx.stroke();
+        // console.log(dbmsg);
+    }
+
+    function writeTowR(start_X, start_y, ippen, radius) {
+        var dbmsg = '[writeTow]1を(' + start_X + " , " + start_y + ")";
+        ctx.beginPath();
+        ctx.fillStyle = 'rgb(5, 8, 12)';
+        ctx.strokeStyle = 'rgb(56, 62, 34)';
+        var shft = (ippen * 0.3);
+        var center_x = start_X + ippen - shft;
+        var center_y = start_y + shft;
+        var startAngle = 0;
+        var endAngle = Math.PI * 2;
+        var anticlockwise = false;
+        ctx.arc(center_x, center_y, radius, startAngle, endAngle, anticlockwise);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.beginPath();
+        center_x = start_X + shft;
+        center_y = start_y + ippen - shft;
+        ctx.arc(center_x, center_y, radius, startAngle, endAngle, anticlockwise);
+        ctx.fill();
+        ctx.stroke();
+        // console.log(dbmsg);
+    }
+
+    function writeSix(start_X, start_y, ippen) {
+        var dbmsg = '[writeTow]1を(' + start_X + " , " + start_y + ")";
+        ctx.beginPath();
+        ctx.fillStyle = 'rgb(5, 8, 12)';
+        ctx.strokeStyle = 'rgb(56, 62, 34)';
+        var shft = (ippen * 0.3);
+        var center_x = start_X + shft;
+        var center_y = start_y + (ippen * 0.2);
+        var radius = ippen / 12;
+        var startAngle = 0;
+        var endAngle = Math.PI * 2;
+        var anticlockwise = false;
+        ctx.arc(center_x, center_y, radius, startAngle, endAngle, anticlockwise);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.beginPath();
+        center_y = start_y + (ippen * 0.5);
+        ctx.arc(center_x, center_y, radius, startAngle, endAngle, anticlockwise);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.beginPath();
+        center_y = start_y + ippen - (ippen * 0.2);
+        ctx.arc(center_x, center_y, radius, startAngle, endAngle, anticlockwise);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.beginPath();
+        center_x = start_X + ippen - shft;
+        center_y = start_y + (ippen * 0.2);
+        ctx.arc(center_x, center_y, radius, startAngle, endAngle, anticlockwise);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.beginPath();
+        center_y = start_y + (ippen * 0.5);
+        ctx.arc(center_x, center_y, radius, startAngle, endAngle, anticlockwise);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.beginPath();
+        center_y = start_y + ippen - (ippen * 0.2);
+        ctx.arc(center_x, center_y, radius, startAngle, endAngle, anticlockwise);
+        ctx.fill();
+        ctx.stroke();
+        // console.log(dbmsg);
+    }
+</script>
+
+
+</html>

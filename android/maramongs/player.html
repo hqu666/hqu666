@@ -1,0 +1,769 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MaraSongs「プレイヤー画面」</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
+    <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+    <link href="../../main.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div align="right">
+        <a href="en/player.html">English</a>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <table align="left" valign="top" border="0" style="font-size: 11pt; line-height: 150%;">
+                    <tr valign="top">
+                        <td style="width: 58px; height: 22px">
+                            <a href="index.html">
+                                <img src="img/ic_launcher-web.png" alt="Marasong" style="width: 48px; " vspace="1" hspace="1">
+                            </a>
+                        </td>
+                        <td style="margin: 10px; padding: 10px;">
+                            当たり前に使える音楽プレイヤー
+                            <h2>MaraSongs</h2>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-sm-6" style="text-align: right;">
+                <P class="container">
+                    <div class="row">
+                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3146425308522831" data-ad-slot="4219928305" data-ad-format="auto"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+                    <div class="row">
+                        <script type="text/javascript">
+                            var nend_params = {
+                                "media": 32269,
+                                "site": 206990,
+                                "spot": 583222,
+                                "type": 1,
+                                "oriented": 1
+                            };
+                        </script>
+                        <script type="text/javascript" src="https://js1.nend.net/js/nendAdLoader.js"></script>
+                    </div>
+                </P>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <ul class="nav nav-tabs" style="width: 800dp; margin: 0px 0px 0px 15px;">
+                    <li class="nav-item" style="margin-right: 18px;">
+                        <a class="nav-link bg-primary active" href="index.html">概要</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 18px;">
+                        <a class="nav-link bg-primary" style="background: #5cb85c !important;">プレイヤー</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 18px;">
+                        <a class="nav-link bg-primary" href="list.html">リスト</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 18px;">
+                        <a class="nav-link bg-primary" href="pref.html">設定画面</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 18px;">
+                        <a class="nav-link bg-primary" href="zenkyokulist.html">特徴機能詳細</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <table align="left" valign="top" border="0" width="100%" style="font-size: 11pt; line-height: 150%;">
+                    <tr style="margin: 10px; padding: 10px;">
+                        <td style="background:#eeeeff;">
+                            <h4>タイトルバー</h4>
+                            (Android5以降はToolBer)
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-md-8">
+                <table align="left" valign="top" border="0" style="font-size: 11pt; line-height: 150%;">
+                    <tr style="margin: 10px; padding: 10px;">
+                        <td style="background:#eeeeff; margin: 10px; padding: 10px;"></td>
+                        <td>
+                            プレイヤー画面のToolBarには再生しているリスト名を表示します。
+                            <br>右端にメニューボタンが有ります。
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-xs-9 col-sm-4 col-md-4">
+                <img src="img/player_titol_bar.png " alt="タイトルバー " width="90%">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <table align="left" valign="top" border="0" width="100%" style="font-size: 11pt; line-height: 150%;">
+                    <tr style="margin: 10px; padding: 10px;">
+                        <td style="background:#ffeeff;">
+                            <h4>ヘッドエリア</h4>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-md-8">
+                <table align="left" valign="top" border="0" style="font-size: 11pt; line-height: 150%;">
+                    <tr style="margin: 10px; padding: 10px;">
+                        <td style="background:#ffeeff; margin: 10px; padding: 10px;"></td>
+                        <td>
+                            共通事項
+                            <ul>
+                                <li>タップするとアーティスト～タイトルリスト画面に遷移します</li>
+                                <li>長い文字列で入りきらないところは自動スクロールします。
+                                    <li>各リストの先頭の数字は　番目/総数　のカウンタです。<br>(全曲リストのみ)<br>他のリストは下部の情報エリアでリスト総曲数のカウンタのみ</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr style="margin: 10px; padding: 10px;">
+                        <td style="background:#ffeeff; margin: 10px; padding: 10px;"></td>
+                        <td>
+                            1;アーティスト
+                            <ul>
+                                <li>ゲスト参加も含めた、レコードジャケットなどにクレジットされているアーティスト名です。</li>
+                                <li>リストはゲスト名などを取り除く事で、一枚のアルバムが分離するのを防ぎますが、プレイヤー画面ではクレジットされたままを表示します。</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr style="margin: 10px; padding: 10px;">
+                        <td style="background:#ffeeff; margin: 10px; padding: 10px;"></td>
+                        <td>
+                            2;アルバム
+                            <ul>
+                                <li>
+                                    上記のアーティスト名で抽出した再生中のアルバムです。
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr style="margin: 10px; padding: 10px;">
+                        <td style="background:#ffeeff; margin: 10px; padding: 10px;"></td>
+                        <td>
+                            3;タイトル
+                            <ul>
+                                <li>
+                                    上記のアルバム名で抽出した曲の中で再生中の曲名です。
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-xs-9 col-sm-4 col-md-4">
+                <img src="img/play_head_eria.png " alt="ヘッドエリア " width="90%">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <table align="left" valign="top" border="0" width="100%" hight="100%" style="font-size: 11pt; line-height: 150%;">
+                    <tr style="margin: 10px; padding: 10px;">
+                        <td style="background:#eeffee;">
+                            <h4>中央部</h4>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-9 col-md-9">
+                <table align="left" valign="top" border="0" style="font-size: 11pt; line-height: 150%;">
+                    <tr style="margin: 10px; padding: 10px;">
+                        <td style="background:#eeffee; margin: 10px; padding: 10px;"></td>
+                        <td>
+                            <h5>アルバムアート</h5>
+                            <ul>
+                                <li>
+                                    ジャケット写真などの画像が設定してあれば、その画像を表示します。
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-xs-9 col-sm-3 col-md-3">
+                <img src="img/play_center.png " alt="中央部 " width="90%">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-9 col-md-6">
+                <table align="left" valign="top" border="0" style="font-size: 11pt; line-height: 150%;">
+                    <tr style="margin: 10px; padding: 10px;">
+                        <td style="background:#eeffee; margin: 10px; padding: 10px;"></td>
+                        <td>
+                            <h5>ビジュアライザー</h5>
+                            ジャケット写真を左にフリックすると再生している音を視覚的に表現する
+                            <a name="visualtser ">ビジュアライザー</a>を表示します。
+                            <ul>
+                                <li>設定の「サウンドエフェクト / ビジュアライザー」で以下の選択ができます
+                                    <ol>
+                                        <li>オシロスコープ風<br> アナログな感じの波形表示。(右図)
+                                        </li>
+                                        <li>スペクトラムアナライザ風<br> デジタル風な周波数帯毎のレベル増減表示。(左図)
+                                        </li>
+                                        <li>使わない<br> 節電優先の方はVirtualizerをoffにできます。
+                                        </li>
+                                    </ol>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-xs-9 col-sm-3 col-md-3">
+                <img src="img/play_fft.png " alt="fft " width="90%">
+            </div>
+            <div class="col-xs-9 col-sm-3 col-md-3">
+                <img src="img/play_wav.png " alt="wave " width="90%">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-9 col-md-6">
+                <table align="left" valign="top" border="0" style="font-size: 11pt; line-height: 150%;">
+                    <tr style="margin: 10px; padding: 10px;">
+                        <td style="background:#eeffee; margin: 10px; padding: 10px;"></td>
+                        <td>
+                            <h5>歌詞表示</h5>
+                            ジャケット写真を右にフリックすると<a name="lyric ">歌詞</a>を表示します。
+                            <ul>
+                                <li>
+                                    表示出来るのはmp3のID3タグとaacです。
+                                </li>
+                                <li>
+                                    それ以外のファイルもしくは歌詞が設定されていないファイルは検索状況(読み取れたタグ情報など)を表示します。
+                                </li>
+                                <li>
+                                    しばらくはトラブル対応の手掛かりにファイル名とタグ情報も表示します。
+                                </li>
+                                <li>表示された歌詞をロングタップすれば関連する操作メニューを表示します。
+                                    <ol>
+                                        <li>拡大表示<br> 内蔵webビューに流し込んで表示します。
+                                            <br> 画面の下部に再生/停止、送り、戻しボタンを設けました。
+                                            <br> 文字が小さいと感じる方はwebのピンチ操作で拡大する機能をご利用ください。
+                                            <br> *戻るキーでwebビューは閉じます。
+                                        </li>
+                                        <li>歌詞の再読み込み<br> 歌詞が取得できない時は手動で再度読込操作が出来るようにしました。
+                                        </li>
+                                        <!-- 				2)再エンコード<br><small>文字化けが発生したら、ご利用の端末で利用できる文字コードの一覧を表示します。<br>
+								*多くの場合は(日本語などの)マルチバイトを表示するUTF-16かアルファベット基本セットのISO-8859-1ですが、どちらでも文字化けしてしまうケースに備えて実装しました。</small><br> -->
+                                    </ol>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-xs-9 col-sm-3 col-md-3">
+                <img src="img/play_lylic.png " alt="歌詞表示 " width="90%">
+            </div>
+            <div class="col-xs-9 col-sm-3 col-md-3">
+                <img src="img/lylic_web.png " alt="歌詞表示web " width="90%">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <table align=" left " valign="top " border="0 " style="font-size: 11pt; line-height: 150%; ">
+                    <tr style="margin: 10px; padding: 10px; ">
+                        <td style="background:#eeffee; margin: 10px; padding: 10px; "></td>
+                        <td>
+                            <ul>
+                                <li>
+                                    備考;私はiTunesでMP3にリッピングしてLyricsMasterで歌詞設定、そのファイルをドラッグ＆ドロップ操作でメモリーカードや内蔵メモリーにコピーしています。<br> それ以外の方法は検証しきれていませんので、ご利用状況をご連絡頂けると助かります。
+                                    <br> (Windows Media Playerにインポートしてシンクロ機能でAndroid端末にコピーする、という方法もありますが、WMAに変換されタグ情報も書き換えられるのでお勧めできません）
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <table align="left" valign="top" border="0" style="font-size: 11pt; line-height: 150%;">
+                    <tr style="margin: 10px; padding: 10px;">
+                        <td style="background:#eeffee; margin: 10px; padding: 10px;"></td>
+                        <td>
+                            <h5>ボタン</h5>
+                            表示部の左に"曲戻し ",右に"曲送り "ボタンを配置しています。奇妙なデザインかもしれませんが
+                            <ul>
+                                <li>
+                                    間違ってタップしない位置
+                                </li>
+                                <li>
+                                    片手で再生/停止、順送りくらいはできる配置を試行錯誤しています。
+                                </li>
+
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr style="margin: 10px; padding: 10px;">
+                        <td style="background:#eeffee; margin: 10px; padding: 10px;"></td>
+                        <td>
+                            <h5>
+                                <a name="vol_bt "><img src="img/onryou_bt.png " alt="音量bt " style="width: 40px; " vspace="1 " hspace="1 ">音量調整ボタン<br></h5>
+                            スタンドやフォルダーによっては音量調整ボタンを操作できないケースが有ったので設けたボタンです。
+                            <ul>
+                                <li>タップで消音</li>
+                                <li>ロングタップで音量調整スライダーを表示します。</li>
+                                <li>ボタンの下に表示される数字は現在の音量です。<br>（Androidの音量は15段階です）</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-9 col-md-9">
+                <table align="left" valign="top" border="0" style="font-size: 11pt; line-height: 150%;">
+                    <tr style="margin: 10px; padding: 10px;">
+                        <td style="background:#eeffee; margin: 10px; padding: 10px;"></td>
+                        <td>
+                            <h5><img src="img/rewbtn.png " alt="戻しボタン " style="width: 40px; " vspace="1 " hspace="1 ">戻しボタン</h5>
+                            音量調整ボタンの下にあるのは前の曲に戻る『戻しボタン』です。
+                            <ul>
+                                <li>シングルタップで曲の先頭に、ダブルタップで次前の曲に戻します。</li>
+                                <li>例えば10回タップすれば、タップした回数分を全曲カウンターから減算して一回で10曲前の曲の再生 （画面の構成）を行います。
+                                    <br>一回タップするごとに一曲づつ送る仕掛けにすると、連打するとアルバムアートの書き換えなどが追い付かず、 異常終了します。
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr style="margin: 10px; padding: 10px;">
+                        <td style="background:#eeffee; margin: 10px; padding: 10px;"></td>
+                        <td>
+                            <h5><img src="img/ffbtn.png " alt="送りボタン " style="width: 40px; " vspace="1 " hspace="1 ">送りボタン</h5>
+
+                            アルバムアートの右にあるのは次の曲に送る『送りボタン』です。<br>・<small>戻しと同様に連続タップしても誤動作が発生しない工夫をしています。</small>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-xs-9 col-sm-3 col-md-3">
+                <img src="img/play_center.png " alt="中央部左右 " width="90%">
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <table align="left" valign="top" border="0" width="100%" hight="100%" style="font-size: 11pt; line-height: 150%;">
+                    <tr style="margin: 10px; padding: 10px;">
+                        <td style="background:#ffeeff;">
+                            <h4>下部</h4>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-9 col-md-9">
+                <table align="left" valign="top" border="0" style="font-size: 11pt; line-height: 150%;">
+                    <tr style="margin: 10px; padding: 10px;">
+                        <td style="background:#ffeeff; margin: 10px; padding: 10px;"></td>
+                        <td>
+                            <h5>シークバー</h5>
+                            <ul>
+                                <li>
+                                    曲中の再生位置を示すと同時に、ここを操作して曲内の任意の位置に再生ポイントを移動させます。
+                                </li>
+                                <li>
+                                    2点間再生を行っている時はバーの下に開始と終了時間を表示し、バーの可動範囲も再生区間だけに絞ります。
+                                </li>
+                            </ul>
+                            <h5><img src="img/play40.png " width="32 " height="32 " align="left ">再生/ポーズボタン</h5>
+                            <ul>
+                                <li>
+                                    タップして再生/ポーズを切り替えます。
+                                </li>
+                                <li>
+                                    起動直後はいきなり鳴って驚かない様にポーズをかけて起動しますので、このボタンをタップして再生を開始してください。
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-xs-9 col-sm-3 col-md-3">
+                <img src="img/play_bottm.png " alt="下部 " width="90%">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <table align="left" valign="top" border="0" width="100%" hight="100%" style="font-size: 11pt; line-height: 150%;">
+                    <tr style="margin: 10px; padding: 10px;">
+                        <td style="background:#eeffff;">
+                            <h4>付随情報エリア</h4>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-md-8">
+                <table align="left" valign="top" border="0" style="font-size: 11pt; line-height: 150%;">
+                    <tr style="margin: 10px; padding: 10px;">
+                        <td style="background:#eeffff; margin: 10px; padding: 10px;"></td>
+                        <td>
+                            <h5>曲カウンタ</h5>
+                            <ul>
+                                <li>
+                                    リスト中の何曲目か / リスト中の曲数　を表示します。
+                                </li>
+                                <li>
+                                    このカウントでアルバムの区切りに縛られない早送り/戻しを実行しています。
+                                </li>
+                            </ul>
+                            <h5>再生ポジション/再生時間</h5>
+                            <ul>
+                                <li>
+                                    現在再生している位置を開始からの経過時間で示す「再生ポジション」と、その曲の長さを示す「再生時間」です。
+                                </li>
+                                <li>
+                                    曲内の2点間リピートの利用を想定して、ｍ秒単位にしています。
+                                </li>
+                            </ul>
+                            <h5>起動からの経過</h5>
+                            <ul>
+                                <li>
+                                    二行目はこのアプリケーションをどれくらい連続使用したかを再生開始からの経過時間時間/再生曲数で表示します。
+                                </li>
+                                <li>
+                                    トレーニングなどで長時間続けることや、大雑把な時間的な目安に使えればよいかと思います。
+                                </li>
+                                <li>
+                                    2回目以降は右に前回利用時の経過時間を表示します。
+                                </li>
+                                <ul>
+                                    <h5>Bluetooth情報</h5>
+                                    <ul>
+                                        <li>
+                                            接続した時に機器名と状況を表示します。
+                                        </li>
+                                        <li>
+                                            現在は接続時のトースト表示のみにしています。
+                                        </li>
+                                    </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-xs-9 col-sm-4 col-md-4">
+                <img src="img/play_info.png " alt="情報表示エリア " width="90%">
+            </div>
+        </div>
+
+        <h3>ボタンで表示するメニュー(最上部のToolBarメニュー)</h3>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <table align="left" valign="top" border="0" width="100%" hight="100%" style="font-size: 11pt; line-height: 150%;">
+                    <tr style="margin: 10px; padding: 10px;">
+                        <td colspan="2" style="background:#dddddd;">
+                            <h4>機能</h4>
+                        </td>
+                    </tr>
+                    <tr style="margin: 10px; padding: 10px;">
+                        <tdstyle="background:#dddddd;">
+                            プレイヤー画面から使う機能で、不用意に触れて煩わしい思いをしそうな機能を集めました
+                            </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-9 col-md-9">
+                <table align="left" valign="top" border="0" style="font-size: 11pt; line-height: 150%;">
+                    <tr style="margin: 10px; padding: 10px;">
+                        <td style="background:#dddddd; margin: 10px; padding: 10px;"></td>
+                        <td>
+                            <h5><a name="rundame ">ランダム再生</a></h5>
+                            <ul>
+                                <li>
+                                    全曲リストのインデックスから乱数で、最近再生した曲を避けて、抽出します。
+                                </li>
+                                <li>
+                                    抽出する曲数は設定の「ランダム再生で設定した曲数」で設定します。
+                                </li>
+                                <li>
+                                    再生したら消去される仮プレイリストに登録しますので、タイトル部分をタップしてリスト表示させる事もできます。
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-xs-9 col-sm-3 col-md-3">
+                <img src="img/list_rundum0.png " alt="ランダム再生" width="90%">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-9 col-md-9">
+                <table align="left" valign="top" border="0" style="font-size: 11pt; line-height: 150%;">
+                    <tr style="margin: 10px; padding: 10px;">
+                        <td style="background:#dddddd; margin: 10px; padding: 10px;"></td>
+                        <td>
+                            <h5><a name="rundame ">リピート再生</a></h5>
+                            <ul>
+                                <li>
+                                    再生しているアーティスト/再生しているアルバム/再生している曲/再生している曲の特定範囲(2点間)で繰り返し再生を行います。
+                                </li>
+                                <li>
+                                    上記のいずれかを選択するダイアログで「二点間再生」を選択すると開始と終了ポイントを設定するインターフェースを表示します。
+                                </li>
+                                <li>
+                                    「二点間再生」中は機能メニューに「二点間再生解除」、「二点間再生開始点」、「二点間再生終了点」が追加されます。
+                                </li>
+                                <li>
+                                    「二点間再生開始点」、「二点間再生終了点」は1/1000単位で開始もしくは終了点を調整するためのダイアログを表示します。<br> 大雑把な処はシークバーで、9秒以下は数字でも入力して調整できます。
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-xs-9 col-sm-3 col-md-3">
+                <img src="img/memu_pl_fink_repeat00.png " alt="リピート再生 " width="90%">
+            </div>
+            <div class="col-xs-9 col-sm-3 col-md-3">
+                <img src="img/memu_pl_fink_repeat01.png " alt="二点間再生 " width="90%">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-9 col-md-9">
+                <table align="left" valign="top" border="0" style="font-size: 11pt; line-height: 150%;">
+                    <tr style="margin: 10px; padding: 10px;">
+                        <td style="background:#dddddd; margin: 10px; padding: 10px;"></td>
+                        <td>
+                            <h5><a name="tone ">音質調整</a></h5>
+                            <ul>
+                                <li>
+                                    端末に設定してある帯域でとバンド数で設定するグラフィックイコライザーです。
+                                </li>
+                                <li>
+                                    プリセットはフラット/高域強調/中域強調/低域強調とユーザー設定を保持する「現在の設定」が有ります。
+                                </li>
+                                <li>
+                                    「バスブート」はAndroidで用意している低域強調機能のON/OFFスイッチです。
+                                </li>
+                                <li>
+                                    「合計レベル調整」は設定している各バンド間の比率を維持して、レベル値の合計を0に合わせる事で、レベルオーバーによる音割れを緩和します。
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-xs-9 col-sm-3 col-md-3">
+                <img src="img/memu_pl_fink_tone12.png " alt="音質調整 " width="90%">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-9 col-md-9">
+                <table align="left" valign="top" border="0" style="font-size: 11pt; line-height: 150%;">
+
+                    <tr style="margin: 10px; padding: 10px;">
+                        <td style="background:#dddddd; margin: 10px; padding: 10px;"></td>
+                        <td>
+                            <h5><a name="revarbe ">リバーブ</a></h5>
+                            Androidのプリセットリバーブで、以下のものが用意されています。
+                            <ul>
+                                <li>
+                                    <ol>
+                                        <li>NONE<br> リバーブを使わない
+                                        </li>
+                                        <li>SMALLROOM<br> 小さな部屋に未満の長さ5メートルを表すリバーブプリセット
+                                        </li>
+                                        <li>MEDIUMROOM<br> 10メートル以下の長さを有する媒体の部屋を表すリバーブプリセット
+                                        </li>
+                                        <li>LARGEROOM<br> ライブパフォーマンスに適した大型の部屋を表すリバーブプリセット
+                                        </li>
+                                        <li>MEDIUMHALL<br> 中規模ホールを表すリバーブプリセット
+                                        </li>
+                                        <li>LARGEHALL<br> フルオーケストラに適した大型ホールを表すリバーブプリセット
+                                        </li>
+                                        <li>PLATE<br> 楽器用アンプに搭載されている板バネなどを使った機械式の残響を模した効果
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li>
+                                    効果はかなり判りづらいです。<br> (Androidの標準機能を素直に使っていますで極端な利き方では有りません。
+                                    <br>かなりいいヘッドホンで、音量が上がりきったところで停止すれば残響が分かるかどうかです。)
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-xs-9 col-sm-3 col-md-3">
+                <img src="img/memu_pl_rev_00.png " alt="リバーブ " width="90%">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <table align="left" valign="top" border="0" width="100%" hight="100%" style="font-size: 11pt; line-height: 150%;">
+                    <tr style="margin: 10px; padding: 10px;">
+                        <td colspan="2" style="background:#eeeeee;">
+                            <h4>その他</h4>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-9 col-md-9">
+                <table align="left" valign="top" border="0" style="font-size: 11pt; line-height: 150%;">
+                    <tr style="margin: 10px; padding: 10px;">
+                        <td style="background:#eeeeee; margin: 10px; padding: 10px;"></td>
+                        <td>
+                            <h5><a href="pref.html ">設定</a></h5>
+                            設定画面を開きます。
+                            <ul>
+                                <li>
+                                    操作頻度が最も低い機能（一度設定したら基本的に再操作しないもの）の操作と、レジュームや保存されているファイルの状況を表示します。
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-xs-9 col-sm-3 col-md-3">
+                <img src="img/settei_00.png " alt="設定 " width="90%">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-9 col-md-9">
+                <table align="left" valign="top" border="0" style="font-size: 11pt; line-height: 150%;">
+                    <tr style="margin: 10px; padding: 10px;">
+                        <td style="background:#eeeeee; margin: 10px; padding: 10px;"></td>
+                        <td>
+                            <h5>ヘルプ表示</h5>
+                            webの仕掛けを使った表示画面です。
+                            <ul>
+                                <li>
+                                    操作頻度が最も低い機能（一度設定したら基本的に再操作しないもの）の操作と、レジュームや保存されているファイルの状況を表示します。
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr style="margin: 10px; padding: 10px;">
+                        <td style="background:#eeeeee; margin: 10px; padding: 10px;"></td>
+                        <td>
+                            <h5>終了</h5>
+                            <ul>
+                                <li>
+                                    再生している音楽を停止し、再生中の曲と再開ポイントを記録してアプリケーションを終了します。
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-xs-9 col-sm-3 col-md-3">
+                <img src="img/help_web.png " alt="ヘルプ " width="90%">
+            </div>
+        </div>
+
+        <h3>キー割付け</h3>
+        (かなり古い機種での確認ですので最近の機種で動作が異なったらご容赦ください)
+
+        <div class="row">
+            <div class="col-xs-12">
+                <table width="100%" align=" left " valign="top " border="0 " style="font-size: 11pt; line-height: 150%; ">
+                    <tr style="margin: 10px; padding: 10px; ">
+                        <td style="background:#dddddd; margin: 10px; padding: 10px; "></td>
+                        <td style="background:#dddddd; margin: 10px; padding: 10px; "></td>
+                    </tr>
+                    <tr style="margin: 10px; padding: 10px; ">
+                        <td style="background:#dddddd; margin: 10px; padding: 10px; "></td>
+                        <td>
+                            <h5>原則</h5>
+                            <ul>
+                                <li>
+                                    ４方向キーの上を押せば上のアイテム、下を押せば下のアイテムを選択します。
+                                </li>
+                            </ul>
+                            <h5>早送り以外で４方向キーの右</h5>
+                            <ul>
+                                <li>
+                                    早送りを選択します。
+                                </li>
+                                <li>
+                                    同様に戻り以外で４方向キーの左を押すと戻りを選択
+                                </li>
+                                <li>
+                                    送り、戻り共に左右キーで反対側のボタンを選択します。
+                                </li>
+                            </ul>
+                            <h5>シークバーで４方向キーの左右</h5>
+                            <ul>
+                                <li>
+                                    シークバーはツマミが強制的に選択され、右左で再生ポイントを調整します。
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p style="text-align: right; background-color:white">
+            <div class="col-xs-12 col-sm-12">
+                <div class="col-xs-6 col-sm-8">
+                    <a href="../index.htm">
+                        <img src="../img/koubou.png" alt="比治山工房" width="100%">
+                    </a>
+                </div>
+                <div class="col-xs-2 col-sm-2">
+                    <a href="https://play.google.com/store/apps/details?id=com.hijiyam_koubou.marasongs ">
+                        <img src="../img/marasongs.png " alt="Marasong_qr " vspace="1 " hspace="1 "></a>
+                </div>
+                <div class="col-xs-4 col-sm-2">
+                    Copyright 2016
+                </div>
+            </div>
+        </p>
+    </footer>
+    </div>
+</body>
+
+</html>

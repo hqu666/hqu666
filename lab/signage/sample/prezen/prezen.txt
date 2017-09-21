@@ -1,0 +1,114 @@
+scene_cut	type	element	souce	left	top	width	hight	fontColor	bgColor	align	scale	opacity	fleamWidth	fleamColor	fontFamily	fontSize	vRows	scrollSpead	mStart	mPosition	effect	time	備考
+s000c00	signage	signage	sample/prezen/prezen.txt	0	0	1920	1080	false													fi	5000		
+s010c01	layout	layout	free																		fi	5000		
+s010c01	wall	wall	#ffffff							0	100	0.5							0	0	fi	5000		
+s010c01	text	fix_left	表紙	0	0	100	20	#000000	-1	1	100	0.5			"Hiragino Kaku Gothic ProN"	12	11		0	0	fi	5000		
+s010c01	text	top_left	市場分析サンプル	0	0	100	11	#03015a	-1	0	100	0.5			"Hiragino Kaku Gothic ProN"	60	1		0	0	fi	5000		
+s010c01	text	center_left	日本のブライダル市場	0	0	100	44	#000000	-1	0	100	0.5			"Hiragino Kaku Gothic ProN"	96	2		0	0	fi	5000		
+s010c01	text	bottom_left	○○経済調査　Co.	0	0	100	36	#03015a	-1	0	100	0.5			"Hiragino Kaku Gothic ProN"	32	6		0	0	fi	5000		
+s020c01	layout	layout	free																			5000		
+s020c01	wall	wall	http://www.geocities.jp/hqu666/lab/signage/sample/prezen/img/170628_01_452.jpg							0	100	0.3							0.0 			5000		
+s020c01	text	fix_left	現状分析			100	2	#000000		1	100	1.0			"Hiragino Kaku Gothic ProN"	12	1		0.0			5000		
+s020c01	text	top_left	日本の婚姻数			100	11	#000000	-1	0					"Hiragino Kaku Gothic ProN"	60					fi	5000		
+s020c01	pict	center_left	http://www.geocities.jp/hqu666/lab/signage/sample/prezen/img/0101konninnkennsuu.png	0		100	50	#000000		0	100	1.0	0			0			0.0			5000		
+s020c01	text	bottom_left	日本で提出される婚姻届けは年間約６０万件。<br>少子化に伴い１万５千件/年の減少傾向にある		60	100	20	#000000			100	1.0			"Hiragino Kaku Gothic ProN"	48			0.0			5000		
+s020c01	text	footer_right	ブライダル総研2017年出展： 2015年 / 635,156件	70	88	30	4	#000000	-1	2	100	0.5			"Hiragino Kaku Gothic ProN"	12	1		0	0	fi	5000		
+s020c02	wall	wall	#ffffff	0		12	12	#000000		0	100	0.2				0			0.0			5000		
+s020c02	text	top_left	増加するナシ婚⇒更に「ダケ婚」へ			100	11	#000000	-1	0					"Hiragino Kaku Gothic ProN"	60	1				fi	5000		
+s020c02	pict	center_left	http://www.geocities.jp/hqu666/lab/signage/sample/prezen/img/jissi_jyoukyou.png	0		60	55	#000000		0	100	1.0	1	#ffffff		0			0.0			5000		
+s020c02	text	center_right	<br>指輪だけ<br>↓<br>記念写真まで<br>↓<br>親族の顔合わせまで<br>↓<br>披露宴・パーティ<br>↓<br>従来プログラムの<br>結婚式の実施率は半分以下へ	60	20	40	50	#000000	-1	0	100	1.0			"Hiragino Kaku Gothic ProN"	28	10	20	0.0			5000		
+s020c02	text	bottom_left	実施件数は半数程度<br>2014年の婚姻件数64万9000組中<br>結婚式件数35万組	2	60	40	13	#000000	-1	1	100	1.0			"Hiragino Kaku Gothic ProN"	24	3		0.0			5000		
+s020c02	text	bottom_right	少子化に伴う１万５千件/年の減少<br>+<br>必要最低限の「ダケ婚」に抑えられる傾向へ。	60	60	40	13	#000000	-1	0	100	1.0			"Hiragino Kaku Gothic ProN"	18			0.0			5000		
+s020c02	text	footer_left	みんなのウェディング　2015年3月12日出展	2	88	40	2	#000000		1	100	1.0			"Hiragino Kaku Gothic ProN"	14	1		0.0			5000		
+s020c02	text	footer_right	結婚総合意識調査2016（リクルートブライダル総研調べ） 	50	88	50	2	#000000		2	100	1.0			"Hiragino Kaku Gothic ProN"	12	1		0.0			5000		
+s020c03	wall	wall	http://www.geocities.jp/hqu666/lab/signage/sample/prezen/img/0203.png							0	100	1							0	0	fi	5000		
+s020c03	text	top_left	ナシ婚理由Best3	0	4	100	13	#000000	-1	0	100	0.5			meiryo	80	1		0	0	fi	5000		
+s020c03	text	center_left	経済的理由～さずかり婚まで<br>事情が許せば実施の<br>可能性が有るのは<br>６割超<br><br>	2	17	40	27	25	-1	1	1	100	0.5		"Hiragino Kaku Gothic ProN"	36	4	1		0	0	5000	5000	
+s020c03	text	center_right	内容を見直せば<br>実施の可能性は<br>更に２割増	75	17	23	19	#000000	-1	2	#ff0080	1	100	0.5	"Hiragino Kaku Gothic ProN"	36	3	24	1		0	5000	fi	
+s020c03	text	footer_right	みんなのウェディング　2015年3月12日出展	50	88	50	2	#000000	-1	2	100	0.5			"Hiragino Kaku Gothic ProN"	12	1		0	0	fi	5000		
+s030c01	wall	wall	#ffffff							0	100	0.5							0	0	fi	5000		
+s030c01	text	fix_left	経済的な問題	0	0	100	4	#000000	-1	1	100	0.5			"Hiragino Kaku Gothic ProN"	24	1		0	0	fi	5000		
+s030c01	text	top_left	挙式費用の内訳	0	0	100	15	#000000	-1	0	100	0.5			"Hiragino Kaku Gothic ProN"	80	1		0	0	fi	5000		
+s030c01	pict	center_left	http://www.geocities.jp/hqu666/lab/signage/sample/prezen/img/0301hiyou.png	0	0	100	75	#000000	-1	0	100	1	1	#ffffff							fi	5000		
+s030c02	wall	wall	http://www.geocities.jp/hqu666/lab/signage/sample/prezen/img/04002.png	0		12	12	#000000		0	100	1				0			0.0			5000		
+s030c02	text	top_left	挙式・披露宴で実際に払った最終金額 	0	0	100	15	#000000	-1	0	100	0.5			"Hiragino Kaku Gothic ProN"	80	1		0	0	fi	5000		
+s030c02	text	center_right	2016年全国平均<br>費用総額は約359.7万円<br>ゼクシイ　http://zexy.net/mar/manual/kiso_souba/	70	0	30	18	#000000	-1	1	100	0.5			"Hiragino Kaku Gothic ProN"	24	4		0	0	fi	5000		
+s030c02	text	footer_right	2016年 みんなのウェディング白書	70	88	30	2	#000000	-1	2	100	0.5			"Hiragino Kaku Gothic ProN"	12	1		0	0	fi	5000		
+s030c03	wall	wall	http://www.geocities.jp/hqu666/lab/signage/sample/prezen/img/04003.png	0		12	12	#000000		0	100	1				0			0.0			5000		
+s030c03	text	top_left	祝儀と援助で補填して… 	0	4	100	15	#000000	-1	0	100	0.5			"Hiragino Kaku Gothic ProN"	80	1		0	0	fi	5000		
+s030c03	text	center_left	ご祝儀平均５万円<br>×招待人数	1	0	40	14	#000000	-1	1	100	0.5			"Hiragino Kaku Gothic ProN"	40	2		0	0	fi	5000		
+s030c03	text	center_right	2016年全国平均<br>招待人数は約71.6人。 <br>ゼクシイ　http://zexy.net/mar/manual/kiso_souba/	68	20	32	17	#000000	-1	1	100	0.5			"Hiragino Kaku Gothic ProN"	22	4		0	0	fi	5000		
+s030c03	text	bottom_left	ご祝儀の目安【一人当たり】<br>兄弟姉妹　　：10万円<br>親族　　　　： 5万円<br>会社関係者　：3～5万円<br>友人　　　　： 3万円	1	60	30	35	29	21	-1	#e5e5e5	1	100	1	"Hiragino Kaku Gothic ProN"	24	32	5	5		0	0	fi	
+s030c03	text	bottom_right	費用の援助 <br>1位：新郎新婦のご両親から：47.48%<br>3位：どちらかの両親から　：22.68%<br><br>2位：援助は一切なかった 　：29.84%	69	60	30	21	#000000	-1	2	100	1			"Hiragino Kaku Gothic ProN"	24	5		0	0	fi	5000		
+s030c03	text	footer_right	2016年 みんなのウェディング白書	70	88	30	2	#000000	-1	2	100	0.5			"Hiragino Kaku Gothic ProN"	12	1		0	0	fi	5000		
+s030c04	wall	wall	http://www.geocities.jp/hqu666/lab/signage/sample/prezen/img/04004.png	0		12	12	#000000		0	100	1				0			0.0			5000		
+s030c04	text	top_left	最終的にふたりで支払った金額 	0	0	100	15	#000000	-1	0	100	0.5			"Hiragino Kaku Gothic ProN"	80	1		0	0	fi	5000		
+s030c04	text	center_right	どのように負担 <br><br>1位：新郎新婦で折半　51%<br>2位：新郎が多く負担　27%<br>3位：新婦が多く負担　11%<br>4位：新郎がすべて負担　6%　<br>5位：新婦側がすべて負担　3% 	72	0	26	36	#000000	-1	1	100	0.5			"Hiragino Kaku Gothic ProN"	24	8		0	0	fi	5000		
+s030c04	text	bottom_left	「ナシ婚」の方々 本音のコメント <br>＜経済的事情＞ <br>・余裕ができたらやればよいという考えだったため。（神奈川 30代 女性） <br>・貯金もなかったし、親からの援助もなかったので。（京都 30代 女性）	2	0	25	20	#000000	#ead0f9	1	100	0.5			"Yu Mincho"	18	6		0	0	fi	5000		
+s030c04	text	footer_right	2016年 みんなのウェディング白書	70	88	30	4	#000000	-1	2	100	0.5			"Hiragino Kaku Gothic ProN"	12	1		0	0	fi	5000		
+s040c01	wall	wall	#ffffff							0	100	1							0	0	fi	5000		
+s040c01	text	fix_left	ナシ婚からダケ婚へ。	0	0	100	4	#000000	-1	1	100	0.5			"Hiragino Kaku Gothic ProN"	24	1		0	0	fi	5000		
+s040c01	text	top_left	ナシ婚でもこれだけはする	0	0	100	15	#000000	-1	0	100	0.5			"Hiragino Kaku Gothic ProN"	80	1		0	0	fi	5000		
+s040c01	text	center_left	残るもの<br>①婚約指輪の購入 <br>②ハネムーン（新婚旅行） <br>③婚礼衣装で写真撮影 <br>④結婚指輪の購入 	2	0	38	35	#000000	#f5e7ab	1	100	0.5			"Hiragino Kaku Gothic ProN"	36	5		0	0	fi	5000		
+s040c01	pict	center_right	http://www.geocities.jp/hqu666/lab/signage/sample/prezen/img/05okonattakoto.png	40	0	60	65	#000000	-1	0	100	1	1	#ffffff							fi	5000		
+s040c01	text	bottom_left	最低限のご挨拶<br>②身内だけの食事会 <br>⑥小規模の友人向けお披露目会<br>　　 （～20人未満） <br>	2	70	38	26	#000000	#bdbdff	1	100	0.5			"Hiragino Kaku Gothic ProN"	36	4		0	0	fi	5000		
+s040c01	text	footer_right	みんなのウェディング　2015年3月12日出展	70	88	30	2	#000000	-1	2	100	0.5			"Hiragino Kaku Gothic ProN"	12	1		0	0	fi	5000		
+s040c02	wall	wall	http://www.geocities.jp/hqu666/lab/signage/sample/prezen/img/column_02.png							0	100	1							0	0	fi	5000		
+s040c02	text	top_left	指輪だけ	0	4	100	15	#000000	-1	0	100	0.5			"Hiragino Kaku Gothic ProN"	80	1		0	0	fi	5000		
+s040c02	pict	center_left	http://www.geocities.jp/hqu666/lab/signage/sample/prezen/img/0701.png	0	0	70	70	#000000	-1	0	100	1	1	#ffffff							fi	5000		
+s040c02	text	bottom_right	家族との食事会や仲間との<br>簡単なパーティなどを計画<br><br><br>その席で指輪の交換のセレモニーだけ 	70	0	30	46	#000000	-1	1	100	0.5			"Yu Mincho"	24	8		0	0	fi	5000		
+s040c02	text	footer_right	http://www.mariage-corp.com/column/column01.html	70	88	30	2	#000000	-1	2	100	0.5			"Hiragino Kaku Gothic ProN"	12	1		0	0	fi	5000		
+s040c03	wall	wall	http://www.geocities.jp/hqu666/lab/signage/sample/prezen/img/photweding.png							0	100	1							0	0	fi	5000		
+s040c03	text	top_left	写真だけ	0	0	100	15	#000000	-1	0	100	0.5			"Hiragino Kaku Gothic ProN"	80	1		0	0	fi	5000		
+s040c03	text	center_left	①スケジュールは自由度<br>　大安だろうが仏滅だろうが<br>　結婚してから何年経ってても関係なし。 <br>③ゲストをお招きすることがない<br>④写真だから子どもやペットなども参加<br>⑤結婚報告はがきが作れます。 	2	0	60	48	#000000	-1	1	100	0.5			"Hiragino Kaku Gothic ProN"	44	6		0	0	fi	5000		
+s040c03	text	center_right	②結婚式はしないけど、<br>ドレスは着たい......<br>	65	0	35	18	#000000	-1	2	100	0.5			"Hiragino Kaku Gothic ProN"	44	2		0	0	fi	5000		
+s040c03	text	bottom_left	親もなんとなく納得 	2	88	48	11	#ffffff	#800040	6	100	0.5			"Yu Mincho"	60	1		0	0	fi	5000		
+s040c03	pict	bottom_right	http://www.geocities.jp/hqu666/lab/signage/sample/prezen/img/170628_01_001.jpg	62	42	37	46	#000000	-1	2	100	1	1	#ffffff							fi	5000		
+s040c03	text	footer_right	ぐるなびWEDDING https://wedding.gnavi.co.jp/howto/19995/<br>	50	88	50	2	#000000	-1	2	100	0.5			"Hiragino Kaku Gothic ProN"	12	1		0	0	fi	5000		
+s040c04	wall	wall	http://www.geocities.jp/hqu666/lab/signage/sample/prezen/img/pic_detail_002.png	0		12	12	#000000		0	100	1				0			0.0			5000		
+s040c04	text	top_left	挙式だけ	0	0	100	15	#000000	-1	0	100	0.5			"Hiragino Kaku Gothic ProN"	80	1		0	0	fi	5000		
+s040c04	text	center_left	・会場使用料、式に使用する小物の実費で済むケースもあります。<br>・そこに新郎・新婦の衣装代、ヘアメイク代をプラスした15～30万円程度	2	0	95	13	#000000	-1	1	100	0.5			"Hiragino Kaku Gothic ProN"	36	2		0	0	fi	5000		
+s040c04	pict	bottom_left	http://www.geocities.jp/hqu666/lab/signage/sample/prezen/img/170628_01_096.jpg	0	0	50	55	#000000	-1	1	100	1	1	#ffffff							fi	5000		
+s040c04	text	bottom_right	①「人前に立つのが苦手」という方にも。<br>②セレモニー自体は30分程度。 <br>③結婚のけじめがつけられる	50	40	50	50	#000000	-1	1	100	0.5			"Hiragino Kaku Gothic ProN"	36	1		0	0	fi	5000		
+s040c04	text	footer_right	ぐるなびWEDDING https://wedding.gnavi.co.jp/style/ceremony/<br>	50	88	50	2	#000000	-1	2	100	0.5			"Hiragino Kaku Gothic ProN"	12	1		0	0	fi	5000		
+s040c05	wall	wall	http://www.geocities.jp/hqu666/lab/signage/sample/prezen/img/mw_80a32c160d77ab3235f88d31.png	0		12	12	#000000		0	100	1				0			0.0			5000		
+s040c05	text	top_left	家族との食事会だけ	0	0	100	17	#000000	-1	0	100	0.5			"Hiragino Kaku Gothic ProN"	70	1		0	0	fi	5000		
+s040c05	text	center_left	ふたりの結婚を本当に知っておいてもらいたい<br>家族だけを招いた小規模なお食事会	2	0	68	16	#000000	-1	0	100	0.5			"Hiragino Kaku Gothic ProN"	44	2		0	0	fi	5000		
+s040c05	text	center_right	レストランや料亭の個室などでアットホームに感謝の気持ちを告げ、祝福を受けることができる <br><br>・本人たちは入籍のみで結婚式・披露宴を行うつもりはなかったが、親から「両家親族の顔合わせの場だけでも設けてほしい」といわれて開催するパターン<br><br>・妊娠のため結婚式・披露宴を行うには負担が大きいが、親族には結婚のお披露目をしたい、というパターン	70	0	30	55	#000000	-1	1	100	1			"Yu Mincho"	24	13		0	0	fi	5000		
+s040c05	pict	bottom_left	http://www.geocities.jp/hqu666/lab/signage/sample/prezen/img/170628_01_069.jpg	0	45	22	60	#000000	-1	0	100	1	1	#ffffff							fi	5000		
+s040c05	pict	bottom_right	http://www.geocities.jp/hqu666/lab/signage/sample/prezen/img/mw_713dec2ec795530ca221bff031c29251.jpg	30	45	40	48	#000000	-1	0	100	1	1	#ffffff							fi	5000		
+s040c05	text	footer_right	https://www.mwed.jp/manuals/572/<br>	70	88	30	2	#000000	-1	2	100	0.5			"Hiragino Kaku Gothic ProN"	12	1		0	0	fi	5000		
+s040c06	wall	wall	http://www.geocities.jp/hqu666/lab/signage/sample/prezen/img/0654482617.png	0		12	12	#000000		0	100	1				0			0.0			5000		
+s040c06	text	top_left	パーティだけ	0	0	100	17	#000000	-1	0	100	0.5			"Hiragino Kaku Gothic ProN"	80	1		0	0	fi	5000		
+s040c06	text	center_left	挙式や披露宴なんて堅苦しくてイヤ。<br>　予算もないし......」という方へ。<br><br>①海外挙式後の友人へのお披露目パーティ<br><br>②「1.5次会スタイル」で<br>　　結婚式披露宴と二次会を<br>　　一緒にまとめて挙げる<br>③人前式を取り入れれば、<br>　フランクにふたりの結婚の宣言	1	0	50	71	#000000	-1	1	100	0.5			"Hiragino Kaku Gothic ProN"	36	11		0	0	fi	5000		
+s040c06	pict	center_right	http://www.geocities.jp/hqu666/lab/signage/sample/prezen/img/1p5jikai.png	52	0	48	37	#000000	-1	0	100	1	1	#ffffff							fi	5000		
+s040c06	text	bottom_right	ゲストが気軽に参加できるアットホームなパーティ<br>特に貸切レストランが人気<br>着席or立食、コース料理orビュッフェなども自由<br>挙式日に関係なく日程や時間帯を自由に選べる<br>パーティは2～2.5時間が一般的<br>会費制；65% / ご祝儀制；34%  	55	52	43	26	#000000	-1	1	100	0.5			"Yu Mincho"	24	6		0	0	fi	5000		
+s040c06	text	footer_right	 https://www.mwed.jp/articles/197/#anchor01	50	88	50	2	#000000	-1	2	100	0.5			"Hiragino Kaku Gothic ProN"	12	1		0	0	fi	5000		
+s040c07	wall	wall	#ffffff							0	100	1							0	0	fi	5000		
+s040c07	text	fix_right	カスタムウエディング	50	0	50	4	#000000	-1	2	100	0.5			"Hiragino Kaku Gothic ProN"	24	1		0	0	fi	5000		
+s040c07	text	top_left	必要最低限で	0	0	100	15	#000000	-1	0	100	0.5			"Hiragino Kaku Gothic ProN"	80	1		0	0	fi	5000		
+s040c07	pict	center_left	http://www.geocities.jp/hqu666/lab/signage/sample/prezen/img/07002weding_stayle.png	0	0	60	70	#000000	-1	2	100	1	0	#ffffff							fi	5000		
+s040c07	text	center_right	結納・顔合わせ、<br>挙式、披露宴、二次会<br>のすべてを行うのが<br>「結婚式」ではありません。	61	0	36	30	#000000	#ddddff	1	100	0.5			"Hiragino Kaku Gothic ProN"	36	4		0	0	fi	5000		
+s040c07	text	footer_right	ぐるなびWEDDING https://wedding.gnavi.co.jp/sp/money/souba/#pStyle 出展	70	88	30	2	#000000	-1	2	100	0.5			"Hiragino Kaku Gothic ProN"	12	1		0	0	fi	5000		
+s050c01	wall	wall	#ffffff							0	100	0.5							0	0	fi	5000		
+s050c01	text	fix_left	内容に不満	0	0	50	2	4	-1	-1	1	100	0.5		"Hiragino Kaku Gothic ProN"	12	1	1		0	0	5000	5000	
+s050c01	text	top_left	内容に不満	0	4	100	12	#000000	-1	0	100	0.5			"Hiragino Kaku Gothic ProN"	80	1		0	0	fi	5000		
+s050c01	pict	center_left	http://www.geocities.jp/hqu666/lab/signage/sample/prezen/img/04lpnpmi.png	0	15	65	78	#000000	-1	2	100	1	1	#ffffff							fi	5000		
+s050c01	text	center_right	「ナシ婚」の方々 本音のコメント <br>＜セレモニー的行為が嫌＞ <br>・日本の披露宴のスタイルに興味を惹かれない。（大阪 30代 女性） <br>・相手はしてもしなくてもいい、というスタンスだったため、実際やるとなるとあまり協力が得られないような気がしたので。（沖縄 20代 女性） <br>・金銭的に余裕がなかったことと、目立つことや派手なことが好きではない為（東京 30代 女性） <br>・お金がないのもありますが、挙式をすることが少し恥ずかしくも感じるため。（新潟 20代 女性） 	68	0	30	40	#000000	#ead0f9	1	100	0.5			"Yu Mincho"	18	11		0	0	fi	5000		
+s050c01	text	bottom_right	「ナシ婚」の方々 本音のコメント <br>＜複合的要因＞ <br>・遠距離で、それぞれがお互いの地元以外のところで就職していたためタイミングが合わなかった。 <br>さらに資金も余裕がなかったので、入籍のタイミングと同じでなくてもよいのではということになった（愛知 30代 女性）	68	60	30	27	#000000	#ead0f9	1	100	0.5			"Yu Mincho"	18	8		0	0	fi	5000		
+s050c01	text	footer_right	2016年 みんなのウェディング白書	70	88	30	2	#000000	-1	2	100	0.5			"Hiragino Kaku Gothic ProN"	12	1		0	0	fi	5000		
+s060c01	text	fix_left	ご提案	0	0	50	4	#000000	-1	1	100	0.5			"Hiragino Kaku Gothic ProN"	24	1		0	0	fi	5000		
+s060c01	text	top_left	カスタムウエディング	0	0	100	15	#000000	-1	0	100	0.5			"Hiragino Kaku Gothic ProN"	80	1		0	0	fi	5000		
+s060c01	pict	center_left	http://www.geocities.jp/hqu666/lab/signage/sample/prezen/img/0601.png	0	0	100	56	#000000	-1	0	100	1	1	#ffffff							fi	5000		
+s060c01	text	bottom_right	「ナシ婚」の方々 本音のコメント ＜さずかり婚＞ <br>・おめでた婚で、どのタイミングでやったらいいかわからない。（千葉 20代 女性） <br>・おめでた婚だった為、挙式など行う時間も余裕もなかった。子供がもう少し大きくなったら考えようと思っていた。（東京 20代 女性） <br>・出産をして落ち着いてからしたいと思ったから （宮城 20代 女性）<br>・先に妊娠したことと、夫が再婚のため。いつか式はしたいけどすぐにはできない。（兵庫 20代 女性） 	62	55	37	14	#000000	#ead0f9	1	100	0.5			"Hiragino Kaku Gothic ProN"	12	7		0	0	fi	5000		
+s060c01	text	footer_right	みんなのウェディング　2015年3月12日出展	70	88	30	2	#000000	-1	2	100	0.5			"Hiragino Kaku Gothic ProN"	12	1		0	0	fi	5000		
+s060c02	wall	wall	#ffffff							0	100	0.5							0	0	fi	5000		
+s060c02	text	fix_left	カスタムウエディングの実現に向けて	0	0	100	4	#000000	-1	1	100	0.5			"Hiragino Kaku Gothic ProN"	24	1		0	0	fi	5000		
+s060c02	text	top_left	挙式に関わる要素	0	0	100	15	#000000	-1	0	100	0.5			"Hiragino Kaku Gothic ProN"	80	1		0	0	fi	5000		
+s060c02	pict	center_left	http://www.geocities.jp/hqu666/lab/signage/sample/prezen/img/0801.png	0	0	100	60	#000000	-1	0	100	1	1	#ffffff							fi	5000		
+s060c02	text	bottom_left	これらの要素を有機的に結び付ける仕掛けが必要	0	0	100	12	#000000	-1	0	100	0.5			"Hiragino Kaku Gothic ProN"	63.63636363636363	1		0	0	fi	5000		
+s060c03	text	top_left	挙式の要素を結びつけるシステム	0	0	100	15	#000000	-1	0	100	0.5			"Hiragino Kaku Gothic ProN"	80	1		0	0	fi	5000		
+s060c03	pict	center_left	http://www.geocities.jp/hqu666/lab/signage/sample/prezen/img/0802.png	0	0	100	73	#000000	-1	0	100	1	1	#ffffff							fi	5000		
+s070c01	text	fix_left	エンディング	0	0	100	32	#000000	-1	1	100	1			"Hiragino Kaku Gothic ProN"	12	1		0	0	fi	5000		
+s070c01	text	top_left	ご清聴ありがとうございました。	0	30	100	25	#000000	-1	0	100	1			"Yu Mincho"	80	1		0	0	fi	5000		
+s070c01	text	center_left	○○経済調査　Co.	0	0	100	7	#000000	-1	0	100	1			"Hiragino Kaku Gothic ProN"	40	1		0	0	fi	5000		

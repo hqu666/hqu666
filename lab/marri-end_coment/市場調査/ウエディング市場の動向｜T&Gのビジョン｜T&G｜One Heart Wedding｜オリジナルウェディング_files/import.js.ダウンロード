@@ -1,0 +1,42 @@
+var include = function(){
+	//対象のディレクトリ
+	var targetDirName = 'shared/';
+
+	//JSのディレクトリ
+	var jsDir = 'js/';
+	
+	var escapeRegex = function(str){
+		return str.replace(/([\\$^*+?(){}\[\].|])/g,"\\$1");
+	};
+
+	//ベースディレクトリ
+	var baseDir = function(){
+		if(!document.getElementsByTagName) return;
+		var scripts = document.getElementsByTagName("script");
+		var regexp = new RegExp('^(.*/?' + escapeRegex(targetDirName) + ').*?$');
+		for(var i = 0;i < scripts.length;i++){
+			if( scripts[i].src.match(regexp) ){
+				return scripts[i].src.match(regexp)[1];
+			}
+		}
+	}();
+
+	//include関数
+	var pub = function(file){
+		document.write('<script type="text/javascript" src="' + baseDir + jsDir + file + '"><\/script>');
+	};
+	
+
+	//ベースディレクトリの属性を追加
+	pub.baseDir = baseDir;
+
+	return pub;
+	
+}();
+
+include('scrollsmoothly.js');
+include('jquery-1.4.2.min.js');
+include('jquery.updnWatermark.js');
+include('jquery.tools.min.js');
+include('script.js');
+include('fontsize.js');

@@ -1,0 +1,29 @@
+@charset "utf-8";
+/*=============================================================
+ trend Layout
+=============================================================*/
+
+/* table
+-------------------------------------------------------------*/
+table#support{
+	margin:15px 0px 0px;
+}
+table#support td{
+	padding:10px;
+	border-right:1px solid #c8c8c8;
+	border-bottom:1px solid #c8c8c8;
+}
+table#support td.right-cell,
+table#support th.right-cell{
+	border-right:none;
+}
+table#support tr.type02 td{
+	background:#fbfaf8;
+}
+table#support th{
+	padding:10px;
+	border-right:1px solid #fff;
+	background:#b2a798;
+	color:#fff;
+	font-weight:bold;
+}

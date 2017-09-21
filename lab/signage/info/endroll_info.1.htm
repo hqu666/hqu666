@@ -1,0 +1,845 @@
+<!DOCTYPE HTML>
+<!--PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"-->
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>比治山工房/web signage |「シナリオに沿ったスライドショー」の説明</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <style type="text/css">
+        /*table,
+        td,
+        th {
+            border: 2px #2b2b2b solid;
+        }*/
+        
+        td,
+        th {
+            padding: 10px 10px;
+        }
+    </style>
+</head>
+
+<body style="font-size: 11pt; line-height: 150%;">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8">
+                <h2>シナリオに沿ったスライドショー</h2>
+                <div style="padding: 10px;background-color: #3c763d;color: white;">
+                    概要
+                </div>
+                <div style="padding: 10px;background-color: #dff0d8;">
+                    各カットでどの位置に何を表示させるかを（シナリオ？絵コンテで）指定して、連続したアニメーションを実行します。<br> デジタルサイネージなどを利用する動く広告や結婚式に使うエンドロール、汎用的なプレゼンツールをweb上に構築するシステムです。
+                </div>
+                このスライドの設定には映像コンテンツに使われる絵コンテに近い内容の設定ファイルを使います。<br> このファイルはEXCELなどで編集して「conte.txt」という名称でタブ区切りのテキストファイルにしています。
+            </div>
+            <div class="col-xs-12 col-sm-4" style="text-align: right;">
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- サポートページトップ -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3146425308522831" data-ad-slot="4219928305" data-ad-format="auto"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+
+                <script type="text/javascript">
+                    var nend_params = {
+                        "media": 32269,
+                        "site": 206990,
+                        "spot": 583222,
+                        "type": 1,
+                        "oriented": 1
+                    };
+                </script>
+                <script type="text/javascript" src="https://js1.nend.net/js/nendAdLoader.js"></script>
+            </div>
+        </div>
+
+        <div class="row" style="width: 100%;height: auto;">
+            <div style="padding: 5px;">
+                <!--bordercolor="#333333"  class="bg-warning"        class="bg-info"-->
+                <div class="col-sm-12">
+                    <div>
+                        <table border="1">
+                            <tr>
+                                <th bgcolor="#337ab7" width=70%>
+                                    <font color="#ffffff">
+                                        conte画面（データエディタ）
+                                    </font>
+                                </th>
+                                <th rowspan="2">
+                                    <img src="img/conte.png" class="phorRes" style="width:100%;" alt="コンテ">
+                                </th>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    このシステムはシナリオ(映像コンテンツで言う「絵コンテ」)に沿ってスライドショーを実行するシステムです。
+                                    <p>デモンストレーションでは「こんな感じ」というだけのサンプル画面で、実際に動作するのは「再生」ボタンだけです。</p>
+                                    <p>実際のシステムではPHPなども駆使してデータベースに「conte.txtの設定」にある様なカットごとのレコードを作成し、 hogan.jsなどで表を構成する事になるかと思います。
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    ただし、絵コンテでふんどしページにならない様、折り畳み式のリストにしています。<br><br> ページを開いた直後は右上の様なシーンごとのリスト
+                                    <br><br>リンクテキストをクリックすると、そのシーンのカットリストを表示します。<br><br> ここでカットのブロックをドラッグ＆ドロップで順番を入れ替える事を検討しています。
+                                </td>
+                                <td>
+                                    <img src="img/conte2.png" class="phorRes" style="width:100%;" alt="コンテ2">
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    更にカットのリンクテキストをクリックするとカット内に使用するエレメント（パーツ情報）を表示します。<br><br> 更にこの表示部分をクリックする事でエディターに入ることを検討しています。
+                                </td>
+                                <td>
+                                    <img src="img/conte3.png" class="phorRes" style="width:100%;" alt="コンテ2">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="width: 100%;height: auto;">
+            <div style="padding: 5px;">
+                <!--bordercolor="#333333"  class="bg-warning"        class="bg-info"-->
+                <div class="col-sm-12">
+                    <div>
+                        <table border="1">
+                            <tr>
+                                <th colspan="2" bgcolor="#337ab7" width=70%>
+                                    <font color="#ffffff">
+                                        スライドショー画面（プレイヤー）
+                                    </font>
+                                </th>
+                                <th rowspan="2">
+                                    <img src="../img/s030c05pre.png" class="phorRes" style="width:100%;" alt="プレイヤー">
+                                </th>
+                            </tr>
+                            <tr valign="top">
+                                <td colspan="2">
+                                    このデモンストレーションでは構成物単位のレコードで構成した「conte.txt」を読み込んで、 プレイヤー内でカットごとのオブジェクトに再構成します。
+                                    <p>
+                                        実際のシステムではconte.txtに該当するデータベースのレコードを読み込ませます。
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td colspan="3">
+                                    例えば結婚式のエンドロールなど操作不要な実用例の方が多いかと思いますが、プレゼン用途にも耐える様、画面下部に操作パネルを用意しています。
+                                    <table width="100%" border="1">
+                                        <tr valign="top">
+                                            <td>
+                                                <img src="img/sc_v.png" class="phorRes" alt="シーン・カット表示"><br> シーン・カット表示
+                                            </td>
+                                            <td>
+                                                現在表示しているシーンとカット番号です。
+                                            </td>
+                                        </tr>
+                                        <tr valign="top">
+                                            <td>
+                                                <img src="img/mae_bt.png" class="phorRes" alt="前のカット"><br> 前のカット
+                                            </td>
+                                            <td>
+                                                一つ前のカットに戻します。
+                                            </td>
+                                        </tr>
+                                        <tr valign="top">
+                                            <td>
+                                                音声コントロール
+                                            </td>
+                                            <td>
+                                                <img src="img/audio_panel.png" class="phorRes" style="width:80%;" alt="音声コントロール"><br> 音声ファイルの再生/停止、再生ポジション、音量を調整します。
+                                                <br> html5のaudioタグをそのまま使っていますので、ブラウザーによって構成やデザインが変わります。
+                                            </td>
+                                        </tr>
+                                        <tr valign="top">
+                                            <td>
+                                                <img src="img/play_bt.png" class="phorRes" alt="再生">
+                                                <img src="img/pouse_bt.png" class="phorRes" alt="再生/ポーズ"><br> 再生/ポーズ
+                                            </td>
+                                            <td>
+                                                再生中のカットで停止/そのカットの先頭から再生します。
+                                            </td>
+                                        </tr>
+                                        <tr valign="top">
+                                            <td>
+                                                <img src="img/tugi_bt.png" class="phorRes" alt="次のカット"><br> 次のカット
+                                            </td>
+                                            <td>
+                                                次のカットに送ります。
+                                                <div class="alert alert-danger" role="alert">
+                                                    連打すると誤動作の原因になりますので0.1秒遅延して動作します。
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr valign="top">
+                                            <td>
+                                                <img src="img/setumei_bt.png" class="phorRes" alt="説明"><br> 説明
+                                            </td>
+                                            <td>
+                                                プレイヤーからこの説明画面にリンクします。
+                                            </td>
+                                        </tr>
+                                        <tr valign="top">
+                                            <td>
+                                                <img src="img/navi_open.png" class="phorRes" alt="説明"><br> 閉じる
+                                            </td>
+                                            <td>
+                                                操作パネルを閉じて再生を開始します。
+                                            </td>
+                                        </tr>
+                                        <tr valign="top">
+                                            <td>
+                                                <img src="img/navi_close.png" class="phorRes" alt="説明"><br> 開く
+                                            </td>
+                                            <td>
+                                                操作パネルを表示します。
+                                                <div class="alert alert-danger" role="alert">
+                                                    プレイヤーを開いた直後は操作パネルを開いて一時停止させています。
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <p>
+                                        <div class="alert alert-danger" role="alert">
+                                            音楽再生が不自然にならない様にフェードアウトを長めに取っています。 その影響もあって送り/戻しのタイミングによっては音声が止まる事も有ります。
+                                        </div>
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="container" style="width: 100%;">-->
+        <div class="row" style="width: 100%;height: auto;">
+            <div style="padding: 5px;">
+                <!--bordercolor="#333333"  class="bg-warning"        class="bg-info"-->
+                <div class="col-sm-12">
+                    <div>
+                        <table border="1">
+                            <tr>
+                                <th colspan="2" bgcolor="#337ab7">
+                                    <font color="#ffffff">
+                                        conte.txtの設定
+                                    </font>
+                                </th>
+
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    scene_cut
+                                </td>
+                                <td>
+                                    例えばシーン２のカット４なら「s020c04」と指定してください。<br>
+                                    <table width="100%" border="0">
+                                        <tr valign="top">
+                                            <td colspan="2">
+                                                小文字のｓ+３桁の数字でレコードの先頭区分に使います。
+                                            </td>
+                                        </tr>
+                                        <tr valign="top">
+                                            <td colspan="2">
+                                                シーンの追加が可能な様にシーンNoの後ろに0～9の数字を指定できる様にしました。
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <div class="alert alert-danger" role="alert">
+                                        Excelで元ファイルを編集する場合、セル内で改行する事があります。 これをtab区切りのTextファイルの書き出すと、別のレコードに分割されます。
+                                        <br> このスクリプトでは分割されたレコードを繋ぎ直す為に「s0」という文字を行頭（レコードの先頭）の識別子として使います。
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    type
+                                </td>
+                                <td>
+                                    表示するアイテムの種類です
+                                    <table width="100%" border="1">
+                                        <tr valign="top">
+                                            <td>
+                                                text
+                                            </td>
+                                            <td>
+                                                固定表示する文字列です。
+                                            </td>
+                                        </tr>
+                                        <tr valign="top">
+                                            <td>
+                                                scroll
+                                            </td>
+                                            <td>
+                                                スクロールさせる文字です。
+                                            </td>
+                                        </tr>
+                                        <tr valign="top">
+                                            <td>
+                                                pict
+                                            </td>
+                                            <td>
+                                                静止画です。
+                                            </td>
+                                        </tr>
+                                        <tr valign="top">
+                                            <td>
+                                                sound
+                                            </td>
+                                            <td>
+                                                そのカットからスタートさせる音声/楽曲です。
+                                            </td>
+                                        </tr>
+                                        <tr valign="top">
+                                            <td>
+                                                wall
+                                            </td>
+                                            <td>
+                                                そのカットで切り替える壁紙です。
+                                            </td>
+                                        </tr>
+                                        <tr valign="top">
+                                            <td>
+                                                layout
+                                            </td>
+                                            <td>
+                                                レイアウトの分類です<br> デフォルトは全画面中のフリーレイアウトですが、左右対称や左右の比率を指定するレイアウトを用意します。
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    element
+                                </td>
+                                <td>
+                                    カット中の各アイテムを表示させる位置です。<br> BootStropのグリッドシステム（画面幅を12分割するシステム）ですので、各エリアで幅いっぱいのエリアを確保する時は"_left"を指定してwidthを"12"と指定します。
+                                    <table width="100%" border="1">
+                                        <tr align="center">
+                                            <th>
+
+                                            </th>
+                                            <th width="8.3%">
+                                                1
+                                            </th>
+                                            <th width="8.3%">
+                                                2
+                                            </th>
+                                            <th width="8.3%">
+                                                3
+                                            </th>
+                                            <th width="8.3%">
+                                                4
+                                            </th>
+                                            <th width="8.3%">
+                                                5
+                                            </th>
+                                            <th width="8.3%">
+                                                6
+                                            </th>
+                                            <th width="8.3%">
+                                                7
+                                            </th>
+                                            <th width="8.3%">
+                                                8
+                                            </th>
+                                            <th width="8.3%">
+                                                9
+                                            </th>
+                                            <th width="8.3%">
+                                                10
+                                            </th>
+                                            <th width="8.3%">
+                                                11
+                                            </th>
+                                            <th width="8.3%">
+                                                12
+                                            </th>
+                                        </tr>
+                                        <tr align="center">
+                                            <td rowspan="2">
+                                                fix
+                                            </td>
+                                            <td colspan="6">
+                                                fix_left
+                                            </td>
+                                            <td colspan="6">
+                                                fix_right
+                                            </td>
+                                        </tr>
+                                        <tr align="center">
+
+                                            <td colspan="12">
+                                                シーンのタイトルなど、カットの切り替えでフェードアウトさせないエリアです。
+                                            </td>
+                                        </tr>
+                                        <tr align="center">
+                                            <td>
+                                                top
+                                            </td>
+                                            <td colspan="6">
+                                                top_left
+                                            </td>
+                                            <td colspan="6">
+                                                top_right
+                                            </td>
+                                        </tr>
+                                        <tr align="center">
+                                            <td>
+                                                center
+                                            </td>
+                                            <td colspan="6">
+                                                center_left
+                                            </td>
+                                            <td colspan="6">
+                                                center_right
+                                            </td>
+                                        </tr>
+                                        <tr align="center">
+                                        </tr>
+                                        <tr align="center">
+                                            <td>
+                                                bottom
+                                            </td>
+                                            <td colspan="6">
+                                                bottom_left
+                                            </td>
+                                            <td colspan="6">
+                                                bottom_right
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    typeがsoundの場合はaudio、wallの場合はwall、layoutの場合はlayoutと指定して下さい。
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    souce
+                                </td>
+                                <td>
+                                    type毎の内容です
+                                    <table width="100%" border="1">
+                                        <tr valign="top">
+                                            <td>
+                                                text
+                                            </td>
+                                            <td>
+                                                改行が必要な場合はExcelの場合、Alt+Enterで改行して下さい。
+                                                <p>&ltbr&gt や　&ltｐ&gt　タグなどはスクリプト中で挿入しますので不要です。</p>
+                                            </td>
+                                        </tr>
+                                        <tr valign="top">
+                                            <td>
+                                                scroll
+                                            </td>
+                                            <td>
+                                                textと同様です。
+                                            </td>
+                                        </tr>
+                                        <tr valign="top">
+                                            <td>
+                                                pict
+                                            </td>
+                                            <td rowspan="3">
+                                                urlを指定して下さい。<br> 大きなファイルは別サーバに置かれたファイルの直接リンクで指定して下さい。
+                                            </td>
+                                        </tr>
+                                        <tr valign="top">
+                                            <td>
+                                                wall
+                                            </td>
+                                        </tr>
+                                        <tr valign="top">
+                                            <td>
+                                                sound
+                                            </td>
+                                        </tr>
+                                        <tr valign="top">
+                                            <td>
+                                                layout
+                                            </td>
+                                            <td>
+                                                たとえば左右に均等分割の場合は「　1:1　」(すべて半角)、非対称にする場合は左右比率で「　1:2　」などを指定して下さい。 その他、もしくは未指定の場合はその他の位置/サイズ指定に従ったフリーレイアウトです。
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    sound以外の共通項目
+                                </td>
+                                <td>
+                                    表示する位置です。<br> はみ出す場合は出来る限りスクリプトで調整します。
+                                    <table width="100%" border="1">
+                                        <tr valign="top">
+                                            <td rowspan="3">
+                                                left
+                                            </td>
+                                            <td>
+                                                そのアイテムの左(x)座標です。
+                                            </td>
+                                        </tr>
+                                        <tr valign="top">
+                                            <td>
+                                                画面幅を1とした小数で指定して下さい。
+                                            </td>
+                                        </tr>
+                                        <tr valign="top">
+                                            <td>
+                                                右側に表示するアイテムを中心より左に配置したい場合は-で指定して下さい。
+                                            </td>
+                                        </tr>
+                                        <tr valign="top">
+                                            <td>
+                                                top
+                                            </td>
+                                            <td>
+                                                そのアイテムの上(y)座標です。<br> 画面高さを1とした小数ですが、今のところ使っていません。
+                                            </td>
+                                        </tr>
+                                        <tr valign="top">
+                                            <td>
+                                                width
+                                            </td>
+                                            <td>
+                                                そのアイテムの幅です。
+                                                <ul>
+                                                    <il>
+                                                        BootStropのグリッドシステム（画面幅を12分割するシステム）ですので、top～bottm各エリアの"_left"で1～12の数値を指定します。
+                                                    </il>
+                                                    <il>
+                                                        "_right"側の幅は12から"_left"側の幅を引いた数値が算入されます。
+                                                    </il>
+                                                    <il>
+                                                        top～bottm各エリアで幅いっぱいのエリアを確保する時はを指定してwidthを"12"と指定します。
+                                                    </il>
+                                                </ul>
+                                            </td>
+                                        </tr>
+
+                                        <tr valign="top">
+                                            <td>
+                                                hight
+                                            </td>
+                                            <td>
+                                                画面高さを1とした小数で指定して下さい。<br>縦横いづれかの優先が必要な場合は幅が優先されます。
+                                            </td>
+                                        </tr>
+                                        <tr valign="top">
+                                            <td>
+                                                align
+                                            </td>
+                                            <td>
+                                                <table border="0">
+                                                    <tr align="top">
+                                                        <td>
+                                                            <table border="1" align="left" style="margin-right: 2em;">
+                                                                <tr align="center">
+                                                                    <td>
+
+                                                                    </td>
+                                                                    <td>
+                                                                        <span class='glyphicon glyphicon-align-left'></span>
+                                                                    </td>
+                                                                    <td>
+                                                                        <span class='glyphicon glyphicon-align-center'></span>
+                                                                    </td>
+                                                                    <td>
+                                                                        <span class='glyphicon glyphicon-align-right'></span>
+                                                                    </td>
+                                                                    <td>
+                                                                        <span class='glyphicon glyphicon-align-justify'></span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr align="center">
+                                                                    <td>
+                                                                        <span class='glyphicon glyphicon-open'></span>
+                                                                    </td>
+                                                                    <td nowrap>
+                                                                        4； 左上
+                                                                    </td>
+                                                                    <td nowrap>
+                                                                        3； 上
+                                                                    </td>
+                                                                    <td nowrap>
+                                                                        5； 右上
+                                                                    </td>
+                                                                    <td nowrap>
+                                                                        9； 均等
+                                                                    </td>
+                                                                </tr>
+                                                                <tr align="center">
+                                                                    <td>
+                                                                        <span class='glyphicon glyphicon-align-justify'></span>
+                                                                    </td>
+                                                                    <td>
+                                                                        1； 左
+                                                                    </td>
+                                                                    <td nowrap>
+                                                                        0； 中央
+                                                                    </td>
+                                                                    <td>
+                                                                        2； 右
+                                                                    </td>
+                                                                </tr>
+                                                                <tr align="center">
+                                                                    <td>
+                                                                        <span class='glyphicon glyphicon-save'></span>
+                                                                    </td>
+                                                                    <td>
+                                                                        7； 左下
+                                                                    </td>
+                                                                    <td>
+                                                                        6； 下
+                                                                    </td>
+                                                                    <td>
+                                                                        8； 右下
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                            <ul>
+                                                                <li>
+                                                                    デフォルト（未指定）はdivの中心に配置します。
+                                                                </li>
+                                                                <li>
+                                                                    均等配列はブラウザによって利かない事が有ります。（webKit系が非対応だそうです）
+                                                                </li>
+                                                                <li>
+                                                                    スクロールテキストは上詰め/下詰めを除く左詰め/センタリング/右詰めのみとなります。
+                                                                </li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    textとscroll
+                                </td>
+                                <td>
+                                    <table width="100%" border="1">
+                                        <tr valign="top">
+                                            <td>
+                                                isEng
+                                            </td>
+                                            <td>
+                                                英文の場合にtrueを指定して下さい。<br>
+                                            </td>
+                                        </tr>
+                                        <tr valign="top">
+                                            <td rowspan="3">
+                                                fontSize
+                                            </td>
+                                            <td>
+                                                無指定の場合はエレメント幅に収まる様に自動調整します。
+                                                <p>先頭アイテムで無指定にすると、このエレメントのフォントサイズをカットの標準サイズにします。</p>
+                                                デフォルトは1920幅の時に96pxです。
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <!--<td>
+                                                    width
+                                                </td>-->
+                                            <td>
+                                                9以下の数字はカットの先頭エレメントに設定されたフォントサイズに対する比率です。
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <!--<td>
+                                                    hight
+                                                </td>-->
+                                            <td>
+                                                10以上の数字で強制的にフォントサイズを指定します。
+                                                <p>これも画面幅1920pxを基準に設定値を縮小します。</p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    scroll
+                                </td>
+                                <td>
+                                    <table width="100%" border="1">
+                                        <tr valign="top">
+                                            <td>
+                                                vRows
+                                            </td>
+                                            <td>
+                                                表示する行数の指定です。
+                                                <p></p>
+                                                <div class="alert alert-danger" role="alert">
+                                                    scrollの場合はwidthより　最長行の文字数×行数でelementサイズを決定します。
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    sound
+                                </td>
+                                <td>
+                                    <table width="100%" border="1">
+                                        <tr valign="top">
+                                            <td>
+                                                mStart
+                                            </td>
+                                            <td>
+                                                そのカットの開始から何秒後に曲を開始するかをしていします。 開始秒数です。
+                                            </td>
+                                        </tr>
+                                        <tr valign="top">
+                                            <td>
+                                                mPosition
+                                            </td>
+                                            <td>
+                                                そのカットの先頭で、曲の先頭から何秒後を指定するかを指定します。
+                                                <div class="alert alert-danger" role="alert">
+                                                    mStartと同じカットで使用すれば曲前のブランクがやたら長い場合の無音部カットや、サビからスタートさせたい時に使用します。
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    pict
+                                </td>
+                                <td>
+                                    <table width="100%" border="1">
+                                        <tr valign="top">
+                                            <td>
+                                                opacity
+                                            </td>
+                                            <td>
+                                                透明度です。
+                                                <p>
+                                                    透明は0～そのままは1を指定して下さい。
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr valign="top">
+                                            <td>
+                                                fleamWidth
+                                            </td>
+                                            <td>
+                                                枠線が必要な場合は太さをpxに該当する値で指定して下さい。(10pxなら10)
+                                                <p>
+                                                    透明は0～そのままは1を指定して下さい。
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr valign="top">
+                                            <td>
+                                                fleamColor
+                                            </td>
+                                            <td>
+                                                枠線の色です。
+                                                <p>
+                                                    標準的には１６進数（白なら#ffffff、黒なら#000000）で指定して下さい。
+                                                </p>
+                                                <p>
+                                                    ブラウザによってはRGBや'white'の様な色名指定も出来るようです。
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    waii
+                                </td>
+                                <td>
+                                    <table width="100%" border="1">
+                                        <tr valign="top">
+                                            <td>
+                                                opacity
+                                            </td>
+                                            <td>
+                                                透明度です。
+                                                <p>
+                                                    pictと同じく透明は0～そのままは1を指定して下さい。
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr valign="top">
+                                            <td>
+                                                mStart
+                                            </td>
+                                            <td>
+                                                そのカットの開始から何秒後に曲を開始するかをしていします。 開始秒数です。
+                                                <p>soundのmStartと同様です</p>
+                                            </td>
+                                        </tr>
+                                        <tr valign="top">
+                                            <td>
+                                                centaling
+                                            </td>
+                                            <td>
+                                                前記と同じ位置指定で、背景画像にカットが生じる場合にどの部分を優先して残すかを指定します。
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    effect
+                                </td>
+                                <td>
+                                    現在未使用です。<br> 今のところ、各カットの切り替えに先頭２秒のフェードイン、音楽の切替わりに２秒のフェードアウトを設けています。
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    time
+                                </td>
+                                <td>
+                                    各カットの表示秒数です。
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="row" style="width: 100%;height: auto;">-->
+            <div class="col-sm-12">
+                <p></p>
+                <div>
+                    <div class="alert alert-danger" role="alert">
+                        表中以外の列名は無視しますので備考などの必要記載が有ればそちらにご記入ください。
+                    </div>
+                </div>
+            </div>
+            <!--</div>
+            <div class="row" style="width: 100%;height: auto;">-->
+            <div class="col-sm-12">
+                <div style="text-align: end;">
+                    <a href="../../" target="_blank" class="btn btn-warning btn-sx active" role="button" style="margin-top: -24px;">
+                        <span class="glyphicon glyphicon-home"></span>インデックス</a>
+                </div>
+            </div>
+        </div>
+        <!--</div>-->
+    </div>
+</body>

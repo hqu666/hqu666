@@ -1,0 +1,570 @@
+<!DOCTYPE HTML>
+<!--PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"-->
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>比治山工房/web signage |「シナリオに沿ったスライドショー」の説明</title>
+    <meta name="keywords" content="パワーポイントみたいに使える,簡易ムービー作成に,デジタルサイネージのコンテンツ作成に,結婚式のエンドロールムービーに">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="../../../main.css" />
+
+    <style type="text/css">
+        #header {
+            width: 80vw;
+            height: 125px;
+            margin-left: 20vw;
+            padding: 0;
+            background-color: #dce5f3;
+            position: fixed;
+            z-index: 9999;
+        }
+        /* #footer {
+            top: 90vh;
+            width: 80vw;
+            margin-left: 20vw;
+            padding: 0;
+            background-color: #dce5f3;
+            position: fixed;
+            z-index: 9999;
+        } */
+        
+        #wrapper {
+            text-align: left;
+            width: 100vw;
+            margin: 0 auto;
+            padding: 0;
+        }
+        
+        #contents {
+            width: 80vw;
+            float: right;
+            padding-top: -125px;
+            margin-top: 125px;
+            padding-bottom: 10vh;
+        }
+        /* #sidebar {
+            width: 20vw;
+            height: 100%;
+            float: left;
+            margin: 0;
+            padding-top: 8px;
+            font-size: 80%;
+            background-color: #f9f3f3;
+            position: fixed;
+            z-index: 9999;
+        } */
+    </style>
+</head>
+
+<body style="padding: 0px;">
+    <div id="wrapper">
+        <div id="header">
+            <img src="../img/logo.png" class="phorRes" style="width:50%;" alt="logo"> シナリオに沿ったスライドショー
+            <ul class="nav nav-tabs nav-justified">
+                <li role="presentation" class="active"><a href="#">概要</a></li>
+                <li role="presentation"><a href="list.htm">コンテ</a></li>
+                <li role="presentation"><a href="edit.htm">エディット</a></li>
+                <li role="presentation"><a href="player.htm">プレイヤー</a></li>
+            </ul>
+        </div>
+        <div id="contents">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row" id='pagetop'>
+                        <div class="col-xs-12 col-sm-7">
+                            <div class="panel-heading" style="padding: 10px;background-color: #3c763d;color: white;">
+                                システムの構成
+                            </div>
+                            <p>このシステムは
+                                <ol>
+                                    <li>
+                                        全体の流れ（コンテンツの構成）を編集する<a href="#list_editer">リスト編集</a>
+                                    </li>
+                                    <li>
+                                        各画面の要素を個々に編集する<a href="#cut_editer">カット編集</a>
+                                    </li>
+                                    <li>
+                                        最終的な表示を行う<a href="#player">プレイヤー</a>
+                                    </li>
+                                </ol>という３つのwebページで構成されます。</p>
+                        </div>
+                        <div class="col-xs-12 col-sm-5" style="text-align: right;">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3146425308522831" data-ad-slot="4219928305" data-ad-format="auto"></ins>
+                            <script>
+                                (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
+
+                            <script type="text/javascript">
+                                var nend_params = {
+                                    "media": 32269,
+                                    "site": 206990,
+                                    "spot": 583222,
+                                    "type": 1,
+                                    "oriented": 1
+                                };
+                            </script>
+                            <script type="text/javascript" src="https://js1.nend.net/js/nendAdLoader.js"></script>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="alert alert-info" role="alert" style='font-size: small;'>
+                                便宜上
+                                <ul>
+                                    <li>
+                                        表示される一画面をカット
+                                    </li>
+                                    <li>
+                                        同じパターンが続くカットをまとめてをシーン
+                                    </li>
+                                </ul>と呼びます。
+                            </div>
+
+                            <div class="alert alert-danger" role="alert" style='font-size: small;'>
+                                このシステムでは編集結果をLocalStrageに書き込み他の画面との連携を取ります。<br> これはサイトを閲覧している間のデータ保持ですので、適切なタイミングで「データ書き込み」を使って、ご利用のPCにデータを保存して下さい。
+                                <div class="alert alert-info" role="alert">
+                                    書き出されるファイルはシーンカットのエレメント毎に１レコードを構成します。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row" style="width: 100%;height: auto;">
+                        <table border="0" id='list_editer'>
+                            <tr valign="top">
+                                <th bgcolor="#cbdbf7" width=50%>
+                                    <font color="#ffffff">
+                                        <a href="list.htm">コンテ画面（リスト編集）</a>
+                                    </font>
+                                </th>
+                                <th rowspan="2">
+                                    <img src="img/list0000.png" class="phorRes" style="width:100%;" alt="コンテ">
+                                </th>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    このページでシーン/カットの順番と追加廃止を行います。
+                                    <p>表示されるリストはbootstrapのアコーディオンパネルで、
+                                        <ul>
+                                            <li>
+                                                シーン名を示す文字部部分をクリックするとシーン内のカットを、
+                                            </li>
+                                            <li>
+                                                カット名の文字部部分をクリックするとカットに配置された要素の概要
+                                            </li>
+                                        </ul>を表示します。
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td colspan="2">
+                                    <p>シーン名を示すパネルには
+                                        <ul>
+                                            <li>
+                                                上下の移動と
+                                            </li>
+                                            <li>
+                                                削除
+                                            </li>
+                                        </ul>ができるボタンが有ります。<br> またシーンリストの末尾には、新しいシーンを追加するボタンが有ります。
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    <img src="img/list0300.png" class="phorRes" style="width:100%;" alt="コンテ">
+                                </td>
+                                <td>
+                                    <p>カット名を示すパネルには
+                                        <ul>
+                                            <li>
+                                                上下の移動と削除ができるボタン
+                                            </li>
+                                            <li>
+                                                他のシーンへの移動や
+                                            </li>
+                                            <li>
+                                                エレメント編集画面へ線するボタン
+                                            </li>
+                                        </ul>が有ります。<br><br>また 各シーンの表示枠の末尾(最終カットの下)には、そのシーンへのカット追加
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td colspan="2">
+                                    <br> また、左側のメニューで
+                                    <ul>
+                                        <li>
+                                            テンプレートの呼出しと初期化(新規作成の開始)
+                                        </li>
+                                        <li>
+                                            データ読込み/データ書き込み
+                                        </li>
+                                        <li>
+                                            プレイヤーを起動して再生の開始
+                                        </li>
+                                    </ul>を行います。
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- コンテ画面（リスト編集） -->
+                        <table border="0" id='cut_editer'>
+                            <tr valign="top">
+                                <th bgcolor="#cbdbf7" width=50%>
+                                    <font color="#ffffff">
+                                        <a href="edit.htm">エディット画面（カット編集）</a>
+                                    </font>
+                                </th>
+                                <th rowspan="3">
+                                    <img src="img/edit00000.png" style="width:100%;" alt="エディタ">
+                                </th>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    このページで画面を構成する文字や画像の置き方を設定します。
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    画面の構成は上から
+                                    <ol>
+                                        <li>
+                                            シーンプロパティ
+                                            <ul class="sub_li">
+                                                <li>
+                                                    前のカットから継続された背景、音楽、シーンのタイトルなどの固定エレメントの表示
+                                                </li>
+                                                <li>
+                                                    もしくはそのカットからの開始/変更設定を行います。
+                                                </li>
+                                                <li>
+                                                    そのシーンから開始か、前のカットからの継続かを示す「そのカットからスタート」チェックボックス
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ol>
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td colspan="2">
+                                    <ol start="2">
+                                        <li>
+                                            編集状況を示すモニター
+                                            <ul class="sub_li">
+                                                <li>
+                                                    クリックした部分の編集項目があるパネルを開きます。
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            上部/中央部/下部に分けて各エレメントごとの編集
+                                        </li>
+                                        <li>
+                                            カットの表示時間など、そのカットのプロパティ編集
+                                        </li>
+                                    </ol>が有ります。
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td colspan="2">
+                                    左側のメニューは
+                                    <ul>
+                                        <li>
+                                            テンプレートの呼出しと初期化(新規作成の開始)
+                                        </li>
+                                        <li>
+                                            データ読込み/データ書き込み
+                                        </li>
+                                        <li>
+                                            プレイヤーを起動して再生の開始
+                                        </li>
+                                    </ul>を行います。
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- エディット画面（カット編集） -->
+                        <table border="0" id='player'>
+                            <tr valign="top">
+                                <th bgcolor="#cbdbf7" width=50%>
+                                    <font color="#ffffff">
+                                        <a href="player.htm">スライドショー画面（プレイヤー）</a>
+                                    </font>
+                                </th>
+                                <th rowspan="2">
+                                    <img src="img/s050end.png" class="phorRes" style="width:100%;" alt="プレイヤー">
+                                </th>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    プレイヤー画面は
+                                    <ul>
+                                        <li>
+                                            フルスクリーンレイアウトの背景と
+                                        </li>
+                                        <li>
+                                            各エレメントを配置したレイヤー
+                                        </li>
+                                    </ul>の二階層になっています。
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td colspan="2">
+                                    <p>各エレメントを配置したレイヤーは
+                                        <ul>
+                                            <li>
+                                                最上部に前後のカットで継続させる文字などを表示するfixエリア
+                                            </li>
+                                            <li>
+                                                必要に応じて上から書き込んでいくtop/center/bottomの３行
+                                            </li>
+                                            <li>
+                                                BootStropのグリッドシステム（画面幅を12分割するシステム）を使った幅の制御を行います。
+                                            </li>
+                                        </ul>これらのエレメントは下表の様な構成になっています。
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td colspan="2">
+                                    <table width="100%" border="1">
+                                        <tr align="center">
+                                            <th>
+
+                                            </th>
+                                            <th width="8.3%">
+                                                1
+                                            </th>
+                                            <th width="8.3%">
+                                                2
+                                            </th>
+                                            <th width="8.3%">
+                                                3
+                                            </th>
+                                            <th width="8.3%">
+                                                4
+                                            </th>
+                                            <th width="8.3%">
+                                                5
+                                            </th>
+                                            <th width="8.3%">
+                                                6
+                                            </th>
+                                            <th width="8.3%">
+                                                7
+                                            </th>
+                                            <th width="8.3%">
+                                                8
+                                            </th>
+                                            <th width="8.3%">
+                                                9
+                                            </th>
+                                            <th width="8.3%">
+                                                10
+                                            </th>
+                                            <th width="8.3%">
+                                                11
+                                            </th>
+                                            <th width="8.3%">
+                                                12
+                                            </th>
+                                        </tr>
+                                        <tr align="center">
+                                            <td>
+                                                fix
+                                            </td>
+                                            <td colspan="6">
+                                                fix_left
+                                            </td>
+                                            <td colspan="6">
+                                                fix_right
+                                            </td>
+                                        </tr>
+                                        <tr align="center">
+                                            <td>
+                                                top
+                                            </td>
+                                            <td colspan="6">
+                                                top_left
+                                            </td>
+                                            <td colspan="6">
+                                                top_right
+                                            </td>
+                                        </tr>
+                                        <tr align="center">
+                                            <td>
+                                                center
+                                            </td>
+                                            <td colspan="6">
+                                                center_left
+                                            </td>
+                                            <td colspan="6">
+                                                center_right
+                                            </td>
+                                        </tr>
+                                        <tr align="center">
+                                        </tr>
+                                        <tr align="center">
+                                            <td>
+                                                bottom
+                                            </td>
+                                            <td colspan="6">
+                                                bottom_left
+                                            </td>
+                                            <td colspan="6">
+                                                bottom_right
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td colspan="2">
+                                    プレイヤーの底辺にはコントロールパネルが有り
+                                    <ul>
+                                        <li>
+                                            右隅の開閉ボタンでパネルを閉じれば、各カットの指定秒数に応じた自動送りを実行
+                                        </li>
+                                        <li>
+                                            自動送り時間を長めに取っておいて進む/戻すボタンで任意のタイミングで画面切り替え（プレゼン利用）
+                                        </li>
+                                        <li>
+                                            音楽が設定して有ればボリュームと再生ポイントの調整
+                                        </li>
+                                    </ul>が行えます。
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- スライドショー画面（プレイヤー） -->
+                    </div>
+                </div>
+
+                <div class="row" style="width: 100%;height: auto;padding: 10px;">
+                    <div class="panel-heading" id='data_info' style="background-color: #3c763d;color: white;">
+                        作成されるデータ
+                    </div>
+                    <div class="panel-body">
+                        このスライドの設定には映像コンテンツに使われる絵コンテの様な内容の設定ファイルを使います。<br><br> 各レコードはエレメント毎の構成になっていて
+                        <ul>
+                            <li>
+                                シーン/カット名
+                            </li>
+                            <li>
+                                扱うデータの種類(固定文/スクロールテキスト/画像...といったタイプ)
+                            </li>
+                            <li>
+                                表示する位置（使用するエレメント）
+                            </li>
+                            <li>
+                                文面や画像ファイルなどへのURL
+                            </li>
+                            <li>
+                                エレメント内の位置、サイズ、表示タイミング
+                            </li>
+                        </ul>などのパラメータで構成されます。<br><br>
+                        <ul>
+                            <li>
+                                各エレメントのパラメータと内容はカット編集画面で編集し、
+                            </li>
+                            <li>
+                                シーン/カットの順番はコンテ(リスト編集)画面で編集します。
+                            </li>
+                        </ul>
+                        <br><br> 初期値になるテンプレートはコンテ(リスト編集)画面の「テンプレート」ボタンで読み出せます。今の処、
+                        <ul>
+                            <li>
+                                結婚式のエンドロールムービー
+                            </li>
+                            <li>
+                                パワーポイント風のプレゼン資料(作成中)
+                            </li>
+                        </ul>を用意しています。<br><br> 編集したデータは
+                        <ul>
+                            <li>
+                                リスト編集の「データ書き込み」もしくは
+                            </li>
+                            <li>
+                                カット編集の「確定」
+                            </li>
+                        </ul>ボタンで皆さんのパソコンにタブ区切りのテキストデータで保存されます。<br><br> 保存したデータはリスト編集の「データ読込み」で読込み、カットごとのオブジェクトに再構成します。
+                        <br><br> リスト編集の「プレイヤーで再生」でカットごとのオブジェクトデータをプレイヤーに渡し、再生の準備を行います。
+                        <div class="alert alert-info" role="alert">
+                            ファイルに保存しなくても編集中のデータはLocalStrageを介して編集結果を画面間で反映させます。
+                        </div>
+                        <div class="alert alert-info" role="alert">
+                            皆さんがデータを作成されていない場合、（デモンストレーションとしての閲覧時）には結婚式のエンドロールムービーのテンプレートを初期値として読み込みます。
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div id="sidebar">
+            <ul>
+                <li>
+                    <a href="../../" target="_blank" style="margin-top: -24px;">
+                        <span class="glyphicon glyphicon-home"></span>インデックス</a>
+                </li>
+                <li>
+                    <a href="#pagetop">システムの構成</a>
+                </li>
+                <li>
+                    <a href="#list_editer">リスト編集</a>
+                </li>
+                <li>
+                    <a href="#cut_editer">カット編集</a>
+                </li>
+                <li>
+                    <a href="#player">プレイヤー</a>
+                </li>
+                <li>
+                    <a href="#data_info">作成されるデータ</a>
+                </li>
+            </ul>
+            <div class="alert alert-danger" role="alert">
+                2017年8月現在、誤動作の発生個所を調整中です。
+            </div>
+            <div class="col-xs-12 col-sm-12" style="text-align: right;">
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3146425308522831" data-ad-slot="4219928305" data-ad-format="auto"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+
+                <script type="text/javascript">
+                    var nend_params = {
+                        "media": 32269,
+                        "site": 206990,
+                        "spot": 583222,
+                        "type": 1,
+                        "oriented": 1
+                    };
+                </script>
+                <script type="text/javascript" src="https://js1.nend.net/js/nendAdLoader.js"></script>
+            </div>
+
+        </div>
+        <!-- <div id="footer">
+        </div> -->
+    </div>
+    <script type="text/javascript">
+        $(function() {
+            var headerHight = $('#header').outerHeight(true); //ヘッダの高さ
+            // console.log(headerHight);
+            $('a[href^="#"]').click(function() {
+                var href = $(this).attr("href");
+                var target = $(href == "#" || href == "" ? 'html' : href);
+                var position = target.offset().top - headerHight; //ヘッダの高さ分位置をずらす
+                $("html, body").animate({
+                    scrollTop: position
+                }, 550, "swing");
+                return false;
+            });
+        });
+    </script>
+</body>

@@ -1,0 +1,527 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--互換表示をさせない;InternetExplorer-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--レスポンシブWebデザイン用-->
+    <title>Atare君の使い方</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
+    <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+    <link href="../../main.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-xs-6">
+            <a href="../../">
+                <img src="../../img/koubou.png" alt="比治山工房" style="width:50%;margin-top: 10px;">
+            </a>
+            <a href="../">
+                <img src="../../img/android_log.png" alt="android" style="width: 48px;">
+            </a><br><br>
+        </div>
+        <div class="col-xs-6" align="right">
+            <!-- <div align="right"> -->
+            <a href="en/index.html">English</a>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 col-md-8">
+                <table align="left" valign="top" border="0" style="font-size: 11pt; line-height: 150%;">
+                    <tr valign="top">
+                        <td style="width: 58px; height: 22px">
+                            <a style="width: 58px; height: 22px" href="https://play.google.com/store/apps/details?id=com.hijiyama_koubou.atare_kun">
+                                <img align="right" src="img/atare96.png" alt="atare" style="width:96px; " vspace="1" hspace="1">
+                            </a>
+                        </td>
+                        <td style="margin: 10px; padding: 10px;">
+                            <small>いろんなロトくじに対応する乱数発生器</small>
+                            <h2>Atare君</h2>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan=2 style="margin: 10px; padding: 10px;">
+                            <small>Atare君は「予想」なんて難しい事はできません。<br>
+								『当たれぇ当たれぇ』と念じながらも当たりそうな数字が思いつかない時に<br>
+								「これでどうですか？」って数字を表示するアプリです。</small>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-sm-12 col-md-4" style="text-align: right;">
+                <P class="container">
+                    <div class="row">
+                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3146425308522831" data-ad-slot="4219928305" data-ad-format="auto"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+                    <div class="row">
+                        <script type="text/javascript">
+                            var nend_params = {
+                                "media": 32269,
+                                "site": 206990,
+                                "spot": 583222,
+                                "type": 1,
+                                "oriented": 1
+                            };
+                        </script>
+                        <script type="text/javascript" src="https://js1.nend.net/js/nendAdLoader.js"></script>
+                    </div>
+                </P>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <ul class="nav nav-tabs" style="width: 800dp; margin: 0px 0px 0px 15px;">
+                    <li class="nav-item" style="margin-right: 18px;">
+                        <a class="nav-link bg-primary active" style="background: #5cb85c !important;">概要</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 18px;">
+                        <a class="nav-link bg-primary" href="menu.htm">メニュー遷移</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 18px;">
+                        <a class="nav-link bg-primary" href="setteui.html">設定</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 18px;">
+                        <a class="nav-link bg-primary" href="loto7.htm">各くじの詳細</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="line-height:16px ; text-alingn:left;
+				 border-style: solid ; border-width: 1px; padding: 10px 5px 10px 20px; border-color: #999999 ;
+				 border-radius: 10px; box-shadow: 10px 10px 10px #AAA;">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h2>使い方</h2>
+                    <div class="alert alert-info">
+                        ver1.4以降、それまでスピナーだった「くじの種類」と「一発/累積」の切り替えをメニューに組み込みました。<br> 全く同じ構成のメニューを左から引き出すNavigationViewにも用意していますので使いやすい方で使って下さい。
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-9 col-md-6">
+                    <table align="left" valign="top" border="0" style="font-size: 11pt; line-height: 150%;">
+                        <tr valign="top">
+                            <td colspan="2" style="background:#ffeeee; margin: 10px; padding: 10px;">
+                                <h3>くじの選択</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background:#ffeeee; margin: 10px; padding: 10px;"></td>
+                            <td style="margin: 10px; padding: 10px;">
+                                メニューの「くじの種類」から選択します。
+                                <small><ul>
+									<li>
+										Atare君は使用している電話回線で居住もしくは滞在している国を判別し、購入可能なくじを「くじの種類」にリストアップします。
+									</li>
+									<li>
+										海外から宝くじを購入すると違法行為になる事がほとんどですので”その他”から別リストで海外のくじの雰囲気を楽しんで頂ければと思います。
+									</li>
+									<li>
+										（注意；日本で英語モードにするとアメリカ設定になってしまうので、その場合は「海外のロトくじ」でくじの種類を切り替えてご利用ください）
+									</li>
+									<li>
+										設定で作成したオリジナルの乱数設定は「海外のロトくじ」の下に追記されます。
+									</li>
+								</ul></small>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-3">
+                    <img src="img/NavigationView0100.png" alt="Naviくじ種" width="80%">
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-3">
+                    <img src="img/menu0156.png" alt="海外のロトくじ" width="100%">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-9 col-md-9">
+                    <table align="left" valign="top" border="0" style="font-size: 11pt; line-height: 150%;" width="100%">
+                        <tr valign="top">
+                            <td colspan="2" style="background:#eeffee;">
+                                <h3>繰り返し</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan=2 align="left" valign="top" style="background:#eeffee; margin: 10px; padding: 10px;"></td>
+                            <td style="margin: 10px; padding: 10px;">
+                                「繰り返し」で一発表示か累積かを切替えて下さい。<br> （このメニューはタップするたびにいづれかに切り替わります。）
+                                <br> １）一発で表示
+                                <small><ul>
+									<li>
+										お時間が無い時は一発表示で。
+									</li>
+								</ul></small>
+                            </td>
+                        </tr>
+                        <tr valign="top">
+                            <td style="margin: 10px; padding: 10px;">
+                                ２）累積表示
+                                <small><ul>
+									<li>
+										いづれかの数字が設定した量（初期値は100回）に達するまで累積を続けます。
+									</li>
+									<li>
+										気休めでも良く出る乱数の方が信憑性がある様に思えたら乱数累積で。
+									</li>
+								</ul></small>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-xs-5 col-sm-3 col-md-3">
+                    <img src="img/menu0200.png" alt="累積切替" width="100%">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-12">
+                    <table align="left" valign="top" border="0" style="font-size: 11pt; line-height: 150%;" width="100%">
+                        <tr valign="top">
+                            <td colspan="2" style="background:#ffffee; margin: 10px; padding: 10px;">
+                                <h3>操作ボタン</h3>
+                            </td>
+                        </tr>
+                        <tr valign="top">
+                            <td rowspan=3 align="left" valign="top" style="background:#ffffee; margin: 10px; padding: 10px;"></td>
+                            <td style="margin: 10px; padding: 10px;">
+                                タップ一回ごとの結果表示エリアと兼用にした操作ボタンです。
+                                <small><ul>
+									<li>
+										関連情報表示エリアを少しでも広く表示させたく、Ver1.3からボタンと表示エリアを兼用しました。
+									</li>
+									<li>
+										起動直後、切替直後は「乱数一発！速攻表示」もしくは「乱数累積」と表示します。
+									</li>
+								</ul></small>
+                            </td>
+                        </tr>
+                        <tr valign="top">
+                            <td>
+                                <img src="img/kekka.png" alt="結果表示" style="width:180px; margin-left: 10px;" vspace="1" hspace="1">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-9 col-md-9">
+                    <table align="left" valign="top" border="0" style="font-size: 11pt; line-height: 150%;" width="100%">
+                        <tr valign="top">
+                            <td colspan=2 style="background:#eeffff;">
+                                <h3>関連情報/結果表示エリア</h3>
+                            </td>
+                        </tr>
+                        <tr valign="top">
+                            <td rowspan=2 align="left" valign="top" style="background:#eeffff; margin: 10px; padding: 10px;"></td>
+                            <td style="margin: 10px; padding: 10px;">
+                                起動直後、もしくは切り替えた直後はそのくじに関連する情報を掲載したWebページを表示します。
+                                <small><ol class="list-mini">
+										<li type="a">web設定としては
+										<ol  class="list-mini">
+											<li type="i">全画面が表示できるサイズで読み込み</li>
+											<li type="i">ピンチ操作のズーム可能</li>
+											<li type="i">キャッシュを消去して読み込み</li>
+										</ol>
+										ですが、ページにによっては設定が反映されない場合もあります。
+										</li>
+										<li type="a">関連情報表示エリアをロングタップすると以下の機能を提供します。
+											<ol>
+												<li  class="list-mini" type="i">現在のwebページを記録<br>
+												*次回から表示するページを、表示しているページに変更します。<br>
+												*URLと表示倍率の変更ですが倍率はページによって反映されない場合もあります。</li>
+												<li type="i">(その時選択しているくじ)の検索<br>
+												*その時選択しているくじの名称でGoogle検索</li>
+												<li type="i">全画面表示<br>ズームアップしすぎて何処を見ているのか分からなくなったら全体表示に戻します。<br>*これもページによって機能しない場合があります。</li>
+											</ol>
+										</li>
+									</ol></small>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-xs-5 col-sm-3 col-md-3">
+                    <img src="img/jyouhou.png" alt="情報表示" width="100%">
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-9 col-md-6">
+                    <table align="left" valign="top" border="0" style="font-size: 11pt; line-height: 150%;">
+                        <tr valign="top">
+                            <td rowspan=2 align="left" valign="top" style="background:#eeffff; margin: 10px; padding: 10px;"></td>
+                            <td style="margin: 10px; padding: 10px;">
+                                使い始めからアプリを閉じるまで（もしくは別のくじに切り替えるまでの）累積結果をグラフ表示します。
+                                <small><ol>
+										<li type="i">多くのロトくじは
+											<ul>
+												<li>開始～最終値まで、どの数字が何回出ているかを数字で上部に表示し、</li>
+												<li>最も少ない数字から多い数字までを10段階に分けて</li>
+												<li>例えばロト7なら上位7つを赤、次の７つをオレンジ、3番目をグリーンという風に色でグループ分けしてグラフ表示します。</li>
+											</ul>
+										</li>
+										<li type="i">ナンバーズの様に各桁で何の数字が何回出るかを表示する場合は、各桁毎に行分けして表示します。<br> ダイスがいくつかと言うような設定では、１～6までのグループをダイスの数分、表示します。
+										</li>
+										<li type="i">ポーカーやビンゴの様に重複が出ない設定の場合は
+											<ul>
+												<li>その数字が出るまでは空白、</li>
+												<li>出た時に赤字に白マーク</li>
+												<li>既に出た数字はグレーで</li>
+												<li>もう出す数字が無くなればリセットして最初から抽出を繰り返します。</li>
+											</ul>
+										</li>
+									</ol></small>
+                                </li>
+
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-3">
+                    <img src="img/lot7_end.png" alt="ロト6結果" width="100%">
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-3">
+                    <img src="img/num4_end.png" alt="ナンバーズ結果" width="100%">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-9 col-md-9">
+                    <table align="left" valign="top" border="0" style="font-size: 11pt; line-height: 150%;" width="100%">
+                        <tr valign="top">
+                            <td colspan="2" style="background:#ffeeee; margin: 10px; padding: 10px;">
+                                <h3>動作がおかしい時は</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan=2 align="left" valign="top" style="background:#ffeeee; margin: 10px; padding: 10px;"></td>
+                            <td style="margin: 10px; padding: 10px;">
+                                メニューの&quot;その他\設定消去&quot;でデータベースファイルなどを破棄します。
+                                <small><ul>
+									<li>
+										くじ種スピナーの動作をトリガーに設定ファイルを作り直します。
+									</li>
+								</ul></small>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-xs-5 col-sm-3 col-md-3">
+                    <img src="img/NavigationView060o.png" alt="設定消去" width="100%">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <table align="left" valign="top" border="0" style="font-size: 11pt; line-height: 150%;">
+                        <tr valign="top">
+                            <td colspan="2" style="background:#eeeeee">
+                                <h3>ダイヤルキー付端末対応</h3>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan=2 align="left" valign="top" style="background:#eeeeee"></td>
+                            <td style="margin: 10px; padding: 10px;">
+                                画面をタッチする事無く、すべての操作をキーで（片手で）行えます。
+                                <small><ul>
+									<li>
+										通常のAndroidアプリは一番下の項目が選択されたら四方向キーの下を押してもそれ以上動きませんが、このアプリは一番下まで行ったら上に、一番上まで戻ったら一番下に、スマホ以前の携帯電話同等の操作設定になっています。
+									</li>
+									<li>
+										特殊な設定になっている機種は除きます
+									</li>
+								</ul></small>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                    <h2>対応するくじの種類</h2>
+                    <table align="left" valign="top" border="0" style="font-size: 11pt; line-height: 150%; margin: 10px; padding: 10px;">
+
+                        <tr align="left" valign="top" style="background:#ffeeff">
+                            <td style="margin: 10px; padding: 10px;">日本</td>
+                            <td style="margin: 10px; padding: 10px;">
+                                ロト7、ロト6、ミニロト、ナンバーズ3、ナンバーズ４</td>
+                        </tr>
+                        <tr align="left" valign="top" style="background:#ffddff">
+                            <td style="margin: 10px; padding: 10px;">USA</td>
+                            <td style="margin: 10px; padding: 10px;">Power Ball、Mega Millons</td>
+                        </tr>
+                        <tr align="left" valign="top" style="background:#ffeeff">
+                            <td norap style="margin: 10px; padding: 10px;">
+                                <nobr>
+                                    デンマーク、<br>エストニア、<br>フィンランド、<br>ドイツ、<br> アイスランド、
+                                    <br>イタリア、<br>オランダ、<br>スロベニア、<br>スウェーデン
+                                </nobr>
+                            </td>
+                            <td style="margin: 10px; padding: 10px;">EuroMillions</td>
+                        </tr>
+                        <tr align="left" valign="top" style="background:#ffddff">
+                            <td style="margin: 10px; padding: 10px;">香港</td>
+                            <td style="margin: 10px; padding: 10px;">六合彩[マーシックス]</td>
+                        </tr>
+
+                    </table>
+                </div>
+                <div class="col-xs-5 col-sm-3 col-md-3">
+                    <img src="img/num4_end.png" alt="ナンバーズ4" width="100%">
+                </div>
+                <div class="col-xs-5 col-sm-3 col-md-3">
+                    <img src="img/euro_million_end.png" alt="Euro Millons" width="100%">
+                </div>
+            </div>
+        </div>
+
+
+        <br clear="all">
+        <div class="row">
+            <div class="col-xs-12">
+                <h3>テスト端末</h3>
+                <table>
+                    <tr>
+                        <td>
+                            Android5.1.1;
+                        </td>
+                        <td>
+                            501SO(Xpela Z5)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Android4.4.2;
+                        </td>
+                        <td>
+                            304SH
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Android4.2.2;
+                        </td>
+                        <td>
+                            SH-08E (7インチタブレット)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Android4.1.2;
+                        </td>
+                        <td>
+                            203SH
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Android4.0.3;
+                        </td>
+                        <td>
+                            is15SH(ダイヤルキー付)
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <h3>変更履歴</h3>
+        <Ul>
+            <li>Ver1.4.1 ;2016/8/26<br>
+                <ol>
+                    <li type="1">ヘルプ表示終了時のエラー対策</li>
+                    <li type="1">Power Ball、Mega Millons、EuroMillions、六合彩[マーシックス]の設定更新</li>
+                </ol>
+                <div class="alert alert-danger">
+                    *旧バージョンから引き続きご利用の際は、メニューのその他￥設定消去で新しい設定に更新して下さい。<br> 既にオリジナル設定を使っておられる方も居られるかもしれませんので自動消去にはしていません。
+                </div>
+            </li>
+            <li>Ver1.4.0 ;2016/8/17<br>
+                <ol>
+                    <li type="1">インターフェイス変更；スピナーをメニューに内蔵</li>
+                    <li type="1">同じメニュー構成でNaviDrower追加</li>
+                    <li type="1">累積結果の可視化</li>
+                    <li type="1">ダイス、ポーカー、ビンゴなど乱数が活用できそうな設定の作成対応</li>
+                </ol>
+            </li>
+            <li>Ver1.3.1 ;2015/10/27<br> 1)英文の説明書きなど
+            </li>
+            <li>Ver1.3.0 ;2015/10/26<br> 1)情報エリアを関連するwebページに変更
+                <br> 2)webページの変更も可能にする為、各くじの設定をデータベース化
+                <br> 　 それぞれのくじの設定修正も可能な様にインターフェイス追加。<br> 3) 情報エリアを広く取りたく、結果表示エリアを動作エリアに統合<br>4)Numbers3,4で重複した数字(911とか000など)が出せる様、調整。<br>
+                <small>なぜか累積させるより、一発表示させる方が重複する数字は出易い様です。<br></small> 5)その他で海外のくじを表示する仕様に変更
+            </li>
+            <li>Ver1.2.2 ;2015/9/7<br> 端末によってはボタンの色が全く分からないケースが有り、ボタン色変更ではキー選択時の反転が無効になる為、着色できるベースを敷きました。
+                <br> テスト端末は上記に加えAndroid4.4.4　；　SHF32 (AQUOS K)<br>
+            </li>
+            <li>Ver1.2.1 ;2015/8/29<br> ①くじ種選択スピナーなど使用している国別判定の方法
+                <br> 1)最初にSIMカードの国コードを読んで判定
+                <br> 2)SIMカードが読めなければ使用言語で判定
+                <br>
+            </li>
+            <li>Ver1.2.0 ;2015/8/24<br> ①2年近くアップデート出来ていなかったので、最新環境での動作確認。
+                <br> ②操作の簡素化（メニューを開かなくてもくじ種切替）
+                <br> ③表示の簡素化(一発表示と累積を切り替えにし、表示と動作ボタンを一組に簡素化)
+                <br>
+
+            </li>
+            <li>Ver1.1.0 ;2013/3/22;ロト7対応</li>
+            <li>Ver1.0.0 ;2012/11/22:初回リリース</li>
+        </Ul>
+    </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <h3>課題</h3>
+            <ol>
+                <li>情報エリアの活用方法(例えば過去データの累計)</li>
+                <li>ダイヤルキー付きAndroid対応(最近端末が入手できていないので実動作不明なので)<br> 4方向キーで順送りで選択、Webエリアは左右で拡大/縮小という仕様ですが、
+                    <br> 起動時と異常動作時、もしくはクリアボタンを押した場合、
+                    <br>フォーカスを結果表示エリア兼動作ボタンに移し、<br> 最低限でも乱数表示だけは出来るようにします。(Ver1.3時点)
+                </li>
+                <li>JavaScriptを内包したwebコンテンツとの連携</li>
+            </ol>
+        </div>
+    </div>
+    </div>
+    <footer class="footer">
+        <p style="text-align: right; background-color:white">
+            <div class="col-xs-12 col-sm-12">
+                <div class="col-xs-6 col-sm-8">
+                    <a href="../index.htm">
+                        <img src="../img/koubou.png" alt="比治山工房" width="100%">
+                    </a>
+                </div>
+                <div class="col-xs-2 col-sm-2">
+                    <a href="https://play.google.com/store/apps/details?id=com.hijiyama_koubou.atare_kun">
+                        <img src="../img/atare.png" alt="atarekunn_qr" width="100%">
+                    </a>
+                </div>
+                <div class="col-xs-4 col-sm-2">
+                    Copyright 2016
+                </div>
+            </div>
+        </p>
+    </footer>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <title>Free web signage |エレメントエディター</title>
+    <meta name="keywords" content="パワーポイントみたいに使える,簡易ムービー作成に,デジタルサイネージのコンテンツ作成に,結婚式のエンドロールムービーに">
+
+    <script src="http://twitter.github.com/hogan.js/builds/3.0.1/hogan-3.0.1.js"></script>
+    <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="../js/tab_text_read.js"></script>
+    <script type="text/javascript" src="../js/canvas_util.js"></script>
+    <script type="text/javascript" src="../js/audio_util.js"></script>
+    <script type="text/javascript" src="../js/text_util.js"></script>
+    <script type="text/javascript" src="../js/screenplay_common.js"></script>
+    <script type="text/javascript" src="../js/org_util.js"></script>
+    <script type="text/javascript" src="edit.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../main.css" />
+    <style>
+        .preview {
+            /* font-size: 24px;
+            -webkit-transform: scale(0.5);
+            -webkit-transform-origin: 0 0; */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="header" style="margin-left: 0px;width: 100vw;height: auto;background-color: white;padding: 10px;">
+            <div style="padding: 10px;">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-10">
+                        <span>
+                            <span>
+                                <img src="img/logo.png" style="width:100pt;" align="left" alt="logo" />
+                            </span>
+                        <span id='page_titol' style="font-size: x-large;margin: 10px;white-space: normal;">カット編集</span>
+                        </span>
+                    </div>
+                    <div class="col-xs-12 col-sm-2" style="margin-top: 10px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="contents" style="left:0px;width:100vw;height: auto;">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6" id="left_element" style="margin-bottom: 10px;float: left;z-index: 999;position: fixed;background-color: white;">
+                    <div id='top_bt_gr' style="width:100%;height: auto;padding-top: -3px;margin-bottom: 10px;">
+                        <span>
+                             <a href="view.htm" class="btn btn-default  glyphicon glyphicon-eject" role="button " > リストへ戻る</a>
+                                <a href="info/edit.htm" target="_blank " class="btn btn-default glyphicon glyphicon-comment" role="button "> 説明</a>
+                                 <button type="button" class="btn btn-primary  glyphicon glyphicon-save" role="button" onclick="saveData(event)"> 確定</button>
+                            </span>
+                    </div>
+                    <div id="moniter_row">
+                        <div id="moniter_bace" style="line-height: initial;margin-top: 10px;">
+                            <div id="canvas_bace" style="width: 100%; height: auto;padding: 0px; position: absolute; z-index: -1;display: block;"></div>
+
+                            <div id="fix_aria" style="width: 100%;top:0%;margin-top: 1%;margin-left: 0px;margin-right: 0px;padding: 0px;">
+                            </div>
+
+                            <div id="top_aria" style="width: 100%;margin-top: 1%;margin-left: 0px;margin-right: 0px;padding: 0px;">
+                            </div>
+
+                            <div class="row" id="center_aria" style="width: 100%;margin-top: 1%;margin-left: 0px;margin-right: 0px;padding: 0px;">
+                            </div>
+
+                            <div class="row" id="bottom_aria" style="width: 100%;margin-top: 1%;margin-left: 0px;margin-right: 0px;padding: 0px;">
+                            </div>
+
+                            <div class="row" id="footer_aria" style="width: 100%;position: absolute;top:94%;margin-top: 1%;margin-left: 0px;margin-right: 0px;padding: 0px;">
+                            </div>
+
+                            <div id="control_aria" style="width: 100%; height: auto; top:94%; position: absolute; z-index: 10;display: block;text-align: right;padding: 1vw;right: 10px;">
+                                <img src="info/img/saikai.png" id='control_img' style="width: 40%;" />
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div id="dummy_element" style="margin-left: 0%;margin-right:0%;padding-left: 0px;padding-right: 0px;display:none;"></div><br> -->
+                    <!--カットモニター　と　レイアウト指定-->
+                    <div id='bottom_bt_gr' style="top:300px;width:92%;height:auto;position: absolute;margin-top: 10px;">
+                        <span style="float: right;    margin-bottom: 20px;">
+                             <button type="button" class="btn btn-primary glyphicon glyphicon-play" role="button " onclick="viewPlayer(event)">プレイヤーで確認</button>
+                            <button type="button" id="rd_btn" class="btn btn-warning glyphicon glyphicon-step-backward" role="button "onclick="previewCut(event)"></button>
+                            <button type="button" id="fs_btn" class="btn btn-success glyphicon glyphicon-step-forward" role="button " onclick="forwordCut(event)"></button>
+                        </span>
+                        <div>
+                            <!-- <div class="hidden-xs hidden-sm"> -->
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3146425308522831" data-ad-slot="4219928305" data-ad-format="auto"></ins>
+                            <script>
+                                (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
+
+                            <script type="text/javascript">
+                                var nend_params = {
+                                    "media": 32269,
+                                    "site": 206990,
+                                    "spot": 583222,
+                                    "type": 1,
+                                    "oriented": 1
+                                };
+                            </script>
+                            <script type="text/javascript" src="https://js1.nend.net/js/nendAdLoader.js"></script>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6" style="float: right;">
+                    <!-- style="padding:5px;float: right;" -->
+                    <form name="setform" action="">
+                        <div class="row " id="scene_propaty_row">
+                            <div class="col-sm-12">
+                                <div class="panel-group">
+                                    <div id="scenr_propaty" class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <div id="scNoPanel" class="panel-heading btn collapse_bt" data-toggle="collapse" data-target="#scp">
+                                                    シーン　プロパティ
+                                                </div>
+                                            </h4>
+                                        </div>
+                                        <div id="scp" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <div class="panel-group">
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h4 class="panel-title">
+                                                                <div class="panel-heading btn collapse_bt" data-toggle="collapse" data-target="#scp_layout">
+                                                                    レイアウト
+                                                                    <span style="float: right;">
+                                                                        <div id="layout_add_bt" class="btn btn-danger btn-lg btn-xs glyphicon glyphicon-plus-sign" role="button " onclick="addObjRecord(event)">変更</div>
+                                                                        <div id="layout_del_bt" class="btn btn-default btn-lg btn-xs glyphicon glyphicon-trash" role="button " onclick="deletObjRecord(event)">削除</div>
+                                                                    </span>
+                                                                </div>
+                                                            </h4>
+                                                        </div>
+                                                        <div id="scp_layout" class="panel-collapse collapse">
+                                                            <div class="panel-body">
+                                                                <input type="checkbox" class="cbox" name="scp_layout" id="scp_layout_is_start" style="margin-left: -10px; margin-top: -2px;" checked="false">
+                                                                <label style="margin-left: -54px;">このカットからスタート</label>
+                                                                <div class="table-responsive table-striped pict_edit">
+                                                                    <table class="table table-striped table-condensed " border="0 " bordercolor="#333333 " style="width:100%; ">
+                                                                        <tr>
+                                                                            <td>
+                                                                                <input type="radio" name="layout_type" id="layout_free" style="margin-left: -35px;" onchange="layoutSet()">
+                                                                                <label class="glyphicon glyphicon-th" style=" margin-left: -36px;top: -5px;">フリー</label>
+                                                                                <input type="radio" name="layout_type" id="layout_lr" style="margin-left: -35px;" onchange="layoutSet()">
+                                                                                <label class="glyphicon glyphicon-th-list" style=" margin-left: -36px;top: -5px;">左右分割</label>
+
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr id="layout_lr_balance" style="display: none;">
+                                                                            <td>
+                                                                                <!-- <span id="layout_lr_balance" style="display: none;vertical-align: middle;margin-top: -10px;margin-left: 1em;"> -->
+                                                                                左右比<input type="number" id="sayuu_hi" step="1" min="0" max="100" class="form-control" style='margin-left: 1em;width:5em;display: inline;' placeholder="0～" value="50" onchange="sayuuHi(event)">                                                                                :
+
+                                                                                <!-- <select id="sayuu_hi" style="padding: 0.2em;" onchange="sayuuHi(event)">
+                                                                                            <option value="1">1</option>
+                                                                                            <option value="2">2</option>
+                                                                                            <option value="3">3</option>
+                                                                                            <option value="4">4</option>
+                                                                                            <option value="5">5</option>
+                                                                                            <option value="6" selected>6</option>
+                                                                                            <option value="7">7</option>
+                                                                                            <option value="8">8</option>
+                                                                                            <option value="9">9</option>
+                                                                                            <option value="10">10</option>
+                                                                                            <option value="11">11</option>
+                                                                                            <option value="12">12</option>
+                                                                                        </select> : -->
+                                                                                <span id="migi_hi" style="vertical-align: middle;">50</span>%
+                                                                                <!-- </nobr> -->
+                                                                                <!-- </span> -->
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="panel-group">
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading">
+                                                                <h4 class="panel-title">
+                                                                    <div class="panel-heading btn collapse_bt" data-toggle="collapse" data-target="#scp_wall">
+                                                                        背景
+                                                                        <span style="float: right;">
+                                                                            <div id="wall_add_bt" class="btn btn-danger btn-lg btn-xs glyphicon glyphicon-plus-sign" role="button " onclick="addObjRecord(event)">変更</div>
+                                                                            <div id="wall_del_bt" class="btn btn-default btn-lg btn-xs glyphicon glyphicon-trash" role="button " onclick="deletObjRecord(event)">削除</div>
+                                                                        </span>
+                                                                    </div>
+                                                                    <!-- <a data-toggle="collapse" href="#scp_wall">背景</a> -->
+                                                                </h4>
+                                                            </div>
+                                                            <div id="scp_wall" class="panel-collapse collapse">
+                                                                <div class="panel-body">
+                                                                    <input type="checkbox" class="cbox" name="scp_wall" id="scp_wall_is_start" style="margin-left: -10px; margin-top: -2px;" checked="false">
+                                                                    <label style="margin-left: -54px;">このカットからスタート</label>
+                                                                    <div class="table-responsive table-striped pict_edit">
+                                                                        <table class="table table-striped table-condensed " border="0 " bordercolor="#333333 " style="width:100%; ">
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <textarea type="url" class="form-control " id="scp_wall_url" style="min-height: 6em;" placeholder="背景ファイルへのurl/カラー指定" onChange="wallSouceChange(event)"></textarea>
+                                                                                    <!--<span style="vertical-align: middle;">
+                                                                                <input type="file" class="form-control text-left" id="scp_wall_resoce_url" onChange="wallUrlChange(event)">
+                                                                             </span> -->
+                                                                                    <!--webkitdirectory multiple でフォルダを選択し、フォルダ名+ファイル名をリストアップ-->
+                                                                                </td>
+                                                                                <td width="30%">
+                                                                                    <div id="scp_wall_div" width="100%">
+                                                                                        <img src="img/white.png" id="scp_wall_src" class="img-responsive ">
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td colspan="2">
+                                                                                    <span style="vertical-align: middle;margin-right: 1em;">
+                                                                             単色<input type="color" class="form-control text-left" id="scp_wall_color" style='width:3em;display: inline;' value="#000000" onchange="wallColorSet(event)">
+                                                                        </span>
+                                                                                    <span style="vertical-align: middle;margin-right: 1em;">
+                                                                            透明度<input type="number" step="0.1" min="0" max="1" class="form-control text-left scp_wall_opt"
+                                                                                 id="scp_wall_opt" style='width:5em;display: inline;' placeholder="0～1" value="1" onchange="wallOpacitySet(event)">
+                                                                        </span>
+                                                                                    <span style="vertical-align: middle;">
+                                                                            開始<input type="number" step="100" min="0" max="9999" class="form-control text-left scp_wall_opt" style='width:6em;display: inline;' placeholder="1000" value="0">ｍS
+                                                                        </span>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td colspan="2" valign="bottom" norap>
+                                                                                    <span id="wall_format_gr" class="btn-toolbar" role="toolbar"><span>はみ出した場合に残す位置</span>
+                                                                                    <span class="btn-group  btn-group-xs" role="group">
+                                                                                <button type="button" class="btn btn-default glyphicon glyphicon-align-left pos_left" name="format_gr" data-toggle="tooltip" data-original-title="左詰め"></button>
+                                                                                    <button type="button" class="btn btn-default glyphicon glyphicon-align-center pos_center" name="format_gr" data-toggle="tooltip" data-original-title="中央"></button>
+                                                                                    <button type="button" class="btn btn-default glyphicon glyphicon-align-right pos_right" name="format_gr" data-toggle="tooltip" data-original-title="右詰め"></button>
+                                                                                </span>
+                                                                                    <span class="btn-group  btn-group-xs" role="group">
+                                                                                    <button type="button" class="btn btn-default glyphicon glyphicon-open pos_top" name="format_gr" data-toggle="tooltip" data-original-title="上詰め"></button>
+                                                                                    <button type="button" class="btn btn-default glyphicon glyphicon-align-justify pos_mid" name="format_gr" data-toggle="tooltip"
+                                                                                        data-original-title="中央"></button>
+                                                                                    <button type="button" class="btn btn-default glyphicon glyphicon-save pos_bottom" name="format_gr" data-toggle="tooltip"
+                                                                                        data-original-title="下詰め"></button>
+                                                                            </span>
+                                                                                    </span>
+
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="panel-group">
+                                                            <div class="panel panel-default">
+                                                                <div class="panel-heading">
+                                                                    <h4 class="panel-title">
+                                                                        <div class="panel-heading btn collapse_bt" data-toggle="collapse" data-target="#scp_audio">
+                                                                            音楽
+                                                                            <span style="float: right;">
+                                                                                <div id="audio_add_bt" class="btn btn-danger btn-lg btn-xs glyphicon glyphicon-plus-sign" role="button " onclick="addObjRecord(event)">変更</div>
+                                                                                <div id="audio_del_bt" class="btn btn-default btn-lg btn-xs glyphicon glyphicon-trash" role="button " onclick="deletObjRecord(event)">削除</div>
+                                                                            </span>
+                                                                        </div>
+                                                                        <!-- <a data-toggle="collapse" href="#scp_audio">音楽</a> -->
+                                                                    </h4>
+                                                                </div>
+                                                                <div id="scp_audio" class="panel-collapse collapse">
+                                                                    <div class="panel-body">
+                                                                        <input type="checkbox" class="cbox" name="scp_wall" id="scp_audio_is_start" style="margin-left: -10px; margin-top: -2px;" checked="true">
+                                                                        <label style="margin-left: -54px;">このカットからスタート</label>
+                                                                        <div class="table-responsive table-striped ">
+                                                                            <table class="table table-striped table-condensed " border="0 " bordercolor="#333333 " style="width:100%; ">
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <textarea type="url" class="form-control" id="scp_audio_url" style="min-height: 7em;" placeholder="音声/音楽ファイルへのurl" onChange="souceChange(event)"></textarea>
+                                                                                    </td>
+                                                                                    <td rowspan="3">
+                                                                                        <img src="img/33120C8ACCAACB2BBC9E4A1BFEighth20note.gif" class="img-responsive " width="100px">
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <span name="s000c00" style="vertical-align: middle;margin-right: 1em;">経過<input type="number"  id="scp_audio_position" step="1" min="0" max="999"  class="form-control text-left scp_wall_opt" style='width:6em;display: inline;' placeholder="0～" value="5600">秒</span>
+                                                                                        <span name="s000c00" style="vertical-align: middle;">開始<input type="number" step="100" min="0" max="9999" class="form-control text-left scp_wall_opt" style='width:7em;display: inline;' placeholder="1000" value="0">ｍS</span>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td valign="center">
+                                                                                        <audio controls preload="auto" id="audio_control">
+                                                                                このブラウザはHTML5のオーディオ機能に対応していません。Chromeをご利用ください。
+                                                                             </audio>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row ">
+                            <div class="col-sm-12">
+                                <div class="panel-group">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <div class="panel-heading btn collapse_bt" data-toggle="collapse" data-target="#scp_fix">
+                                                    ヘッダー（シーンの固定要素）
+                                                </div>
+                                            </h4>
+                                        </div>
+                                        <div id="scp_fix" class="panel-collapse collapse in" aria-expanded="true">
+                                            <!-- <div id="scp_fix" class="panel-collapse collapse"> -->
+                                            <div class="panel-body">
+                                                <div class="col-sm-12 col-md-6" id="fix_left_eidt" name="fix_left_eidt" style="margin-top: 5px;margin-bottom: 5px;">
+                                                    <nobr>
+                                                        <input type="checkbox" class="cbox" name="fix_left_eidt" id="scp_fix_left_is_start" style="margin-left: -10px; margin-top: -2px;" checked="false" style="margin: -20px -20px;">
+                                                        <label style="margin-left: -40px;">このカットからスタート</label>
+                                                    </nobr>
+                                                </div>
+
+                                                <div class="col-sm-12 col-md-6" id="fix_right_eidt" name="fix_right_eidt" style="margin-top: 5px;margin-bottom: 5px;">
+                                                    <nobr>
+                                                        <input type="checkbox" class="cbox" name="fix_right_eidt" id="scp_fix_right_is_start" checked="false" style="margin: -20px -20px;">
+                                                        <label style="margin-left: -40px;">このカットからスタート</label>
+                                                    </nobr>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row " id="edit_top_row">
+                            <div class="col-sm-12">
+                                <div class="panel-group">
+                                    <div id="scenr_propaty" class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <div class="panel-heading btn collapse_bt" data-toggle="collapse" data-target="#edit_top">
+                                                    上部
+                                                </div>
+                                                <!-- <a data-toggle="collapse" id="scNoPanel" href="#edit_top">上部</a> -->
+                                            </h4>
+                                        </div>
+                                        <div id="edit_top" class="panel-collapse collapse in" aria-expanded="true">
+                                            <!-- <div id="edit_top" class="panel-collapse collapse"> -->
+                                            <div class="panel-body">
+                                                <div class="panel-group">
+                                                    <div class="col-sm-12 col-md-6" id="top_left_eidt" style="margin-top: 5px;margin-bottom: 5px;">
+                                                    </div>
+                                                    <div class="col-sm-12 col-md-6" id="top_right_eidt" style="margin-top: 5px;margin-bottom: 5px;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row " id="edit_center_row">
+                            <div class="col-sm-12">
+                                <div class="panel-group">
+                                    <div id="scenr_propaty" class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <div class="panel-heading btn collapse_bt" data-toggle="collapse" data-target="#edit_center">
+                                                    中央
+                                                </div>
+                                                <!-- <a data-toggle="collapse" id="scNoPanel" href="#edit_center">中央</a> -->
+                                            </h4>
+                                        </div>
+                                        <div id="edit_center" class="panel-collapse collapse in" aria-expanded="true">
+                                            <!-- <div id="edit_center" class="panel-collapse collapse"> -->
+                                            <div class="panel-body">
+                                                <div class="panel-group">
+                                                    <div class="col-sm-12 col-md-6" id="center_left_eidt" name="center_left_eidt" style="margin-top: 5px;margin-bottom: 5px;">
+                                                    </div>
+                                                    <div class="col-sm-12 col-md-6" id="center_right_eidt" name="center_right_eidt" style="margin-top: 5px;margin-bottom: 5px;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row " id="edit_bottom_row">
+                            <div class="col-sm-12">
+                                <div class="panel-group">
+                                    <div id="scenr_propaty" class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <div class="panel-heading btn collapse_bt" data-toggle="collapse" data-target="#edit_bottom">
+                                                    下部
+                                                </div>
+                                                <!-- <a data-toggle="collapse" id="scNoPanel" href="#edit_bottom">下部</a> -->
+                                            </h4>
+                                        </div>
+                                        <div id="edit_bottom" class="panel-collapse collapse in" aria-expanded="true">
+                                            <!-- <div id="edit_bottom" class="panel-collapse collapse"> -->
+                                            <div class="panel-body">
+                                                <div class="panel-group">
+                                                    <div class="col-sm-12 col-md-6" id="bottom_left_eidt" name="bottom_left_eidt" style="margin-top: 5px;margin-bottom: 5px;">
+                                                    </div>
+                                                    <div class="col-sm-12 col-md-6" id="bottom_right_eidt" name="bottom_right_eidt" style="margin-top: 5px;margin-bottom: 5px;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row " id="edit_footer_row">
+                            <div class="col-sm-12">
+                                <div class="panel-group">
+                                    <div id="scenr_propaty" class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <div class="panel-heading btn collapse_bt" data-toggle="collapse" data-target="#edit_footer">
+                                                    フッター
+                                                </div>
+                                                <!-- <a data-toggle="collapse" id="scNoPanel" href="#edit_footer">フッター</a> -->
+                                            </h4>
+                                        </div>
+                                        <div id="edit_footer" class="panel-collapse collapse in" aria-expanded="true">
+                                            <!-- <div id="edit_footer" class="panel-collapse collapse"> -->
+                                            <div class="panel-body">
+                                                <div class="panel-group">
+                                                    <div class="col-sm-12 col-md-6" id="footer_left_eidt" name="footer_left_eidt" style="margin-top: 5px;margin-bottom: 5px;">
+                                                    </div>
+                                                    <div class="col-sm-12 col-md-6" id="footer_right_eidt" name="footer_right_eidt" style="margin-top: 5px;margin-bottom: 5px;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row " id="edit_other_row">
+                            <div class="col-sm-12">
+                                <div class="panel-group">
+                                    <div id="scenr_propaty" class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <div class="panel-heading btn collapse_bt" data-toggle="collapse" data-target="#edit_other">
+                                                    その他
+                                                </div>
+                                                <!-- <a data-toggle="collapse" id="scNoPanel" href="#edit_other">その他</a> -->
+                                            </h4>
+                                        </div>
+                                        <div id="edit_other" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <div class="panel-group" style='font-size: initial;'>
+                                                    <div style="vertical-align: middle;margin-right: 1em;">このカットの長さ
+                                                        <input type="number" step="100" min="0" max="999999" class="form-control" id="cp_cut_time" style='width:8em;display: inline;' placeholder="0～" value="8000" onchange="cutTime(event)">ｍS
+                                                    </div>
+                                                    <div style="vertical-align: middle;margin-right: 1.5em;font-size:small;">
+                                                        <input type="checkbox" class="cbox" id="sp_cut_time" style="margin-left: 0px; margin-top: 0px;" onclick="cutTime(event)">
+                                                        <label style="margin-left: -62px;">このシーンの全カットを同じ長さにする</label>
+                                                    </div>
+                                                    <div style="vertical-align: middle;margin-right: 1.5em;font-size:small;">
+                                                        <input type="checkbox" class="cbox" id="all_cut_time" style="margin-left: 0px; margin-top: 0px;" onclick="cutTime(event)">
+                                                        <label style="margin-left: -62px;">全シーンの全カットを同じ長さにする</label>
+                                                    </div>
+
+                                                    <!-- <div style="vertical-align: middle;margin-right: 1em;margin-left: 2em;">フェードイン
+                                                        <input type="number" step="100" min="0" max="9999" class="form-control" id="cp_fedein_time" style='width:8em;display: inline;' placeholder="0～" value="1000" onchange="fedeinTime(event)">ｍS
+                                                    </div>
+                                                    <div style="vertical-align: middle;margin-right: 1em;margin-left: 1em;">フェードアウト
+                                                        <input type="number" step="100" min="0" max="9999" class="form-control" id="cp_fedeout_time" style='width:8em;display: inline;' placeholder="0～" value="0" onchange="fedeoutTime(event)">ｍS
+                                                    </div> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- <div class="row "> -->
+                    <div class="alert alert-warning" role="alert" style="width:100%;height: auto;margin-top: 10px;font-size: small;">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="閉じる"><span aria-hidden="true">×</span></button> この画面でできる事はこの画面でカットの詳細編集です
+                        <ol>
+                            <li>
+                                テキストでは文面と文字サイス、位置決め
+                            </li>
+                            <li>
+                                スクロールでは加えて表示行数やスクロールスピード
+                            </li>
+                            <li>
+                                pictでは読み込む画像のurlと位置決めや枠線情報を指定して下さい。
+                            </li>
+                            <li>
+                                「テンプレート」 ボタンでデモ用に用意したコンテデータの読み出し。
+                            </li>
+                            <li>
+                                詳細は「説明」 ボタンで呼び出されたページをご参照ください。
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div id="footer" style="width: 100vw;background-color: white;margin-left: 0px;">
+          </div> -->
+    </div>
+
+    <script type="text/template" id="tpl_view">
+        <a href="#{{elmId}}_eidt">
+            <div id="{{elmId}}" style="padding-left: 1px;">
+            </div>
+        </a>
+    </script>
+
+    <script type="text/template" id="tpl_common">
+        <table class="table table-striped table-condensed " border="0 " bordercolor="#333333 " style="width:100%;margin-bottom: auto;">
+            <tr>
+                <td colspan="2" align="bottom" norap>
+                    <p id="{{elmId}}_type_gr" style="display: table-cell;vertical-align: middle;">
+                        <span class="label label-default" id="{{elmId}}_label">{{elmId}}</span>
+                        <select class="type_select" id="{{elmId}}_type" style="padding: 0.2em;" onChange='elementTypeSelect(event)'>
+                            <option  value="none">none</option>
+                            <option  value="text">text</option>
+                            <option value="scroll">scroll</option>
+                            <option value="pict">pict</option>
+                        </select>
+                    </p>
+                </td>
+            </tr>
+            <tr name="{{elmId}}_eidter">
+                <td colspan="2" align="bottom" norap>
+                    <textarea type="text" class="form-control text_souce" id="{{elmId}}_souce" style="min-height: 5em;" placeholder="文章/画像の場合はurl" onChange="souceChange(event)"></textarea>
+                </td>
+            </tr>
+            <tr name="{{elmId}}_eidter">
+                <td colspan="2" align="bottom" norap>
+                    始点
+                    <span style='margin-left: 0.5em'></span>;x
+                    <input type="number" id="{{elmId}}_left_parcent" step="1" min="0" max="100" class="form-control" style='width:5em;display: inline;' placeholder="0～" value="0" onchange="leftParcent(event)">%
+                    <span style='margin-left: 0.5em'></span>;y
+                    <input type="number" id="{{elmId}}_top_parcent" step="1" min="0" max="100" class="form-control" style='width:5em;display: inline;' placeholder="0～" value="0" onchange="topParcent(event)">%
+                    <!-- </p> -->
+                </td>
+            </tr>
+            <tr name="{{elmId}}_eidter">
+                <td colspan="2" align="bottom" norap>
+                    幅<input type="number" id="{{elmId}}_width_parcent" step="1" min="0" max="100" class="form-control" style='margin-left: 3em;width:5em;display: inline;' placeholder="0～" value="0" onchange="widthParcentSet(event)">%
+                    <span><button type="button" class="btn btn-primary glyphicon glyphicon-indent-right" id="{{elmId}}_deduct_width" role="button " style="margin-left: 1.5em;margin-top: -5px;" onclick="deductWidth(event)"> 自動設定</button>
+                    </span>
+                </td>
+            </tr>
+            <tr name="{{elmId}}_eidter">
+                <td colspan="2" align="bottom" norap>
+                    高さ<input type="number" id="{{elmId}}_hight_parcent" step="1" min="0" max="100" class="form-control" style='margin-left: 2em;width:5em;display: inline;' placeholder="0～" value="0" onchange="hightParcentSet(event)">%
+                </td>
+            </tr>
+            <tr name="{{elmId}}_eidter">
+                <td colspan="2" align="bottom" norap>
+                    <select name="font_size" id="{{elmId}}_hight_select" style="margin-left: 4em;padding: 0.2em;" onchange="hightSelect(event)">
+                        <option value="0">このまま</option>
+                        <option value="1">下エレメントまで伸ばす</option>
+                        <option value="2">現在の高さで記録</option>
+                        <option value="3">行数に合わせる</option>
+                    </select>
+                    <!-- <input type="checkbox" class="cbox" name="{{elmId}}_scroll_edit" id="{{elmId}}_text_edit_v_bottom" style="margin-left: 3em;" checked="false" onclick="hight2Bottom(event)">
+                    <label style="margin-left: -54px;">底辺まで伸ばす</label> -->
+                </td>
+            </tr>
+        </table>
+        <div class="table-responsive table-striped text_edit" id="{{elmId}}_text_edit" name="{{elmId}}_eidter">
+            <table class="table table-striped table-condensed " border="0 " bordercolor="#333333 " style="width:100%;margin-bottom: auto;">
+                <tr>
+                    <!-- <tr id="{{elmId}}_scroll_hight"> -->
+                    <td colspan="2" align="bottom" norap>
+                        <span class="scroll_edit" name="{{elmId}}_scroll_edit" style="margin-left: 4em;vertical-align: middle;">
+                            <input type="number" class="form-control text-left v_rows" id="{{elmId}}_text_edit_v_rows" style='width:5em;display: inline;' step="1" min="2" max="20" value="10" onchange="higtByEm(event)">行相当
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="bottom" norap>
+                        サイズ<input type="number" class="form-control text-left font_size_px" id="{{elmId}}_text_edit_font_size_px" style='margin-left: 1em;width:6em;display: inline;' step="1" min="11" max="240" value="24" onchange="fontSizeChangePx(event)">
+                        <span style='vertical-align: bottom;display: inline;'>pt</span>
+                        <span><button type="button" class="btn btn-primary" id="{{elmId}}_font_re_size" role="button " style="display: none;" value="24" onclick="fontReSize(event)">ptに変更</button></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="bottom" norap>
+                        <select name="font_size" id="{{elmId}}_text_edit_font_size" style="margin-left: 4em;padding: 0.2em;" onchange="fontSizeChange(event)">
+                                <option value="0">上記のまま</option>
+                               <option value="1">最長行を一行に収める</option>
+                                <option value="2">最大サイズの%</option>
+                             </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="bottom" norap>
+                        <input type="number" class="form-control text-left font_size_parcent" id="{{elmId}}_text_edit_font_size_parcent" style='margin-left: 3em;width:6em;display: none;' step="10" min="10" max="1000" value="50" onchange="fontSizeChangeParcent(event)">
+                        <span id="{{elmId}}_text_edit_font_size_unit" style='vertical-align: bottom;display: none;'>％</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="btn-toolbar font_align" role="toolbar">
+                            <div class="btn-group  btn-group-xs" name="font_align" id="{{elmId}}_text_align" role="group">
+                                <button type="button" class="btn btn-default glyphicon glyphicon-align-left pos_left" id="{{elmId}}_text_align_pos_left" name="{{elmId}}_text_align" data-toggle="tooltip" data-original-title="左詰め" onclick="ptAline(event)"></button>
+                                <button type="button" class="btn btn-default glyphicon glyphicon-align-center pos_center" id="{{elmId}}_text_align_pos_center" name="{{elmId}}_text_align" data-toggle="tooltip" data-original-title="中央" onclick="ptAline(event)"></button>
+                                <button type="button" class="btn btn-default glyphicon glyphicon-align-right pos_right" id="{{elmId}}_text_align_pos_right" name="{{elmId}}_text_align" data-toggle="tooltip" data-original-title="右詰め" onclick="ptAline(event)"></button>
+                                <button type="button" class="btn btn-default glyphicon glyphicon-align-justify pos_justify" id="{{elmId}}_text_align_pos_justify" name="{{elmId}}_text_align" data-toggle="tooltip" data-original-title="均等割付" onclick="ptAline(event)"></button>
+                            </div>
+                            <div class="btn-group  btn-group-xs" name="font_valign" id="{{elmId}}_text_valign" role="group">
+                                <button type="button" class="btn btn-default glyphicon glyphicon-open pos_top" id="{{elmId}}_text_valign_pos_top" name="{{elmId}}_text_valign" data-toggle="tooltip" data-original-title="上詰め" onclick="ptAline(event)"></button>
+                                <button type="button" class="btn btn-default glyphicon glyphicon-align-justify pos_mid" id="{{elmId}}_text_valign_pos_mid" name="{{elmId}}_text_valign" data-toggle="tooltip" data-original-title="中央" onclick="ptAline(event)"></button>
+                                <button type="button" class="btn btn-default glyphicon glyphicon-save pos_bottom" id="{{elmId}}_text_valign_pos_bottom" name="{{elmId}}_text_valign" data-toggle="tooltip" data-original-title="下詰め" onclick="ptAline(event)"></button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" valign="bottom" norap>
+                        <span>
+                            <p class="font_type" style="display: table-cell;vertical-align: middle;">フォント
+                                <select name="font_type"  id="{{elmId}}_text_edit_font_type" style="padding: 0.2em;" onchange="fontTypeChange(event)">
+                                    <option style='font-family: "Great Vibes", cursive;'>Great Vibes</option>
+                                    <option style='font-family:Hiragino Kaku Gothic ProN;'>ヒラギノ角ゴ ProN W3</option>
+                                    <option style='font-family: meiryo;' >meiryo</option>
+                                    <option style='font-family: Yu Gothic;' >游ゴシック体</option>
+                                    <option style='font-family: Yu Mincho;' >游明朝</option>
+                                    <option style='font-family: MS Gothic;'>ＭＳ ゴシック</option>
+                                    <option style='font-family: MS Mincho;'>ＭＳ 明朝</option>
+                                    <option style='font-family: HGP行書体;'>HGP行書体</option>
+                                    <option style='font-family: HG正楷書体-PRO;'>HG正楷書体-PRO</option>
+                                    <option style='font-family:arial;'>arial</option>
+                                    <option style='font-family:arial black;'>arial black</option>
+                                    <option style='font-family:arial narrow;'>arial narrow</option>
+                                    <option style='font-family:Book Antiqua;'>Book Antiqua</option>
+                                    <option style='font-family:Bookman Old Style;'>Bookman Old Style</option>
+                                    <option style='font-family:Century;'>Century</option>
+                                    <option style='font-family:Century Gothic;'>Century Gothic</option>
+                                    <option style='font-family:Courier;'>Courier</option>
+                                    <option style='font-family:Courier New;'>Courier New</option>
+                                    <option style='font-family:Haettenschweiler;'>Haettenschweiler</option>
+                                    <option style='font-family:Impact;'>Impact</option>
+                                    <option style='font-family:fantasy;'>fantasy</option>
+                                    <option style='font-family:Franklin Gothic Medium;'>Franklin Gothic Medium</option>
+                                    <option style='font-family:Georgia;'>Georgia</option>
+                                    <option style='font-family:Garamond;'>Garamond</option>
+                                    <option style='font-family:monospace;'>monospace</option>
+                                    <option style='font-family:MS Serif;'>MS Serif</option>
+                                    <option style='font-family:OCRB;'>OCRB</option>
+                                    <option style='font-family:sans-serif;'>sans-serif</option>
+                                    <option style='font-family:serif;'>serif</option>
+                                    <option style='font-family:SimSun;'>SimSun</option>
+                                    <option style='font-family:Sylfaen;'>Sylfaen</option>
+                                    <option style='font-family:Tahoma;'>Tahoma</option>
+                                    <option style='font-family:Times New Roman;'>Times New Roman</option>
+                               </select>
+                            </p>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="bottom" norap>
+                        <span class="font_color" name="{{elmId}}_text_edit_font_color" style="vertical-align: middle;">フォント色
+                            <input type="color" class="form-control text-font_color" id="{{elmId}}_text_edit_font_color" style='width:3em;display: inline;' value="#000000" onchange="fontColorSet(event)">
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="bottom" norap>
+                        <span class="text_edit_font_backgrand" name="{{elmId}}_eidt" style="margin-left: 2em;vertical-align: middle;">背景色
+                            <input type="color" class="form-control text-font_backgrand" id="{{elmId}}_text_edit_font_backgrand" style='width:3em;display: inline;margin-top: 5px;'  value="#ffffff" onchange="fontBGColor(event)">
+                            <input type="checkbox" class="cbox" name="text_edit_font_backgrand" id="{{elmId}}_text_edit_font_bgtrance" checked="true" onchange="fontBGTrance(event)">
+                            <label style="margin-left: -54px;">透明</label>
+                        </span>
+                    </td>
+                </tr>
+            </table>
+            <table class="table table-striped table-condensed " id="{{elmId}}_scroll_edit" border="0 " bordercolor="#333333 " style="width:100%; ">
+                <tr>
+                    <td colspan="2" align="bottom" norap>
+                        <span class="scroll_edit" name="{{elmId}}_scroll_edit" style="margin-left: 1em;vertical-align: middle;">早さ
+                            <input type="number" class="form-control text-left scroll_spead" id="{{elmId}}_text_edit_scroll_spead" style='width:5em;display: inline;margin-top: 5px;' step="1" min="1" max="100" value="20" onchange="scrollSpeedSet(event)">px/m秒
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="bottom" norap>
+                        <div><button type="button" class="btn btn-primary glyphicon glyphicon-play" id="{{elmId}}_text_edit_scroll_test" role="button " style="margin-left: 3em;margin-top: 5px;" onclick="scrollTest(event)">速度確認</button></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="table-responsive table-striped pict_edit" id="{{elmId}}_pict_edit" name="{{elmId}}_eidter">
+            <table class="table table-striped table-condensed " border="0 " bordercolor="#333333 " style="width:100%; ">
+                <tr>
+                    <td>
+                        <!--<input type="file" id="{{elmId}}_resoce_url" onChange="resoceUrlChange(event)">-->
+                    </td>
+                    <td>
+                        <img src="img/please-select.png" class="img-responsive " id="{{elmId}}_pict_edit_src">
+                    </td>
+                </tr>
+                <td colspan="2" norap>
+                    <div class="btn-toolbar font_align" role="toolbar">
+                        <div class="btn-group  btn-group-xs" name="pict_align" id="{{elmId}}_pict_align" role="group">
+                            <button type="button" class="btn btn-default glyphicon glyphicon-align-left pos_left" id="{{elmId}}_pict_align_pos_left" name="{{elmId}}_pict_align" data-toggle="tooltip" data-original-title="左詰め" onclick="ptAline(event)"></button>
+                            <button type="button" class="btn btn-default glyphicon glyphicon-align-center pos_center" id="{{elmId}}_pict_align_pos_center" name="{{elmId}}_pict_align" data-toggle="tooltip" data-original-title="中央" onclick="ptAline(event)"></button>
+                            <button type="button" class="btn btn-default glyphicon glyphicon-align-right pos_right" id="{{elmId}}_pict_align_pos_right" name="{{elmId}}_pict_align" data-toggle="tooltip" data-original-title="右詰め" onclick="ptAline(event)"></button>
+                        </div>
+                        <div class="btn-group  btn-group-xs" name="pict_v_align" id="{{elmId}}_pict_valign" role="group">
+                            <button type="button" class="btn btn-default glyphicon glyphicon-open pos_top" id="{{elmId}}_pict_valign_pos_top" name="{{elmId}}_pict_valign" data-toggle="tooltip" data-original-title="上詰め" onclick="ptAline(event)"></button>
+                            <button type="button" class="btn btn-default glyphicon glyphicon-align-justify pos_mid" id="{{elmId}}_pict_valign_pos_mid" name="{{elmId}}_pict_valign" data-toggle="tooltip" data-original-title="中央" onclick="ptAline(event)"></button>
+                            <button type="button" class="btn btn-default glyphicon glyphicon-save pos_bottom" id="{{elmId}}_pict_valign_pos_bottom" name="{{elmId}}_pict_valign" data-toggle="tooltip" data-original-title="下詰め" onclick="ptAline(event)"></button>
+                        </div>
+                    </div>
+                </td>
+                <tr>
+                    <td colspan="2" valign="center" norap>
+                        <span style="vertical-align: middle;margin-right: 1em;">透明度<input type="number" class="form-control pict-left p_opt" id="{{elmId}}_pict_edit_p_opt" step="0.1" min="0" max="1" style='width:5em;display: inline;' placeholder="0～1" value="1" onChange="pictOpt(event)"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" valign="center" norap>
+                        <span style="vertical-align: middle;">縮小率<input type="number" class="form-control pict-left fleme_widht" id="{{elmId}}_pict_edit_pict_scale" step="1" min="0" max="100" style='width:5em;display: inline;'  value="100" onChange="picScale(event)">%</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" valign="center" norap>
+                        <span style="vertical-align: middle;margin-left: 1em;"> 枠線<input type="number" class="form-control pict-left fleme_widht" id="{{elmId}}_pict_edit_fleme_widht" step="1" min="0" max="20" style='width:5em;display: inline;' placeholder="0は縁なし" value="10" onChange="borderWidth(event)">px</span>
+                        <span style="vertical-align: middle;margin-left: 1em;"> 色<input type="color" class="form-control pict-left fleme_color" id="{{elmId}}_pict_edit_fleme_color"  style='width:3em;display: inline;' value="#ffffff" onChange="borderColor(event)"></span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            var tag = "[document.ready] ";
+            var dbMsg = tag;
+            try {
+                var data = location.search.substring(1, location.search.length); //エスケープされた文字をアンエスケープする
+                // var escapeStr = unescape(data) + ''; // ?以降の文字を表示する
+                // var escapeStrs = escapeStr.split('&'); // ?以降の文字を表示する
+                // textFileName = escapeStrs[0];
+                // dbMsg = dbMsg + ",textFileName=" + textFileName;
+                sceneCut = unescape(data) + ''; // ?以降の文字を表示する  escapeStrs[1]; // ?以降の文字を表示する
+                dbMsg = dbMsg + ",sceneCut=" + sceneCut;
+
+                var docW = window.innerWidth; //モニター画面の幅
+                dbMsg = dbMsg + 'docW=' + docW;
+                var headerHight = $('#header').outerHeight(true); //ヘッダの高さ
+                dbMsg = dbMsg + ',outerHeight=' + headerHight;
+                if (768 <= docW) {
+                    document.getElementById('left_element').style.position = "fixed";
+                    // document.getElementById('header').style.height = "44px";
+                    // document.getElementById('contents').style.marginTop = "35px";
+                } else {
+                    document.getElementById('left_element').style.position = "";
+                    headerHight = 141; //ヘッダの高さ
+                    dbMsg = dbMsg + '>headerHight>' + headerHight;
+                }
+                document.getElementById('contents').style.marginTop = headerHight + "px";
+                // dbMsg = dbMsg + ',height=' + $('#header').height() + ',innerHeight=' + $('#header').innerHeight() + ',clientHeight=' + document.getElementById('header').clientHeight;
+
+                writeEditElement();
+                // requestFileAPI();
+                myLog(dbMsg);
+            } catch (e) {
+                console.log(dbMsg);
+                // window.location.reload(); //再読み込み
+            }
+        });
+
+        $(window).load(function() {
+            var tag = "[(window).load] ";
+            var dbMsg = tag; //+ ",ceremonies_slide_bg=" + ceremonies_slide_bg;
+            try {
+                myLog(dbMsg);
+                cutDataRead(sceneCut); //scene_cut
+                myLog(dbMsg);
+                if (debug_now == true) {
+                    // console.log(event);
+                    // console.log(file); //.webkitRelativeP//
+                }
+            } catch (e) {
+                console.log(dbMsg);
+            }
+        }); //読込完了時；備考；$(window).load()はページのすべての要素、つまり画像などがすべてロードされた段階
+
+        $(window).resize(function() {
+            var tag = "[(window).resize] ";
+            var dbMsg = tag; //+ ",ceremonies_slide_bg=" + ceremonies_slide_bg;
+            location.reload();
+        });
+
+        $(function() {
+            var headerHight = $('#header').outerHeight(true); //ヘッダの高さ
+            // console.log(headerHight);
+            $('a[href^="#"]').click(function() {
+                var href = $(this).attr("href");
+                var target = $(href == "#" || href == "" ? 'html' : href);
+                var position = target.offset().top - headerHight; //ヘッダの高さ分位置をずらす
+                $("html, body").animate({
+                    scrollTop: position
+                }, 550, "swing");
+                return false;
+            });
+        });
+    </script>
+</body>
+
+</html>

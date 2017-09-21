@@ -1,0 +1,377 @@
+<!DOCTYPE HTML>
+<!--PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"-->
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <!--<meta http-equiv="Content-Script-Type" content="text/javascript">-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--互換表示をさせない;InternetExplorer-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--レスポンシブWebデザイン用-->
+    <title>比治山工房</title>
+    <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
+    <!-- BootstrapのCSS読み込み ;このページだけ読み込みフォルダのJSなどを使ったBootStrap3-->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+    <!-- jQuery読み込み -->
+    <!--<script src="js/bootstrap.min.js"></script>-->
+    <!-- BootstrapのJS読み込み -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
+    <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="../main.css" title="優先スタイル">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <ul class="nav nav-tabs nav-justified">
+                <li role="presentation"><a href="../dotnet/">.NET/C#</a></li>
+                <li role="presentation"><a href="../lab">webプログラム実験室</a></li>
+                <li role="presentation" class="active"><a href="#">Andriod</a></li>
+            </ul>
+        </div>
+        <div id="contents">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="row" style="text-align: right; margin: 10px; padding: 10px;">
+                        <a href="en/index.htm">English</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id='pagetop'>
+                <div class="col-xs-12 col-sm-7">
+                    <!-- <img src="img/koubou.png" alt="比治山工房" width="80%"> -->
+                    <h2>このページは</h2>
+                    比治山工房が作成するAndroidのアプリを紹介するページです。<br> 私と同じ様な事でお困りの方やAndroidの世界では当たり前とされている事に違和感を感じる方にお試し頂ければと思います。
+                </div>
+                <div class="col-xs-12 col-sm-5" style="text-align: right;">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3146425308522831" data-ad-slot="4219928305" data-ad-format="auto"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+
+                    <script type="text/javascript">
+                        var nend_params = {
+                            "media": 32269,
+                            "site": 206990,
+                            "spot": 583222,
+                            "type": 1,
+                            "oriented": 1
+                        };
+                    </script>
+                    <script type="text/javascript" src="https://js1.nend.net/js/nendAdLoader.js"></script>
+                </div>
+            </div>
+            <h2>現在公開しているアプリ</h2>
+            <div class="row" id='marasongs'>
+                <div class="col-xs-12 col-sm-9">
+                    <table align="left" valign="top" border="0" cellpadding="10" cellspacing="0" style="font-size: 11pt; line-height: 150%; margin: 10px; padding: 10px;">
+                        <!-- " width="850"-->
+                        <tr valign="bottom">
+                            <td colspan=2 style="background:#ffeedd; margin: 10px; padding: 10px;">
+                                当たり前に使える音楽プレイヤー
+                                <a href="maramongs/index.html"><big><big><big>MaraSongs</big></big></big></a>
+                            </td>
+                        </tr>
+                        <tr valign="top">
+                            <td rowspan=2 style="text-align: center; background:#ffeedd; margin: 10px; padding: 10px;">
+                                <a href="maramongs/">
+                                    <img src="maramongs/img/ic_launcher-web.png" alt="Marasong" style="width: 92px; height: 92x; " vspace="1" hspace="1"><br>
+                                </a>
+                                <a href="https://play.google.com/store/apps/details?id=com.hijiyam_koubou.marasongs">
+                                    <img src="img/marasongs.png" alt="Marasong_qr" vspace="1" hspace="1"></a>
+                                </a><br>
+                                <a href="https://androider.jp/developer/41ed918186ac8c2a894d6a7954e43249/?from=developerBanner" title="アンドロイダー公認デベロッパー認証">
+                                    <img src="https://androider.jp/devbanner/41ed918186ac8c2a894d6a7954e43249/androider_certification.png" alt="アンドロイダー公認デベロッパー認証"></a>
+                                <a href="http://androidview.jp/archives/15571" title="AndroidView"><img src="http://androidview.jp/wp-content/uploads/tcd-w/bnr1.png" alt="AndroidView" style="width: 96px; height: 20px; "></a>
+                            </td>
+                            <td style="margin: 10px; padding: 10px;">
+                                「延々続くこと」を示す言い回しの一つにmarathonという単語が出てきた事があり、延々と再生を続けるミュージックプレイヤーの名前としてこの造語を思いつきました。 <br> たとえマラソンランナーがBGMに使っても、立ち止ってアルバムの選択をし直さなくても良いプレイヤーを作成しました。
+                                <br><br> 機能的にはi-Podクラシックの代用になる様、
+                                <ul>
+                                    <li>
+                                        AAC/MP3の歌詞表示
+                                    </li>
+                                    <li>
+                                        全曲連続再生
+                                    </li>
+                                </ul>
+                                にも対応。また
+                                <ul>
+                                    <li>
+                                        イコライザー
+                                    </li>
+                                    <li>
+                                        リバーブ
+                                    </li>
+                                    <li>
+                                        ノティフィケーションプレイヤー
+                                    </li>
+                                </ul>
+                                などAndroidが用意しているミュージックプレイヤー機能も一通り網羅しました。
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="margin: 10px; padding: 10px;">
+                                <div class="alert alert-info">
+                                    最新版は2016年5月8日（Ver,1.2.47)
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-xs-12  col-sm-3">
+                    <img src="maramongs/img/play_bl.png" alt="Marasong" width="100%" style="margin-top: 15px;  float:right;">
+                </div>
+            </div>
+
+            <div class="row" id='tex2calc'>
+                <div class="col-xs-12 col-sm-9">
+                    <table align="left " valign="top " border="0 " cellpadding="10 " cellspacing="0 " style="font-size: 11pt; line-height:
+						150%; margin: 10px; padding: 10px; ">
+                        <tr valign="bottom ">
+                            <td colspan=2 style="background:#ffffdd; margin: 10px; padding: 10px; ">
+                                スマホの大画面を活かす電卓
+                                <a href="moji_kara/index.html"><big><big><big>文字cal</big></big></big></a>
+                            </td>
+                        </tr>
+                        <tr valign="top ">
+                            <td rowspan=2 style="text-align: center; background:#ffffdd; margin: 10px; padding: 10px; ">
+                                <a href="moji_kara ">
+                                    <img src="moji_kara/img/ic_launcher.png " alt="moji_kara " style="width: 92px; height: 92x; " vspace="1
+						" hspace="1 "></a><br>
+                                <a href="https://play.google.com/store/apps/details?id=com.hjiyama_koubou.text2calc ">
+                                    <img src="img/mojical.png " alt="moji_kara_qr " vspace="1 " hspace="1 "></a>
+                            </td>
+                            <td style="margin: 10px; padding: 10px; ">
+                                文字で数式を書き込んで計算させる電卓です。数字も演算子もそのまま残るから
+                                <ol>
+                                    <li>変更したい部分だけを修正して再計算が可能。
+                                    </li>
+                                    <li>誤入力もすぐ判明
+                                    </li>
+                                </ol>
+                                出来る計算は今の処、
+                                <ul>
+                                    <li>
+                                        小学生の算数
+                                    </li>
+                                    <li>
+                                        「一般向け」の計算
+                                    </li>
+                                </ul>
+                                使い方は(1+2)/+3などの数式を入力して”＝”を入力した時点で答えにたどり着くまでを表示します。
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="margin: 10px; padding: 10px; ">
+                                <div class="alert alert-info ">
+                                    最新版は2016年5月8日(1.4.1)Android 5.1対応
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-xs-12  col-sm-3">
+                    <img src="moji_kara/img/jeisan_nkessa.png " alt="moji_kara " width="100%" align="right" style="margin-top: 15px;">
+                </div>
+            </div>
+
+            <div class="row" id='phone2nd'>
+                <div class="col-xs-12 col-sm-9">
+                    <table align="left " valign="top " border="0 " cellpadding="10 " cellspacing="0 " style="font-size: 11pt; line-height:
+						150%; margin: 10px; padding: 10px; ">
+                        <!-- " width="850" -->
+                        <tr valign="bottom">
+                            <td colspan=2 style="background:#ddffdd; margin: 10px; padding: 10px;">
+                                カンタン・速攻で電話できる
+                                <a href="phone2nd/index.html"><big><big><big>Phone2nd</big></big></big></a>
+                            </td>
+                        </tr>
+                        <tr valign="top">
+                            <td rowspan=2 style="text-align: center; background:#ddffdd; margin: 10px; padding: 10px;">
+                                <a href="phone2nd">
+                                    <img src="phone2nd/img/ic_launcher.png" alt="phone2nd" style="width: 92px; height: 92x; " vspace="1" hspace="1"></a><big><br>
+								<a href="https://play.google.com/store/apps/details?id=com.hijiyama_koubou.phone2nd_l">
+								<img src="img/phone2nd.png" alt="phone2nd_qr" vspace="1" hspace="1"></a>
+							</td>
+							<td style="margin: 10px; padding: 10px;">
+								電話帳、発信・着信履歴と電話をかけるためのユーティリティをまとめました。<br>
+								機能的には
+								<ul>
+									<li>
+										通話を始めるまでのステップ削減。<br>例えば起動時はかけ直しの頻度の高い最新履歴で起動
+									</li>
+									<li>
+										ガラケーのスピードダイヤル代わりの&quot;定番リスト&quot;
+									</li>
+									<li>
+										履歴はお名前でまとめて表示。<br>発信/着信などは履歴として表示。
+									</li>
+									<li>
+										電話帳はAndroidで用意している全フィールドが利用可能
+									</li>
+									<li>
+										実際に回線を接続する画面はスマホに搭載されているものをそのまま使う事で通信キャリアを問わず、ご利用いただけます。<br>
+									</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td style="margin: 10px; padding: 10px;">
+								<div class="alert alert-info">
+									最新版は1.3.2; 2016年5月22日；Android2.3互換パートが残っていたために発生していたバグの修正
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="col-xs-12  col-sm-3">
+					<img src="phone2nd/img/bangoutuika0124.png"  alt="phone2nd" width="100%" align="right" style="margin-top: 15px;">
+				</div>
+			</div>
+
+			<div class="row"  id='atarekunn'>
+				<div class="col-xs-12 col-sm-9">
+					<table  align="left" valign="top"   border="0" cellpadding="10"  cellspacing="0"  style="font-size: 11pt; line-height: 150%; margin: 10px; padding: 10px;"><!-- " width="850"-->
+						<tr valign="bottom">
+							<td colspan = 2  style="background:#ddddff; margin: 10px; padding: 10px;">
+								シンプルな乱数発生器　　
+								<a href="atarekunn/index.html"><big><big><big>アタレくん</big></big>
+                                </big>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr valign="top">
+                            <td rowspan=2 style="text-align: center; background:#ddddff; margin: 10px; padding: 10px;">
+                                <a href="atarekunn/">
+                                    <img src="atarekunn/img/atare96.png" alt="atarekunn" style="width: 92px; height: 92x; " vspace="1" hspace="1">
+                                </a><br>
+                                <a href="https://play.google.com/store/apps/details?id=com.hijiyama_koubou.atare_kun">
+                                    <img src="img/atare.png" alt="atarekunn_qr" vspace="1" hspace="1"></a>
+                            </td>
+                            <td style="margin: 10px; padding: 10px;">
+                                連続して同じ数字が出ないアルゴリズム”を求めて開発を続けてる乱数発生器です。<br><br> ただ乱数を発生させるのも退屈なので世界のロトくじの法則で乱数発生させる事もできます。
+                                <br> ご注意
+                                <ol>
+                                    <li>予想の様な複雑な事は出来ませんが、数字が思いつかない時にお役にたてれば幸いです。
+                                    </li>
+                                    <li>宝くじは販売地域の地方税財源です。他国の宝くじを販売地区以外で売買すると法律違反とされる事が殆どですのでご注意ください。
+                                    </li>
+                                </ol>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="margin: 10px; padding: 10px;">
+                                <div class="alert alert-info">
+                                    最新版は2016/8/26（Ver1.4.1)<br> ヘルプ表示終了時のエラー対策<br>Power Ball、Mega Millons、EuroMillions、六合彩[マーシックス]の設定更新
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-xs-12  col-sm-3">
+                    <img src="atarekunn/img/lot7_end.png" alt="atarekunn" width="100%" align="right" style="margin-top: 15px;">
+                </div>
+            </div>
+
+            <div class="row " id="info_row">
+                <div class="col-sm-12">
+                    <div class="panel-group">
+                        <div id="scenr_propaty" class="panel panel-default">
+                            <!-- <div class="panel-heading"> -->
+                            <div class="panel-title">
+                                <div class="panel-heading btn btn-default collapse_bt" data-toggle="collapse" data-target="#edit_other">
+                                    <h3>ご連絡</h3>
+                                </div>
+                            </div>
+                            <!-- </div> -->
+                            <div id="edit_other" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div class="panel-group">
+                                        只今、就活中。<br>広島市近郊のデベロッパー様でプログラマーをお探しでしたらご一報ください。
+                                        <input type="text" name="email" id="mail_send_titol" style="width:85%; margin-top: 5px;" placeholder="御社名をご記入ください">
+                                        <button type="button" id="mail_send" class="btn btn-Default glyphicon glyphicon-send btn-xs" role="button " style="margin-top: -6px;text-align: right;" onclick="mailSender(event)"> 送信</button>
+                                        <br>
+                                        <textarea type="text" name="email" class="form-control text_souce" id="mail_send_souce" style="min-height: 10em;margin-top: 5px;" placeholder="業務内容、就業場所などをご記入下さい。"></textarea>
+                                        <br>車での通勤可否と交通費の支給によっては広島市外への通勤も可能です。
+                                        <br>ハローワークインタネットサービスに登録されている案件は求人番号をご記入ください。
+                                        <br>その他の求人サイトにご登録の場合はその旨をお伝えください。
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="sidebar" style="padding:5px;">
+            <a href="../">
+                <img src="../img/koubou.png" alt="比治山工房" style="width:100%;margin-top: 10px;">
+            </a><br><br>
+            <ul>
+                <li>
+                    <a href="#pagetop">ページトップへ</a>
+                </li>
+                <li>
+                    <a href="#marasongs">MaraSongs</a>
+                </li>
+                <li>
+                    <a href="#tex2calc">文字cal</a>
+                </li>
+                <li>
+                    <a href="#phone2nd">Phone2nd</a>
+                </li>
+                <li>
+                    <a href="#atarekunn">アタレくん</a>
+                </li>
+                <li class="nomark_li">
+                </li>
+                <li>
+                    <a href="#info_row">ご連絡</a>
+                </li>
+            </ul>
+            <div>
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3146425308522831" data-ad-slot="4219928305" data-ad-format="auto"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+
+                <script type="text/javascript">
+                    var nend_params = {
+                        "media": 32269,
+                        "site": 206990,
+                        "spot": 583222,
+                        "type": 1,
+                        "oriented": 1
+                    };
+                </script>
+                <script type="text/javascript" src="https://js1.nend.net/js/nendAdLoader.js"></script>
+            </div>
+
+        </div>
+        <!-- <div id="footer">
+        </div> -->
+    </div>
+    <script type="text/javascript">
+        $(function() {
+            var headerHight = $('#header').outerHeight(true); //ヘッダの高さ
+            // console.log(headerHight);
+            $('a[href^="#"]').click(function() {
+                var href = $(this).attr("href");
+                var target = $(href == "#" || href == "" ? 'html' : href);
+                var position = target.offset().top - headerHight; //ヘッダの高さ分位置をずらす
+                $("html, body").animate({
+                    scrollTop: position
+                }, 550, "swing");
+                return false;
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+//このjsを呼び出しているhtmlのソースから/shared/へのパスを調べる
+	var i,a;
+	for(i=0; (a = document.getElementsByTagName("script")[i]); i++) {
+		if(a.getAttribute("src").indexOf("shared/js/import.js") != -1 ) {
+			SitePath=a.getAttribute("src").replace("shared/js/import.js", "");
+		}
+	}
+
+//フォントサイズの拡大・縮小
+	var typenum = "";
+	typenum = getCookieValue("style");
+	//alert (typenum);
+	if(!typenum || typenum == "default" || typenum == "middle"){typenum=2;}
+	//if(!typenum){typenum=2;}
+	var typeList=new Array('s','m','l');
+	var value_style=typeList[typenum-1];
+	
+
+//ボタンの表示
+function size_btn(){
+if(value_style=="l"){
+document.write('<ul><li><a href="#" onclick="setStyle(1);return false;"><img src="'+SitePath+'shared/img/txtsize_s.gif" alt="小" width="17" height="18" name="fontIcnS" /></a></li>');
+document.write('<li><a href="#" onclick="setStyle(2);return false;"><img src="'+SitePath+'shared/img/txtsize_m.gif" alt="中" width="17" height="18" name="fontIcnM" /></a></li>');
+document.write('<li><a href="#" onclick="setStyle(3);return false;"><img src="'+SitePath+'shared/img/txtsize_l_o.gif" alt="大" width="17" height="18" name="fontIcnL" /></a></li></ul>');
+}else if(value_style=="m"){
+document.write('<ul><li><a href="#" onclick="setStyle(1);return false;"><img src="'+SitePath+'shared/img/txtsize_s.gif" alt="小" width="17" height="18" name="fontIcnS" /></a></li>');
+document.write('<li><a href="#" onclick="setStyle(2);return false;"><img src="'+SitePath+'shared/img/txtsize_m_o.gif" alt="中" width="17" height="18" name="fontIcnM" /></a></li>');
+document.write('<li><a href="#" onclick="setStyle(3);return false;"><img src="'+SitePath+'shared/img/txtsize_l.gif" alt="大" width="17" height="18" name="fontIcnL" /></a></li></ul>');
+}else{
+document.write('<ul><li><a href="#" onclick="setStyle(1);return false;"><img src="'+SitePath+'shared/img/txtsize_s_o.gif" alt="小" width="17" height="18" name="fontIcnS" /></a></li>');
+document.write('<li><a href="#" onclick="setStyle(2);return false;"><img src="'+SitePath+'shared/img/txtsize_m.gif" alt="中" width="17" height="18" name="fontIcnM" /></a></li>');
+document.write('<li><a href="#" onclick="setStyle(3);return false;"><img src="'+SitePath+'shared/img/txtsize_l.gif" alt="大" width="17" height="18" name="fontIcnL" /></a></li></ul>');
+}
+}
+//読み込んだときにCookieからstyleを読み込んでcssを書き出す
+function setCss(){
+	var i,a;
+	document.write( '<link href="'+SitePath+'shared/css/size_s.css" rel="alternate stylesheet" type="text/css" media="all" title="s">');
+	document.write( '<link href="'+SitePath+'shared/css/size_m.css" rel="alternate stylesheet" type="text/css" media="all" title="m">');
+	document.write( '<link href="'+SitePath+'shared/css/size_l.css" rel="alternate stylesheet" type="text/css" media="all" title="l">');
+
+for(i=0; (a = document.getElementsByTagName("link")[i]); i++) {
+if(a.getAttribute("rel").indexOf("style") != -1 && a.getAttribute("title")) {
+a.disabled = true;
+if(a.getAttribute("title") == value_style) a.disabled = false;
+		}
+	}
+}
+
+//同一ページ内にて変更ボタンが押された時はスタイルシートを上書きする
+function resetCss(num){
+	var typeList=new Array('s','m','l');
+	var value_style=typeList[num-1];
+	var i,a;
+for(i=0; (a = document.getElementsByTagName("link")[i]); i++) {
+if(a.getAttribute("rel").indexOf("style") != -1 && a.getAttribute("title")) {
+a.disabled = true;
+if(a.getAttribute("title") == value_style) a.disabled = false;
+		}
+	}
+
+
+}
+
+//フォントのアイコン表示を変更する
+function fontIcnChange(num) {
+	if(num == "1"){
+		document.images["fontIcnS"].src = SitePath+"shared/img/txtsize_s_o.gif";
+		document.images["fontIcnM"].src = SitePath+"shared/img/txtsize_m.gif";
+		document.images["fontIcnL"].src = SitePath+"shared/img/txtsize_l.gif";
+	}if(num == "2"){
+		document.images["fontIcnS"].src = SitePath+"shared/img/txtsize_s.gif";
+		document.images["fontIcnM"].src = SitePath+"shared/img/txtsize_m_o.gif";
+		document.images["fontIcnL"].src = SitePath+"shared/img/txtsize_l.gif";
+	}if(num == "3"){
+		document.images["fontIcnS"].src = SitePath+"shared/img/txtsize_s.gif";
+		document.images["fontIcnM"].src = SitePath+"shared/img/txtsize_m.gif";
+		document.images["fontIcnL"].src = SitePath+"shared/img/txtsize_l_o.gif";
+	}
+}
+
+//Cookieの取り出し
+function getCookieValue(name)	{
+var cookieStr = document.cookie
+var existNum = cookieStr.indexOf(name)
+	if(existNum != -1)	{
+		var start = existNum + name.length + 1
+		var end = cookieStr.indexOf(";" , start)
+		if(end == -1)	{
+			end = cookieStr.length
+		}
+		var cookieValue = cookieStr.substring(start,end)
+		return cookieValue
+	} else {
+		return ""
+	}
+}
+
+//Cookieに選択したタイプ（s,m,l）を書き込む
+function setStyle(num){
+fontIcnChange(num);
+resetCss(num);
+	if(num){
+	typenum=num;
+	}
+	var styletype=typenum;
+	var sizeString='style=' ;
+	sizeString+=escape(styletype);
+	sizeString+= "; path=";
+	sizeString+= "/";
+	document.cookie =sizeString ;
+
+}
+
+//document.write(cssName);
+setCss();

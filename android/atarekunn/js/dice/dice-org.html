@@ -1,0 +1,179 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dice</title>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+    <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
+    <script src="http://github.hubspot.com/tether/dist/js/tether.js"></script>
+    <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+    <script type="text/javascript" src="../../../js/cock.js"></script>
+    <script type="text/javascript" src="../../../js/acount.js"></script>
+    <!--file.js-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery.qrcode.min.js"></script>
+    <link href="../../../main.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript">
+        var log_file; //fileオブジェクト
+        var my_coookie;
+        var tourokubi;
+        var gid;
+        var pid;
+        var data;
+        var dateStr;
+        var timeStr;
+        $(document).ready(function() { // ページ読み込み時に実行したい処理
+            tourokubi = null;
+            gid = null;
+            pid = null;
+            data = null;
+            syokika();
+            my_coookie = 'atare_dice';
+            readLoc();
+        });
+
+        function syokika() {
+            var dbmsg = '[syokika]';
+            document.getElementById("kousin_bt").style.display = "none"; //更新
+            document.getElementById("qr_make_bt").style.display = "none"; //QRコード作成
+            document.getElementById("qr_aria").style.display = "none";
+            document.getElementById("gr_mail_bt").style.display = "none"; //メ-ルで連絡
+            document.getElementById("member_list").style.display = "none";
+            document.getElementById("alart_text").style.display = "none";
+            isCookie();
+        }
+    </script>
+
+</head>
+
+<body>
+    <header style="background-color:white">
+
+        <div style="font-size: 11pt; line-height: 150%; line-height:16px ; text-alingn:left;
+					border-style: solid ; border-width: 1px; padding: 10px 5px 10px 20px; border-color: #999999 ;
+					border-radius: 10px; box-shadow: 10px 10px 10px #AAA;">
+            <div class="row" id="acount">
+                <div class="col-xs-12 col-sm-7 col-md-7">
+                    <div class="alert" role="alert" id="alart_text" style="width: 100%; display:none">
+                        <!-- alert-info / warning / danger -->
+                        <div id="alart_str">alert-success</div>
+                        <button type="button" onclick="hideAlartAia()" style="margin-left: auto;"><!-- class="close"  data-dismiss="alert"-->
+                                <span>×</span><!-- aria-hidden="true"-->
+                            </button>
+                    </div>
+                    <table>
+                        <tr>
+                            <th>
+                                登録日
+                            </th>
+                            <th>
+                                グループ
+                            </th>
+                            <th>
+                                ID
+                            </th>
+                            <th>
+                                Data
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div id="touroku"></div>
+                            </td>
+                            <td>
+                                <div id="gid"></div>
+                            </td>
+                            <td>
+                                <div id="pid"></div>
+                            </td>
+                            <td>
+                                <div id="data"></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-xs-3">
+                    <form action="#">
+                        <p><input type="button" id="gr_mail_bt" value="メ-ルで連絡" onclick="makeNewGrupe()"></p>
+                        <div id="member_aria">
+                            <textarea id="member_list" rows="4" style="width:100%; height:100%; margin:0px 0px 5px 0px;" disabled></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-xs-2" style="text-align: right;">
+                    <form action="#">
+                        <p><input type="button" id="gr_kousin_bt" value="グループ更新" onclick="makeNewGrupe()"></p>
+                        <p><input type="button" id="kousin_bt" value="更新" onclick="readLoc()"></p>
+                        <p><input type="button" id="alartCookie_bt" value="Cookieを見る" onclick="alartCookie()"></p>
+                        <p><input type="button" id="qr_make_bt" value="QRコード作成" tyle="display: inline-block;" onclick="makeQR()"></p>
+                        <a id="qr_link">
+                            <div id="qr_aria"></div>
+                        </a>
+                    </form>
+                </div>
+            </div>
+    </header>
+    <div class="container-fluid">
+    </div>
+    <br>
+    <!--<div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12" style="text-align: right;">
+            <input type="file" id="input_02_file" style="width:100%; margin:0px 0px 10px 0px;" />
+        </div>
+    </div>
+    結果:
+    <textarea id="edit_02_result" style="width:100%; height:200px; margin:0px 0px 5px 0px;" disabled></textarea>
+    <button id="btndownload">ファイル作成</button>
+    <div id="disp"> </div>-->
+
+    <footer class="footer">
+        <div class="row">
+            <div class="col-sm-12 col-md-8">
+                <table align="left" valign="top" border="0">
+                    <tr valign="top">
+                        <td style="width: 58px; height: 22px">
+                            <a style="width: 58px; height: 22px" href="https://play.google.com/store/apps/details?id=com.hijiyama_koubou.atare_kun">
+                                <img align="right" src="../../img/atare96.png" alt="atare" style="width:48px; " vspace="1" hspace="1">
+                            </a>
+                        </td>
+                        <td>
+                            <small>いろんなロトくじに対応する乱数発生器</small>
+                            <h2>Atare君</h2>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-sm-12 col-md-4" style="text-align: right;">
+                <P class="container">
+                    <div class="row">
+                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3146425308522831" data-ad-slot="4219928305" data-ad-format="auto"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+                    <div class="row">
+                        <script type="text/javascript">
+                            var nend_params = {
+                                "media": 32269,
+                                "site": 206990,
+                                "spot": 583222,
+                                "type": 1,
+                                "oriented": 1
+                            };
+                        </script>
+                        <script type="text/javascript" src="https://js1.nend.net/js/nendAdLoader.js"></script>
+                    </div>
+                </P>
+            </div>
+        </div>
+        </div>
+</body>
+
+</html>
+
+<!--ext install-->

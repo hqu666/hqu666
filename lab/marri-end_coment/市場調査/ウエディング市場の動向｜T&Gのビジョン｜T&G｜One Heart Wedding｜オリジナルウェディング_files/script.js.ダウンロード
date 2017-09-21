@@ -1,0 +1,91 @@
+
+// rollover
+
+function over() {
+	if (!document.getElementById) return
+	var aPreLoad = new Array();
+	var sTempSrc;
+	var aImages = document.getElementsByTagName('img');
+	for (var i = 0; i < aImages.length; i++) {		
+		if (aImages[i].className == 'over') {
+			var src = aImages[i].getAttribute('src');
+			var ftype = src.substring(src.lastIndexOf('.'), src.length);
+			var hsrc = src.replace(ftype, '_o'+ftype);
+			aImages[i].setAttribute('hsrc', hsrc);
+			aPreLoad[i] = new Image();
+			aPreLoad[i].src = hsrc;
+			aImages[i].onmouseover = function() {
+				sTempSrc = this.getAttribute('src');
+				this.setAttribute('src', this.getAttribute('hsrc'));
+			}
+			aImages[i].onmouseout = function() {
+				if (!sTempSrc) sTempSrc = this.getAttribute('src').replace('_o'+ftype, ftype);
+				this.setAttribute('src', sTempSrc);
+			}
+		}
+	}
+}
+
+// GlobalNavi
+function setGnavi() {
+	var gNavObj = '#' + $('body').attr('id') + 'Nav';
+	if ($('#gb-menu li').filter(gNavObj).size() == 1) {
+		$gNavObj = $(gNavObj).find('a:first img');
+		var src = $gNavObj.attr('src');
+		var ftype = src.substring(src.lastIndexOf('.'), src.length);
+		var hsrc = src.replace(ftype, '_o'+ftype);
+		$gNavObj.attr('src', hsrc);
+		$gNavObj.removeClass('over');
+	};
+}
+
+// LocalNavi [body class="act-lm-***"] active li=#lm-***
+function setLnavi() {
+	var actLNObj = $('body').attr('class').split(" ");
+	jQuery.each(actLNObj, function() {
+		if(this.indexOf('act-lm-')!=-1){
+			var actLN='#'+this.slice(4);
+			if ($('#local-menu li').filter(actLN).size() == 1) {
+				$(actLN).addClass('act');
+				if($('ul',actLN).size() >= 1){
+					$(actLN).addClass('open');
+					$('ul',actLN).css("display","block");
+				}
+				if($(actLN).parent().css("display")=="none"){
+					$(actLN).parent().parent().addClass('open');
+					$(actLN).parent().css("display","block");
+				}
+			}
+			return;
+		}
+	});
+}
+
+
+// Window Open
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  win = window.open(theURL,winName,features);
+  win.window.focus();
+}
+
+// PhotoGallery
+
+function pg_open(opnum) {
+	var IdNum='#win'+opnum;
+	$(IdNum).show();
+}
+function pg_close(clsnum) {
+	var IdClsNum='#win'+clsnum;
+	$(IdClsNum).hide();
+}
+
+// onload
+window.onload = function(){
+	setGnavi();
+	setLnavi();
+	over();	
+	jQuery(document).ready(function($){$.updnWatermark.attachAll();});
+};
+
+
+

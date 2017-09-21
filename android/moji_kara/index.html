@@ -1,0 +1,813 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--互換表示をさせない;InternetExplorer-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>「文字cal」の使い方</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
+    <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+    <link href="../../main.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-xs-6">
+            <a href="../../">
+                <img src="../../img/koubou.png" alt="比治山工房" style="width:50%;margin-top: 10px;">
+            </a>
+            <a href="../">
+                <img src="../../img/android_log.png" alt="android" style="width: 48px;">
+            </a><br><br>
+        </div>
+        <div class="col-xs-6" align="right">
+            <!-- <div align="right"> -->
+            <a href="en/index.html">English</a>
+        </div>
+    </div>
+
+    <div class="col-sm-12">
+        <!-- <header style="background-color:white">
+			<div class="row" style="text-align: right; margin: 10px; padding: 10px;">
+				<a href="en/index.html">English</a>
+			</div>
+		</header> -->
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12 col-md-7">
+                    <table align="left" valign="top" border="0" style="font-size: 11pt; line-height: 150%;">
+                        <tr valign="top">
+                            <td style="width: 58px; height: 22px">
+                                <a style="width: 58px; height: 22px" href="https://play.google.com/store/apps/details?id=com.hjiyama_koubou.text2calc">
+                                    <img align="right" src="img/ic_launcher.png" alt="moji_kalu" style="width:96px; " vspace="1" hspace="1">
+                                </a>
+                            </td>
+                            <td style="margin: 10px; padding: 10px;">
+                                <small>さんすう電卓</small>
+                                <h1>文字cal</h1>[Moji Karu]
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan=2 style="margin: 10px; padding: 10px;">
+                                <h2>このアプリは</h2>
+                                文字で数式を書き込んで計算させる電卓です。<br>
+                                <small>Text to Calculationなので読み方は「モジカル」くらいで如何でしょうか。</small>
+                                <p>
+                                    出来る計算は今の処、<br> 「小学生の算数」+「一般向け」。
+                                    <br> 数式を書き込んで&quot;= &quot;を記入すると計算過程を含めて答えに辿り着くまでを書き出します。<br>
+                                    <small>このアプリの開発動機は小学生の息子に算数を教える事でした。<br>
+				ですから「余り付きの割り算」や「計算順の表示」など一般的には煩わしい機能や表示になっていますが、以降のバージョンで切り替えを検討したいと思います。</small>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-sm-12 col-md-5" style="text-align: right;">
+                    <P class="container">
+                        <div class="row">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3146425308522831" data-ad-slot="4219928305" data-ad-format="auto"></ins>
+                            <script>
+                                (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
+                        </div>
+                        <div class="row">
+                            <script type="text/javascript">
+                                var nend_params = {
+                                    "media": 32269,
+                                    "site": 206990,
+                                    "spot": 583222,
+                                    "type": 1,
+                                    "oriented": 1
+                                };
+                            </script>
+                            <script type="text/javascript" src="https://js1.nend.net/js/nendAdLoader.js"></script>
+                        </div>
+                    </P>
+                </div>
+            </div>
+
+            <div style="line-height:16px ; text-alingn:left;
+				 border-style: solid ; border-width: 1px; padding: 10px 5px 10px 20px; border-color: #999999 ;
+				 border-radius: 10px; box-shadow: 10px 10px 10px #AAA;">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2>特長</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-9">
+                        <table align="left" valign="top" border="0" style="font-size: 11pt; line-height: 150%;">
+                            <tr valign="top">
+                                <td colspan="2" style="background:#ffeeff; margin: 10px; padding: 10px;">
+                                    <h3>数字も演算子もそのまま</h3>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="background:#ffeeff; margin: 10px; padding: 10px;"></td>
+                                <td style="margin: 10px; padding: 10px;">
+                                    <ul>
+                                        <li>
+                                            誤入力がすぐ判明
+                                        </li>
+                                        <li>
+                                            変更したい部分だけを修正して再計算。<br>紛らわしいメモリ機能は不要
+                                        </li>
+                                    </ul>
+                                    <small>備考；
+										<ul>
+										<li>
+											Windows10・メトロアプリの電卓も履歴として入力を確認する事は出来ますが、一旦入力した数式の再利用はできません。
+										</li>
+										<li>
+											競合するとしたらbao quanshouさんのScientific Calculatorやalbert soft  さんのBest calculator、
+							それ以上の機能をお求めならRealMaxさんの関数電卓や、手書きで数式を書き込めるMyScript さんのMyScript Calculatorあたりでしょうか。
+										</li>
+									</ul></small>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-xs-12 col-sm-3">
+                        <img src="img/jeisan_nkessa.png" alt="N計算直後" width="80%">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-9">
+                        <table align="left" valign="top" border="0" style="font-size: 11pt; line-height: 150%;">
+                            <tr valign="top">
+                                <td colspan="2" style="background:#eeeeff; margin: 10px; padding: 10px;">
+                                    <h3>計算した数式をデータベース記録</h3>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="background:#eeeeff; margin: 10px; padding: 10px;"></td>
+                                <td style="margin: 10px; padding: 10px;">
+                                    <ul>
+                                        <li>
+                                            &quot;=&quot;を入力して回答を表示した時点で数式をデータベースに登録します。<br> 呼出しは&quot;Re&quot;キーの長押しで&quot;数式呼出し&quot;リストダイアログを表示します。
+                                        </li>
+                                        <li>
+                                            *&quot;Memory&quot;の意味でキーの右上に&quot;M&quot;の文字の有るキーです
+                                        </li>
+                                        <li>
+                                            数式をロングタップすると&quot;選択項目の編集&quot;、&quot;選択項目の削除&quot;、&quot;全履歴消去&quot;といった操作メニューが表示されます。
+                                        </li>
+                                        <li>
+                                            データベースの動きを含め動作がおかしい時はメニュー\その他\設定初期化でデータベースファイルと設定ファイルを作り直します。
+                                        </li>
+                                        <li>
+                                            初期バージョンで表示していた数式のサンプルもここで表示します。
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-xs-12 col-sm-3">
+                        <img src="img/list_edit01.png" alt="履歴リスト" width="80%">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-9">
+                        <table align="left" valign="top" border="0" style="font-size: 11pt; line-height: 150%;">
+                            <tr>
+                                <td style="background:#eeeeff; margin: 10px; padding: 10px;"></td>
+                                <td style="margin: 10px; padding: 10px;">
+                                    このデータベースには分類分けするための&quot;分類&quot;と各数式に付ける&quot;名前&quot;のフィールドが有ります。
+                                    <ul>
+                                        <li>
+                                            登録した段階では分類は&quot;履歴&quot;、名前は登録された日時のタイムスタンプが入っています。
+                                        </li>
+                                        <li>
+                                            *&quot;Memory&quot;の意味でキーの右上に&quot;M&quot;の文字の有るキーです
+                                        </li>
+                                        <li>
+                                            Windows10・メトロアプリの電卓も履歴として入力を確認する事は出来ますが、一旦入力した数式の再利用はできません。
+                                        </li>
+                                        <li>
+                                            &quot;全履歴消去&quot;で分類が履歴のままの数式を消去します。
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-xs-12 col-sm-3">
+                        <img src="img/list_edit02.png" alt="リスト編集" width="80%">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-9">
+                        <table align="left" valign="top" border="0" style="font-size: 11pt; line-height: 150%;">
+                            <tr>
+                                <td style="background:#eeeeff; margin: 10px; padding: 10px;"></td>
+                                <td style="margin: 10px; padding: 10px;">
+                                    分類と名前を編集出来ます。 (Ver1.4以降)
+                                    <ul>
+                                        <li>
+                                            分類はリスト上部のスピナーにリストアップされ同じ&quot;分類名&quot;の数式だけ絞り込んで表示します。
+                                        </li>
+                                        <li>
+                                            名称はそれぞれの数式に付ける名称です。
+                                        </li>
+                                        <li>
+                                            登録されたレコードはレコードIDで管理していますので重複しても構いません。
+                                        </li>
+                                        <li>
+                                            &quot;全履歴消去&quot;で分類が履歴のままの数式を消去します。
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-xs-12 col-sm-3">
+                        <img src="img/list_edit21.png" alt="リスト編集" width="80%">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-9">
+                        <table align="left" valign="top" border="0" style="font-size: 11pt; line-height: 150%;">
+                            <tr valign="top">
+                                <td colspan="2" style="background:#ffeecc; margin: 10px; padding: 10px;">
+                                    <h3>どこにでも貼り込める普通のテキスト</h3>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="background:#ffeecc; margin: 10px; padding: 10px;"></td>
+                                <td style="margin: 10px; padding: 10px;">
+                                    <ul>
+                                        <li>
+                                            演算子はExcelなどの表計算アプリによくある特殊記号無しのテキスト形式ですから、 入力も含めて表示されているすべてを他のアプリにコピーペーストできます。
+                                        </li>
+                                        <li>
+                                            英語モードや日本以外で使われる場合はフォントの事情が分かりませんのでEXCELと同じ演算子で計算します。
+                                        </li>
+                                        <li>
+                                            数式例は再計算ボタンの長押しでダイアログ表示します）
+                                        </li>
+                                        <li>
+                                            データベースの動きを含め動作がおかしい時はメニュー\その他\設定初期化でデータベースファイルと設定ファイルを作り直します。
+                                        </li>
+                                        <li>
+                                            初期バージョンで表示していた数式のサンプルもここで表示します。
+                                        </li>
+                                        <li>
+                                            入力の表示部分をタップして選択した部分、もしくはフィールド全体をコピー
+                                            <small><ul>
+												<li>
+													標準のインプットメソッドを使うとソフトキーボードが邪魔をしますのでVer1.3からクリップボードだけを利用します。
+												</li>
+											</ul></small>
+                                        </li>
+                                        <li>
+                                            回答表示部分をタップすればフィールド全体（答えだけ）をコピー
+                                            <small><ul>
+												<li>
+													３桁ごとの区切り記号を入れます　; 10000000 →　10,000,000
+													</li>
+													</ul></small>
+                                        </li>
+                                    </ul>
+                                    <small>注記
+										<ul>
+											<li>
+												AQUOS-Kの様に変換エリアを全画面表示してしまう機種もあるのでダイヤルキーの付いた端末は範囲選択やカーソルの表示などに制限が発生するので<br>
+												Ver1.3から入力の表示部分をかな漢字入力連動のEditTextから、クリップボード機能だけに限定したTextViewに変更。<br>
+												入力動作は無理矢理プログラムで作っているので不自然なところが有ります。例えば文字と文字との間に入るべき「カーソル」が使えないので1文字以上を選択する「キャレット」になっています。
+											</li>
+										</ul>
+									</small>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-xs-12 col-sm-3">
+                        <img src="img/crip_copy.png" alt="コピー" width="80%">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <table align="left" valign="top" border="0" style="font-size: 11pt; line-height: 150%;">
+                            <tr valign="top">
+                                <td colspan="2" style="background:#eeffcc; margin: 10px; padding: 10px;">
+                                    <h3>その他の工夫</h3>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="background:#eeffcc; margin: 10px; padding: 10px;"></td>
+                                <td style="margin: 10px; padding: 10px;">
+                                    <ul>
+                                        <li>
+                                            細かい選択操作の補助(Ver1.4)<br> 数式入力エリア長押しで選択部分削除とペーストの補助ダイアログを表示します。
+                                        </li>
+                                        <li>
+                                            ダイアルキーにそのまま相当するキー配列。<br> 通話/クリア/終話に相当するキーの下に電話用の12相当キーを配置。<br> ※長押しで演算子を配置する事でキーの数を最小限に抑え、 ダイヤルキー付の端末はタッチパネルに触れる必要なく操作できます。
+                                        </li>
+                                    </ul>
+                                    <small>備考；キーフェイス
+										<ul>
+											<li>
+												キーフェイスは試行錯誤ですが短押しで入力される数字は左側に大きく、長押しで入力される演算子や機能は右上に小さめに算数の記号で、
+												その記号が数学記号と入力すべき演算子が異なる時は右下に表示します。
+											</li>
+										</ul>
+									</small>
+                                    <small>注記；
+										<ul>
+											<li>
+												四方向キーに四則演算子を割り付けたアプリもありますが、4方向キーはアイテム選択の機能が標準的な使い方ですから、
+												ダイヤルキーに相当する数字キーのサブ機能で四則演算子などを入力します。<br>
+												ダイヤルキー付端末には特殊な構成の機器が有りますので機能が制限される場合もあります。
+											</li>
+											<li>
+												小学生に算数を説明する機能<br>余りを表示する割り算や、正しい計算順が確認できる様に複数行に分けて計算の経過を表示。
+											</li>
+										</ul>
+									</small>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2>使い方</h2>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <table align="left" valign="top" border="0" style="font-size: 11pt; line-height: 150%;">
+                            <tr valign="top">
+                                <td style="background:#cceeff; margin: 10px; padding: 10px;">
+                                    1
+                                </td>
+                                <td style="background:#cceeff; margin: 10px; padding: 10px;">
+                                    キーボード
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="background:#cceeff; margin: 10px; padding: 10px;"></td>
+                                <td style="margin: 10px; padding: 10px;">
+                                    <table align="left" valign="top" border="0" cellpadding="10" cellspacing="0" style="font-size: 11pt; line-height: 150%; ">
+                                        <tr valign="top">
+                                            <td></td>
+                                            <td>タップ</td>
+                                            <td>ロングタップ</td>
+                                        </tr>
+                                        <tr valign="top">
+                                            <td>
+                                                <img src="img/key_recalc.png" alt="re_culc" style="width: 32px; height: 32; " vspace="1" hspace="1">
+                                            </td>
+                                            <td>再計算</td>
+                                            <td>入力履歴/数式サンプルリスト表示<br>表示されたリストの数式に分類と名前を付けて残せる様にしました。</td>
+                                        </tr>
+                                        <tr valign="top">
+                                            <td><img src="img/key_bs.png" alt="BS/Ac" style="width: 32px; height: 32; " vspace="1" hspace="1"></td>
+                                            <td>バックスペース</td>
+                                            <td>全消去</td>
+                                        </tr>
+                                        <tr valign="top">
+                                            <td><img src="img/denngenn_btn.png" alt="Marasong" style="width: 32px; height: 32; " vspace="1" hspace="1"></td>
+                                            <td>終了<br>※ダイヤルキー付のみ<br>※タッチパネルは&quot;=&quot;<br>（終了は戻るキーで）</td>
+                                            <td>-</td>
+                                        </tr>
+
+                                        <tr valign="top">
+                                            <td><img src="img/key1.png" alt="1" style="width: 32px; height: 32; " vspace="1" hspace="1"></td>
+                                            <td>1</td>
+                                            <td>^2で二乗<br>^(1/2)でルート2</td>
+                                        </tr>
+                                        <tr valign="top">
+                                            <td><img src="img/key2.png" alt="2" style="width: 32px; height: 32; " vspace="1" hspace="1"></td>
+                                            <td>2</td>
+                                            <td>加算<br>1+1=2</td>
+                                        </tr>
+                                        <tr valign="top">
+                                            <td><img src="img/key3.png" alt="3" style="width: 32px; height: 32; " vspace="1" hspace="1"></td>
+                                            <td>3</td>
+                                            <td>余り付きの割り算<br>2%3=1...1</td>
+                                        </tr>
+
+                                        <tr valign="top">
+                                            <td><img src="img/key4.png" alt="4" style="width: 32px; height: 32; " vspace="1" hspace="1"></td>
+                                            <td>4</td>
+                                            <td>かけ算<br>3*2=6</td>
+                                        </tr>
+                                        <tr valign="top">
+                                            <td><img src="img/key5.png" alt="5" style="width: 32px; height: 32; " vspace="1" hspace="1"></td>
+                                            <td>5</td>
+                                            <td>イコールの入力で<br>計算開始</td>
+                                        </tr>
+                                        <tr valign="top">
+                                            <td><img src="img/key6.png" alt="6" style="width: 32px; height: 32; " vspace="1" hspace="1"></td>
+                                            <td>3</td>
+                                            <td>割り算<br>2%3=1...1<br></td>
+                                        </tr>
+
+                                        <tr valign="top">
+                                            <td>
+                                                <img src="img/key7.png" alt="7" style="width: 32px; height: 32; " vspace="1" hspace="1">
+                                            </td>
+                                            <td>7</td>
+                                            <td>括弧(の開始側)<br>(1+3)/2=4/2=2の”(”</td>
+                                        </tr>
+                                        <tr valign="top">
+                                            <td><img src="img/key8.png" alt="8" style="width: 32px; height: 32; " vspace="1" hspace="1"></td>
+                                            <td>8</td>
+                                            <td>減算<br>2-3=-1</td>
+                                        </tr>
+                                        <tr valign="top">
+                                            <td><img src="img/key9.png" alt="9" style="width: 32px; height: 32; " vspace="1" hspace="1"></td>
+                                            <td>9</td>
+                                            <td>閉じ括弧<br>(1+3)/2=4/2=2の”)”</td>
+                                        </tr>
+
+                                        <tr valign="top">
+                                            <td><img src="img/keyleft.png" alt="left" style="width: 32px; height: 32; " vspace="1" hspace="1"></td>
+                                            <td>
+                                                カーソルの戻し<br>（左送り）機能
+                                            </td>
+                                            <td>左へ1文字づつ選択範囲拡大<br></td>
+                                        </tr>
+                                        <tr valign="top">
+                                            <td><img src="img/key0.png" alt="0" style="width: 32px; height: 32; " vspace="1" hspace="1"></td>
+                                            <td>0</td>
+                                            <td>小数点<br>3.14などの&quot;. &quot;</td>
+                                        </tr>
+                                        <tr valign="top">
+                                            <td rowspan=1><img src="img/key_r.png" alt="right" style="width: 32px; height: 32; " vspace="1" hspace="1"></td>
+                                            <td>
+                                                カーソルの送り<br>（右送り）機能
+
+                                            </td>
+                                            <td>右へ1文字づつ選択範囲拡大</td>
+                                            <tr valign="top">
+                                                <td colspan=3>
+                                                    タッチパネル付きの端末では一番右に短押し操作で演算子が入力できる様、ボタンを追加します。
+                                                </td>
+                                            </tr>
+                                    </table>
+                                </td>
+                                </tr>
+                                <tr valign="top" style="background:#eeeeee; margin: 10px; padding: 10px;">
+                                    <td>
+                                        2
+                                    </td>
+                                    <td>
+                                        インプットメソッドの切り替え
+                                    </td>
+                                </tr>
+                                <tr valign="top">
+                                    <td style="background:#eeeeee; margin: 10px; padding: 10px;"></td>
+                                    <td>
+                                        Ver1.1からキーボードを組み込みました。
+                                        <ul>
+                                            <li>
+                                                ご利用の端末によって、狙い通りに数字入力用のキーが出なかったり、キー自体の機能も搭載しているインプットメソッドによって一定化しませんでした。
+                                            </li>
+                                            <li>
+                                                何よりも演算子スピナーから演算子を入力する操作性は悪いと判断し、スピナーは廃止。
+                                            </li>
+                                            <li>
+                                                タップとロングタップだけで操作できるキーにしました。<br>　(当初考えていた「関数スピナー」も仕様を再考案中です)
+                                            </li>
+                                            <li>
+                                                今回はダイヤルキー付Android端末やガラケーから最近使い始めた方の使い勝手から電話のダイヤルキーをそのまま使える配置にしました。
+                                            </li>
+                                        </ul>
+                                        Ver1.3から数式が入力される数式入力フィールドをインプットメソッドのソフトキーボードを表示しない基本的には表示専用のTextViewにしました。他のアプリとの連携に使うクリップボードの機能は残していますので、数式が入力をタップ、もしくはソフトキーボード最下段のカーソルで位置選択してご利用ください。<br> 意図せずインプットメソッドのキーボードが表示されるケースが機種によって散見されるため、EditTextから変更しました。<br>                                        注意：文字と文字との間で点滅するカーソルは実装できない様ですので
+                                        <small><ul>
+											<li>
+												入力文字列の中を選択している時は(1文字だけ反転した)選択部分部分の前に文字挿入、
+											</li>
+											<li>
+												削除は選択されている部分
+											</li>
+											<li>
+												選択された部分が無ければ末尾に文字追加/末尾から先頭に、向かって削除(バックスペース)します。
+											</li>
+											<li>
+												ダイヤルキー付の場合は4方向キーの左右にもカーソルの左右移動を割り付けています。
+											</li>
+											<li>
+												数式入力フィールドタップした時の選択機能は全選択への選択範囲拡大と、選択部分の消去だけです。
+											</li>
+										</ul></small> 細かい選択操作の補助(Ver1.4)
+                                        <br> 数式入力エリア長押しで選択部分削除とペーストの補助ダイアログを表示します。
+                                        <br>
+                                        <small><ul>
+											<li>
+												クリップボードにコピーしたデータ(赤文字)が有る場合はそのデータのペーストか/範囲選択(赤文字)して削除するかを選択する「操作選択スピナー」を表示します
+											</li>
+											<li>
+												選択範囲が無い時は赤文字で&quot;I&quot;を表示してイサーションポイント(Iビームカーソル)の代わりの位置表示を行います。<br>*コピーした文字が無い場合はスピナーを表示せず、範囲選択削除のみを行います。
+											</li>
+											<li>
+												例えば「選択範囲にペースト」など複合操作は無限に考えられますが、操作をシンプルにするために「一旦削除してからペースト」という使い方にして下さい。
+											</li>
+										</ul>（中途半端な仕様ですがVer2.0をターゲットにEditText同等機能を目指します。）</small>
+                                    </td>
+                                </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <table align="left" valign="top" border="0" style="font-size: 11pt; line-height: 150%;">
+                            <tr valign="top" style="background:#ddeeee; margin: 10px; padding: 10px;">
+                                <td>
+                                    3
+                                </td>
+                                <td>
+                                    その他の注意事項
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="background:#ddeeee; margin: 10px; padding: 10px;"></td>
+                                <td style="margin: 10px; padding: 10px;">
+                                    <ul>
+                                        <li>計算の実行
+                                            <dl compact>
+                                                <dt><img src="img/key5.png" alt="Marasong" style="width: 16px; height: 16; " vspace="1" hspace="1">長押し
+													<dd>先頭から" = "直前の数字まで
+														<dd>
+															<small><ul>
+																<li>
+																	カーソルが何処に有っても" = "は直強制的に一番最後の数字の後ろに入力されます。
+																</li>
+																<li>
+																	最初のバージョンはインプットメソッドをそのままキーに使っていたので、「一連の計算式として読み取る範囲は先頭から改行まで、=を入力すると自動的に改行を入れて計算を開始します。
+																</li>
+																<li>
+																	続けて計算する時は改行キーで1行以上空けて次の数式を入力して下さい。」という仕様でしたが、
+																	キーボードを組み込み、本来はイレギュラーな複数の数式（改行から上を無視させる）対応メソッドを除去する事で誤動作になりそうなトラップを不要にしました。
+																</li>
+															</ul></small>
+											</dl>
+										</li>
+										<li>優先順位付け計算
+											<dl compact>
+												<dt>
+													<img src="img/key7.png" alt="7" style="width: 16px; height: 16; " vspace="1" hspace="1">もしくは
+													<img src="img/key9.png" alt="9" style="width: 16px; height: 16; " vspace="1" hspace="1">長押し
+													<dd>先頭から" = "直前の数字まで
+														<dd>
+															<ol>
+																<li>
+																	括弧内の項
+																</li>
+																<li>
+																	冪乗と冪根
+																</li>
+																<li>
+																	乗法と除法
+																</li>
+																<li>
+																	加法と減法
+																</li>
+															</ol>
+															同じ順位の計算なら左から計算します。
+															<small><ul>
+																<li>
+																	当たり前の事ですが、後日改めて関数を組み込前にバグ探しを行いたく、優先的に作りました。当面は小学生の息子に算数を教える意図もあります。
+																</li>
+															</ul></small>
+											</dl>
+										</li>
+										<li>累乗 ・　累乗根
+											<dl compact>
+												<dt>
+													<img src="img/key1.png" alt="1" style="width: 16px; height: 16; " vspace="1" hspace="1">長押し
+													<dd>ある一つの数同士を繰り返し掛け合わせる冪乗（べきじょう）、または累乗（るいじょう）(Exponentiation)は上付き文字でテキスト入力できる書き方ではないのでEXCEL風に「^」を使います。
+														<dd>
+															<small>例えば<ul>
+																<li>
+																	2^2=4
+																</li>
+																<li>
+																	3^3=27
+																</li>
+															</ul>
+															例えばルート２なら
+															<ul>
+																<li>
+																	2^(1/2)=2^0.5=1.414213562373095
+																</li>
+																<li>
+																	累乗も累乗根もJAVAのMath.pow関数を用い、精度はDouble値で定義されているとおりです。
+																</li>
+															</ul></small>
+											</dl>
+										</li>
+										<li>再計算
+											<dl compact>
+												<dt>
+													<img src="img/key_recalc.png" alt="re_culc" style="width: 16px; height: 16; " vspace="1" hspace="1">短押し
+													<dd>数字や演算子を書き換えたり、修正する時はこのボタンを押してください。<br> &quot; = &quot;以降を消去して再計算を行います。
+														<dd>
+															<small><ul>
+																<li>
+																	何を登録したのか記憶に怪しいメモリー機能は不要な事を実感頂けると思います。
+																</li>
+															</ul></small> 備考；"="を入力して計算結果を出した後で入力を修正する前に、それまでの計算結果と過程を消去して再計算します。
+											</dl>
+										</li>
+										<li>記録
+											<dl compact>
+												<dt>
+													<img src="img/key_recalc.png" alt="re_culc" style="width: 16px; height: 16; " vspace="1" hspace="1">長押し
+													<dd>一度計算した数式をデータベースに記録します。<br>同じパターンの計算を繰り返すときは再計算ボタンの長押しで一度計算した数式を読み出せます。
+											</dl>
+										</li>
+										<li>カーソル操作
+											<dl compact>
+												<dt>
+													<img src="img/keyleft.png" alt="left" style="width: 16px; height: 16; " vspace="1" hspace="1">
+													<img src="img/key_r.png" alt="right" style="width: 16px; height: 16; " vspace="1" hspace="1">
+													<dd><small>※表示部分をタッチするとキーボードがインプットメソッドのキーに切り替わりますが、
+														多くのインプットメソッドの範囲選択タブは小さすぎて操作できなかったり、
+														切り替わること自体が煩わしい事が有りますので、表示部に触らずカーソル操作できるキーにしました。<br>
+														※このキーはダイヤルキーのSTARキーとPOUND（#）キーに相当します。</small> Ver1.3から計算後にカーソル操作すると一つ目の&quot;=&quot;以降を消去します。
+														<br>
+														<small><ul>
+															<li>
+																他の人に説明する時は計算過程も含めた範囲選択に用途は有るかと思いますが
+															</li>
+															<li>
+																タッチ選択で文字が反転できてるので、ソフトキー操作のカーソル移動は選択したい処に早く到達できる様、「再計算」と連携させました。
+															</li>
+														</ul></small>
+											</dl>
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+
+
+			<br clear="all">
+			<h3>思い出話<small><small>(と言うか制作動機)</small></small>
+			</h3>
+			私が初めて見たパソコン(SE30)には一行表示の簡易な電卓アプリがバンドルされていました。<br> 大きな画面に電卓キー以上に多くのキーを付けたパソコンで7セグメント管を一列に並べて答えだけしか表示できない「電卓」。 ・・・・・・・Appleらしい微笑ましいジョークアプリだなと思いました。
+			<br> ところがそれから後に発売されるパソコンから今日のスマホに至るまで「あの形が電卓」とされ、未だに改められる気配もありません。
+			<br> 　途中で入力間違いをしても気づけない。部分修正すらできない。大きな画面もインタフェースの進化もお構いなしで今となっては性質の悪いパロディーにしかなっていない「電卓アプリ」が疎ましく思えてきました。
+			<p>
+				もう一つの動機は自分の頭の体操。簡単な四則演算でも計算の順番を間違うと答えも変わります。当たり前の事ですが「自分は常識的に計算できる」と思いこんでいる大人ほど、恥辱的に計算間違いします。 つまらない恥をかく前にトレーニングできればと思います。
+
+
+				<br clear="all">
+				<Ul>
+					<dt><big>リリース記録</big></dt>
+                                                <dd>
+                                                    <li>1.4.1; 2016年5月8日；Android 5.1対応
+                                                        <ol>
+                                                            <li>ToolBarなど追加機能対応
+                                                                <small><ul>
+								<li>
+									上部に組み込むとタイトル部分が邪魔になる(入力エリアが小さくなる)ので、右下にメニュー機構を組み込みました。
+								</li>
+							</ul></small>
+                                                            </li>
+                                                            <li>ヘルプ機構の改定
+                                                                <small><ul>
+							<li>
+								修正齟齬の防止とアプリサイズの肥大を防止する目的でwebのヘルプページに統合
+							</li>
+							</ul></small>
+                                                            </li>
+                                                        </ol>
+                                                        <small>テスト端末<br>
+						Android5.1.1　；　501SO(Xpelia Z5)<br>
+						Android4.4.2　；　304SH<br>
+						Android4.2.2　；　SH-08E (7インチタブレット)<br>
+						Android4.1.2　；　203SH<br>
+						Android4.0.3　；　is15SH(ダイヤルキー付)<p></small>
+                                                    </li>
+                                                    <li>1.4.0 ; 2015年11月3日；
+                                                        <ol>
+                                                            <li>入力した数式のデータベース化で数式に分類と名前を付けるIF追加<br>
+                                                                <small>*名称入力のソフトキーボードで改行ボタンが消しきれてませんが、改行記号を入力しても補正プログラムで消去します。</small>
+                                                            </li>
+                                                            <li>前の計算の答えをペースト、もしくは選択範囲削除をサポートするIFを追加
+                                                            </li>
+                                                            <li>&quot;((-2))&quot;の様な&quot;(&quot;が残って異常終了するバグの改修<br><small>*&quot;(&quot;と&quot;)&quot;の数が違う様な入力ミスについては補正されません（プログラムで対処しきれませんのでご容赦ください）</small></li>
+                                                        </ol>
+                                                        <small>テスト端末<br>
+						上記に加え<br>
+						Android4.2.2　；　206SH</small>
+                                                    </li>
+                                                    <li>1.3.0 ; 2015年10月12日；
+                                                        <small><ol>
+						<li>入力した数式のデータベース化(入力した数式リスト)<br>1)&quot;=&quot;を入力して計算させた時点で数式をデータベースに記録<br>
+						2)"Re"ボタンの長押しでリストダイアログ表示<br>
+						3)そのリスト項目を長押しして消去/全履歴消去<br>
+						4)計算例もサンプル程度に表示
+						</li>
+						<li>以下のバグ修正を優先させる為、DB機能作成中断<br>1)ソフトキーボードが邪魔になって操作できなくなる機種が有るのでEditTextから(コピー機能を残した)表示専用のTextViewに変更<br>2)余り付き計算の3桁区切り記号<br>
+						3)小数部の桁落ち対策
+						</li>
+					</ol>
+						</small>
+                                                    </li>
+                                                    <li>1.2.0 ; 2015年9月30日；
+                                                        <small><ol>
+						<li>答えの表示枠追加
+						<br>ここをクリックする事でクリップボードにデータコピーできる仕様に変更<br>
+						（他のインプットメソッドを起動する必要無し）<br>計算結果が出た時点で答えの表示枠を選択していますから<br>ダイヤルキー付端末はそのまま決定ボタンを押してください。</li>
+					</ol>
+					テスト端末<br>
+						Android4.4.4　；　SHF32 (AQUOS K)<br>
+						</small>
+                                                    </li>
+                                                    <li>1.1.1 ; 2015年9月28日；
+                                                        <small><ol>
+						<li>小数計算修正
+						</li>
+					</ol>
+						</small>
+                                                    </li>
+                                                    <li>1.1.0 ; 2015年9月20日；
+                                                        <small><ol>
+						<li>利便性の向上（というか妥当な操作性）を目標にキーボード装備
+						</li>
+						<li>対応をAndroid3.0以上として内部構造再検討
+						</li>
+						<li>タッチパネルが無い特殊な端末(AQUOS K)については端末を借用できる9月中、検討継続<br>
+					　<small>　カーソルの表示ができないので、方法検討中</small>
+                                                    </li>
+                                                    </ol>
+                                                    </small>
+                                        </li>
+                                        <li>2013年12月14日；初回リリース
+                                            <small><ol>
+						<li>最初はキーボード無し。インプットメソッドのキーをそのまま使う
+						</li>
+						<li>演算子はスピナーから選択。という仕様でスタート</li>
+					</ol></small> テスト端末
+                                            <br> Android4.1.2　；　203SH
+                                            <br> Android4.0.3　；　is15SH(ダイヤルキー付)
+                                            <br>Android2.3.3　；　007SH(ダイヤルキー付)
+                                        </li>
+                                        </dd>
+                                    </Ul>
+
+
+                                    <br clear="all">
+                                    <Ul>
+                                        <dt><big>課題</big></dt>
+                                        <dd>
+                                            <li>関数の利用<br> *JAVAの組み込み関数の流用
+                                                <br>*Excel関数とのすり合わせ
+                                            </li>
+                                            <li>表示改善<br> ①計算経過の表示/非表示切替
+                                                <br> ②単位・補助単位対応で処理範囲(有効桁数)から外れる事の阻止
+                                            </li>
+                                            <li>連携強化<br> ①ファイル書き出し(恒久保存)
+                                                <br> ②メール送信（PCなど他の機器への連携）
+                                            </li>
+                                            <li>このアプリ自体をインプットメソッドにする事で<br> ①キー切り替えのロス削減
+                                                <br> ②メールなどの入力中でも必要に応じた計算機能の提供
+                                            </li>
+                                        </dd>
+
+                    </div>
+                </div>
+                <footer class="footer">
+                    <p style="text-align: right; background-color:white">
+                        <div class="col-xs-12 col-sm-12">
+                            <div class="col-xs-6 col-sm-8">
+                                <a href="../index.htm">
+                                    <img src="../img/koubou.png" alt="比治山工房" width="100%">
+                                </a>
+                            </div>
+                            <div class="col-xs-2 col-sm-2">
+                                <a href="https://play.google.com/store/apps/details?id=com.hjiyama_koubou.text2calc">
+                                    <img src="../img/mojical.png" alt="moji_kara_qr" vspace="1" hspace="1"></a>
+                            </div>
+                            <div class="col-xs-4 col-sm-2">
+                                Copyright 2016
+                            </div>
+                        </div>
+                    </p>
+                </footer>
+            </div>
+</body>
+
+</html>

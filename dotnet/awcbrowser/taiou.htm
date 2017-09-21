@@ -1,0 +1,602 @@
+<!DOCTYPE HTML>
+<!--PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"-->
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+    <title>AWC File Browser/対応表</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/org_util.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../main.css" title="優先スタイル">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <ul class="nav nav-tabs nav-justified">
+                <li role="presentation"><a href="index.htm">概要と説明</a></li>
+                <li role="presentation" class="active"><a href="#">対応表</a></li>
+                <!-- <li role="presentation"><a href="../android/">Andriod</a></li> -->
+            </ul>
+        </div>
+        <div id="pagetop">
+        </div>
+        <div id="contents">
+            <h2 id="video">
+                video
+            </h2>
+            <table class="table table-striped" align="left" valign="top" border="1" cellpadding="10" cellspacing="0" style="font-size: 11pt; line-height: 150%; margin: 10px; padding: 10px;">
+                <!-- " width="850"-->
+                <tr valign="bottom">
+                    <th style=" margin: 10px; padding: 10px;">
+                        表示方法
+                    </th>
+                    <th style=" margin: 10px; padding: 10px;">
+                        対応状況
+                    </th>
+                    <th style=" margin: 10px; padding: 10px;">
+                        対象
+                    </th>
+                    <th style=" margin: 10px; padding: 10px;">
+                        備考
+                    </th>
+                </tr>
+                <tr valign="top">
+                    <td rowspan="10" style="margin: 10px; padding: 10px;">
+                        WMP
+                    </td>
+                    <td rowspan="3" nowrap style=" margin: 10px; padding: 10px;">
+                        確認済み
+                    </td>
+                    <td style=" margin: 10px; padding: 10px;">
+                        .wmv
+                    </td>
+                    <td style=" margin: 10px; padding: 10px;">
+                        Windows Media 形式
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td style=" margin: 10px; padding: 10px;">
+                        .mp4 , .m2ts, .ts
+                    </td>
+                    <td style=" margin: 10px; padding: 10px;">
+                        m2ts(.ts)はビデオカメラのAVCRECファイルで確認
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td style="margin: 10px; padding: 10px;">
+                        .3gp
+                    </td>
+                    <td style=" margin: 10px; padding: 10px;">
+                        ver12:MP4 ビデオ ファイル(スマホなど)
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td rowspan="7" style=" margin: 10px; padding: 10px;">
+                        確認待ち
+                    </td>
+                    <td style="margin: 10px; padding: 10px;">
+                        .asf , .wm
+                    </td>
+                    <td style=" margin: 10px; padding: 10px;">
+                        ver9:Windows Media 形式
+                    </td>
+                </tr>
+
+                <tr valign="top">
+                    <td style="margin: 10px; padding: 10px;">
+                        dvr-ms
+                    </td>
+                    <td style=" margin: 10px; padding: 10px;">
+                        ver12:Microsoft デジタル ビデオ録画
+                    </td>
+                </tr>
+
+                <tr valign="top">
+                    <td style="margin: 10px; padding: 10px;">
+                        .ivf
+                    </td>
+                    <td style=" margin: 10px; padding: 10px;">
+                        ver10:Indeo Video Technology
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td style="margin: 10px; padding: 10px;">
+                        .mpg , m1v , mp2 , mpa , mpe
+                    </td>
+                    <td style=" margin: 10px; padding: 10px;">
+                        ver9:MPEG
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td style="margin: 10px; padding: 10px;">
+                        .m4v , .mp4v , mpeg , mpeg
+                    </td>
+                    <td style=" margin: 10px; padding: 10px;">
+                        ver12:MP4 ビデオ ファイル
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td style="margin: 10px; padding: 10px;">
+                        .3gpp
+                    </td>
+                    <td style=" margin: 10px; padding: 10px;">
+                        ver12:MP4 ビデオ ファイル(スマホなど)
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td style="margin: 10px; padding: 10px;">
+                        .qt 、.mov
+                    </td>
+                    <td style=" margin: 10px; padding: 10px;">
+                        ver12:QuickTime ムービー ファイル
+                    </td>
+                </tr>
+
+                <tr valign="top">
+                    <td style="  margin: 10px; padding: 10px;">
+                        videoタグ
+                    </td>
+                    <td style=" margin: 10px; padding: 10px;">
+                        確認待ち
+                    </td>
+                    <td style="margin: 10px; padding: 10px;">
+                        .webm , .ogv
+                    </td>
+                    <td style="margin: 10px; padding: 10px;">
+                        .mp4はコントロールが表示されないものが有ったのでWMPで再生
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td rowspan="2" nowrap style="  margin: 10px; padding: 10px;">
+                        objectタグ
+                    </td>
+                    <td style=" margin: 10px; padding: 10px;">
+                        確認済み
+                    </td>
+                    <td style="margin: 10px; padding: 10px;">
+                        .flv
+                    </td>
+                    <td style="margin: 10px; padding: 10px;">
+                        プレイヤーは<a href="https://www.streaming.jp/fladance/" target="_blank">ふらだんす</a>を使用
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td style=" margin: 10px; padding: 10px;">
+                        確認待ち
+                    </td>
+                    <td style="margin: 10px; padding: 10px;">
+                        .swf
+                    </td>
+                    <td style="margin: 10px; padding: 10px;">
+                        確認ソース入手待ち
+                    </td>
+                </tr>
+            </table>
+
+            <h2 id="audio">
+                audio
+            </h2>
+            <table class="table table-striped" align="left" valign="top" border="1" cellpadding="10" cellspacing="0" style="font-size: 11pt; line-height: 150%; margin: 10px; padding: 10px;">
+                <tr valign="bottom">
+                    <th style=" margin: 10px; padding: 10px;">
+                        表示方法
+                    </th>
+                    <th style=" margin: 10px; padding: 10px;">
+                        対応状況
+                    </th>
+                    <th style=" margin: 10px; padding: 10px;">
+                        対象
+                    </th>
+                    <th style=" margin: 10px; padding: 10px;">
+                        備考
+                    </th>
+                </tr>
+                <tr valign="top">
+                    <td rowspan="9" style="margin: 10px; padding: 10px;">
+                        WMP
+                    </td>
+                    <td nowrap rowspan="3" style=" margin: 10px; padding: 10px;">
+                        確認済み
+                    </td>
+                    <td style="margin: 10px; padding: 10px;">
+                        .wma
+                    </td>
+                </tr>
+
+                <tr valign="top">
+                    <td style="margin: 10px; padding: 10px;">
+                        .wav
+                    </td>
+                    <td style="margin: 10px; padding: 10px;">
+                        var9;Windows 用オーディオ
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td style="margin: 10px; padding: 10px;">
+                        .mp3 , aac , m4a
+                    </td>
+                    <td style="margin: 10px; padding: 10px;">
+                        audioタグでコントロールが表示されないものが有ったのでWMPで再生
+                    </td>
+                </tr>
+
+                <tr valign="top">
+                    <td rowspan="6" style=" margin: 10px; padding: 10px;">
+                        確認待ち
+                    </td>
+                    <td style="margin: 10px; padding: 10px;">
+                        .wvx , wax , wav , asx
+                    </td>
+                    <td style="margin: 10px; padding: 10px;">
+                        var9;
+                    </td>
+                </tr>
+
+                <tr valign="top">
+                    <td style="margin: 10px; padding: 10px;">
+                        .midi , mid , rmi
+                    </td>
+                    <td style="margin: 10px; padding: 10px;">
+                        var9;MIDI
+                    </td>
+                </tr>
+
+                <tr valign="top">
+                    <td style="margin: 10px; padding: 10px;">
+                        .aif , aifc , aiff
+                    </td>
+                    <td style="margin: 10px; padding: 10px;">
+                        var9;Audio Interchange File FormatI
+                    </td>
+                </tr>
+
+                <tr valign="top">
+                    <td style="margin: 10px; padding: 10px;">
+                        .au , snd
+                    </td>
+                    <td style="margin: 10px; padding: 10px;">
+                        var9;Sun Microsystems および NeXT
+                    </td>
+                </tr>
+
+                <tr valign="top">
+                    <td style="margin: 10px; padding: 10px;">
+                        .cda
+                    </td>
+                    <td style="margin: 10px; padding: 10px;">
+                        var9;CD オーディオ トラック
+                    </td>
+                </tr>
+
+                <tr valign="top">
+                    <td style="margin: 10px; padding: 10px;">
+                        .adt , adts </td>
+                    <td style="margin: 10px; padding: 10px;">
+                        var12;Windows オーディオ ファイル
+                    </td>
+                </tr>
+
+                <tr valign="top">
+                    <td nowrap style="margin: 10px; padding: 10px;">
+                        audioタグ
+                    </td>
+                    <td style=" margin: 10px; padding: 10px;">
+                        確認待ち
+                    </td>
+                    <td style="margin: 10px; padding: 10px;">
+                        .ogg
+                    </td>
+                </tr>
+
+            </table>
+
+            <h2 id="pict">
+                pict
+            </h2>
+            <table class="table table-striped" align="left" valign="top" border="1" cellpadding="10" cellspacing="0" style="font-size: 11pt; line-height: 150%; margin: 10px; padding: 10px;">
+                <tr valign="bottom">
+                    <th style=" margin: 10px; padding: 10px;">
+                        表示方法
+                    </th>
+                    <th style=" margin: 10px; padding: 10px;">
+                        対応状況
+                    </th>
+                    <th style=" margin: 10px; padding: 10px;">
+                        対象
+                    </th>
+                    <th style=" margin: 10px; padding: 10px;">
+                        備考
+                    </th>
+                </tr>
+
+                <tr valign="top">
+                    <td style="margin: 10px; padding: 10px;">
+                        imgタグ
+                    </td>
+                    <td nowrap style="margin: 10px; padding: 10px;">
+                        確認済み
+                    </td>
+                    <td style="margin: 10px; padding: 10px;">
+                        .jpg,.jpeg,.png,.gif
+                    </td>
+                </tr>
+
+                <tr valign="top">
+                    <td style="margin: 10px; padding: 10px;">
+                        検討中
+                    </td>
+                    <td style="margin: 10px; padding: 10px;">
+                        確認待ち
+                    </td>
+                    <td style="margin: 10px; padding: 10px;">
+                        .tif , .ico , .bmp
+                    </td>
+                    <td style="margin: 10px; padding: 10px;">
+                        確認サンプル入手待ち
+                    </td>
+                </tr>
+
+            </table>
+
+            <h2 id="text">
+                text
+            </h2>
+            <table class="table table-striped" align="left" valign="top" border="1" cellpadding="10" cellspacing="0" style="font-size: 11pt; line-height: 150%; margin: 10px; padding: 10px;">
+                <tr valign="bottom">
+                    <th style=" margin: 10px; padding: 10px;">
+                        表示方法
+                    </th>
+                    <th style=" margin: 10px; padding: 10px;">
+                        対応状況
+                    </th>
+                    <th style=" margin: 10px; padding: 10px;">
+                        対象
+                    </th>
+                    <th style=" margin: 10px; padding: 10px;">
+                        備考
+                    </th>
+                </tr>
+                <tr valign="top">
+                    <td rowspan="5" style="margin: 10px; padding: 10px;">
+                        preタグ
+                    </td>
+                    <td nowrap rowspan="2" style="margin: 10px; padding: 10px;">
+                        確認済み
+                    </td>
+                    <td style="margin: 10px; padding: 10px;">
+                        .txt , .js
+                    </td>
+                    <td style="margin: 10px; padding: 10px;">
+                        そのまま
+                    </td>
+                </tr>
+
+                <tr valign="top">
+                    <td style="margin: 10px; padding: 10px;">
+                        .htm ,.html ,.php
+                    </td>
+                    <td style="margin: 10px; padding: 10px;">
+                        "&lt;" , "&gt;"を表示出来るよう置換えてpreタグ内に書き込み
+                    </td>
+                </tr>
+
+                <tr valign="top">
+                    <td style="margin: 10px; padding: 10px;">
+                        確認待ち
+                    </td>
+                    <td style="margin: 10px; padding: 10px;">
+                        .xhtml,.xml,.rss,.xml,.css,.vbs,.cgi
+                    </td>
+                    <td rowspan="5" style="margin: 10px; padding: 10px;">
+                        確認サンプル入手次第対応予定
+                    </td>
+                </tr>
+            </table>
+
+            <h2 id="application">
+                application
+            </h2>
+            <table class="table table-striped" align="left" valign="top" border="1" cellpadding="10" cellspacing="0" style="font-size: 11pt; line-height: 150%; margin: 10px; padding: 10px;">
+                <tr valign="bottom">
+                    <th style=" margin: 10px; padding: 10px;">
+                        表示方法
+                    </th>
+                    <th style=" margin: 10px; padding: 10px;">
+                        対応状況
+                    </th>
+                    <th style=" margin: 10px; padding: 10px;">
+                        対象
+                    </th>
+                    <th style=" margin: 10px; padding: 10px;">
+                        備考
+                    </th>
+                </tr>
+
+                <tr valign="top">
+                    <td rowspan=5 style="margin: 10px; padding: 10px;">
+                        WMP
+                    </td>
+                    <td rowspan=5 style="margin: 10px; padding: 10px;">
+                        確認待ち
+                    </td>
+                    <td style="margin: 10px; padding: 10px;">
+                        .wmx , wms , wmz,.wms
+                    </td>
+                    <td style="margin: 10px; padding: 10px;">
+                        ver9:Windows Media Player スキン
+                    </td>
+                </tr>
+
+                <tr valign="top">
+                    <td style="margin: 10px; padding: 10px;">
+                        .m3u </td>
+                    <td style="margin: 10px; padding: 10px;">
+                        MPEGだがrealPlayerのプレイリスト
+                    </td>
+                </tr>
+
+                <tr valign="top">
+                    <td style="margin: 10px; padding: 10px;">
+                        .asx、.wax、.wvx、.wmx ,.wpl
+                    </td>
+                    <td style="margin: 10px; padding: 10px;">
+                        ver9:Windows Media メタファイル
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td style="margin: 10px; padding: 10px;">
+                        .wmd
+                    </td>
+                    <td style="margin: 10px; padding: 10px;">
+                        ver9:Windows Media Download パッケージ
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td style="margin: 10px; padding: 10px;">
+                        .avi
+                    </td>
+                    <td style="margin: 10px; padding: 10px;">
+                        ver9:Audio Visual Interleave
+                    </td>
+                </tr>
+
+
+            </table>
+
+            <h2 id="omit">
+                無視するファイル
+            </h2>
+            <table class="table table-striped" align="left" valign="top" border="1" cellpadding="10" cellspacing="0" style="font-size: 11pt; line-height: 150%; margin: 10px; padding: 10px;">
+                <tr valign="bottom">
+                    <th style=" margin: 10px; padding: 10px;">
+                        対象
+                    </th>
+                    <th style=" margin: 10px; padding: 10px;">
+                        備考
+                    </th>
+                </tr>
+                <tr valign="top">
+                    <td style="margin: 10px; padding: 10px;">
+                        RECYCLE , .bak , .bdmv , .blf , .BIN , .cab , .cfg , .cmd , .dat , .dll , .inf , .inf , .ini , .lsi , .iso , .lst , .jar , .log , .lock , .mis , .mni , .MARKER , .mbr , .manifest , .properties , .pnf , .prx , .scr , .settings , .so , .sys , .xml , .exe
+                    </td>
+                    <td rowspan=4 style="margin: 10px; padding: 10px;">
+                        システムファイルなど触るとまずいものはリストアップしません
+                    </td>
+                </tr>
+            </table>
+            <div style="margin: 10px; padding: 10px;">
+                参照<br>
+                <a href="https://support.microsoft.com/ja-jp/help/316992/file-types-supported-by-windows-media-player">Windows Media Player でサポートされているファイルの種類</a>
+            </div>
+            <div class="row " id="info_row">
+                <div class="col-sm-12">
+                    <div class="panel-group">
+                        <div id="scenr_propaty" class="panel panel-default">
+                            <!-- <div class="panel-heading"> -->
+                            <div class="panel-title">
+                                <div class="panel-heading btn btn-default collapse_bt" data-toggle="collapse" data-target="#edit_other">
+                                    <h3>ご連絡</h3>
+                                </div>
+                            </div>
+                            <!-- </div> -->
+                            <div id="edit_other" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div class="panel-group">
+                                        只今、就活中。<br>広島市近郊のデベロッパー様でプログラマーをお探しでしたらご一報ください。
+                                        <input type="text" name="email" id="mail_send_titol" style="width:85%; margin-top: 5px;" placeholder="御社名をご記入ください">
+                                        <button type="button" id="mail_send" class="btn btn-Default glyphicon glyphicon-send btn-xs" role="button " style="margin-top: -6px;text-align: right;" onclick="mailSender(event)"> 送信</button>
+                                        <br>
+                                        <textarea type="text" name="email" class="form-control text_souce" id="mail_send_souce" style="min-height: 10em;margin-top: 5px;" placeholder="業務内容、就業場所などをご記入下さい。"></textarea>
+                                        <br>車での通勤可否と交通費の支給によっては広島市外への通勤も可能です。
+                                        <br>ハローワークインタネットサービスに登録されている案件は求人番号をご記入ください。
+                                        <br>その他の求人サイトにご登録の場合はその旨をお伝えください。
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="sidebar" style="padding:5px;">
+            <a href="../../">
+                <img src="../../img/koubou.png" alt="比治山工房" style="width:100%;margin-top: 10px;">
+            </a><br><br>
+            <a href="../">
+                <img src="../../img/winlog.jpg" alt="win" style="width: 36px;">.NET/C#
+            </a><br><br>
+            <ul>
+                <li>
+                    <a href="#pagetop">ページトップへ</a>
+                </li>
+                <li>
+                    <a href="#video">video</a>
+                </li>
+                <li>
+                    <a href="#audio">audio</a>
+                </li>
+                <li>
+                    <a href="#pict">pict</a>
+                </li>
+                <li>
+                    <a href="#text">text</a>
+                </li>
+                <li>
+                    <a href="#application">application</a>
+                </li>
+                <li>
+                    <a href="#omit">無視するファイル</a><br>
+                </li>
+
+                <li>
+                    <a href="#info_row">ご連絡</a>
+                </li>
+            </ul>
+            <div>
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3146425308522831" data-ad-slot="4219928305" data-ad-format="auto"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+
+                <script type="text/javascript">
+                    var nend_params = {
+                        "media": 32269,
+                        "site": 206990,
+                        "spot": 583222,
+                        "type": 1,
+                        "oriented": 1
+                    };
+                </script>
+                <script type="text/javascript" src="https://js1.nend.net/js/nendAdLoader.js"></script>
+            </div>
+
+
+        </div>
+        <!-- <div id="footer">
+         </div> -->
+    </div>
+    <script type="text/javascript">
+        $(function() {
+            var headerHight = $('#header').outerHeight(true); //ヘッダの高さ
+            // console.log(headerHight);
+            $('a[href^="#"]').click(function() {
+                var href = $(this).attr("href");
+                var target = $(href == "#" || href == "" ? 'html' : href);
+                var position = target.offset().top - headerHight; //ヘッダの高さ分位置をずらす
+                $("html, body").animate({
+                    scrollTop: position
+                }, 550, "swing");
+                return false;
+            });
+        });
+    </script>
+</body>

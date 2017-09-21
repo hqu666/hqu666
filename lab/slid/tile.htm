@@ -1,0 +1,320 @@
+<!DOCTYPE HTML>
+<!--PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"-->
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>比治山工房/タイル</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="common.js"></script>
+    <script type="text/javascript" src="tile.js"></script>
+    <!--<script type="text/javascript" src="../js/tab_text_read.js"></script>
+    <script type="text/javascript" src="../js/canvas_util.js"></script>
+    <script type="text/javascript" src="../js/audio_util.js"></script>
+    <script type="text/javascript" src="../js/text_util.js"></script>-->
+    <script type="text/javascript" src="../js/org_util.js"></script>
+</head>
+
+<body style="font-size: 11pt; line-height: 150%;">
+    <!--<style>
+        canvas {
+            background-color: 'transparent';
+        }
+    </style>-->
+    <!--<a class="btn btn-primary" data-toggle="modal" data-target="#modal_box" href="show">Show Modal</a>
+    <div class="modal hide" id="modal_box" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="">-->
+    <div class="modal fade" id="modal_box">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="panel-heading" style="background-color: #ccc; cursor:move;">設定
+                    <div class="col-sm-12" style="text-align: right;">
+                        <a class="btn" data-dismiss="modal" href="#">
+                            <span class="glyphicon glyphicon-remove" style="right: -31px;top: -25px;color: black;"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="box_inner" style="margin: 10px;">
+                    <form name="setform" action="">
+                        <div class="row" style="margin: 2px;">
+                            <!--<div class="form-group">-->
+                            <div class="col-sm-9">
+                                <span>
+                                    枠型を画面幅の; <input type="text" id="tile_bace_size" size="1" maxlength="2" value="70" oninput="setDEqually()">%に配置し、
+                                    枠数を; <input type="text" id="dEqually" size="1" maxlength="4" value="100" oninput="setDEqually()">分割
+                                </span>
+                            </div>
+                            <div class="col-sm-3">
+                                <label style="background-color: #d0c8c8;text-align: center;width: 100%;padding: 4px;">
+                                    <input type="file" accept='image/*' id="selectfile" accept='image/*' style="display:none;"> 枠型変更
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row" style="margin: 2px;">
+                            <div class="col-sm-2" style="margin-top:5px;">
+                                <p>４頂点中<br>
+                                    <select id="test_point" style="padding: 0.2em;" onchange="testPoint()">
+                                        <option value="4">4点評価</option>
+                                        <option value="3">3点評価</option>
+                                        <option value="2">2点評価</option>
+                                        <option value="1">1点評価</option>
+                                    </select>
+                                </p>
+                            </div>
+                            <div class="col-sm-3" style="margin-top:5px;">
+                                <p>配置範囲<br>
+                                    <select id="revarce_layout_out" style="padding: 0.2em;" onchange="revarceLayout()">
+                                        <option value="0">外(フレーム)</option>
+                                        <option value="1">枠内</option>
+                                        <option value="2" selected>線形</option>
+                                        </select>
+                                </p>
+                            </div>
+                            <div class="col-sm-4" style="margin-top:5px;">
+                                <div id="line_col_alia">
+                                    <p>線の太さ<br>
+                                        <select id="line_col" style="padding: 0.2em;" onchange="lineCol()">
+                                            <option value="0">1</option>
+                                            <option value="1">2</option>
+                                            <option value="2">3</option>
+                                        </select>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-sm-3" style="margin-top:5px;">
+                                <!--<div style="text-align: end;">-->
+                                <fieldset style="margin-bottom: 10px;font-size: medium; border: 1px dotted #000000;border-radius: 5px;padding: 5px;">
+                                    <legend style="margin-bottom: 0px;font-size: medium;">分割列数</legend>
+                                    <input type="radio" name="even_odd" id="even_odd_even" onchange="evenOddSel()">偶数
+                                    <input type="radio" name="even_odd" id="even_odd_odd" onchange="evenOddSel()" checked>奇数
+                                </fieldset>
+                                <!--</div>-->
+                            </div>
+                        </div>
+                        <!--<div class="form-group">-->
+                        <div class="row" style="margin: 5px;">
+                            <div class="col-sm-4">
+                                <input type="checkbox" id="veiw_fleam" checked onclick="veiwFleam()">サムネイル表示;
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="checkbox" id="view_base" checked onclick="viewBase()">枠型表示;
+                            </div>
+                            <div class="col-sm-5" style="text-align: right;">
+                                <input type="checkbox" id="is_cell_drow" checked onclick="setDEqually()">升目とカラム名の表示;
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin: 10px;">
+                            <div class="col-sm-10" style="display:inline;background-color: rgba(255, 255, 255, 0.70);">
+                                <div id="colorMoniter" style="width:100%;height:auto;"></div>
+                            </div>
+                            <div class="col-sm-2" style="text-align: right;">
+                                <input type="button" value="回避情報" onclick="showBlankInfo()" />
+                            </div>
+
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--</div>-->
+
+    <div id="canvas_bace" style="width: 100vw; height: 100vh;  position: absolute; z-index: -1;display: block;">
+        <canvas width="0" height="0" style="position: absolute;"></canvas>
+        <!--<canvas id="canvas_aria"  style="width: 100%; height: 100%;display: inline; margin-top: -16px; margin-left: -16px;">
+        </canvas>-->
+    </div>
+    <div class="container" style="width: 96%;">
+        <!--<div class="row" style="margin: 10px;">
+            <div class="col-sm-11">
+            </div>
+            <div class="col-sm-1">
+                <p class="text-center"><a class="btn btn-primary click_btn">設定</a></p>
+            </div>
+        </div>-->
+
+        <div id="control_aria" style="top: 92vh;width: 95vw; height: auto;  position: absolute; z-index: 10;display: block;text-align: right;padding: 1vw;">
+            <span>
+              <div id='setting_btn' class="btn btn-primary  active btn-sm " role="button">
+                <span class="glyphicon glyphicon-wrench"></span>設定</div>
+        <a href="tile_info.htm" target="_blank" class="btn btn-warning btn-sm active" role="button">
+            <span class="glyphicon glyphicon-question-sign"></span>説明</a>
+        <a href="../" target="_blank" class="btn btn-info btn-sm active" role="button">
+            <span class="glyphicon glyphicon-home"></span>インデックス</a>
+        </span>
+    </div>
+    </div>
+    <script>
+        var debug_now = true;
+        var winW;
+        var winH;
+        var tbCanvas; //下絵
+        var tbCtx;
+        var flCanvas; //フレーム
+        var flCtx;
+        var srcName = 'tile_bace_br.png';
+        var thmbnails = [];
+
+        var colorMoni;
+        var boxes;
+
+        $(document).ready(function() {
+            var tag = "[document.ready]";
+            var dbMsg = tag;
+            try {
+                winW = $(window).width(); //window.innerWidth;
+                winH = $(window).height(); //window.innerHeight;
+                dbMsg = dbMsg + ",window[" + winW + "×" + winH + "]";
+                setDragElement("modal_box");
+
+                boxes = document.getElementById("canvas_bace"); //idで親要素を取得          //http://unitopi.com/jquery-parent-child-3/
+                colorMoni = document.getElementById('colorMoniter');
+                thmbnails.push('tile_bace.png');
+
+                // myLog(dbMsg);
+            } catch (e) {
+                console.log(dbMsg);
+                // window.location.reload(); //再読み込み
+            }
+        });
+
+        $(window).load(function() {
+            var tag = "[(window).load]";
+            var dbMsg = tag; //+ ",ceremonies_slide_bg=" + ceremonies_slide_bg;
+            try {
+                var tWidth = boxes.clientWidth;
+                var tHeight = boxes.clientHeight;
+                dbMsg = dbMsg + "[" + tWidth + "×" + tHeight + "]";
+                // var pandSize = boxes.style.paddingTop;
+                // dbMsg = dbMsg + "pandSize=" + pandSize;
+                tWidth = winW;
+                tbCanvas = boxes.firstElementChild.cloneNode(true); //親要素の先頭にある子要素を複製（コピー）これでID指定と同様？
+                tbCanvas.id = "tbCanvas";
+                tbCanvas.style.width = '100vw'; //winW - 5;
+                tbCanvas.style.height = '100vh'; // = winH - 5;
+                boxes.appendChild(tbCanvas); //「boxes」の要素の最後尾に複製した要素を追加
+
+                tbCanvas.width = tWidth; //winW - 5;
+                tbCanvas.height = tHeight; // = winH - 5;
+                tbCtx = tbCanvas.getContext('2d');
+
+                flCanvas = boxes.firstElementChild.cloneNode(true); //親要素の先頭にある子要素を複製（コピー）これでID指定と同様？
+                flCanvas.id = "flCanvas";
+                flCanvas.style.width = '100vw'; //winW - 5;
+                flCanvas.style.height = '100vh'; // = winH - 5;
+                boxes.appendChild(flCanvas); //「boxes」の要素の最後尾に複製した要素を追加
+                flCanvas.width = tWidth; //winW - 5;
+                flCanvas.height = tHeight; // = winH - 5;
+                flCtx = flCanvas.getContext('2d');
+                blankParcent = 0;
+
+                tileBaceRead(srcName);
+                tbCanvas.addEventListener('mousemove', colorPick);
+
+                // myLog(dbMsg);
+            } catch (e) {
+                console.log(dbMsg);
+            }
+        }); //読込完了時；備考；$(window).load()はページのすべての要素、つまり画像などがすべてロードされた段階
+
+        function callTBR() {
+            document.location.reload();
+        }
+
+        $(window).resize(function() {
+            var dbMsg = "[window.resize]"; // + b_bgv;
+            try {
+                setTimeout("callTBR()", 1000);
+                myLog(dbMsg);
+            } catch (e) {
+                console.log(dbMsg);
+            }
+        }); //ウインドウサイズが変更されたときの処理☆
+
+
+        var baseObje = document.getElementById("selectfile");
+        /**
+         * http://www.pori2.net/html5/File/040.html
+         */
+        baseObje.addEventListener("change", function(evt) {
+            var dbMsg = "[baseObje.addEventListener]";
+            var file = evt.target.files;
+            console.log(file[0]);
+            srcName = file[0].name;
+            dbMsg = dbMsg + "選択されたファイル=" + srcName; //pcならこれで十分 tileBaceRead(srcName);
+            var reader = new FileReader();
+            reader.readAsDataURL(file[0]); //1ファイルだけ、dataURL形式でファイルを読み込む
+            reader.onload = function() { //ファイルの読込が終了した時の処理
+                var dbMsg = "[baseObje.onload]";
+                var srcBase = reader.result; //base64を取得する
+                // dbMsg = dbMsg + "、base64=" + srcBase;
+                tileBaceRead(srcBase);
+                myLog(dbMsg);
+            }
+            myLog(dbMsg);
+        }, false);
+
+        $('#setting_btn').on('click', function() {
+            $('#modal_box').modal('show');
+        });
+        /**
+         * 複数ファイルの読み込み  https://syncer.jp/javascript-reverse-reference/output-local-image
+         * フォルダの指定          http://www.kogures.com/hitoshi/javascript/file-api/directory.html
+         * 
+         */
+        // thombnailfile.addEventListener("change", function(evt) {
+        //     var dbMsg = "[thombnailfile.addEventListener]";
+        //     var fileList = evt.target.files;
+        //     console.log(fileList);
+        //     for (var i = 0, l = fileList.length; l > i; i++) { // 個数分の画像を表示する
+        //         dbMsg = dbMsg + "(" + i + ")";
+        //         var tFile = fileList[i];
+        //         console.log(tFile);
+        //         var thubName = 'thmbs/' + tFile.name;
+        //         dbMsg = dbMsg + thubName;
+        //         thmbnails.push(thubName);
+        //         var fileReader = new FileReader(); // [FileReader]クラスを起動
+        //         fileReader.onload = function() { // 読み込み後の処理を決めておく
+        //             var thmbBase = this.result; // データURIを取得
+        //             // dbMsg = dbMsg + ",、base64=" + thmbBase;
+        //             // myLog(dbMsg);
+        //             // thmbnails.push(thmbBase);
+        //         }
+        //         fileReader.readAsDataURL(fileList[i]); // ファイルをデータURIとして読み込む
+        //     }
+        //     console.log(thmbnails);
+        //     dbMsg = dbMsg + "選択されたファイル=" + thmbnails; //pcならこれで十分 tileBaceRead(srcName);
+        //     setDEqually();
+        //     myLog(dbMsg);
+        // }, false);
+        function getDirInFils(files, tagetDir) {
+            var dbMsg = "[fileListDilectory]";
+            for (i = 0; i < files.length; i++) {
+                var thubName = files[i].webkitRelativePath; //'thmbs/'
+                thmbnails.push(thubName);
+                dbMsg
+                    += "name[" + i + "]=" + files[i].name +
+                    " urn[" + i + "]=" + files[i].urn +
+                    " path[" + i + "]=" + files[i].webkitRelativePath +
+                    " type[" + i + "]=" + files[i].type +
+                    " size[" + i + "]=" + files[i].size +
+                    " lmd[" + i + "]=" + files[i].lastModifiedDate +
+                    "<br>";
+            }
+            myLog(dbMsg);
+            setDEqually();
+        }
+    </script>
+</body>

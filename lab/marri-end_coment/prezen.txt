@@ -1,0 +1,9 @@
+scene_cut	type	element	souce	left	top	width	hight	fontColor	bgColor	align	scale	opacity	fleamWidth	fleamColor	isEng	fontSize	vRows	scrollSpead	mStart	mPosition	effect	time	備考
+s010c01	sound	audio	https://marri-share.com/home/demo/marri_endroll/bgm/Sweet on You by Beth Whitney.mp3																0.0 	0.0 	fi	8500	イントロ	
+s010c01	wall	wall	#ffffff							0	100	0.5							0.0 			8500		
+s010c01	layout	layout	free																			8500		
+s010c01	text	top_left	市場分析			12		#000000	-1	0					true	80					fi	8500		
+s010c01	text	center_left	日本のブライダル市場			12	6	#000000			100	1.0			false	114			0.0			8500		
+s010c01	text	bottom_left	○○経済調査　Co.			12		#000000	-1	0					false	60						8500		
+s010c02	text	top_left	今日はたくさんのご投稿、ありがとうございました			12		#e81384	-1	0					false						fi	8500	17	
+s010c02	pict	center_left	img/01001.jpg	0	0	12	0.7	0.7	0.7	0	100	1	10	#ffffff								8500		

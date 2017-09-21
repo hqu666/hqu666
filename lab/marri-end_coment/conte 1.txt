@@ -1,0 +1,286 @@
+scene_cut	type	element	souce	left	top	width	hight	fontColor	bgColor	align	scale	opacity	fleamWidth	fleamColor	isEng	fontSize	vRows	scrollSpead	mStart	mPosition	effect	time	備考
+s010c01	sound	audio	https://marri-share.com/home/demo/marri_endroll/bgm/Sweet on You by Beth Whitney.mp3																0.0 	0.0 	fi		イントロ
+s010c01	wall	wall	img/mer_bg_flower_road.jpg							0	100	0.5							0.0 				
+s010c01	layout	layout	free																				
+s010c01	text	top_left	Thank You for Coming			12		#e81384	-1	0					true	120					fi	8500	
+s010c01	text	center_left	"本日はお忙しい中
+私たちの結婚式のために
+お集まりいただき
+本当にありがとうございました。"			12		#e81384	-1	0					false	0.7							
+s010c01	text	bottom_left	Ryousuke & Reina			12		#e81384	-1	0					true	1							
+s010c02	text	top_left	今日はたくさんのご投稿、ありがとうございました			12		#e81384	-1	0					false						fi	8500	17
+s010c02	pict	center_left	img/01001.jpg	0	0	12	0.7	0.7	0.7	0	100	1	10	#ffffff									
+s020c01	wall	wall	img/mer_bg_flower_green.jpg							2	100	0.5							0.0 				頂きましたメッセージ
+s020c01	layout	layout	6:6																				
+s020c01	text	top_left	えりさんより	0.02		6		#e81384	-1	0					false	72					fi	5600	22.6
+s020c01	pict	center_left	img/02001.jpg		0	6	0.5			0	100	1	5	#ffffff									
+s020c01	text	bottom_left	"今日はとっても奇麗だよ！
+また遊ぼうね！"	0.05		6		#e81384	-1	0					false	0.6							
+s020c01	text	top_right	木戸雄太さんより	0.05	0	6	0	#e81384	-1	0					false	72							
+s020c01	pict	center_right	img/02002.jpg		0	6	0.5			0	100	1	5	#ffffff	0								
+s020c01	text	bottom_right	今日の新郎はふざけてばかりのいつもと違ってかっこいいゾ！	0.05	0	6	0	#e81384	-1	0					false	0.6							
+s020c02	text	top_left	智樹さんより	0.02	0	6	0	#e81384	-1	0	0	0	0	0	false	72					fi	5600	28.2
+s020c02	pict	center_left	img/02003.jpg	0	0	6	0.5			0	100	1	5	#ffffff	0	0							
+s020c02	text	bottom_left	"なかなか凛々しいぜ！　
+今日はめっちゃ祝ってやるからな！"	0.05	0	6	0	#e81384	-1	0	0	0	0	0	false	0.6							
+s020c02	text	top_right	市原優衣さんより	0.05	0	6	0	#e81384	-1	0	0	0	0	0	false	72							
+s020c02	pict	center_right	img/02004.jpg	0	0	6	0.5			0	100	1	5	#ffffff	0	0							
+s020c02	text	bottom_right	"今日のれいな、すごいキレイだヨ。
+亮クンとけんかせず仲良くね。"	0.05	0	6	0	#e81384	-1	0	0	0	0	0	false	0.6							
+s020c03	text	top_left	Yukkoさんより	0.02	0	6	0	#e81384	-1	0	0	0	0	0	false	72					fi	5600	33.8
+s020c03	pict	center_left	img/02005.jpg	0	0	6	0.5			0	100	1	5	#ffffff	0	0							
+s020c03	text	bottom_left	"離れてしまってなかなか会えないけど、
+帰郷したときはあそぼう(^_^)"	0.05	0	6	0	#e81384	-1	0	0	0	0	0	false	0.6							
+s020c03	text	top_right	はなさんより	0.05	0	6	0	#e81384	-1	0	0	0	0	0	false	72							
+s020c03	pict	center_right	img/02006.jpg	0	0	6	0.5			0	100	1	5	#ffffff	0	0							
+s020c03	text	bottom_right	"東京タラレバ娘から玲奈がめでたく抜けたから、
+新メンバーを入れたよ(^_^)
+でもこれからも一緒にタラレバしようネ"	0.05	0	6	0	#e81384	-1	0	0	0	0	0	false	0.6							
+s020c04	text	top_left	新名心音さんより	0.02	0	6	0	#e81384	-1	0	0	0	0	0	false	72					fi	5600	39.4
+s020c04	pict	center_left	img/02007.jpg	0	0	6	0.5			0	100	1	5	#ffffff	0	0							
+s020c04	text	bottom_left	"先輩、
+いつも仕事を教えてくれてアリガトウ！　
+今度おうちに招待してください"	0.05	0	6	0	#e81384	-1	0	0	0	0	0	false	0.6							
+s020c04	text	top_right	結城咲人さんより	0.05	0	6	0	#e81384	-1	0	0	0	0	0	false	72							
+s020c04	pict	center_right	img/02008.jpg	0	0	6	0.5			0	100	1	5	#ffffff	0	0							
+s020c04	text	bottom_right	"ダンナさんめっちゃイケメンだね、
+びっくり！　
+職場近くだから今度ランチいこうね。"	0.05	0	6	0	#e81384	-1	0	0	0	0	0	false	0.6							
+s020c05	text	top_left	吉井寛之さんより	0.02	0	6	0	#e81384	-1	0	0	0	0	0	false	72					fi	5600	45
+s020c05	pict	center_left	img/02009.jpg	0	0	6	0.5			0	100	1	5	#ffffff	0	0							
+s020c05	text	bottom_left	"亮介君、素敵な伴侶を得て、
+よりいっそう飛躍してください！"	0.05	0	6	0	#e81384	-1	0	0	0	0	0	false	0.6							
+s020c05	text	top_right	綿貫絵梨さんより	0.05	0	6	0	#e81384	-1	0	0	0	0	0	false	72							
+s020c05	pict	center_right	img/02010.jpg	0	0	6	0.5			0	100	1	5	#ffffff	0	0							
+s020c05	text	bottom_right	"玲奈さん、
+これからは仕事と家庭のバランスが大切。
+わからないことはいつでも相談してネ(^^)　"	0.05	0	6	0	#e81384	-1	0	0	0	0	0	false	0.6							
+s020c06	wall	wall	img/mer_bg_rose_white.jpg							9	100	0.5							0.0 				頂きましたメッセージ
+s020c06	text	top_left	えりさんより	0.02		6		#e81384	-1	0					false	72					fi	5600	5.6
+s020c06	pict	center_left	img/02001.jpg		0	6	0.5			0	100	1	5	#ffffff									
+s020c06	text	bottom_left	"今日はとっても奇麗だよ！
+また遊ぼうね！"	0.05		6		#e81384	-1	0					false	0.6							
+s020c06	text	top_right	木戸雄太さんより	0.05	0	6	0	#e81384	-1	0					false	72							
+s020c06	pict	center_right	img/02002.jpg		0	6	0.5			0	100	1	5	#ffffff	0								
+s020c06	text	bottom_right	今日の新郎はふざけてばかりのいつもと違ってかっこいいゾ！	0.05	0	6	0	#e81384	-1	0					false	0.6							
+s020c07	text	top_left	智樹さんより	0.02	0	6	0	#e81384	-1	0	0	0	0	0	false	72					fi	5600	11.2
+s020c07	pict	center_left	img/02003.jpg	0	0	6	0.5			0	100	1	5	#ffffff	0	0							
+s020c07	text	bottom_left	"なかなか凛々しいぜ！　
+今日はめっちゃ祝ってやるからな！"	0.05	0	6	0	#e81384	-1	0	0	0	0	0	false	0.6							
+s020c07	text	top_right	市原優衣さんより	0.05	0	6	0	#e81384	-1	0	0	0	0	0	false	72							
+s020c07	pict	center_right	img/02004.jpg	0	0	6	0.5			0	100	1	5	#ffffff	0	0							
+s020c07	text	bottom_right	"今日のれいな、すごいキレイだヨ。
+亮クンとけんかせず仲良くね。"	0.05	0	6	0	#e81384	-1	0	0	0	0	0	false	0.6							
+s020c08	text	top_left	Yukkoさんより	0.02	0	6	0	#e81384	-1	0	0	0	0	0	false	72					fi	5600	16.8
+s020c08	pict	center_left	img/02005.jpg	0	0	6	0.5			0	100	1	5	#ffffff	0	0							
+s020c08	text	bottom_left	"離れてしまってなかなか会えないけど、
+帰郷したときはあそぼう(^_^)"	0.05	0	6	0	#e81384	-1	0	0	0	0	0	false	0.6							
+s020c08	text	top_right	はなさんより	0.05	0	6	0	#e81384	-1	0	0	0	0	0	false	72							
+s020c08	pict	center_right	img/02006.jpg	0	0	6	0.5			0	100	1	5	#ffffff	0	0							
+s020c08	text	bottom_right	"ダンナさんめっちゃイケメンだね、
+びっくり！　
+職場近くだから今度ランチいこうね。"	0.05	0	6	0	#e81384	-1	0	0	0	0	0	false	0.6							
+s020c09	text	top_left	新名心音さんより	0.02	0	6	0	#e81384	-1	0	0	0	0	0	false	72					fi	5600	22.4
+s020c09	pict	center_left	img/02007.jpg	0	0	6	0.5			0	100	1	5	#ffffff	0	0							
+s020c09	text	bottom_left	"先輩、
+いつも仕事を教えてくれてアリガトウ！　
+今度おうちに招待してください"	0.05	0	6	0	#e81384	-1	0	0	0	0	0	false	0.6							
+s020c09	text	top_right	結城咲人さんより	0.05	0	6	0	#e81384	-1	0	0	0	0	0	false	72							
+s020c09	pict	center_right	img/02008.jpg	0	0	6	0.5			0	100	1	5	#ffffff	0	0							
+s020c09	text	bottom_right	"ダンナさんめっちゃイケメンだね、
+びっくり！　
+職場近くだから今度ランチいこうね。"	0.05	0	6	0	#e81384	-1	0	0	0	0	0	false	0.6							
+s020c10	text	top_left	吉井寛之さんより	0.02	0	6	0	#e81384	-1	0	0	0	0	0	false	72					fi	5600	28
+s020c10	pict	center_left	img/02009.jpg	0	0	6	0.5			0	100	1	5	#ffffff	0	0							
+s020c10	text	bottom_left	"亮介君、素敵な伴侶を得て、
+よりいっそう飛躍してください！"	0.05	0	6	0	#e81384	-1	0	0	0	0	0	false	0.6							
+s020c10	text	top_right	綿貫絵梨さんより	0.05	0	6	0	#e81384	-1	0	0	0	0	0	false	72							
+s020c10	pict	center_right	img/02010.jpg	0	0	6	0.5			0	100	1	5	#ffffff	0	0							
+s020c10	text	bottom_right	"玲奈さん、
+これからは仕事と家庭のバランスが大切。
+わからないことはいつでも相談してネ(^^)　"	0.05	0	6	0	#e81384	-1	0	0	0	0	0	false	0.6							
+s030c01	sound	audio	https://marri-share.com/home/demo/marri_endroll/bgm/Can't Fight Love by Liz Rodrigues.mp3																0.0 	0.0 	fo/fi		新郎・新婦の思い出
+s030c01	wall	wall	img/mer_bg_leaf_circle.jpg							0	100	0.5							0.0 				
+s030c01	layout	layout	free																				
+s030c01	text	fix_left	The Days of Our Memories			12		#e81384	-1	0					true	40					fi		
+s030c01	text	top_left	出会いは社会人フットサルチーム			12		#e81384	-1	0					false	1					fi	8000	0
+s030c01	text	center_left	れいなが友達に連れられてたまたま参加したフットサルチームで運命の出会い。第一印象は二人とも同じ。「運命とか、なんにも感じませんでした」(笑)	0		5		#e81384	-1	3					false	1							
+s030c01	pict	center_right	img/03001.jpg	0		7	0.5			4	100	1	7	#ffffff									
+s030c02	text	top_left	フットサル帰りに共通の趣味で盛り上がり、付き合うことに	0	0	12	0	#e81384	-1	0	0	0	0	0	false	1					fi	8000	8
+s030c02	text	center_left	"二人の共通の趣味はフットサルではなく、食べること(^_^)
+一緒に色んなごはんを食べに行くうちに自然とお付き合いが始まりました。"	0	0	5	0	#e81384	-1	3	0	0	0	0	false	1							
+s030c02	pict	center_right	img/03002.jpg	0	0	7	0.5			4	100	1	7	#ffffff	0	0							
+s030c03	text	top_left	二人で楽しいことをいっぱいしてきました	0	0	12	0	#e81384	-1	0	0	0	0	0	false	1					fi	8000	8
+s030c03	text	center_left	二人は外にアウトドア派。色んなところへいき、色んな体験をしてきました。ちょっぴりキケンなことも(^_^)	0	0	5	0	#e81384	-1	3	0	0	0	0	false	1							
+s030c03	pict	center_right	img/03003.jpg	0	0	7	0.5			4	100	1	7	#ffffff	0	0							
+s030c04	text	top_left	一番の思い出、二人きりの海外旅行	0	0	12	0	#e81384	-1	0	0	0	0	0	false	1					fi	8000	16
+s030c04	text	center_left	"食べることが大好きな二人。とうとう国内では飽き足らず、大阪ならぬ、台湾に食い倒れツアーへ(^_^)
+りょうちゃんに食べてもらうお料理の幅が広がりました。これで胃袋はつかめたかな？"	0	0	5	0	#e81384	-1	3	0	0	0	0	false	1							
+s030c04	pict	center_right	img/03004.jpg	0	0	7	0.5			4	100	1	7	#ffffff	0	0							
+s030c05	text	top_left	夕食後によく行った、二人の自宅の中間地点にあるベイサイド	0	0	12	0	#e81384	-1	0	0	0	0	0	false	1					fi	8000	24
+s030c05	text	center_left	プロポーズもここでした。ここにはお互い色んなことを乗り越えてきた2人の想い出がたくさん詰まっています。嬉しいときも辛いときもいつも一緒でした。	0	0	5	0	#e81384	-1	3	0	0	0	0	false	1							
+s030c05	pict	center_right	img/03005.jpg	0	0	7	0.5			4	100	1	7	#ffffff	0	0							
+s040c01	wall	wall	img/mer_bg_feather.jpg							0	100	0.5							0.0 				35
+s040c01	text	fix_left	Histry			12		#e81384	-1	0					true	40					fi		
+s040c01	text	top_left	他社とのコラボレーション業務をさせてもらい、視野が広がりました			12		#e81384	-1	0					false	1					fi	5200	29.2
+s040c01	scroll	center_left	"新郎　社会人時代(敬称略)
+
+大城　耕介
+坂口　侑李
+秋本　創平
+鈴木　清海
+有島　侑平
+山本　二雄
+石田　寛太
+橋口　朔美
+布施　渡
+千代田　啓二郎
+戸野部　杏奈"	0		5		#e81384	-1	0					false	0.8	8 	20 					
+s040c01	pict	center_right	img/04001.jpg	0		7	0.6			4	100	1	7	#ffffff									
+s040c02	text	top_left	サブリーダーとなってリーダーをフォローする意識が高まりました	0	0	12	0	#e81384	-1	0	0	0	0	0	false	1					fi	5200	34.4
+s040c02	scroll	center_left	"新婦　社会人時代(敬称略)
+
+幸田　彩里
+下藤　有希
+枝野　神海
+鈴木　瑠華
+紅林　寿久
+兵頭　涼子
+塚本　睦美
+細川　裕樹
+長谷川　健
+窪塚　心
+吉野　未来"	0	0	5	0	#e81384	-1	0	0	0	0	0	false	0.8	8	20					
+s040c02	pict	center_right	img/04002.jpg	0	0	7	0.6			4	100	1	7	#ffffff	0	0							
+s040c03	text	top_left	2年生の時のスキーツアー、みんなとの大切な思い出！	0	0	12	0	#e81384	-1	0	0	0	0	0	false	1					fi	5200	39.6
+s040c03	scroll	center_left	"新郎　大学時代(敬称略)
+
+菅原　時哉
+須藤　桃代
+江藤　真治
+藤堂　ほのか
+安芸　亨
+桐生　凜太郎
+伊藤　萌
+初芝　祥世
+飯島　萌子
+藤田　咲
+仁科　優理"	0	0	5	0	#e81384	-1	0	0	0	0	0	false	0.8	8	20					
+s040c03	pict	center_right	img/04003.jpg	0	0	7	0.6	0	0	4	100	1	7	#ffffff	0	0							
+s040c04	text	top_left	夢中になった手話を通じて多くのハンディキャップを知りました	0	0	12	0	#e81384	-1	0	0	0	0	0	false	1					fi	5200	44.8
+s040c04	scroll	center_left	"新婦　大学時代(敬称略)
+
+新井　璃子
+仁科　悠斗
+中西　詠美
+吉田　純菜
+橋本　彩良
+兵頭　由紀夫
+菅本　愛美
+横山　麻里
+栗橋　さつき
+芦名　俊弥
+京橋　初音"	0	0	5	0	#e81384	-1	0	0	0	0	0	false	0.8	8	20					
+s040c04	pict	center_right	img/04004.jpg	0	0	7	0.6			4	100	1	7	#ffffff	0	0	0 	0 	0.0 	0.0 			
+s040c05	text	top_left	部活の仲間は一緒にバカなこともしたかけがえのない関係	0	0	12	0	#e81384	-1	0	0	0	0	0	false	1	0 	0 	0.0 	0.0 	fi	5200	50
+s040c05	scroll	center_left	"新郎　高校時代(敬称略)
+
+木島　武
+有田　芳徳
+堤　雄一郎
+安田　哲弥
+富永　馨
+高平　力也
+安藤　蓉子
+田島　紗南
+有働　沙理哉
+春井　拓未
+宇喜田　庸一郎"	0	0	5	0	#e81384	-1	0	0	0	0	0	false	0.8	8 	20 	0.0 	0.0 			
+s040c05	pict	center_right	img/04005.jpg	0	0	7	0.6			4	100	1	7	#ffffff	0	0	0 	0 	0.0 	0.0 			
+s040c06	text	top_left	ずっと仲良しの高校時代のみんな、これからも仲良くしてね	0	0	12	0	#e81384	-1	0	0	0	0	0	false	1	0 	0 	0.0 	0.0 	fi	5200	55.2
+s040c06	scroll	center_left	"新婦　高校時代(敬称略)
+
+佐藤　沙理
+吉竹　眞子
+岸　香凛
+桜井　みなみ
+疋田　沙夜
+秋山　萌
+山崎　彰義
+中田　純菜
+牧野　悠哉
+館野　諒
+小西　愛海"	0	0	5	0	#e81384	-1	0	0	0	0	0	false	0.8	8 	20 	0.0 	0.0 			
+s040c06	pict	center_right	img/04006.jpg	0	0	7	0.6			4	100	1	7	#ffffff	0	0	0 	0 	0.0 	0.0 			
+s040c07	text	top_left	男子揃って廊下に立たされたり、バカなこともした想い出もいっぱい	0	0	12	0	#e81384	-1	0	0	0	0	0	false	1					fi	5200	60.4
+s040c07	scroll	center_left	"新郎　小中校時代(敬称略)
+
+三厨　拓也
+横見　学
+拓植　慎次郎
+夏田　空美
+新堂　茉耶
+成藤　洋
+冨田　麗美
+八田　紘弥
+押埜　晴乃
+北島　玲
+西野　紀男"	0	0	5	0	#e81384	-1	0	0	0	0	0	false	0.8	8	20					
+s040c07	pict	center_right	img/04007.jpg	0	0	7	0.6			4	100	1	7	#ffffff	0	0							
+s040c08	text	top_left	男子そっちのけで手作りチョコを交換し合って楽しかった	0	0	12	0	#e81384	-1	0	0	0	0	0	false	1					fi	5200	65.6
+s040c08	scroll	center_left	"新婦　小中校時代(敬称略)
+
+椎葉　洵奈
+宮田　亜湖
+下条　美玲
+篠田　凛々
+由利　弦太
+寺田　夕紀
+園山　瑠璃亜
+広家　凌空
+妻木　匠人
+萩野　美彩
+宮本　啓
+君島　絢"	0	0	5	0	#e81384	-1	0	0	0	0	0	false	0.8	8	20					
+s040c08	pict	center_right	img/04008.jpg	0	0	7	0.6			4	100	1	7	#ffffff	0	0							
+s040c09	text	top_left	親族とは離れ離れでなかなか会えませんでしたがこれからは積極的に会いに行きます	0	0	12	0	#e81384	-1	0	0	0	0	0	false	1					fi	5200	70.8
+s040c09	scroll	center_left	"新郎　親族(敬称略)
+
+松田　祐希
+松田　浩太
+松田　晃嗣
+松田　昭朋
+松田　明美
+西野　真由美
+富島　蓉子"	0	0	5	0	#e81384	-1	0	0	0	0	0	false	0.8	8	20					
+s040c09	pict	center_right	img/04009.jpg	0	0	7	0.6			4	100	1	7	#ffffff	0	0	0 	0 	0.0 	0.0 			
+s040c10	text	top_left	おじさん、おばさんにたくさん子守りしてもらいました	0	0	12	0	#e81384	-1	0	0	0	0	0	false	1	0 	0 	0.0 	0.0 	fi	5200	76
+s040c10	scroll	center_left	"新婦　親族(敬称略)
+
+秋山　公平
+秋山　慎太
+鈴木　明日香
+鍋島　友里
+秋山　莉里
+秋山　健人"	0	0	5	0	#e81384	-1	0	0	0	0	0	false	0.8	8 	20 	0.0 	0.0 			
+s040c10	pict	center_right	img/04010.jpg	0	0	7	0.6			4	100	1	7	#ffffff	0	0	0 	0 	0.0 	0.0 			
+s040c11	text	top_left	時に励ましてくれて、時に叱ってくれて二人の息子でよかった	0	0	12	0	#e81384	-1	0	0	0	0	0	false	1	0 	0 	0.0 	0.0 	fi	5200	81.2
+s040c11	scroll	center_left	"新郎　両親(敬称略)
+
+松田　宏
+松田　優子"	0	0	5	0	#e81384	-1	0	0	0	0	0	false	0.8	8 	20 	0.0 	0.0 			
+s040c11	pict	center_right	img/04011.jpg	0	0	7	0.6			4	100	1	7	#ffffff	0	0	0 	0 	0.0 	0.0 			
+s040c12	text	top_left	大切に育ててくれてありがとう　お母さんのような母になります	0	0	12	0	#e81384	-1	0	0	0	0	0	false	1					fi	5200	86.4
+s040c12	scroll	center_left	"新婦　両親(敬称略)
+
+秋山　高志
+秋山　朋美"	0	0	5	0	#e81384	-1	0	0	0	0	0	false	0.8	8	20					
+s040c12	pict	center_right	img/04012.jpg	0	0	7	0.6			4	100	1	7	#ffffff	0	0							
+s050c01	wall	wall	img/mer_bg_flower_heart.jpg							0	100	0.5							0.0 				エンディング
+s050c01	text	top_left	これからも私たち二人をどうぞよろしくい願い申し上げます			12		#e81384	-1	0					false						fi	12000	98.4
+s050c01	pict	center_left	img/05001.jpg	0	0	12	0.65			0													
+s050c02	text	top_left	Ryousuke & Reina			12		#e81384	-1	0					true	100					fi	60000	158.4
+s050c02	text	center_left	wedding party			12		#e81384	-1	0					true	1							
+s050c02	text	bottom_left	Fin			12		#e81384	-1	0					true	3					fo		
+
+                            																							

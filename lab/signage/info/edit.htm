@@ -1,0 +1,1451 @@
+<!DOCTYPE HTML>
+<!--PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"-->
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>比治山工房/web signage |「シナリオに沿ったスライドショー」の説明</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <style type="text/css">
+        li {
+            margin-left: -1em;
+        }
+        
+        .sub_li {
+            font-size: 80%;
+            margin-left: -2em;
+        }
+        
+        td,
+        th {
+            padding: 10px 10px;
+        }
+        
+        #header {
+            width: 80vw;
+            height: 44px;
+            margin-left: 20vw;
+            padding: 0;
+            background-color: #dce5f3;
+            position: fixed;
+            z-index: 9999;
+        }
+        
+        #footer {
+            top: 90vh;
+            width: 80vw;
+            margin-left: 20vw;
+            padding: 0;
+            background-color: #dce5f3;
+            position: fixed;
+            z-index: 9999;
+        }
+        
+        #wrapper {
+            text-align: left;
+            width: 100vw;
+            margin: 0 auto;
+            padding: 0;
+        }
+        
+        #contents {
+            width: 80vw;
+            float: right;
+            padding-top: -44px;
+            margin-top: 44px;
+            padding-bottom: 10vh;
+        }
+        
+        #sidebar {
+            width: 20vw;
+            height: 100%;
+            float: left;
+            margin: 0;
+            padding-top: 8px;
+            font-size: 80%;
+            background-color: #f9f3f3;
+            position: fixed;
+            z-index: 9999;
+        }
+    </style>
+</head>
+
+<body style="width: 100vw;height: 100vh;font-size: 11pt; line-height: 150%;">
+    <div id="wrapper">
+        <div id="header">
+            <ul class="nav nav-tabs nav-justified">
+                <li role="presentation"><a href="index.html">概要</a></li>
+                <li role="presentation"><a href="list.htm">コンテ</a></li>
+                <li role="presentation" class="active"><a href="#">エディット</a></li>
+                <li role="presentation"><a href="player.htm">プレイヤー</a></li>
+            </ul>
+        </div>
+        <div id="contents">
+            <!-- <div class="container-fluid"> -->
+            <div class="row" id='pagetop'>
+                <div class="col-xs-12 col-sm-7">
+                    <h4>シナリオに沿ったスライドショー</h4>
+                    <h2>各エレメントの詳細編集</h2>
+                    このページでカット毎の画面を構成する文字や画像の置き方を設定します。
+                </div>
+                <div class="col-xs-12 col-sm-5" style="text-align: right;">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3146425308522831" data-ad-slot="4219928305" data-ad-format="auto"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+
+                    <script type="text/javascript">
+                        var nend_params = {
+                            "media": 32269,
+                            "site": 206990,
+                            "spot": 583222,
+                            "type": 1,
+                            "oriented": 1
+                        };
+                    </script>
+                    <script type="text/javascript" src="https://js1.nend.net/js/nendAdLoader.js"></script>
+                </div>
+            </div>
+            <!-- </div> -->
+
+            <div class="panel panel-default">
+
+                <div class="panel-heading" 　style="padding: 10px;background-color: #337ab7;color: white;">
+                    エディット画面（エレメントエディタ）の構成
+                </div>
+                <div class="panel-body">
+                    <div class="row" style="width: 100%;height: auto;">
+                        <table border="0">
+                            <tr valign="top">
+                                <td width=50%>
+                                    <ul>
+                                        <li>
+                                            画面の右半分はページ内のエレメントの配置と各エレメントの詳細設定。 </li>
+                                        <li>
+                                            左半分はカット毎のプレビューとそれ以外の機能メニューです。
+                                        </li>
+                                    </ul>
+                                    <img src="img/edit_preview.png" style="width:100%;" alt="プレビュー"> プレビュー画面は各エレメントの設定範囲を枠線で区切って表示します。
+                                    <br> 編集したい部分をクリックすると、右半分がスクロールして該当の編集機能を表示します。
+                                </td>
+                                <td rowspan="2">
+                                    <img src="img/edit00000.png" style="width:100%;" alt="エディタ">
+                                </td>
+                            </tr>
+                        </table>
+                        <table border="0" id="cut_menu">
+                            <tr valign="top">
+                                <th bgcolor="#337ab7" colspan="2">
+                                    <font color="white">
+                                        左側に配置した機能メニュー
+                                    </font>
+                                </th>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    「リストに戻る」はこの画面を呼び出したリスト画面に戻ります。
+                                </td>
+                                <td>
+                                    <img src="img/edit_page_lisutonimodoru.png" class="phorRes" alt="リストに戻る">
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    「説明」はこの画面の該当ページから説明ページを開きます。
+                                </td>
+                                <td>
+                                    <img src="img/edit_page_setumei.png" class="phorRes" alt="説明">
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    「確定」は編集結果をファイルに書き出します。
+                                    <div class="alert alert-info" role="alert">
+                                        「確定」でファイル保存しなくてもLocalStrageを経由してプレイヤーに編集結果を反映させます。
+                                    </div>
+                                </td>
+                                <td>
+                                    <img src="img/edit_page_kakutei.png" class="phorRes" alt="確定">
+                                </td>
+                            </tr>
+                            <td>
+                                プレビューの下に並ぶボタンで「プレイヤーで確認」はプレイヤーを開いて編集しているカットを表示します。
+                            </td>
+                            <td>
+                                <img src="img/edit_page_edit2player.png" class="phorRes" alt="プレイヤーで確認">
+                            </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    送り/戻しボタンはエディター画面のまま前後のカットへ編集対象を変更します。
+                                </td>
+                                <td>
+                                    <img src="img/edit_page_fow_back.png" class="phorRes" alt="説明">
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- 左側のメニュー -->
+
+                        <!--<div class="row" style="width: 100%;height: auto;">-->
+                        <table border="0" id="sceneprropaty">
+                            <tr valign="top">
+                                <th bgcolor="#337347" colspan="2">
+                                    <font color="white">
+                                        (右側)各エレメントの編集
+                                    </font>
+                                </th>
+                            </tr>
+                            </tr>
+                            <tr valign="top">
+                                <th bgcolor="#337ab7" width=50%>
+                                    <font color="white">
+                                        シーンプロパティ
+                                    </font>
+                                </th>
+                                <th rowspan="2">
+                                    <img src="img/edit_scene.png" class="phorRes" style="width:100%;" alt="シーンプロパティ">
+                                </th>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    最上部のシーンプロパティでは
+                                    <ul>
+                                        <li>
+                                            そのシーンから開始もしくは前のカットから継続された背景、音楽、固定エレメントの表示、
+                                        </li>
+                                        <li>
+                                            もしくはこのカットからの切り替え設定を行います。
+                                        </li>
+                                    </ul>
+                                    このカットから切り替えたエレメントは各パネル内に「そのカットからスタート」にチェックが入ります。
+
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td colspan="2">
+                                    <ul>
+                                        <li>
+                                            <div id="layout_add_bt" class="btn btn-danger btn-lg btn-xs glyphicon glyphicon-plus-sign" role="button ">変更</div>
+                                            ボタンでそのカットからスタートするシーンエレメントを追加します。
+                                        </li>
+                                        <li>
+                                            <div id="layout_del_bt" class="btn btn-default btn-lg btn-xs glyphicon glyphicon-trash" role="button ">削除</div>
+                                            ボタンでそのカットからスタートするシーンエレメントを削除し、前のカットのシーンエレメントを継続します。
+                                        </li>
+                                    </ul>
+
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- シーンプロパティ -->
+                        <table border="0" id="scene_layout">
+                            <tr valign="top">
+                                <th bgcolor="#b3d3ef" colspan="2">
+                                    レイアウト
+                                </th>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    プレイヤー画面は下表の様な構成になっています。
+                                    <table width="100%" border="1">
+                                        <tr align="center">
+                                            <th>
+
+                                            </th>
+                                            <th width="50%">
+                                                left
+                                            </th>
+                                            <th width="50%">
+                                                right
+                                            </th>
+                                        </tr>
+                                        <tr align="center">
+                                            <td>
+                                                fix
+                                            </td>
+                                            <td>
+                                                fix_left
+                                            </td>
+                                            <td>
+                                                fix_right
+                                            </td>
+                                        </tr>
+                                        <tr align="center">
+                                            <td>
+                                                top
+                                            </td>
+                                            <td>
+                                                top_left
+                                            </td>
+                                            <td>
+                                                top_right
+                                            </td>
+                                        </tr>
+                                        <tr align="center">
+                                            <td>
+                                                center
+                                            </td>
+                                            <td>
+                                                center_left
+                                            </td>
+                                            <td>
+                                                center_right
+                                            </td>
+                                        </tr>
+                                        <tr align="center">
+                                        </tr>
+                                        <tr align="center">
+                                            <td>
+                                                bottom
+                                            </td>
+                                            <td>
+                                                bottom_left
+                                            </td>
+                                            <td>
+                                                bottom_right
+                                            </td>
+                                        </tr>
+                                        <tr align="center">
+                                            <td>
+                                                footer
+                                            </td>
+                                            <td>
+                                                footer_left
+                                            </td>
+                                            <td>
+                                                footer_right
+                                            </td>
+                                    </table>
+                                </td>
+                                <td>
+                                    <img src="img/edit_scene_layout.png" class="phorRes" style="width:100%;" alt="レイアウト">
+                                </td>
+                                </tr>
+                                <tr valign="top">
+                                    <td colspan="2">
+                                        <p>レイアウトでは
+                                            <ul>
+                                                <li>
+                                                    通常はfreeで各エレメント毎に幅をバラバラに設定しますが
+                                                </li>
+                                                <li>
+                                                    「左右分割」でfix(ヘッダー)top/center/bottom/footerを同じ幅に揃える事もできます。
+                                                </li>
+                                                <ul>
+                                                    <li>
+                                                        その場合、幅は画面幅の％で
+                                                    </li>
+                                                    <li>
+                                                        左側の比率を設定します。
+                                                    </li>
+                                                    <li>
+                                                        ※右側は無理な数値を指定できない様、自動計算にしています。
+                                                    </li>
+                                                </ul>
+                                        </p>
+                                    </td>
+
+                                </tr>
+                        </table>
+                        <!-- レイアウト -->
+                        <table border="0" id="scene_backgraund">
+                            <tr valign="top">
+                                <th bgcolor="#b3d3ef">
+                                    背景
+                                </th>
+                                <th rowspan="3">
+                                    <img src="img/edit01020.png" class="phorRes" style="width:100%;" alt="背景">
+                                </th>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    このプレイヤー画面は上記のエレメントの下に、背景として画像もしくは着色レイヤーを配置する２層構造になっています。
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    <p>一番上のテキストエリアには
+                                        <ul>
+                                            <li>
+                                                画像を設定する場合はその<a href="#url_setting">URL</a>を
+                                            </li>
+                                            <li>
+                                                単色を指定する場合は16進数表記(#a1b2c3など)で色をしていします。<br>この設定は色選択ボタン
+                                                <img src="img/edit01022.png" class="phorRes" alt="色選択">をご利用ください。
+                                            </li>
+                                        </ul>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td colspan="2">
+                                    透過(α)は写真でも単色でもエレメント自体の透明度で設定します。
+                                    <img src="img/edit01025.png" class="phorRes" alt="色選択">は1以下の数値を指定して下さい。
+                                    <div class="alert alert-info" role="alert">
+                                        設定方法を検討中ですが、画像は１秒でフェードインさせています
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td colspan="2">
+                                    カットの途中から表示をスタートさせる場合は
+                                    <img src="img/edit01027.png" class="phorRes" alt="開始">でmSを示す数値を指定して下さい。
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td colspan="2">
+                                    現在のディスプレイは16:9なのに対し、多くの写真は縦横比4:3なので左右に隙間が生じます。
+                                    <img src="img/edit01029.png" class="phorRes" alt="開始">で上下左右のどこを表示させるかを指定します。
+                                    <p>ボタンの配置は
+                                        <ul>
+                                            <li>
+                                                左側の三つが左/中央/右で横方向の位置、
+                                            </li>
+                                            <li>
+                                                右側の三つが上/中央/下で縦方向の位置指定です
+                                            </li>
+                                        </ul>これらは「align」フィールドに数値で設定します。具体的には文字の位置指定をご参照ください。
+                                    </p>
+                                </td>
+                                <td></td>
+                            </tr>
+                        </table>
+                        <!-- 背景 -->
+                        <table border="0" id="scene_music">
+                            <tr valign="top">
+                                <th bgcolor="#b3d3ef" width="50%">
+                                    音楽
+                                </th>
+                                <th rowspan="3">
+                                    <img src="img/edit01300.png" class="phorRes" style="width:100%;" alt="音楽">
+                                </th>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    一番上のテキストエリアは画像と同様に<a href="#url_setting">URL</a>を記述します。
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    <img src="img/edit01320.png" class="phorRes" alt="mPosition"> はこのカットで曲の開始から何mS経過しているが表示されます。
+                                    <ul>
+                                        <li>
+                                            このカットから曲をスタートする場合、特定のポイントから再生を開始したい時はここで設定して下さい。
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td colspan="2">
+                                    <div class="alert alert-info" role="alert">
+                                        曲前のブランクがやたら長い場合の無音部カットや、サビからスタートさせたい時に使用します。
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            それ以外の場合は自動計算された値のままにしておいて下さい。
+                                        </li>
+                                    </ul>この数値は「mPosition」フィールドに記録されます。
+                                </td>
+                            </tr>
+                            <!-- <tr valign="top">
+                                <td colspan="2">
+                                    <img src="img/edit01320.png" class="phorRes" alt="mStart">でそのカットの開始から何秒後に曲を開始するか(開始秒数)を指定します。<br> この数値は「mStart」フィールドに記録されます。
+                                </td>
+                            </tr> -->
+                            <tr valign="top">
+                                <td colspan="2">
+                                    <img src="img/edit01360.png" class="phorRes" alt="mStart">で音量と再生ポジションを調整しますが、これは編集時の確認ｓ用で記録には残りません<br>
+                                    <div class="alert alert-info" role="alert">
+                                        音量に関しては再生機器を傷めない様、0.1秒のフェードイン/3秒のフェードアウトを設けています。<br> 「effect」というフィールドを設け、設定方法を検討中です
+                                    </div>
+
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- 音楽 -->
+                        <table border="0" id="scene_fix">
+                            <tr valign="top">
+                                <th bgcolor="#b3d3ef" width="50%">
+                                    シーンの固定要素
+                                </th>
+                                <th rowspan="2">
+                                    <img src="img/edit01400.png" class="phorRes" style="width:100%;" alt="fix">
+                                </th>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    タイトルにする文字要素やアイコン的な画像を設定するエリアです。
+                                    <div class="alert alert-danger" role="alert">
+                                        大きな画像を配置する時は壁紙をご利用ください。
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- シーンの固定要素 -->
+                    </div>
+                    <div class="row" style="width: 100%;height: auto;">
+                        <table border="0" id="element_setting">
+                            <tr valign="top">
+                                <th bgcolor="#337ab7" colspan="4">
+                                    <font color="white">
+                                        各エレメントの設定
+                                    </font>
+                                </th>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    共通事項
+                                </td>
+                                <th rowspan="2">
+                                    <img src="img/edit_futter_none.png" class="phorRes" style="width:100%;" alt="シーンプロパティ">
+                                </th>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    <ul>
+                                        <li>
+                                            ヘッダー(fix)～フッターまで左右をペアにした折り畳みパネルを構成します
+                                        </li>
+                                        <li>
+                                            未使用エレメント(データタイプ「none」)の時は編集操作インターフェースを非表示にし、textやpictなど何らかのソースを設定した時点で、そのソースに見合った操作ボタンなどを表示します。
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr valign="top" id="element_data_type">
+                                <th bgcolor="#b3d3ef" width="70%">
+                                    データタイプ
+                                </th>
+                                <th rowspan="2">
+                                    <img src="img/edit_type00.png" class="phorRes" align="left" alt="mPosition">
+                                </th>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    使用するデータタイプを選択します。 <br> 「none」を選択すればそのエレメントレコードを削除します。
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table border="0" id="element_width">
+                            <tr valign="top">
+                                <th bgcolor="#b3d3ef" width="70%">
+                                    位置とサイズの設定
+                                </th>
+                                <th rowspan="2">
+                                    <img src="img/edit_size.png" class="phorRes" align="left" alt="mPosition"> </th>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    各エレメントが表示画面の中でどの位置にどのくらいのサイズで表示されるかを（基本的に%で）設定します。
+                                    <ul>
+                                        <li>
+                                            「始点：X」はエレメントの左側の位置です。
+                                            <div class="alert alert-info" role="alert">
+                                                0から設定できますので、左寄せにして左端によりすぎる時は左側のマージンとしてこの値を使用します。
+                                            </div>
+                                        </li>
+                                        <li>
+                                            「始点：y」はエレメントの上端の位置です。
+                                            <ul>
+                                                <li>
+                                                    初期値はヘッダーからセ中央までは上からの加算、フッターと下端は画面底面を基準に100からの減算で自動設定されます。
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td colspan="2">
+                                    <ul>
+                                        <li>
+                                            「幅」はエレメントの幅です。
+                                            <ul>
+                                                <li>
+                                                    初期値は左側のエレメントのみの場合100％、右側のエレメントは50％です。
+                                                </li>
+                                                <li>
+                                                    「自動設定」は反対側のエレメント幅を100％から減算してそのエレメントの幅を設定します。
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            「高さ」はエレメントの高さです。<br>入力の補助に以下のセレクタが有ります
+                                            <ul>
+                                                <li>
+                                                    「下のエレメントまで伸ばす」は例えば上部なら中央部、中央部なら下部まで、もし下のエレメントが設定されていなければ底辺までの％を算出します。
+                                                </li>
+                                                <li>
+                                                    「現在の高さに合わせる」はその時に設定されている要素の高さを反映します。
+                                                </li>
+                                                <li>
+                                                    テキストの場合は「行相当」の入力枠とその行数とフォントサイズに合わせる「行数に合わせる」が選択できます。
+                                                </li>
+                                            </ul>
+                                            <div class="alert alert-info" role="alert">
+                                                「ｙ」の設定が反映されない場合は上のエレメントの高さを使って押し下げれば設定できる場合があります。
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="row" style="width: 100%;height: auto;">
+                        <table border="0" id="element_text">
+                            <tr valign="top">
+                                <th bgcolor="#b3d3ef" width="70%">
+                                    固定テキスト
+                                </th>
+                                <th rowspan="3">
+                                    <img src="img/edit_text.png" class="phorRes" style="width:100%;" alt="edit_text">
+                                </th>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    一番上のテキストエリアは表示させる文字です。
+                                    <div class="alert alert-info" role="alert">
+                                        複数行に渡る場合はEnterキーで改行記号だけを入れて下さい。<br> &lt;br&gt;タグはスクリプトで書き込みます。
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    <img src="img/edit_text_algine00.png" class="phorRes" alt="mPosition"> はテキストを表示させる位置で、ボタンと「align」フィールドに入る数値は以下の様になります。
+                                    <table border="1" align="left" style="width:100%; margin-right: 2em;">
+                                        <tr align="center">
+                                            <td>
+
+                                            </td>
+                                            <td>
+                                                <span class='glyphicon glyphicon-align-left'></span>
+                                            </td>
+                                            <td>
+                                                <span class='glyphicon glyphicon-align-center'></span>
+                                            </td>
+                                            <td>
+                                                <span class='glyphicon glyphicon-align-right'></span>
+                                            </td>
+                                            <td>
+                                                <span class='glyphicon glyphicon-align-justify'></span>
+                                            </td>
+                                        </tr>
+                                        <tr align="center">
+                                            <td>
+                                                <span class='glyphicon glyphicon-open'></span>
+                                            </td>
+                                            <td nowrap>
+                                                4； 左上
+                                            </td>
+                                            <td nowrap>
+                                                3； 上
+                                            </td>
+                                            <td nowrap>
+                                                5； 右上
+                                            </td>
+                                            <td nowrap>
+                                                9； 均等
+                                            </td>
+                                        </tr>
+                                        <tr align="center">
+                                            <td>
+                                                <span class='glyphicon glyphicon-align-justify'></span>
+                                            </td>
+                                            <td>
+                                                1； 左
+                                            </td>
+                                            <td nowrap>
+                                                0； 中央
+                                            </td>
+                                            <td>
+                                                2； 右
+                                            </td>
+                                        </tr>
+                                        <tr align="center">
+                                            <td>
+                                                <span class='glyphicon glyphicon-save'></span>
+                                            </td>
+                                            <td>
+                                                7； 左下
+                                            </td>
+                                            <td>
+                                                6； 下
+                                            </td>
+                                            <td>
+                                                8； 右下
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td colspan="2">
+                                    <p>
+                                        <ul>
+                                            <li>
+                                                デフォルト（未指定）はdivの中心に配置します。
+                                            </li>
+                                            <li>
+                                                均等配列はブラウザによって利かない事が有ります。（webKit系が非対応だそうです）
+                                            </li>
+                                            <li>
+                                                スクロールテキストは上詰め/下詰めを除く左詰め/センタリング/右詰めのみとなります。
+                                            </li>
+                                        </ul>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    「フォント」は使用するフォントファミリーを選択します。
+                                    <ul>
+                                        <li>
+                                            web上で変化がわかりやすいフォントファミリーを固定リストで表示します。
+                                        </li>
+                                        <li>
+                                            それぞれのPCで使えないフォントの場合は無視されて、そのブラウザのデフォルト（多くの場合はヒラギノ）になります
+                                        </li>
+                                        </li>
+                                        <li>
+                                            このサイトは一種類だけwebフォントを使っています。そのwebフォントを先頭に日本語、英文フォントの順に並べています。
+                                        </li>
+                                        <li>
+                                            リスト内の各行でそのフォントの形状がモニターできる様にしています。差異を確認しながら設定して下さい。
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td rowspan="2">
+                                    <img src="img/edit_text_fontfamily.png" class="phorRes" align="left" alt="mPosition">
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    <img src="img/edit_text_size00.png" class="phorRes" align="top" alt="mPosition"> でフォントサイズの指定方法を選択します。
+                                    <p>
+                                        <ol>
+                                            <li>
+                                                「最大行を一行に収める」は書き込むエレメントの幅に合わせ、はみ出す様ならサイズをpx指定で縮小します。
+                                                <div class="alert alert-danger" role="alert">
+                                                    複数行にわたる場合は一番長い行を抽出し、その幅に合わせます。
+                                                </div>
+                                            </li>
+                                            <li>
+                                                「最大サイズの%」はFixもしくはtopエリアで一番最初に書き込まれる文字に対する％で指定します。<br>
+                                                <img src="img/edit_text_size_parcent.png" class="phorRes" alt="mPosition"> で１～1000までの数値を設定します。
+                                                <div class="alert alert-danger" role="alert">
+                                                    fixとtopエリアでは選択不可になります。
+                                                </div>
+                                            </li>
+                                            <li>
+                                                「pt」指定はフォントサイズを直接数値で指定します。
+                                                <img src="img/edit_text_size_px00.png" class="phorRes" align="left" alt="mPosition"> で10以上の数値を指定して下さい。
+                                                <br> それ以下の数値は反映できないブラウザが多い様です。
+                                            </li>
+                                        </ol>
+                                    </p>
+
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td colspan="2">
+                                    <img src="img/edit_text_color00.png" class="phorRes" align="left" alt="mPosition"> でフォント色を指定します。
+                                    <br> この値は「fontColor」フィールドに16進数で書き込まれます。
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td colspan="2">
+                                    <img src="img/edit_text_backgloundr00.png" class="phorRes" align="left" alt="mPosition"> で使用したエレメントに着色します。
+                                    <br> 「透明」にチェックを入れれば一旦指定した色を無視します。
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table border="0" id="element_scroll">
+                            <tr valign="top">
+                                <th bgcolor="#b3d3ef" width="70%">
+                                    スクロールテキスト
+                                </th>
+                                <th rowspan="3">
+                                    <img src="img/scroll_000000.png" class="phorRes" style="width:100%;" alt="scroll">
+                                </th>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    多くの人のお名前や、固定テキストでは収まらない長いテキストを設定するエリアです。
+                                    <div class="alert alert-danger" role="alert">
+                                        今の処、下から上への縦スクロールをご利用頂けます。
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    固定のテキストエリアとの違いは
+                                    <ul>
+                                        <li>
+                                            文字の位置指定に縦方向調整が無くなる他、
+                                        </li>
+                                        <li>
+                                            「高さ」で何行分を表示するか、行数を示す整数で指定します。
+                                        </li>
+                                        <li>
+                                            その上の「底辺まで伸ばす」にチェックを入れるとそのエレメントから下をスクロールエリアに設定します。
+                                        </li>
+                                        <li>
+                                            「早さ」でスクロールスピードを調整できます。
+                                            <div class="alert alert-danger" role="alert">
+                                                設定できる限度は確認中ですので、できればこの値でご利用ください。
+                                            </div>
+                                        </li>
+                                        <li>
+                                            「速度確認」でスクロールの動作確認ができます。
+                                        </li>
+
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- スクロールテキスト -->
+                        <table border="0" id="element_pict">
+                            <tr valign="top">
+                                <th bgcolor="#b3d3ef" width="70%">
+                                    pict
+                                </th>
+                                <th rowspan="9">
+                                    <img src="img/pict_000000.png" class="phorRes" style="width:100%;" alt="pict">
+                                </th>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    写真などの画像を表示するエリアです。
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    背景同様、souceのテキストエリアには<a href="#url_setting">画像のUrlを指定</a>します。
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    <img src="img/pict_arign00.png" class="phorRes" align="left" alt="mPosition"> でエリア内の位置決めを指定します。
+                                    <div class="alert alert-info" role="alert">
+                                        「縮小率」を指定しない場合は画像の縦もしくは横方向が指定エリア内に収まるサイズに縮小します。<br> その場合、縦長写真なら横が/横長なら縦方向に余りが出るので調整機能を付けました。
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    「透明度」は０～１までの小数で指定して下さい。
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    「縮小率」は縦長ならエリアの縦方向/横長写真ならエリアの横方向に対する縮小率で1～100までの%値を指定して下さい。
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td colspan="2">
+                                    「枠線」エリアではなく、画像を囲む枠線です。<br> 太さを示すpxになる整数値と色を指定して下さい。
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- pict -->
+                        <table border="0" id="cutpropaty">
+                            <tr valign="top">
+                                <th bgcolor="#337ab7" colspan="2">
+                                    <font color="white" width="50%">
+                                        その他の設定
+                                    </font>
+                                </th>
+                                <th rowspan="3">
+                                    <img src="img/edit_other.png" class="phorRes" style="width:100%;" alt="scroll">
+                                </th>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    このカットに関するエレメント以外の設定です。(今の処はカットの長さだけです)
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    「このカットの長さ」はこのカットが表示されてから次のカットに切り替わるまでの時間をmSを示す整数で指定します。
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    「 このシーンの全カットを同じ長さにする」は同じシーン内のカットを同じ長さにします。
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    「 全シーンの全カットを同じ長さにする」は指定している長さにすべてのカットを揃えます。
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- その他の設定 -->
+                        <table border="0" id="url_setting">
+                            <th bgcolor="#337ab7" colspan="2">
+                                <font color="white">
+                                    ご参考
+                                </font>
+                            </th>
+                            <tr valign="top">
+                                <th bgcolor="#b3d3ef" width="50%">
+                                    ファイルの指定
+                                </th>
+                                <td rowspan="5">
+                                    <img src="img/file_maneger.png" class="phorRes" style="width:100%;" alt="file_maneger">
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    PC上のファイルをそのまま設定できれば簡単なのですが、 webプログラム上で皆さんのpcのフォルダ構造が記録出来てしまうとセキュリティ上様々な問題が発生します。
+                                    <br> そこでクラウドサービスの利用となるのですが、ここでは更にお金をかけない方法(無料のwebサービスを利用する方法)をご紹介します。
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    例えば<a href="http://www.geocities.jp/gr_501/geocities/">yahooのgeocities(ジオシティーズ)</a>を利用すると右の様なファイルマネージャーが表示されます。
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    このファイルマネージャーならドラッグ＆ドロップで転送できます。
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    登録したファイルをダブルクリックすると…
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td rowspan="3">
+                                    <img src="img/file_preveiw.png" class="phorRes" style="width:100%;" alt="file_preveiw">
+                                </td>
+                                <td>
+                                    こんなプレビューが表示されます。
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    このページのURLをコピーしてsouceのテキストエリアにペーストすれば画像も音楽ファイルも登録できます
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    <img src="img/file_preveiw_sound.png" class="phorRes" style="width:100%;" alt="file_preveiw_sound">
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- ファイルの指定 -->
+                        <table border="0" id="layoutsample">
+                            <tr valign="top">
+                                <th bgcolor="#b3d3ef" colspan="2">
+                                    レイアウトサンプル
+                                </th>
+                            </tr>
+                            <tr valign="top">
+                                <th bgcolor="#d3f3ff" colspan="2">
+                                    結婚式用エンドロール
+                                </th>
+                            </tr>
+                            <tr valign="top">
+                                <td width="50%">
+                                    s010c01<br>
+                                    <img src="img/s010c1pre.png" class="phorRes" style="width:100%;" alt="s010c01">
+                                </td>
+                                <td>
+                                    <table width="100%" border="1">
+                                        <tr align="center">
+                                            <th>
+
+                                            </th>
+                                            <th width="10%">
+                                                1
+                                            </th>
+                                            <th width="10%">
+                                                2
+                                            </th>
+                                            <th width="10%">
+                                                3
+                                            </th>
+                                            <th width="10%">
+                                                4
+                                            </th>
+                                            <th width="10%">
+                                                5
+                                            </th>
+                                            <th width="10%">
+                                                6
+                                            </th>
+                                            <th width="10%">
+                                                7
+                                            </th>
+                                            <th width="10%">
+                                                8
+                                            </th>
+                                            <th width="10%">
+                                                9
+                                            </th>
+                                            <th width="10%">
+                                                10
+                                            </th>
+                                        </tr>
+                                        <tr align="center">
+                                            <td>
+                                                top
+                                            </td>
+                                            <td colspan="10">
+                                                top_left width=100% fontsize=120px font=Great Vibes
+                                            </td>
+                                        </tr>
+                                        <tr align="center">
+                                            <td>
+                                                center
+                                            </td>
+                                            <td colspan="10">
+                                                center_left width=100% fontsize=70% font=和文標準
+                                            </td>
+                                        </tr>
+                                        <tr align="center">
+                                            <td>
+                                                bottom
+                                            </td>
+                                            <td colspan="10">
+                                                bottom_left width=100% fontsize=100% font=Great Vibes
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    s020c01<br>
+                                    <img src="img/s020c01pre.png" class="phorRes" style="width:100%;" alt="s020c01">
+                                </td>
+                                <td>
+                                    <table width="100%" border="1">
+                                        <tr align="center">
+                                            <th>
+
+                                            </th>
+                                            <th width="10%">
+                                                1
+                                            </th>
+                                            <th width="10%">
+                                                2
+                                            </th>
+                                            <th width="10%">
+                                                3
+                                            </th>
+                                            <th width="10%">
+                                                4
+                                            </th>
+                                            <th width="10%">
+                                                5
+                                            </th>
+                                            <th width="10%">
+                                                6
+                                            </th>
+                                            <th width="10%">
+                                                7
+                                            </th>
+                                            <th width="10%">
+                                                8
+                                            </th>
+                                            <th width="10%">
+                                                9
+                                            </th>
+                                            <th width="10%">
+                                                10
+                                            </th>
+                                        </tr>
+
+                                        <tr align="center">
+                                            <td>
+                                                top
+                                            </td>
+                                            <td colspan="5">
+                                                top_left width=50% fontsize=72px font=和文標準
+                                            </td>
+                                            <td colspan="5">
+                                                top_right width=50% fontsize=72px font=和文標準
+                                            </td>
+                                        </tr>
+                                        <tr align="center">
+                                            <td>
+                                                center
+                                            </td>
+                                            <td colspan="5">
+                                                center_left width=50% pict 縮小率=100% 位置=中央
+                                            </td>
+                                            <td colspan="5">
+                                                center_right width=50% pict 縮小率=100% 位置=中央
+                                            </td>
+                                        </tr>
+                                        <tr align="center">
+                                        </tr>
+                                        <tr align="center">
+                                            <td>
+                                                bottom
+                                            </td>
+                                            <td colspan="5">
+                                                bottom_leftt width=50% fontsize=60% font=和文標準
+                                            </td>
+                                            <td colspan="5">
+                                                bottom_right width=50% fontsize=60% font=和文標準
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    s030c05<br>
+                                    <img src="img/s030c05pre.png" class="phorRes" style="width:100%;" alt="s030c05">
+                                </td>
+                                <td>
+                                    <table width="100%" border="1">
+                                        <tr align="center">
+                                            <th>
+
+                                            </th>
+                                            <th width="10%">
+                                                1
+                                            </th>
+                                            <th width="10%">
+                                                2
+                                            </th>
+                                            <th width="10%">
+                                                3
+                                            </th>
+                                            <th width="10%">
+                                                4
+                                            </th>
+                                            <th width="10%">
+                                                5
+                                            </th>
+                                            <th width="10%">
+                                                6
+                                            </th>
+                                            <th width="10%">
+                                                7
+                                            </th>
+                                            <th width="10%">
+                                                8
+                                            </th>
+                                            <th width="10%">
+                                                9
+                                            </th>
+                                            <th width="10%">
+                                                10
+                                            </th>
+                                        </tr>
+                                        <tr align="center">
+                                            <td>
+                                                fix
+                                            </td>
+                                            <td colspan="10">
+                                                fix_left width=100% fontsize=40px font=Great Vibes
+                                            </td>
+                                        </tr>
+                                        <tr align="center">
+                                            <td>
+                                                top
+                                            </td>
+                                            <td colspan="10">
+                                                top_left width=100% fontsize=100% font=和文標準
+                                            </td>
+                                        </tr>
+                                        <tr align="center">
+                                            <td>
+                                                center
+                                            </td>
+                                            <td colspan="5">
+                                                center_left width=40% fontsize=100% font=和文標準
+                                            </td>
+                                            <td colspan="7">
+                                                center_right width=60% pict 縮小率=100% 位置=左上
+                                            </td>
+                                        </tr>
+                                        <tr align="center">
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    s040c03<br>
+                                    <img src="img/s040c03pre.png" class="phorRes" style="width:100%;" alt="s040c03">
+                                </td>
+                                <td>
+                                    <table width="100%" border="1">
+                                        <tr align="center">
+                                            <th>
+
+                                            </th>
+                                            <th width="10%">
+                                                1
+                                            </th>
+                                            <th width="10%">
+                                                2
+                                            </th>
+                                            <th width="10%">
+                                                3
+                                            </th>
+                                            <th width="10%">
+                                                4
+                                            </th>
+                                            <th width="10%">
+                                                5
+                                            </th>
+                                            <th width="10%">
+                                                6
+                                            </th>
+                                            <th width="10%">
+                                                7
+                                            </th>
+                                            <th width="10%">
+                                                8
+                                            </th>
+                                            <th width="10%">
+                                                9
+                                            </th>
+                                            <th width="10%">
+                                                10
+                                            </th>
+                                        </tr>
+                                        <tr align="center">
+                                            <td>
+                                                fix
+                                            </td>
+                                            <td colspan="10">
+                                                fix_left width=100% fontsize=40px font=Great Vibes
+                                            </td>
+                                        </tr>
+                                        <tr align="center">
+                                            <td>
+                                                top
+                                            </td>
+                                            <td colspan="10">
+                                                top_left width=100% fontsize=100% font=和文標準
+                                            </td>
+                                        </tr>
+                                        <tr align="center">
+                                            <td>
+                                                center
+                                            </td>
+                                            <td colspan="5">
+                                                center_left width=40% scroll fontsize=80% font=和文標準　高さ=８文字
+                                            </td>
+                                            <td colspan="7">
+                                                center_right width=60% pict 縮小率=100% 位置=左上
+                                            </td>
+                                        </tr>
+                                        <tr align="center">
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>
+                                    s050c02<br>
+                                    <img src="img/s050end.png" class="phorRes" style="width:100%;" alt="s050c02">
+                                </td>
+                                <td>
+                                    <table width="100%" border="1">
+                                        <tr align="center">
+                                            <th>
+
+                                            </th>
+                                            <th width="10%">
+                                                1
+                                            </th>
+                                            <th width="10%">
+                                                2
+                                            </th>
+                                            <th width="10%">
+                                                3
+                                            </th>
+                                            <th width="10%">
+                                                4
+                                            </th>
+                                            <th width="10%">
+                                                5
+                                            </th>
+                                            <th width="10%">
+                                                6
+                                            </th>
+                                            <th width="10%">
+                                                7
+                                            </th>
+                                            <th width="10%">
+                                                8
+                                            </th>
+                                            <th width="10%">
+                                                9
+                                            </th>
+                                            <th width="10%">
+                                                10
+                                            </th>
+                                        </tr>
+
+                                        <tr align="center">
+                                            <td>
+                                                top
+                                            </td>
+                                            <td colspan="10">
+                                                top_left width=100% fontsize=100px
+                                            </td>
+
+                                        </tr>
+                                        <tr align="center">
+                                            <td>
+                                                center
+                                            </td>
+                                            <td colspan="10">
+                                                center_left width=100% fontsize=100%
+                                            </td>
+
+                                        </tr>
+                                        <tr align="center">
+                                        </tr>
+                                        <tr align="center">
+                                            <td>
+                                                bottom
+                                            </td>
+                                            <td colspan="10">
+                                                bottom_left width=100% fontsize=300px
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    font = Great Vibes
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- レイアウトサンプル -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- </div> -->
+        <div id="sidebar">
+            <img src="../img/logo.png" class="phorRes" style="width:80%;" alt="logo">
+            <ul>
+                <li>
+                    <a href="../../" target="_blank" style="margin-top: -24px;">
+                        <span class="glyphicon glyphicon-home"></span>インデックス</a>
+                </li>
+                <li>
+                    <a href="#pagetop">ページトップへ</a>
+                </li>
+                <li>
+                    <a href="#sceneprropaty">シーンプロパティ</a>
+                    <ul class="sub_li">
+                        <li>
+                            <a href="#scene_layout">レイアウト</a>
+                        </li>
+                        <li>
+                            <a href="#scene_backgraund">背景</a>
+                        </li>
+                        <li>
+                            <a href="#scene_music">音楽</a>
+                        </li>
+                        <li>
+                            <a href="#scene_fix">シーンの固定要素</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#element_setting">各エレメントの設定</a>
+                    <ul class="sub_li">
+                        <li>
+                            <a href="#element_data_type">データタイプ</a>
+                        </li>
+                        <li>
+                            <a href="#element_width">位置とサイズの設定</a>
+                        </li>
+                        <li>
+                            <a href="#element_text">固定テキスト</a>
+                        </li>
+                        <li>
+                            <a href="#element_scroll">スクロールテキスト</a>
+                        </li>
+                        <li>
+                            <a href="#element_pict">pict</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    その他の機能
+                    <ul class="sub_li">
+                        <li>
+                            <a href="#cutpropaty">カットプロパティ</a>
+                        </li>
+                        <li>
+                            <a href="#cut_menu">左側のメニュー</a>
+                        </li>
+                    </ul>
+                    <li>
+                        ご参考まで
+                        <ul class="sub_li">
+                            <li>
+                                <a href="#url_setting">ファイルの指定</a>
+                            </li>
+                            <li>
+                                <a href="#layoutsample">レイアウトサンプル</a>
+                            </li>
+                        </ul>
+
+                    </li>
+            </ul>
+
+            <div>
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3146425308522831" data-ad-slot="4219928305" data-ad-format="auto"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+
+                <script type="text/javascript">
+                    var nend_params = {
+                        "media": 32269,
+                        "site": 206990,
+                        "spot": 583222,
+                        "type": 1,
+                        "oriented": 1
+                    };
+                </script>
+                <script type="text/javascript" src="https://js1.nend.net/js/nendAdLoader.js"></script>
+            </div>
+
+
+        </div>
+        <!-- <div id="footer">
+        </div> -->
+    </div>
+    <script type="text/javascript">
+        $(function() {
+            var headerHight = $('#header').outerHeight(true); //ヘッダの高さ
+            // console.log(headerHight);
+            $('a[href^="#"]').click(function() {
+                var href = $(this).attr("href");
+                var target = $(href == "#" || href == "" ? 'html' : href);
+                var position = target.offset().top - headerHight; //ヘッダの高さ分位置をずらす
+                $("html, body").animate({
+                    scrollTop: position
+                }, 550, "swing");
+                return false;
+            });
+        });
+    </script>
+</body>

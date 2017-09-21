@@ -1,0 +1,721 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!--互換表示をさせない;InternetExplorer-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Explanation on the list(MaraSongs)</title>
+	<link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+	<script src="https://code.jquery.com/jquery-2.2.3.js"></script>
+	<script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+	<link href="../../main.css" rel="stylesheet" type="text/css">
+</head>
+
+
+<body>
+	<div align="center" style="font-size: 11pt; line-height: 150%; ">
+		<div style="line-height:16px ; text-alingn:left;
+				 border-style: solid ; border-width: 1px; padding: 10px 5px 10px 20px; border-color: #999999 ;
+				 width: 860px; border-radius: 10px; box-shadow: 10px 10px 10px #AAA;">
+
+			<table align="left" valign="top" border="0" cellpadding="5" cellspacing="0" width="850">
+				<tr valign="top">
+					<td style="width: 48px; ">
+						<a href="index.html">
+							<img src="../img/ic_launcher-web.png" alt="Marasong" style="width: 48px; " vspace="1" hspace="1">
+						</a>
+					</td>
+					<td style=" height: 66px">
+						<small>Music player usable commonly</small><br>
+						<big><big><big>MaraSongs</big></big>
+						</big>
+					</td>
+					<td rowspan=3 align="right" style="width: 280px; ">
+						<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+						<!-- サポートページトップ -->
+						<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3146425308522831" data-ad-slot="4219928305" data-ad-format="auto"></ins>
+						<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+						<p>
+							<p>
+								<script type="text/javascript">
+					var nend_params = {"media":32269,"site":171820,"spot":472676,"type":1,"oriented":3};
+					</script>
+								<script type="text/javascript" src="https://js1.nend.net/js/nendAdLoader.js"></script>
+					</td>
+				</tr>
+
+				<tr valign="top">
+					<td nowrap colspan=2>
+						<big><big><big><big>Explanation on the list</big></big>
+						</big>
+						</big>
+					</td>
+				</tr>
+				<tr valign="bottom">
+					<td colspan=2>
+						It is the selection of music list screen from a playlist
+					</td>
+				</tr>
+			</table>
+			<br>
+
+			<table align="left" valign="top" border="0" cellpadding="10" cellspacing="0" style="font-size: 11pt; line-height: 150%; "
+				width="850">
+				<tr align="left" valign="top">
+					<td colspan="4" style="background:#eeeeff">
+						<h2>tool bar</h2>
+					</td>
+					<td rowspan=2 align="right" valign="top" style="background:#eeeeff">
+						<img src="img/list_tb.png" alt="リストツールバー" style="width: 180px; " vspace="1" hspace="1">
+						<br>
+						<img src="img/list_tb_list.png" alt="リストツールバー" style="width: 180px; " vspace="1" hspace="1">
+					</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td align="left" valign="top" style="background:#eeeeff">
+					</td>
+					<td colspan="3">
+						<ul>
+							<li>
+								It is a change in ToolBar which it was specifications to return to a list in one class if tap it formerly as a head area,
+								but menu mechanism can incorporate with the abolition of the conventional menu button.
+							</li>
+							<li>
+								"MaraSongs" incorporated the spinner of the list reshuffling in tool bar.
+							</li>
+							<li>
+								The list layered like a list of all songs changes in a higher list if Tap an icon part<br>
+								<small>・When a list of titles of the list of all songs taps a header in a displayed state; to a list of albums,
+							From a list of albums to a list of artists,
+							"MaraSongs" close a list, and a high-end artist list is sent back to a player.<br>
+							※It is movement same as a returning key (clear button of the terminal with dial key).
+						</li>
+					</ul>
+				</small></td>
+				</tr>
+				<tr align="left" valign="top">
+					<td colspan="5" style="background:#ffeeee">
+						<h2>Explanation on each list</h2>
+					</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td rowspan=18 align="left" valign="top" style="background:#ffeeee">.
+					</td>
+					<td colspan=3 style="background:#ffeeff">
+						<a name="zenkyoku_list">
+							<h3>List of all songs</h3>
+						</a>
+					</td>
+					<td rowspan=4 align="right" valign="top" style="background:#ffeeff">
+						<img src="img/list_artist.png" alt="アーティストリスト" style="width: 180px; " vspace="1" hspace="1">
+					</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td align="left" valign="top" style="background:#ffeeff">
+					</td>
+					<td colspan="2">"MaraSongs" classify the music files in the terminal as follows and list it.<br> *Detailed information may lack depending
+						on tab information set in a file.
+					</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td rowspan=2 align="left" valign="top" style="background:#ffeeff">1;
+					</td>
+					<td colspan=3 style="background:#ffeeff">
+						Artist
+					</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td colspan=2>
+						It is an item displayed in music players for recent PCs in " album artist ".
+						<ul>
+							<li>
+								"MaraSongs" prevent the division of the album by making only the artist name to become a leader of the album which cut a
+								participation guest name.<br>
+								<small>
+							The folder was done by an artist name including guest participation performed credit of by an album by the music file maintenance of an old type including MediaStore.Audio.Media of Android by the other folder.<br>
+							Then "MaraSongs" list it by the shortest artist name except the guest participation not to be able to regenerate continuation for one piece of album because it is treated as a different album of a different artist.</small>
+							</li>
+							<li>
+								"MaraSongs" display registered album art, age (period) and the number of sheets of a collected album by the detailed indication
+								first.
+							</li>
+						</ul>
+					</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td rowspan=2 align="left" valign="top" style="background:#ffeeff">2;
+					</td>
+					<td colspan=3 align="left" valign="top" style="background:#ffeeff">Album</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td colspan=3>
+						It is the album which "MaraSongs" extracted by a chosen artist name.
+						<ul>
+							<li>
+								"MaraSongs" display it from the old thing of the generation if "MaraSongs" can pick up release age from MediaStore.Audio.Media
+								of Android.
+							</li>
+							<li>
+								Display the number of the collecting music by the detailed indication in each album art, the production year.
+							</li>
+						</ul>
+					</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td rowspan=2 align="left" valign="top" style="background:#ffeeff">3;
+					</td>
+					<td colspan=3 align="left" valign="top" style="background:#ffeeff">Title</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td colspan=3>
+						It is a list of collecting music of a chosen album.
+						<ul>
+							<li>
+								The album art displays it in a head part.
+							</li>
+							<li>
+								The artist name that it is made credit because there has been guest participation by the detailed indication, Because may
+								be the recording day unlike the production year of the album; a year, And it is time indication of the length of
+								the music.
+							</li>
+						</ul>
+					</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td colspan="4" style="background:#eeffee">
+						Various playlists (the list which MaraSongs generates other than the list which "MaraSongs" made and a list saved in a terminal)
+					</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td rowspan=10 align="left" valign="top" style="background:#eeffee">
+					</td>
+					<td colspan=2 style="background:#eeeeff">
+						<a name="saikinn_tuika">
+							<h3>The album which "MaraSongs" added recently</h3>
+						</a>
+					</td>
+					<td rowspan=2 align="right" valign="top" style="background:#eeeeff">
+						<img src="img/list_saikin_tuika.png" alt="最近追加" style="width: 180px; " vspace="1" hspace="1">
+					</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td rowspan=1 align="left" valign="top" style="background:#eeeeff; width: 2px">
+					</td>
+					<td>
+						"MaraSongs" extract the music that added with the number of sheets that "MaraSongs" appointed with "the album which added
+						in playlist / these days" of the setting recently when "MaraSongs" choose "the update on the recently additional list"
+						of the function menu.
+						<small><ul>
+						<li>
+							Because the music that "MaraSongs" can extract all too soon when "MaraSongs" toe the mark by dates disappears, "MaraSongs" extract the music that is the newest when it will be addition several years ago by an album unit.
+						</li>
+						<li>
+							One piece of default is a share.
+						</li>
+						<li>
+							When "MaraSongs" chose "the update on the recently additional list", "MaraSongs" can set the extraction number of sheets.
+						</li>
+							List them three classes of the artist / album / title if "MaraSongs" exceed it<br>
+							When it is lower than it, it becomes a list of titles which are not layered.
+						</li>
+						<li>
+							When "MaraSongs" changed it to a list screen from a player, reading time occurs if it is this list.<br>
+							"MaraSongs" can let you stop the reading on this list with a returning key when you want to change lists of all songs to other lists.
+						</li>
+					</ul></small>
+					</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td colspan=2 style="background:#ffeeff">
+						<a name="sakinn_saisei">
+							<h3>The music that reproduced recently</h3>
+						</a>
+					</td>
+					<td rowspan=2 align="right" valign="top" style="background:#ffeeff">
+						<img src="img/list_saikin_sausei.png" alt="最近再生" style="width: 180px; " vspace="1" hspace="1">
+					</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td style="background:#ffeeff"></td>
+					<td>
+						Function / to call from the menu of the player screen is a list generated in the music that reproduced recently.
+						<ul>
+							<li>
+								MaraSongs records the music that reproduced not to repeat.
+								<li>
+									"MaraSongs" extract the number of the music that "MaraSongs" appointed by "registration setting to playlist / these days
+									play list" of the setting when "MaraSongs" choose this item in the order that regenerated recently.
+								</li>
+								<li>
+									The default is 100 song.
+								</li>
+						</ul>
+					</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td colspan=2 style="background:#eeffff">
+						<a href="player.html#rundame">
+							<h3>Random reproduction</h3>
+						</a>
+					</td>
+					<td rowspan=2 align="right" valign="top" style="background:#eeffff">
+						<img src="img/list_rundum.png" alt="ランダム再生" style="width: 180px; " vspace="1" hspace="1">
+					</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td style="background:#eeffff"></td>
+					<td>
+						It is the list of generated by function / random reproduction to call by a menu player screens.
+						<ul>
+							<li>
+								"MaraSongs" confirmed it before reproduction and was able to edit the deletion.
+							</li>
+							<li>
+								The number of the music sets it with the number of the music of the playlist / random reproduction of the setting, and an
+								initial value is 100 pieces.
+							</li>
+						</ul>
+					</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td colspan=2 style="background:#eeeeff">
+						<a href="player.html#repat">
+							<h3>Repeat reproduction</h3>
+						</a>
+					</td>
+					<td rowspan=2 align="right" valign="top" style="background:#eeeeff">
+						<img src="img/list_repeat.png" alt="リピート再生" style="width: 180px; " vspace="1" hspace="1">
+					</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td style="background:#eeeeff"></td>
+					<td>
+						It is the list of generated by function / repeat reproduction to call by a menu player screens.
+						<ul>
+							<li>
+								"MaraSongs" make it as a general playlist to be able to return to the repeat setting that used from other playlists before.
+							</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+
+			<table align="left" valign="top" border="0" cellpadding="10" cellspacing="0" style="font-size: 11pt; line-height: 150%; ">
+				<tr align="left" valign="top">
+					<td colspan="5" style="background:#dddddd">
+						The menu which is displayed with the long tap of the list item
+					</td>
+					<td align="right" valign="top" style="background:#dddddd">
+						In the case of a list of titol
+						<img src="img/list_titol_lt_menu.png" alt="ロングタップ" style="width: 180px; " vspace="1" hspace="1">
+					</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td rowspan=6 style="background:#dddddd"></td>
+					<td nowrap colspan=3>
+						<a name="add_listup">List up editing</a></td>
+					<td>
+						It is a function that making / is the following cases to occur after having updated it and uses the list of all songs for.<br>
+						<ul>
+							<li>
+								There does not seem to be it with the album of a listed artist; a case, "MaraSongs" can change an artist or an artist displayed
+								by an album unit by a list of artists.
+							</li>
+							<li>
+								For example, "MaraSongs" integrate "Big Brother Industries And The Holding Company" with "Janis Joplin"<br>
+								<small>(An example when automatic information to divide it in two, and to be considered to be it is not included in an artist name performed credit of.
+							<ul>
+								<li>
+									Reproduce Cheap Thrills of Big Brother Industries & The Holding Company with a row of Janis Joplin
+								</li>
+								<li>
+									Reproduce Beck, Bogert & Appice with a row of Jeff Beck
+								</li>
+								<li>
+									Because it is made Herbie Hancock & Jaco Pastorius and credit, the ninth piece Forgotten Love of Jaco Pastorius is displayed on the same side of Herbie Hancock.)
+								</li>
+							</ul></small>
+							</li>
+							<li>
+								"MaraSongs" can gather up the compilation album which "MaraSongs" was not able to gather up here.
+							</li>
+							<li>
+								This menu is displayed in a list of artist or albums.
+							</li>
+						</ul>
+						The assembly operation
+						<ol>
+							<li>
+								Tap long with the artist who wants to change the listing or an album
+							</li>
+							<li>
+								Please use "the list up editing" from a displayed menu
+							</li>
+							<li>
+								"MaraSongs" choose change among a list displayed next
+							</li>
+							<li>
+								It is settled in a dialogue and operates it
+								<small><ul>
+								<li>
+									"MaraSongs" can revise an artist name of the listing here.
+								</li>
+								<li>
+									It is displayed by the artist name that the artist name that is displayed with player screens by the artist name that chose " when "MaraSongs" classify a check into change " chose
+								</li>
+								<li>
+									"MaraSongs" write in it at a modified list when it was settled here.
+									</li>
+								</li>
+							</ul></small>
+								<li>
+									Finally in a dialogue displayed<br> "MaraSongs" finish choice processing if choose list of "all songs update" and
+									carry out list of all songs update for choice result reflection.<br>
+									<small><ul>
+								<li>
+									"MaraSongs" continue the additional operation to a modified list if "MaraSongs" choose "continuing" choice and can reflect a correction in a mass later.
+								</li>
+							</ul></small>
+								</li>
+						</ol>
+						<ul>
+							<li>
+								When finish choice processing in " continuing " choice, the modified list can let you reflect a result anytime if choose
+								" all songs list update " among a menu because it is completed.
+							</li>
+							<li>
+								When register by mistake, "MaraSongs" can correct it by /<a href="#syuuseilist">other / modified </a>list of menus
+								indication.
+							</li>
+						</ul>
+
+
+					</td>
+					<td align="right" valign="top">
+						Start<br>
+						<img src="img/listup_editS1.png" alt="リストアップ編集開始" style="width: 180px; " vspace="1" hspace="1">
+						<br>In the case of a list of <br>Artist or Albam<br>
+						<img src="img/listup_edit01.png" alt="リストアップ編集開始" style="width: 180px; " vspace="1" hspace="1">
+						<br>3><img src="img/listup_edit02.png" alt="リストアップ編集開始" style="width: 180px; " vspace="1" hspace="1">
+						<br>4><img src="img/listup_edit03.png" alt="リストアップ編集開始" style="width: 180px; " vspace="1" hspace="1">
+						<br>5><img src="img/listup_edit04.png" alt="リストアップ編集開始" style="width: 180px; " vspace="1" hspace="1">
+						<br><img src="img/listup_edit5.png" alt="リストアップ編集結果" style="width: 180px; " vspace="1" hspace="1">
+					</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td nowrap colspan=3>
+						<a name="request">Request</a></td>
+					<td>
+						Music to reproduce next if reproducing music is over, the music that want to regenerate it next…"MaraSongs" make music to
+						squeeze in through ...... the play list at that time, and to reproduce a playlist as "request".
+						<ul>
+							<li>
+								This list removes the music that reproduced sequentially and comes back to the next music that regenerated with an original
+								playlist if revitalize all requests exhaustively.
+							</li>
+							<li>
+								It is a transient crossed temporary making list, but change the name and can leave a reproduction result because a history
+								is left for "these days reproduction".
+							</li>
+							<li>
+								For example, the person who rode at the time of drive makes music, "the next wants to listen to this" a list.
+							</li>
+							<li>
+								Display the artist choice on the all songs list to request the next when I tap a title part from a player screen and list
+								it and display it.
+							</li>
+							<li>
+								When you confirm a request, please choose "a request" in a spinner of the upper list screen.<br><br>
+							</li>
+							<li>
+								This menu is displayed in a list of artist or albums.
+							</li>
+							<li>
+								Because you are assuming the choice from a list of all songs, at first, please make a list of all songs.
+							</li>
+						</ul>
+					</td>
+					<td align="right" valign="top">
+						<img src="img/rquest_list_if1.png" alt="リクエストIF" style="width: 180px; " vspace="1" hspace="1">
+						<img src="img/list_rquest.png" alt="リクエスト" style="width: 180px; " vspace="1" hspace="1">
+					</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td nowrap colspan=3><a name="add_pl">add it to a playlist</a></td>
+					<td>
+						add the music that chose to an existing playlist.
+						<ul>
+							<li>
+								Because you list existing playlists, please choose an additional point.
+							</li>
+						</ul>
+					</td>
+					<td align="right" valign="top">
+						<img src="img/playlist_ni_tuika.png" alt="追加先プレイリスト" style="width: 180px; " vspace="1" hspace="1">
+					</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td colspan=3><a name="add_pl">Make a new playlist and add it</a></td>
+					<td>
+						"MaraSongs" make a new playlist to the first piece in the music that chose.
+						<ul>
+							<li>
+								Display a dialogue to set a playlist name.
+							</li>
+							<li>
+								The initial value is a thyme stamp at the time of the "playlist" + making.
+							</li>
+						</ul>
+					</td>
+					<td align="right" valign="top">
+						<img src="img/siniki_lisuto_tuika.png" alt="新規プレイリストを作成して追加" style="width: 180px; " vspace="1" hspace="1">
+					</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td nowrap colspan=3><a name="del_pl">It is deleted by this list</a></td>
+					<td>
+						Delete it from a playlist displaying the music that chose.
+						<ul>
+							<li>
+								File in itself is removed, and there is not it.
+							</li>
+						</ul>
+					</td>
+					<td rowspan=2 align="right" valign="top">
+						Tap long with a title of the music
+						<img src="img/playlist_lt_menu.png" alt="プレイリストロングタップメニュー" style="width: 180px; " vspace="1" hspace="1">
+					</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td colspan=3><a name="move_item">vertical movement</a></td>
+					<td>
+						vertical movement
+						<ul>
+							<li>
+								Plural music is displayed by a registered list other than "a list of all songs" in conjunction with "deletion by this list".
+							</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+
+			<table align="left" valign="top" border="0" cellpadding="10" cellspacing="0" style="font-size: 11pt; line-height: 150%; ">
+				<tr align="left" valign="top">
+					<td colspan="4" style="background:#eeeeee">
+						<h2>ToolBar menu</h2>(Menu to display with a button at the old terminal)
+					</td>
+					<td align="right" valign="top" style="background:#eeeeee">
+						<img src="img/list_tb_menu00.png" alt="リストツールバーメニュー" style="width: 130px; " vspace="1" hspace="1">
+					</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td rowspan=11 style="background:#eeeeee"></td>
+					<td colspan="3" style="background:#cccccc">
+						<h3>Function</h3>
+					</td>
+					<td align="right" valign="top" style="background:#cccccc">
+						<img src="img/list_tb_menu10.png" alt="リストツールバーメニュー機能" style="width: 150px; " vspace="1" hspace="1">
+					</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td rowspan="6" style="background:#cccccc"></td>
+					<td>
+						<a name="simplelist">It is reshuffling for simple indication</a>/<br> It is reshuffling for detailed indication</td>
+					<td>
+						It is reshuffling for indication detailed at the time of detailed indication for simple indication at the time of simple
+						indication.
+						<ul>
+							<li>
+								Simple indication is a simple list displaying only an only title of a musical composition or album name and an artist name.
+							</li>
+							<li>
+								The detailed indication is the list which increased accompaniment information and the thumbnail of a displayed item.
+							</li>
+							<li>
+								Operated a<a href="pref.html#listhyouji"> parameter same as list of player setting / indication </a>(only as for
+								detailed indication / item) of the setting, but established reshuffling IF here to give the operability of the list
+								screen
+							</li>
+							<li>
+								Recommended simple indication before, but change drawing algorithm in Ver1.2.31 and think whether even detailed indication
+								is available without stress.
+							</li>
+						</ul>
+					</td>
+					<td align="right" valign="top">
+						<img src="img/list_artist.png" alt="詳細リスト" style="width: 90px; " vspace="1" hspace="1">
+						<img src="img/list_artist_simple.png" alt="リシンプルリスト" style="width: 90px; " vspace="1" hspace="1">
+					</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td>Update on the recently additional list</td>
+					<td>
+						It is the making / update operation on the above recently additional list which did.
+						<ul>
+							<li>
+								Display the dialogue that confirmation / revises the album number of sheets to list before beginning making.<br>								※This correction is reflected by a setting window.
+							</li>
+						</ul>
+					</td>
+					<td align="right" valign="top">
+						<img src="img/list_tb_menu12_saikintuika_kousin.png" alt="最近追加リストの更新" style="width: 180px; " vspace="1" hspace="1">
+					</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td>
+						List name change
+					</td>
+					<td>
+						Change the name of the playlist.
+						<ul>
+							<li>
+								The list to be produced changed a name and, not to mention the list which made, was able to leave addition and these days
+								reproduction, random reproduction, a program such as the repeat reproduction permanently recently.
+							</li>
+						</ul>
+					</td>
+					<td align="right" valign="top">
+						<img src="img/list_tb_menu13_listmei_henkolu.png" alt="リスト名変更" style="width: 180px; " vspace="1" hspace="1">
+					</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td>Delete the list</td>
+					<td>
+						Delete the unnecessary playlist.
+					</td>
+					<td align="right" valign="top">
+						<img src="img/list_tb_menu14_listsakujyo.png" alt="リストを削除" style="width: 180px; " vspace="1" hspace="1">
+					</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td>The artist who is not displayed</td>
+					<td>
+						<ul>
+							<li>
+								Let a list of artists display the artist who it is classified in compilation, and is not displayed by a list of artists.<br><br>								Revise a list of all songs in addition to a list of adjustment.
+							</li>
+						</ul>
+					</td>
+					<td align="right" valign="top">
+						<img src="img/list_tb_menu15hihyouji_artist.png" alt="表示されていないアーティスト" style="width: 180px; " vspace="1" hspace="1">
+					</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td nowrap>
+						Update <a href="zenkyokulist.html">List of all songs</a></td>
+					<td>
+						<ul>
+							<li>
+								The title title list which lined up in the artist who displayed it in alphabetical order, the album which arranged in chronological
+								order, the number street…, consecutive reproduction constitute a possible list.
+							</li>
+							<li>
+								It is the data which should be updated automatically in the timing when a musical piece file was copied by memory card and
+								built-in memory, but "unknown" and a transcribed state originally occur without being able to finish filling the
+								item.
+								<br> Because the self-replication may be terminated abnormally when there is these data omission, please try this
+								function when movement is strange.
+							</li>
+						</ul>
+						<td align="right" valign="top">
+							<img src="img/inst02.png" alt="全曲リスト" style="width: 180px; " vspace="1" hspace="1">
+							<img src="img/inst_end.png" alt="全曲リスト" style="width: 180px; " vspace="1" hspace="1">
+						</td>
+				</tr>
+
+				<tr align="left" valign="top">
+					<td colspan="3" style="background:#dddddd">
+						<h3>その他</h3>
+					</td>
+					<td rowspan=2 align="right" valign="top" style="background:#dddddd">
+						<img src="img/list_tb_menu20.png" alt="リストツールバーメニュー機能" style="width: 150px; " vspace="1" hspace="1">
+					</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td rowspan=3 style="background:#dddddd"></td>
+					<td><a href="pref.html">Setting</a> &<br> Help indication</td>
+					<td>It is the same as a player screen</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td>
+						<a name="syuuseilist">Modified list indication</a></td>
+					<td>
+						It is the database which records "which" artists (album) which appointed by a list up correction the modified list lists
+						as which artist.
+						<ul>
+							<li>
+								A dialogue displays the setting た situation by "list up editing" displayed with the long tap of the list item as follows.<br>								Artist name<br> (Album)
+								<br>&gt;&gt;An artist name of the listing or classification
+							</li>
+							<li>
+								Display the dialogue that can delete when long shot taps an item displayed by a list.
+							</li>
+						</ul>
+					</td>
+					<td rowspan=2 align="right" valign="top">
+						<img src="img/list_tb_menu22_syuseilisuto.png" alt="修正リスト表示" style="width: 180px; " vspace="1" hspace="1">
+					</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td>close</td>
+					<td>Finish list indication.
+					</td>
+				</tr>
+			</table>
+
+			<table align="left" valign="top" border="0" cellpadding="10" cellspacing="0" style="font-size: 11pt; line-height: 150%; ">
+				<tr align="left" valign="top">
+					<td colspan="6" style="background:#cccccc">Key layout (Because it is the confirmation at a considerably old terminal, may not work equally at the recent terminal)</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td rowspan=5 style="background:#cccccc"></td>
+					<td colspan="5">In principle, choose a lower item if you push an upper item, the bottom if you push it over 4 arrow keys.</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td colspan="4">
+						It is the bottom of 4 arrow keys in the last item on the list
+					</td>
+					<td>
+						Choose a head.
+					</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td nowrap colspan="4">
+						In a head on 4 arrow keys
+					</td>
+					<td colspan="2">
+						Choose the last item on the list
+					</td>
+				</tr>
+				<tr align="left" valign="top">
+					<td colspan="4">Handling of the back key</td>
+					<td>
+						Perform movement same as the tap of title >> album >> artist and the head and when a high-end list is displayed, Finish a
+						list and come back to the player.
+					</td>
+				</tr>
+			</table>
+
+			<div align="left">
+				<P>
+					<br clear="all">
+					<footer>
+						<a href="index.html">To a top screen</a> of MaraSongs
+						<br>
+						<p>
+							<a href="../../en/">
+								<img src="../../img/koubou.png" alt="比治山工房" style="width: 512px">
+							</a>
+							<a href="https://play.google.com/store/apps/details?id=com.hijiyam_koubou.marasongs">
+								<img src="../../img/marasongs.png" alt="Marasong_qr" vspace="1" hspace="1"></a>
+
+							Copyright 2016</footer>
+			</div>
+		</div>
+</body>
+
+</html>
