@@ -69,6 +69,153 @@
                 <div class="col-sm-12">
                     <!--free_strage> id="msg_pict_send_row" style="width: 96vw;padding: 10px;margin: 1vw;"free_strage>-->
                     <div class="panel-group">
+
+
+
+                        <div class="row " id="play_list_part">
+                            <div class="col-sm-12">
+                                <div class="panel-group">
+                                    <div class="panel panel-default">
+                                        <div class="panel-title">
+                                            <div class="panel-heading btn collapse_bt" data-toggle="collapse" style="background-color: #fcf8e3" data-target="#sysmenu_body">
+                                                <h2>システムメニュー</h2>
+                                            </div>
+                                        </div>
+
+                                        <div id="sysmenu_body" class="panel-collapse collapse in" aria-expanded="true">
+                                            <!--class="panel-collapse collapse" -->
+                                            <div class="panel-body">
+                                                <div class="panel-group">
+                                                    画面の左上のアイコンをクリックすると、このアプリケーションのシステムメニューを表示します。
+
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-8">
+                                                            <div>
+                                                                殆どアプリケーション共通でタイトルバー右側のボタン同じ機能の共通メニューです。
+                                                                <ol>
+                                                                    <li>
+                                                                        元のサイズに戻す
+                                                                    </li>
+                                                                    <li>
+                                                                        移動
+                                                                    </li>
+                                                                    <li>
+                                                                        サイズ変更
+                                                                    </li>
+                                                                    <li>
+                                                                        最大化
+                                                                    </li>
+                                                                    <li>
+                                                                        最少化
+                                                                    </li>
+                                                                </ol>
+                                                                および一番下の「閉じる」に加えて、このアプリケーションのカスタムアイテムを追加しています。
+                                                            </div>
+                                                            <div style="padding: 10px;background-color: #3c763d;color: white;">
+                                                                ファイルブラウザ
+                                                            </div>
+                                                            <div style="padding: 10px;background-color: #dff0d8;">
+                                                                今の処はファイルブラウザの開閉だけです。<br>
+                                                                プレイヤー部分を広く見せる為、不要な時は不要な部分を閉じれる様にしました。
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-xs-12 col-sm-4">
+                                                            <img src="img/sys_menu.png" align="top" alt="pl_fl">
+                                                        </div>
+                                                    </div>       <!-- ファイルブラウザ -->
+
+                                                    <div class="row">
+                                                        <div class="col-xs-12">
+                                                            <div style="padding: 10px;background-color: #3c763d;color: white;">
+                                                                プレイリスト
+                                                            </div>
+                                                            <div style="padding: 10px;background-color: #dff0d8;">
+                                                                プレイリスト機能でも個々のファイルに対する以外の機能をここにまとめました。
+                                                                <ol>
+                                                                    <li>
+                                                                        プレイリストを閉じる/開く
+                                                                        <ul>
+                                                                            <li>
+                                                                                プレイリストもプレイヤー部分を広く見せる為、不要な時は閉じれる様にしました。
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li>
+                                                                        上の階層をリストアップ
+                                                                        <ul>
+                                                                            <li>
+                                                                                プレイリストではなくセレクタの一番上にあるフォルダ内のファイルをリストアップしている時に表示される項目です
+                                                                            </li>
+                                                                            <li>
+                                                                                リストアップされているフォルダも含めて、一つ上の階層からリストアップします。
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li>
+                                                                        読めないファイルを削除
+                                                                        <ul>
+                                                                            <li>
+                                                                                プレイリスト登録した後で移動、名称変更、削除などで読めなくなった項目を削除します。
+                                                                            </li>
+                                                                            <li>
+                                                                                必要に応じてこのアプリケーションのファイルブラウザ、もしくはエクスプローラーからドラッグアンドドロップで登録し直して下さい。
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li>
+                                                                        他のリストに結合
+                                                                        <ul>
+                                                                            <li>
+                                                                                選択しているプレイリストを他のプレイリストに統合します。
+                                                                            </li>
+                                                                            <li>
+                                                                                その他はファイルブラウザからファイルもしくはフォルダ内のファイル登録と同じです。
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li>
+                                                                        リストファイル選択
+                                                                        <ul>
+                                                                            <li>
+                                                                                標準のファイルオープンダイアログでプレイリストファイルを開きます。
+                                                                            </li>
+                                                                            <li>
+                                                                                何らかの事情でこのアプリケーションのファイルブラウザからプレイリストを選択できない場合の機能二重化です。
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+                                                                </ol>
+                                                                <img src="img/sys_menu_pl.png" align="top" alt="pl_panel">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>       <!-- プレイリスト -->
+
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-8">
+                                                            <div style="padding: 10px;background-color: #3c763d;color: white;">
+                                                                バージョン情報
+                                                            </div>
+                                                            <div style="padding: 10px;background-color: #dff0d8;">
+                                                                今の処、バージョンナンバーの表示です
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-xs-12 col-sm-4">
+                                                            <img src="img/sys_menu_ver.png" align="top" alt="pl_context_2fl">
+                                                        </div>
+                                                    </div>    <!-- バージョン情報 -->
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>    <!-- システムメニュー< -->
+
+
                         <div class="panel panel-default">
                             <div class="panel-title">
                                 <div class="panel-heading btn collapse_bt" data-toggle="collapse" style="background-color: #fcf8e3" data-target="#browser_part_body">
@@ -98,8 +245,40 @@
                                                                 <li>
                                                                     選択している物の名称(フォルダ名/ファイル名)
                                                                 </li>
+                                                                <li>
+                                                                    プレイリストの連続再生中は上部右に「選択したファイルを選択」ボタンが表示されます。
+                                                                    <img src="img/file_brouser_top_senntakusi.png" align="top" alt="file_brouser_top_senntakusitafile">
+                                                                    <ul>
+                                                                        <li>
+                                                                            プレイリストの連続再生中はファイルブラウザ上で名称変更やファイル/フォルダの移動などの操作を行っても再生を中断しません。
+                                                                        </li>
+                                                                        <li>
+                                                                            このボタンをクリックする事で連続再生を中断してファイルブラウザで選択したファイルの表示/再生に切り替えます。
+                                                                        </li>
+                                                                        <li>
+                                                                            ファイルブラウザで選択したファイルの表示/再生中、このボタンは非表示になります。
+                                                                        </li>
+                                                                        <li>
+                                                                            ファイルブラウザで汎用プレイリスト(.m3u)を選択するとプレイリストに読み込んで、そのプレイリストの連続再生に切り替わります。
+                                                                            この時も他のプレイリストを再生中なら、このボタンを押してリストの読み込みを行います。
+                                                                        </li>
+                                                                    </ul>
+                                                                </li>
                                                             </ul>
                                                         </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-4" style="text-align: center;">
+                                                <img src="img/file_brouser.png" class="phorRes" style="width:100%;" align="top" alt="file_brouser_top"><br>↓<br>
+                                                <img src="img/file_brouser_top.png" class="phorRes" style="width:100%;" align="top" alt="file_brouser_top"><br>↓<br>
+                                            </div>
+                                        </div>  <!--このパートの構成 -->
+
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-8">
+                                                <div style="padding: 10px;background-color: #dff0d8;">
+                                                    <ul>
                                                         <li>
                                                             下部は選択したファイルの詳細情報です。概要は
                                                             <ul>
@@ -115,54 +294,63 @@
                                                 </div>
                                             </div>
                                             <div class="col-xs-12 col-sm-4" style="text-align: center;">
-                                                <img src="img/file_brouser_top.png" class="phorRes" style="width:100%;" align="top" alt="file_brouser_top"><br>↓<br>
                                                 <img src="img/file_brouser_bottom.png" class="phorRes" style="width:100%;" align="top" alt="file_brouser_bottom">
                                             </div>
-                                            <div class="row">
-                                                <div class="col-xs-12 ">
-                                                    <div class="alert alert-danger" role="alert" style="width:96%;height: auto;margin-left: 15px;">
-                                                        いずれもプログラム動作の条件データとして保持していますので動きがおかしい時はパス名/ファイル名が確実に表示されているかどうかを確認し、どちらかが表示されていない様ならもう一度ゆっくりクリックして下さい。
-                                                    </div>
+                                        </div> <!--下部は選択したファイルの詳細情報 -->
+
+                                        <div class="row">
+                                            <div class="col-xs-12 ">
+                                                <div class="alert alert-danger" role="alert" style="width:96%;height: auto;margin-left: 15px;">
+                                                    いずれもプログラム動作の条件データとして保持していますので動きがおかしい時はパス名/ファイル名が確実に表示されているかどうかを確認し、どちらかが表示されていない様ならもう一度ゆっくりクリックして下さい。
                                                 </div>
                                             </div>
-
-                                        </div>
-                                        <!-- 削除(ゴミ箱に移動) -->
+                                        </div> <!-- 注記 -->
 
                                         <div class="row">
                                             <div class="col-xs-12 col-sm-8">
                                                 <div style="padding: 10px;background-color: #3c763d;color: white;">
-                                                    リストの展開
+                                                    リストの展開(TreeView)
                                                 </div>
                                                 <div style="padding: 10px;background-color: #dff0d8;">
                                                     ドライブ毎にドライブ名から最終的なファイルまでのTree構造リストです。
+                                                    <div class="alert alert-danger" role="alert" style="width:96%;height: auto;margin-left: 15px;">
+                                                        <small>
+                                                            最終的にはエクスプローラーと同じくツリー部分はドライブルートから選択したフォルダまでとしますが、動作検証を完了してからファイル表示はリストビューに委ねます。
+                                                        </small>
+                                                    </div>
+
                                                     <ul>
                                                         <li>
                                                             クリックで選択
                                                         </li>
                                                         <li>
                                                             フォルダで中身が有れば下の階層を表示
-                                                        </li>
-                                                        <ul>
-                                                            <li>
-                                                                (空のフォルダは無反応)
-                                                            </li>
-                                                                                                                        <li>
-                                                                属性指定でアクセスできない場合はMIMEにその属性を記載します。
-                                                            </li>
+                                                            <ul>
+                                                                <li>
+                                                                    (空のフォルダは無反応)
+                                                                </li>
+                                                                <li>
+                                                                    属性指定でアクセスできない場合はMIMEにその属性を記載します。
+                                                                </li>
 
-                                                        </ul>
+                                                            </ul>
+                                                        </li>
                                                         <li>
                                                             ファイルならそれに合わせて右のブラウザで再生を開始します。
+                                                            <div class="alert alert-danger" role="alert" style="width:96%;height: auto;margin-left: 15px;">
+                                                                <small>
+                                                                    ファイルの操作はリストビューで行います。
+                                                                </small>
+                                                            </div>
+                                                            <ul>
+                                                                <li>
+                                                                    再生方法が見つかっていない時はその旨を表示します
+                                                                </li>
+                                                                <li>
+                                                                    それでも中身の表示が必要な事も有りますので「アプリを起動」で割り付けられているアプリを起動する方法も用意しました。
+                                                                </li>
+                                                            </ul>
                                                         </li>
-                                                        <ul>
-                                                            <li>
-                                                                再生方法が見つかっていない時はその旨を表示します
-                                                            </li>
-                                                            <li>
-                                                                それでも中身の表示が必要な事も有りますので「アプリを起動」で割り付けられているアプリを起動する方法も用意しました。
-                                                            </li>
-                                                        </ul>
                                                     </ul>
 
                                                     <img src="img/all_wma.png" class="phorRes" style="width:30%;" align="top" alt="all_wma">
@@ -173,10 +361,53 @@
                                             </div>
 
                                             <div class="col-xs-12 col-sm-4">
-                                                <img src="img/file_brouser.png" class="phorRes" style="width:100%;" align="top" alt="file_brouser">
+                                                <img src="img/file_brouser_tree.png" align="top" alt="file_brouser">
                                             </div>
-                                        </div>
-                                        <!-- リストの展開 -->
+                                        </div>      <!-- リストの展開 -->
+
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-8">
+                                                <div style="padding: 10px;background-color: #3c763d;color: white;">
+                                                    フォルダ内のソート(ListView)
+                                                </div>
+                                                <div style="padding: 10px;background-color: #dff0d8;">
+                                                    選択されているフォルダ内を表示する複数項目リストです。
+
+                                                    <ul>
+                                                        <li>
+                                                            用意している項目は
+                                                            <ul>
+                                                                <li>
+                                                                    拡張子を含むファイル名
+                                                                </li>
+                                                                <li>
+                                                                    サイズ
+                                                                </li>
+                                                                <li>
+                                                                    更新日(最終更新日時)
+                                                                </li>
+
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            各列の項目(列名)をクリックするとその列の内容に応じた並べ替えを行います。
+                                                            <ul>
+                                                                <li>
+                                                                    昇順の時にクリックすると降順に。降順の時は昇順にソートします。
+                                                                </li>
+                                                                <li>
+                                                                    ファイル名以外は一旦ファイル情報に直して、妥当な並べ替えを行います。
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xs-12 col-sm-4">
+                                                <img src="img/file_brouser_list.png" class="phorRes" style="width:100%;" align="top" alt="file_brouser">
+                                            </div>
+                                        </div>      <!-- フォルダ内のソート -->
 
                                         <div class="row">
                                             <div class="col-xs-12 col-sm-8">
@@ -195,19 +426,36 @@
                                                                 <li>
                                                                     「crtl」キーを押しながらドラッグするとカーソルに「+」マークが表示されコピーになります。
                                                                 </li>
+                                                                <li>
+                                                                    別ドライブにドラッグした時は「crtl」キーを押さなくてもコピーになります。
+                                                                </li>
                                                             </ul>
                                                         </li>
                                                         <li>
                                                             ファイルかフォルダを選択後、 右クリックで表示されるコンテキストメニューで「コピー」もしくは「カット」
                                                             <ul>
                                                                 <li>
-                                                                    機能選択後「ペースト」が表示されます。
+                                                                    いずれか実行後に「ペースト」が表示されます。
                                                                 </li>
                                                             </ul>
                                                         </li>
+                                                        <li>
+                                                            ショートカットキーは
+                                                            <ul>
+                                                                <li>
+                                                                    Ctrl+xでカット(移動)
+                                                                </li>
+                                                                <li>
+                                                                    Ctrl+cでコピー
+                                                                </li>
+                                                                <li>
+                                                                    Ctrl+vでペースト
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+
                                                     </ol>
-                                                    <img src="img/contextmenu.png" class="phorRes" style="width:40%;" align="top" alt="contextmenu">　⇒
-                                                    <img src="img/cm06_peast0.png" class="phorRes" style="width:40%;" align="top" alt="cm06_peast0">
+                                                    <img src="img/fileBrowsContexet.png" align="top" alt="fileBrowsContexet">
                                                 </div>
                                             </div>
 
@@ -215,34 +463,43 @@
                                                 <br>￥1￥12￥123￥新しいフォルダのtest1234.txtを￥2￥21￥￥211￥2111￥にコピー<br>
                                                 <img src="img/cm06_peast1.png" class="phorRes" style="width:100%;" align="top" alt="cm06_peast1">
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-xs-12">
+                                        </div>      <!-- コピー、カット、ペースト -->
+                                        <!--div class="row">
+                                            <div-- class="col-xs-12">
                                                 <div class="alert alert-warning" role="alert" style="width:96%;height: auto;margin-left: 10px;">
                                                     反映にタイムラグがある様なので調査中です。
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <!-- コピー、カット、ペースト -->
-
+                                            </div-->
                                         <div class="row">
                                             <div class="col-xs-12 col-sm-8">
                                                 <div style="padding: 10px;background-color: #3c763d;color: white;">
                                                     削除(ゴミ箱に移動)
                                                 </div>
                                                 <div style="padding: 10px;background-color: #dff0d8;">
-                                                    コンテキストメニューの「削除」で不要なファイルはゴミ箱に移動
-                                                    <div class="alert alert-info" role="alert" style="width:96%;height: auto;margin-left: 10px;">
-                                                        いきなり消去せず、一旦ゴミ箱に異動させます。
-                                                    </div>
+                                                    <ul>
+                                                        <li>
+                                                            コンテキストメニューの「削除」で不要なファイルはゴミ箱に移動
+                                                            <div class="alert alert-info" role="alert" style="width:96%;height: auto;margin-left: 10px;">
+                                                                いきなり消去せず、一旦ゴミ箱に異動させます。
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            ショートカットキーは
+                                                            <ul>
+                                                                <li>
+                                                                    Deletr
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+
+                                                    </ul>
                                                 </div>
                                             </div>
                                             <div class="col-xs-12 col-sm-4" style="text-align: center;">
                                                 <img src="img/cm07_del0.png" class="phorRes" style="width:100%;" align="top" alt="cm07_del0"><br>↓<br>
                                                 <img src="img/cm07_del1.png" class="phorRes" style="width:100%;" align="top" alt="cm07_del1">
                                             </div>
-                                        </div>
-                                        <!-- 削除(ゴミ箱に移動) -->
+                                        </div>     <!-- 削除(ゴミ箱に移動) -->
 
                                         <div class="row">
                                             <div class="col-xs-12 col-sm-8">
@@ -253,18 +510,21 @@
                                                     ボリューム.フォルダを選択して、その直下に新しいフォルダを作ります。
                                                     <ul>
                                                         <li>
-                                                            ファイルが選択された状態なら同階層に新しいフォルダを作成します。
+                                                            ショートカットキーは
+                                                            <ul>
+                                                                <li>
+                                                                    shift+ctrl+N
+                                                                </li>
+                                                            </ul>
                                                         </li>
                                                     </ul>
                                                 </div>
                                             </div>
 
                                             <div class="col-xs-12 col-sm-4" style="text-align: center;">
-                                                <img src="img/cm01_newfolder0.png" class="phorRes" style="width:100%;" align="top" alt="cm01_newfolder0"><br>↓<br>
                                                 <img src="img/cm01_newfolder.png" class="phorRes" style="width:100%;" align="top" alt="cm01_newfolder">
                                             </div>
-                                        </div>
-                                        <!-- 新規ホルダの作成 -->
+                                        </div>      <!-- 新規ホルダの作成 -->
 
                                         <div class="row">
                                             <div class="col-xs-12">
@@ -280,15 +540,79 @@
                                                         </li>
                                                         <li>
                                                             ただしラベルの直接編集では拡張子を書き換えたり、ファイルブラウザの幅によっては編集が困難な事も有りますので
-                                                        上記の操作でラベル編集モードに入るか、ファイルかフォルダを選択後、コンテキストメニューの「名称変更」で下記の様な入力ダイアログを表示します。
-                                                            <img src="img/cm02_rewname2.png"  align="top" alt="cm02_rewname1">
-                           
+                                                            上記の操作でラベル編集モードに入るか、ファイルかフォルダを選択後、コンテキストメニューの「名称変更」で下記の様な入力ダイアログを表示します。
+                                                            <img src="img/cm02_rewname2.png" align="top" alt="cm02_rewname1">
+
                                                         </li>
-                                                     </ul>
+                                                        <li>
+                                                            ショートカットキーは
+                                                            <ul>
+                                                                <li>
+                                                                    F2
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <!-- 名称変更 -->
+                                        </div>       <!-- 名称変更 -->
+
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <div style="padding: 10px;background-color: #3c763d;color: white;">
+                                                    プレイリストに追加
+                                                </div>
+                                                <div style="padding: 10px;background-color: #dff0d8;">
+
+                                                    <ul>
+                                                        <li>
+                                                            選択したファイルもしくはフォルダの中の全ファイルを既存のプレイリストに追加します。
+                                                        </li>
+                                                        <li>
+                                                            コンテキストメニューの二階層目にこれまで使った事のあるプレイリストと未選択のリストを指定する「その他のリスト」を表示します。
+                                                        </li>
+                                                        <li>
+                                                            コンテキストメニューの三階層目で指定したリストの先頭/末尾のいづれに追加するかを指定します。
+                                                            <ul>
+                                                                <li>
+                                                                    細かい位置指定はプレイリスト内のドラッグ＆ドロップ操作で行って下さい。
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <img src="img/fileBrowsContexet_addpl.png" align="top" alt="cm02_rewname1">
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>       <!-- プレイリストに追加 -->
+
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <div style="padding: 10px;background-color: #3c763d;color: white;">
+                                                    プレイリストを作成
+                                                </div>
+                                                <div style="padding: 10px;background-color: #dff0d8;">
+
+                                                    <ul>
+                                                        <li>
+                                                            選択したファイルもしくはフォルダの中の全ファイルから新規のプレイリストを作成します。
+                                                        </li>
+                                                        <li>
+                                                            コンテキストメニューの二階層目でVideoのみかaudioのみかを指定します。
+                                                            <ul>
+                                                                <li>
+                                                                    おそらく再生時の混在は無いと思いますのでフィルタリングします。
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <img src="img/fileBrowsContexet_makepl.png" align="top" alt="cm02_rewname1">
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>       <!-- プレイリストを作成 -->
 
                                         <div class="row">
                                             <div class="col-xs-12 col-sm-8">
@@ -303,8 +627,7 @@
                                             <div class="col-xs-12 col-sm-4" style="text-align: center;">
                                                 <img src="img/cm08_aplilanch0.png" class="phorRes" style="width:100%;" align="top" alt="cm08_aplilanch0">
                                             </div>
-                                        </div>
-                                        <!-- アプリを起動 -->
+                                        </div>    <!-- アプリを起動 -->
 
                                     </div>
                                 </div>
@@ -321,7 +644,7 @@
                         <div class="panel panel-default">
                             <div class="panel-title">
                                 <div class="panel-heading btn collapse_bt" data-toggle="collapse" style="background-color: #fcf8e3" data-target="#play_list_body">
-                                    <h2>連続再生リスト</h2>
+                                    <h2>プレイリスト</h2>
                                 </div>
                             </div>
 
@@ -333,7 +656,8 @@
                                         <div class="row">
                                             <div class="col-xs-12 ">
                                                 <div class="alert alert-success" role="alert" style="width:96%;height: auto;margin-left: 15px;">
-                                                    ver1.1では再生中のファイルとサブフォルダから同種（videoまたはaudio）ファイルを抽出します
+                                                    ver1.1では再生中のファイルとサブフォルダから同種（videoまたはaudio）ファイルを抽出し、プレイリスト的な機能(連続再生リスト)にしています多が
+                                                    ver1.2からは汎用的なプレイリストファイルを利用できる様にしました。
                                                 </div>
                                             </div>
                                         </div>
@@ -341,45 +665,35 @@
                                         <div class="row">
                                             <div class="col-xs-12 col-sm-8">
                                                 <div style="padding: 10px;background-color: #3c763d;color: white;">
-                                                    同種ファイルの抽出
+                                                    プレイリストの選択
                                                 </div>
                                                 <div style="padding: 10px;background-color: #dff0d8;">
                                                     <ul>
                                                         <li>
-                                                            videoまたはaudioを選択した状態で
-                                                            <img src="img/renzokus_saisei_bt.png" align="top" alt="renzokus_saisei_bt"> にチェックを入れると再生中のファイルど同種ファイルを
+                                                            ファイルブラウザで汎用プレイリスト(.m3u)を選択するとプレイリストに読み込んで、そのプレイリストの連続再生に切り替わります。
                                                             <ul>
                                                                 <li>
-                                                                    再生しているファイルがあるフォルダと
-                                                                </li>
-                                                                <li>
-                                                                    サブフォルダ
-                                                                </li>
-                                                            </ul>から抽出します。
-                                                        </li>
-                                                    </ul>
-                                                    <img src="img/pl_list_carent.png" class="phorRes" style="width:70%;" align="top" alt="pl_list_1up"> <br> リストアップに時間が掛かる時は下図の様なプログレスが表示されます。
-                                                    <br>
-                                                    <img src="img/pl_progress.png" align="top" alt="pl_progress">
-                                                    <ul>
-                                                        <li>
-                                                            プレイリスト再生中は再生操作はプレイリストに移ります。
-                                                            <ul>
-                                                                <li>
-                                                                    ファイルリスト上で別のファイルを選択しても再生を中断しません。
-                                                                </li>
-                                                                <li>
-                                                                    再生ファイルを切り替える場合は
-                                                                    <ul>
-                                                                        <li>
-                                                                            <img src="img/renzokus_saisei_bt.png" align="top" alt="renzokus_saisei_bt"> のチェックを外しプレイリスト再生を終了するか
-                                                                        </li>
-                                                                        <li>
-                                                                            <img src="img/file_brouser_2pl_bt.png" align="top" alt="file_brouser_2pl_bt"> ボタンでファイルリストで選択しているファイルを元に再生リストを作り直します。
-                                                                        </li>
-                                                                    </ul>
+                                                                    既に他のプレイリストを再生中なら、「選択したファイルを選択」ボタンを押してリストの読み込みを行います。
                                                                 </li>
                                                             </ul>
+                                                        </li>
+                                                        <li>
+                                                            一度読み込んだファイルは記録して選択リストに追加します。
+                                                            <small>
+                                                                <ul>
+                                                                    <li>
+                                                                        起動時に記録してあるプレイリストファイルの有無を確認して読み込み可能なリストファイルだけをリストアップします。
+                                                                    </li>
+                                                                    <li>
+                                                                        リストの先頭(初期値)には前回再生していたファイルのデレクトリを書き込み、選択すればそのフォルダ内の動画もしくは音楽ファイルをリストアップします。
+                                                                    </li>
+                                                                </ul>
+                                                            </small>
+                                                            <img src="img/pl_list_selecter.png" align="top" alt="pl_list_selecter">
+                                                        </li>
+                                                        <li>
+                                                            リストアップに時間が掛かる時は下図の様なプログレスが表示されます。<br>
+                                                            <img src="img/pl_progress.png" align="top" alt="pl_progress">
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -387,28 +701,9 @@
 
                                             <div class="col-xs-12 col-sm-4">
                                                 ファイルリストでは
-                                                <img src="img/pl_fl.png" class="phorRes" style="width:75%;" align="top" alt="pl_fl">
+                                                <img src="img/pl_list.png" align="top" alt="pl_fl">
                                             </div>
-                                        </div>
-                                        <!-- 同種ファイルの抽出 -->
-                                        <div class="row">
-                                            <div class="col-xs-12 col-sm-8">
-                                                <div style="padding: 10px;background-color: #dff0d8;">
-                                                    <ul>
-
-                                                        <li>
-                                                            <img src="img/pl_panel_caption_ue_listup.png" align="top" alt="pl_panel_caption_ue_listup"> ボタンをクリックすると一つずつ上のフォルダへ抽出範囲を広げます
-                                                        </li>
-                                                    </ul>
-                                                    <img src="img/pl_list_1up.png" class="phorRes" style="width:60%;" align="top" alt="pl_list_1up">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-xs-12 col-sm-4">
-                                                拡大された抽出範囲
-                                                <img src="img/pl_1up.png" class="phorRes" style="width:100%;" align="top" alt="pl_1up">
-                                            </div>
-                                        </div>
+                                        </div>       <!-- 同種ファイルの抽出 -->
 
                                         <div class="row">
                                             <div class="col-xs-12 col-sm-8">
@@ -435,10 +730,9 @@
                                                 </div>
                                             </div>
                                             <div class="col-xs-12 col-sm-4">
-                                                <img src="img/pl_panel.png" class="phorRes" style="width:100%;" align="top" alt="pl_panel">
+                                                <img src="img/pl_panel.png" align="top" alt="pl_panel">
                                             </div>
-                                        </div>
-                                        <!-- プレイリストパネル -->
+                                        </div>       <!-- プレイリストパネル -->
 
                                         <div class="row">
                                             <div class="col-xs-12 col-sm-8">
@@ -484,14 +778,13 @@
                                             </div>
                                         </div>
 
-
                                         <div class="row">
                                             <div class="col-xs-12 col-sm-8">
                                                 <div style="padding: 10px;background-color: #3c763d;color: white;">
                                                     プレイリストのコンテキストメニュー
                                                 </div>
                                                 <div style="padding: 10px;background-color: #dff0d8;">
-                                                    <ul>
+                                                    <ol>
                                                         <li>
                                                             ファイルブラウザで選択
                                                             <ul>
@@ -503,16 +796,42 @@
                                                                 </li>
                                                             </ul>
                                                         </li>
-                                                    </ul>
+                                                        <li>
+                                                            削除
+                                                            <ul>
+                                                                <li>
+                                                                    プレイリストから不要なアイテムを削除します。
+                                                                </li>
+                                                                <li>
+                                                                    複数選択する場合はshiftキーを押しながら二つ目以降のアイテムを選択して下さい。
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            他のアプリケーションで開く
+                                                            <ul>
+                                                                <li>
+                                                                    このアプリケーションで再生できないファイルがあった場合、ファイルに問題があるのかこのアプリケーションの問題なのかを確認する為に作った機能です。
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            エクスプローラーで開く
+                                                            <ul>
+                                                                <li>
+                                                                    このアプリケーションのファイルブラウザ機能は必要最低限に絞っていますので、それ以上のニーズが発生した場合に対応できる様、設けた機能です。
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ol>
                                                 </div>
                                             </div>
 
                                             <div class="col-xs-12 col-sm-4">
-                                                <img src="img/pl_context.png" class="phorRes" style="width:100%;" align="top" alt="pl_context"><br>
                                                 <img src="img/pl_context_2fl.png" class="phorRes" style="width:100%;" align="top" alt="pl_context_2fl">
                                             </div>
-                                        </div>
-                                        <!-- プレイリストのコンテキストメニュー -->
+                                        </div>    <!-- プレイリストのコンテキストメニュー -->
+
                                     </div>
                                 </div>
                             </div>
@@ -520,7 +839,7 @@
                     </div>
                 </div>
             </div>
-            <!-- リリースノート -->
+            <!-- プレイリスト -->
 
             <div class="row " id="mediaplayer_part">
                 <div class="col-sm-12">
@@ -651,40 +970,67 @@
                                 <!--class="panel-collapse collapse" -->
                                 <div class="panel-body">
                                     <div class="panel-group">
-                                      <ul>
-                                           <li>
-                                                最新版はVer,1.2.0; 2017年9月20日
-                                                                                                <ul>
-                                                    <li>汎用形式のプレイリスト
-                                                         <ul>
-                                                            <li>
-                                                               .m3u形式の読込み/書き出し/ファイルツリーからの追記
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li>プレイヤーの全画面表示
-                                                         <ul>
-                                                            <li>
-                                                               システムメニュー（タイトルバー左のアイコンクリックで表示されるメニュー）からファイルブラウザとプレイしストの開閉操作
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                               </ul>
+                                        <ul>
+                                            <li>
+                                                最新版はVer,1.3.0; 2017年10月14日
                                                 <ul>
-                                                    <li>バグフィックス
+                                                    <li>
+                                                        ファイルブラウザの２ペイン化
                                                         <ul>
-                                                             <li>
+                                                            <li>
+                                                                ドライブ(ルートノード)が異なる場合のドラッグ＆ドロップがややこしいので
+                                                                <ul>
+                                                                    <li>
+                                                                        ドライブ～フォルダまでのツリービュー
+                                                                    </li>
+                                                                    <li>
+                                                                        選択されているフォルダの中身を表示するリストビュー
+                                                                    </li>
+                                                                </ul>
+                                                                の２ペイン構造に変更
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                        </ul>
+                                        <ul>
+                                            <li>
+                                                Ver,1.2.0; 2017年9月20日
+                                                <ul>
+                                                    <li>
+                                                        汎用形式のプレイリスト
+                                                        <ul>
+                                                            <li>
+                                                                .m3u形式の読込み/書き出し/ファイルツリーからの追記
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        プレイヤーの全画面表示
+                                                        <ul>
+                                                            <li>
+                                                                システムメニュー（タイトルバー左のアイコンクリックで表示されるメニュー）からファイルブラウザとプレイしストの開閉操作
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                                <ul>
+                                                    <li>
+                                                        バグフィックス
+                                                        <ul>
+                                                            <li>
                                                                 ファイルツリーの削除およびDrag&Drop操作で不自然な挙動（選択されているアイテムや開き直すノード）の修正
                                                             </li>
                                                         </ul>
                                                     </li>
                                                 </ul>
-                                                 </ul>
-                                      <ul>
+                                        </ul>
+                                        <ul>
                                             <li>
                                                 Ver,1.1.1; 2017年9月7日[マイナー修正]
-                                              <ul>
-                                                    <li>対応拡大
+                                                <ul>
+                                                    <li>
+                                                        対応拡大
                                                         <ul>
                                                             <li>
                                                                 .ts (プレイヤーはwindowsMediaPlayerを使用)[1.1.1]
@@ -693,23 +1039,25 @@
                                                     </li>
                                                 </ul>
                                                 <ul>
-                                                    <li>バグフィックス
+                                                    <li>
+                                                        バグフィックス
                                                         <ul>
-                                                             <li>
+                                                            <li>
                                                                 C:\Usersなど開けなかったフォルダの対応[1.1.1]
                                                             </li>
-                                                           <li>
+                                                            <li>
                                                                 プレイリストパネルの表示誤動作修繕[1.1.1]
                                                             </li>
                                                         </ul>
                                                     </li>
                                                 </ul>
                                             </li>
-                                            
-                                                                                        <li>
-                                               Ver,1.1.0; 2017年9月6日
+
+                                            <li>
+                                                Ver,1.1.0; 2017年9月6日
                                                 <ul>
-                                                    <li>同種ファイルのリストアップ
+                                                    <li>
+                                                        同種ファイルのリストアップ
                                                         <ul>
                                                             <li>
                                                                 自動送りは出来ませんがボタンクリックで連続再生を容易にしました。
@@ -718,7 +1066,8 @@
                                                     </li>
                                                 </ul>
                                                 <ul>
-                                                    <li>対応拡大
+                                                    <li>
+                                                        対応拡大
                                                         <ul>
                                                             <li>
                                                                 .flv (プレイヤーは
@@ -728,7 +1077,8 @@
                                                     </li>
                                                 </ul>
                                                 <ul>
-                                                    <li>バグフィックス
+                                                    <li>
+                                                        バグフィックス
                                                         <ul>
                                                             <li>
                                                                 右クリック動作の誤動作対処（リストのマウスアップで操作対象urlを保持）
@@ -738,7 +1088,7 @@
                                                 </ul>
                                             </li>
 
-                                            
+
                                             <li>
                                                 初版は2017年8月25日（Ver,1.0.0)
                                                 <ul>
@@ -759,7 +1109,7 @@
                                         <Br>
                                         <h3>開発予定</h3>
                                         <ul>
-                                             <li>
+                                            <li>
                                                 プレイリストの自動送り
                                                 <ul>
                                                     <li>
@@ -813,7 +1163,6 @@
                 </div>
             </div>
             <!-- リリースノート -->
-
             <!--browser_part-->
             <div class="row " id="info_row">
                 <div class="col-sm-12">
@@ -825,7 +1174,7 @@
                                     <h3>ご連絡</h3>
                                 </div>
                             </div>
-                            <!-- </div> -->
+                            <!-- </div>
                             <div id="edit_other" class="panel-collapse collapse">
                                 <div class="panel-body">
                                     <div class="panel-group">
@@ -839,7 +1188,8 @@
                                         <br>その他の求人サイトにご登録の場合はその旨をお伝えください。
                                     </div>
                                 </div>
-                            </div>
+                            </div>-->
+
                         </div>
                     </div>
                 </div>
@@ -879,17 +1229,17 @@
                 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                 <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3146425308522831" data-ad-slot="4219928305" data-ad-format="auto"></ins>
                 <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
+                                    (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
 
                 <script type="text/javascript">
-                    var nend_params = {
-                        "media": 32269,
-                        "site": 206990,
-                        "spot": 583222,
-                        "type": 1,
-                        "oriented": 1
-                    };
+                                    var nend_params = {
+                                        "media": 32269,
+                                        "site": 206990,
+                                        "spot": 583222,
+                                        "type": 1,
+                                        "oriented": 1
+                                    };
                 </script>
                 <script type="text/javascript" src="https://js1.nend.net/js/nendAdLoader.js"></script>
             </div>
@@ -900,18 +1250,18 @@
          </div> -->
     </div>
     <script type="text/javascript">
-        $(function() {
-            var headerHight = $('#header').outerHeight(true); //ヘッダの高さ
-            // console.log(headerHight);
-            $('a[href^="#"]').click(function() {
-                var href = $(this).attr("href");
-                var target = $(href == "#" || href == "" ? 'html' : href);
-                var position = target.offset().top - headerHight; //ヘッダの高さ分位置をずらす
-                $("html, body").animate({
-                    scrollTop: position
-                }, 550, "swing");
-                return false;
-            });
-        });
+                                    $(function () {
+                                        var headerHight = $('#header').outerHeight(true); //ヘッダの高さ
+                                        // console.log(headerHight);
+                                        $('a[href^="#"]').click(function () {
+                                            var href = $(this).attr("href");
+                                            var target = $(href == "#" || href == "" ? 'html' : href);
+                                            var position = target.offset().top - headerHight; //ヘッダの高さ分位置をずらす
+                                            $("html, body").animate({
+                                                scrollTop: position
+                                            }, 550, "swing");
+                                            return false;
+                                        });
+                                    });
     </script>
 </body>
